@@ -1,0 +1,4 @@
+
+{% for i in themes %}
+<a href="{% url 'hint:theme_detail' room_escape i.name %}"><h1>{{ i.name }}</h1></a>
+{% endfor %}

@@ -1,0 +1,197 @@
+<input type="text" id="input"><br>
+<button onclick="input()">입력</button>
+
+<audio id="audio1" src="{{ theme.hint1.url }}"></audio>
+<audio id="audio2" src="{{ theme.hint2.url }}"></audio>
+<audio id="audio3" src="{{ theme.hint3.url }}"></audio>
+<audio id="audio4" src="{{ theme.hint4.url }}"></audio>
+<audio id="audio5" src="{{ theme.hint5.url }}"></audio>
+{% if theme.hint6 %}
+<audio id="audio6" src="{{ theme.hint6.url }}"></audio>
+{% endif %}
+{% if theme.hint7 %}
+<audio id="audio7" src="{{ theme.hint7.url }}"></audio>
+{% endif %}
+{% if theme.hint8 %}
+<audio id="audio8" src="{{ theme.hint8.url }}"></audio>
+{% endif %}
+{% if theme.hint9 %}
+<audio id="audio9" src="{{ theme.hint9.url }}"></audio>
+{% endif %}
+{% if theme.hint10 %}
+<audio id="audio10" src="{{ theme.hint10.url }}"></audio>
+{% endif %}
+{% if theme.hint11 %}
+<audio id="audio11" src="{{ theme.hint11.url }}"></audio>
+{% endif %}
+{% if theme.hint12 %}
+<audio id="audio12" src="{{ theme.hint12.url }}"></audio>
+{% endif %}
+{% if theme.hint13 %}
+<audio id="audio13" src="{{ theme.hint13.url }}"></audio>
+{% endif %}
+{% if theme.hint14 %}
+<audio id="audio14" src="{{ theme.hint14.url }}"></audio>
+{% endif %}
+{% if theme.hint15 %}
+<audio id="audio15" src="{{ theme.hint15.url }}"></audio>
+{% endif %}
+{% if theme.hint16 %}
+<audio id="audio16" src="{{ theme.hint16.url }}"></audio>
+{% endif %}
+{% if theme.hint17 %}
+<audio id="audio17" src="{{ theme.hint17.url }}"></audio>
+{% endif %}
+{% if theme.hint18 %}
+<audio id="audio18" src="{{ theme.hint18.url }}"></audio>
+{% endif %}
+{% if theme.hint19 %}
+<audio id="audio19" src="{{ theme.hint19.url }}"></audio>
+{% endif %}
+{% if theme.hint20 %}
+<audio id="audio20" src="{{ theme.hint20.url }}"></audio>
+{% endif %}
+
+
+<!-- 아래부터 자바스크립트 -->
+<script type="text/javascript">
+var temp; 
+var count = 0;
+
+function input(){
+    var input = document.getElementById("input").value; 
+    temp = input;
+    if (temp == "CD38"){
+        audio1.play();
+    }
+    if (temp == "DA60"){
+        audio2.play();
+    }
+    if (temp == "CA59"){
+        audio3.play();
+    }
+    if (temp == "BD67"){
+        audio4.play();
+    }
+    if (temp == "AC35"){
+        audio5.play();
+    }
+    if (temp == "BC71"){
+        audio6.play();
+    }
+    if (temp == "AD58"){
+        audio7.play();
+    }
+    if (temp == "CB88"){
+        audio8.play();
+    }
+    if (temp == "CD37"){
+        audio9.play();
+    }
+    if (temp == "DC54"){
+        audio10.play();
+    }
+    if (temp == "CC38"){
+        audio11.play();
+    }
+    if (temp == "DD88"){
+        audio12.play();
+    }
+    if (temp == "DB34"){
+        audio13.play();
+    }
+    if (temp == "CA29"){
+        audio14.play();
+    }
+    if (temp == "AB65"){
+        audio15.play();
+    }
+    if (temp == "BC63"){
+        audio16.play();
+    }
+    if (temp == "AC25"){
+        audio17.play();
+    }
+    if (temp == "AD98"){
+        audio18.play();
+    }
+    if (temp == "BC31"){
+        audio19.play();
+    }
+    if (temp == "CB48"){
+        audio20.play();
+    }
+    count = count + 1;
+}
+
+</script>
+
+    
+<script>
+function play() {
+    var audio1 = document.getElementById("audio1");
+    var audio2 = document.getElementById("audio2");
+    var audio3 = document.getElementById("audio3");
+    var audio4 = document.getElementById("audio4");
+    var audio5 = document.getElementById("audio5");
+    {% if theme.hint6 %}
+    var audio6 = document.getElementById("audio6");
+    {% endif %}
+
+    {% if theme.hint7 %}
+    var audio7 = document.getElementById("audio7");
+    {% endif %}
+
+    {% if theme.hint8 %}
+    var audio8 = document.getElementById("audio8");
+    {% endif %}
+
+    {% if theme.hint9 %}
+    var audio9 = document.getElementById("audio9");
+    {% endif %}
+
+    {% if theme.hint10 %}
+    var audio10 = document.getElementById("audio10");
+    {% endif %}
+
+    {% if theme.hint11 %}
+    var audio11 = document.getElementById("audio11");
+    {% endif %}
+
+    {% if theme.hint12 %}
+    var audio12 = document.getElementById("audio12");
+    {% endif %}
+
+    {% if theme.hint13 %}
+    var audio13 = document.getElementById("audio13");
+    {% endif %}
+
+    {% if theme.hint14 %}
+    var audio14 = document.getElementById("audio14");
+    {% endif %}
+
+    {% if theme.hint15 %}
+    var audio15 = document.getElementById("audio15");
+    {% endif %}
+
+    {% if theme.hint16 %}
+    var audio16 = document.getElementById("audio16");
+    {% endif %}
+
+    {% if theme.hint17 %}
+    var audio17 = document.getElementById("audio17");
+    {% endif %}
+
+    {% if theme.hint18 %}
+    var audio18 = document.getElementById("audio18");
+    {% endif %}
+
+    {% if theme.hint19 %}
+    var audio19 = document.getElementById("audio19");
+    {% endif %}
+
+    {% if theme.hint20 %}
+    var audio20 = document.getElementById("audio20");
+    {% endif %}
+}
+</script>
