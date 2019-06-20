@@ -1,4 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    body {
+        background-color:green;
+    }
+</style>
+<div class="container mt-5">
+    <div class="text-center mt-5">
+        {% for i in themes %}
+        <a style="color:black; text-decoration:none;"href="{% url 'hint:theme_detail' room_escape i.name %}"><h1>{{ i.name }}</h1></a>
+        {% endfor %}
+    </div>
+</div>
 
-{% for i in themes %}
-<a href="{% url 'hint:theme_detail' room_escape i.name %}"><h1>{{ i.name }}</h1></a>
-{% endfor %}
+{% endblock %}

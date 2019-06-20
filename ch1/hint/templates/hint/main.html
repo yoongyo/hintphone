@@ -1,3 +1,33 @@
-{% for i in roomescape %}
-<a href="{% url 'hint:theme_list' i.name %}"><h3>{{ i.name }}</h3></a>
-{% endfor %}
+{% extends 'base.html' %}
+{% block content %}
+<script>
+    var password = "{{ q }}";
+    {% for i in roomescape %}
+    if (password == "{{ i.password }}" ){
+        location.href="{% url 'hint:theme_list' i.name %}"
+    }
+    else {
+        $(function(){
+          $('#not').text('비밀번호가 일치하지 않습니다.');
+        });
+    }
+    {% endfor %}
+</script>
+<style>
+    body{
+        background-color:green;
+    }
+</style>
+<div class="container mt-5">
+    <div class="text-center mt-5">
+        <form action="" method="get">
+            {% csrf_token %}
+            <input name="q" value="{{ q }}" id="pw" class="form-control" type="search" placeholder="비밀번호를 입력해주세요">
+        </form>
+        <h3 id="not"></h3>
+    </div>
+</div>
+
+
+
+{% endblock %}

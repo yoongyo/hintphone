@@ -4,8 +4,10 @@ from .models import Theme, RoomEscape
 
 def main(request):
     roomescape = RoomEscape.objects.all()
+    q = request.GET.get('q', '')
     return render(request, 'hint/main.html', {
-        'roomescape': roomescape
+        'roomescape': roomescape,
+        'q': q
     })
 
 
@@ -18,7 +20,9 @@ def theme_list(request, room_escape):
 
 
 def theme_detail(request, room_escape, theme):
+    password = get_object_or_404(RoomEscape, name=room_escape).reset
     theme = get_object_or_404(Theme, name=theme)
     return render(request, 'hint/theme_detail.html', {
-        'theme': theme
+        'theme': theme,
+        'password': password
     })

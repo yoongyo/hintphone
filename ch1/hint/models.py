@@ -3,6 +3,8 @@ from django.db import models
 
 class RoomEscape(models.Model):
     name = models.CharField(max_length=20)
+    password = models.CharField(max_length=30)
+    reset = models.CharField(max_length=20)
     admin = models.CharField(max_length=20)
     phone = models.CharField(max_length=20)
 
@@ -12,6 +14,7 @@ class RoomEscape(models.Model):
 
 class Theme(models.Model):
     roomEscape = models.ForeignKey(RoomEscape, on_delete=models.CASCADE)
+    hintCount = models.PositiveIntegerField()
     name = models.CharField(max_length=30)
     hint1 = models.FileField(upload_to='{0}/{1}/'.format(roomEscape, name), blank=True, null=True)
     hint2 = models.FileField(upload_to='{0}/{1}/'.format(roomEscape, name), blank=True, null=True)
