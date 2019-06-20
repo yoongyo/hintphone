@@ -8,7 +8,7 @@
 <div class="container mt-5">
     <div class="text-center mt-5">
         {% for i in themes %}
-        <a style="color:black; text-decoration:none;"href="{% url 'hint:theme_detail' room_escape i.name %}"><h1>{{ i.name }}</h1></a>
+        <a style="color:black; text-decoration:none;" href="{% url 'hint:reset_code' room_escape i.name %}"><h1>{{ i.name }}</h1></a>
         {% endfor %}
     </div>
 </div>
