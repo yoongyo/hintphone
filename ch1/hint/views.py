@@ -1,42 +1,46 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Theme, RoomEscape
+from .models import Theme
+from django.contrib.auth.decorators import login_required
+import sys
+sys.path.append('..')
+from accounts.models import Profile
 
 
-def main(request):
-    roomescape = RoomEscape.objects.all()
-    q = request.GET.get('q', '')
-    return render(request, 'hint/main.html', {
-        'roomescape': roomescape,
-        'q': q
-    })
-
-
-def theme_list(request, room_escape):
+@login_required
+def theme_list(request, user_id):
     themes = Theme.objects.all()
+    themes = themes.filter(roomEscape=request.user)
+    escape_room = get_object_or_404(Profile, user=request.user).escape_room
     return render(request, 'hint/theme_list.html', {
         'themes': themes,
-        'room_escape': room_escape
+        'escape_room': escape_room,
+        'user_id': user_id
     })
 
 
-def reset_code(request, room_escape, theme):
-    roomescape = get_object_or_404(RoomEscape, name=room_escape)
+@login_required
+def reset_code(request, user_id, theme):
+    reset = get_object_or_404(Profile, user=request.user).reset
+    user_id = request.user.username
     theme = get_object_or_404(Theme, name=theme)
-    reset = get_object_or_404(RoomEscape, name=room_escape).reset
     q = request.GET.get('q', '')
     return render(request, 'hint/reset_code.html', {
         'reset': reset,
         'q': q,
         'theme': theme,
-        'roomescape': roomescape
+        'user_id': user_id
     })
 
 
-def theme_detail(request, room_escape, theme):
-    roomescape = get_object_or_404(RoomEscape, name=room_escape)
-    password = roomescape.reset
+def QR_code(request):
+    return render(request, 'hint/QR_code.html')
+
+
+@login_required
+def theme_detail(request, user_id, theme):
+    reset = get_object_or_404(Profile, user=request.user).reset
     theme = get_object_or_404(Theme, name=theme)
     return render(request, 'hint/theme_detail.html', {
         'theme': theme,
-        'password': password,
+        'password': reset,
     })

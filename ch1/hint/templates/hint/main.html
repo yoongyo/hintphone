@@ -1,34 +1,40 @@
 {% extends 'base.html' %}
 {% block content %}
-
+{% load static %}
 <style>
-    body{
-        background-color:green;
+    body {
+        background-color: rgb(238,238,238);
     }
 </style>
 <div class="container mt-5">
-    <div class="text-center mt-5">
-        <form action="" method="get">
+    <div class="text-center m-5">
+        <img class="m-5" width="150px" src="{% static 'account.png' %}">
+        <form class="mb-4" action="" method="get">
             {% csrf_token %}
-            <input name="q" value="{{ q }}" id="pw" class="form-control" type="search" placeholder="비밀번호를 입력해주세요">
+            <input name="p" value="{{ p }}" id="id" class="form-control my-3" type="search" placeholder="업체명을 입력해주세요">
+            <input name="q" value="{{ q }}" id="pw" class="form-control my-3" type="search" placeholder="비밀번호를 입력해주세요">
+            <button style="border: 1px solid black" type="submit" class="my-3 form-control btn btn-default">login</button>
         </form>
-        <h3 id="not">비밀번호를 입력해주세요.</h3>
+
     </div>
 </div>
 
 <script>
+    var id = "{{ p }}";
     var password = "{{ q }}";
     {% for i in roomescape %}
     if (password == ""){
         pass
     }else{
-        if (password == "{{ i.password }}" ){
-            location.href="{% url 'hint:theme_list' i.name %}"
-        }
-        else {
-            $(function(){
-              $('#not').text('비밀번호가 일치하지 않습니다.');
-            });
+        if (id == "{{ i.name }}"){
+            if (password == "{{ i.password }}" ){
+                location.href="{% url 'hint:theme_list' i.name %}"
+            }
+            else {
+                $(function(){
+                  $('#not').text('비밀번호가 일치하지 않습니다.');
+                });
+            }
         }
     }
     {% endfor %}

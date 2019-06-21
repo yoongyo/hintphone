@@ -1,19 +1,9 @@
 from django.db import models
-
-
-class RoomEscape(models.Model):
-    name = models.CharField(max_length=20)
-    password = models.CharField(max_length=30)
-    reset = models.CharField(max_length=20)
-    admin = models.CharField(max_length=20)
-    phone = models.CharField(max_length=20)
-
-    def __str__(self):
-        return self.name
+from django.conf import settings
 
 
 class Theme(models.Model):
-    roomEscape = models.ForeignKey(RoomEscape, on_delete=models.CASCADE)
+    roomEscape = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     hintCount = models.PositiveIntegerField()
     name = models.CharField(max_length=30)
     hint1 = models.FileField(upload_to='{0}/{1}/'.format(roomEscape, name), blank=True, null=True)

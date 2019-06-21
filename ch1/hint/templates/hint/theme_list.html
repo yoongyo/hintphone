@@ -1,15 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<style>
-    body {
-        background-color:green;
-    }
-</style>
+
 <div class="container mt-5">
     <div class="text-center mt-5">
+        <h1 class="m-5">{{ escape_room }}</h1>
         {% for i in themes %}
-        <a style="color:black; text-decoration:none;" href="{% url 'hint:reset_code' room_escape i.name %}"><h1>{{ i.name }}</h1></a>
+        <a style="color:black; text-decoration:none;" href="{% url 'hint:reset_code' user_id i.name %}"><h2>{{ i.name }}</h2></a>
         {% endfor %}
+        </ul>
     </div>
 </div>
 

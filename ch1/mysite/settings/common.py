@@ -16,7 +16,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hint'
+    'hint',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -75,6 +76,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_URL = ''   # @login_required 데코레이션 사용시 로그인이 안될시 이 URL로 이동
+LOGIN_REDIRECT_URL = '/accounts/profile'   # 로그인 성공시 이 URL로 이동
 
 LANGUAGE_CODE = 'ko-kr'
 
