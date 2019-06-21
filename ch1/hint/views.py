@@ -33,7 +33,7 @@ def reset_code(request, user_id, theme):
 
 
 def QR_code(request):
-    return render(request, 'hint/QR_code.html')
+    return render(request, 'hint/qr.html')
 
 
 @login_required

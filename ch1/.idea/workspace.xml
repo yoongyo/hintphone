@@ -2,33 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb9a69a9-f5ab-473f-9c49-3d3588a8bab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint/templates/hint/QR_code.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint/templates/hint/theme_detail_1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/qr/css/qr.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/qr/js/llqrcode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/qr/js/webqr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint/templates/hint/qr.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/&lt;django.db.models.fields.related.ForeignKey&gt;/&lt;django.db.models.fields.CharField&gt;/0001.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/&lt;django.db.models.fields.related.ForeignKey&gt;/&lt;django.db.models.fields.CharField&gt;/0002.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/&lt;django.db.models.fields.related.ForeignKey&gt;/&lt;django.db.models.fields.CharField&gt;/0003.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/&lt;django.db.models.fields.related.ForeignKey&gt;/&lt;django.db.models.fields.CharField&gt;/0004.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/&lt;django.db.models.fields.related.ForeignKey&gt;/&lt;django.db.models.fields.CharField&gt;/0005.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hint/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/hint/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hint/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/hint/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hint/templates/hint/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/hint/templates/hint/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hint/templates/hint/reset_code.html" beforeDir="false" afterPath="$PROJECT_DIR$/hint/templates/hint/reset_code.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hint/templates/hint/theme_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/hint/templates/hint/theme_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hint/templates/hint/theme_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/hint/templates/hint/theme_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hint/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hint/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hint/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hint/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,45 +26,45 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="html" value="11" />
+          <entry key="html" value="12" />
           <entry key="js" value="2" />
           <entry key="png" value="1" />
-          <entry key="py" value="31" />
+          <entry key="py" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="HTML" value="11" />
+          <entry key="HTML" value="12" />
           <entry key="Image" value="1" />
           <entry key="JavaScript" value="2" />
-          <entry key="Python" value="31" />
+          <entry key="Python" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1583" />
-          <entry key="py" value="1376" />
+          <entry key="html" value="1587" />
+          <entry key="py" value="1378" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1583" />
-          <entry key="Python" value="1376" />
+          <entry key="HTML" value="1587" />
+          <entry key="Python" value="1378" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hint/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="520">
+              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
-                <marker date="1561116018190" expanded="true" signature="985:1036" ph="..." />
+                <marker date="1561125422989" expanded="true" signature="985:1031" ph="..." />
               </folding>
             </state>
           </provider>
@@ -109,6 +85,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hint/templates/hint/qr.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/static/qr/css/qr.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
@@ -122,18 +107,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hint/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -165,7 +138,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hint/templates/hint/reset_code.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -217,13 +190,14 @@
         <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/hint/templates/hint/theme_list.html" />
         <option value="$PROJECT_DIR$/hint/templates/hint/theme_detail.html" />
-        <option value="$PROJECT_DIR$/hint/views.py" />
         <option value="$PROJECT_DIR$/hint/urls.py" />
         <option value="$PROJECT_DIR$/mysite/static/qr/js/llqrcode.js" />
         <option value="$PROJECT_DIR$/mysite/static/qr/js/webqr.js" />
         <option value="$PROJECT_DIR$/mysite/static/qr/css/qr.css" />
         <option value="$PROJECT_DIR$/hint/templates/hint/QR_code.html" />
         <option value="$PROJECT_DIR$/hint/templates/hint/reset_code.html" />
+        <option value="$PROJECT_DIR$/hint/templates/hint/qr.html" />
+        <option value="$PROJECT_DIR$/hint/views.py" />
       </list>
     </option>
   </component>
@@ -448,17 +422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hint/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-            <marker date="1561116018190" expanded="true" signature="985:1036" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hint/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -490,18 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hint/templates/hint/QR_code.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ins#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hint/templates/hint/theme_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -527,6 +478,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hint/templates/hint/QR_code.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ins#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hint/templates/hint/qr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hint/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1561125422989" expanded="true" signature="985:1031" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
