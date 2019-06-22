@@ -32,8 +32,20 @@ def reset_code(request, user_id, theme):
     })
 
 
-def QR_code(request):
-    return render(request, 'hint/qr.html')
+count = -1
+@login_required
+def QR_code(request, user_id, theme):
+    global count
+    hintCount = get_object_or_404(Theme, name=theme).hintCount
+    if hintCount > count:
+        count += 1
+        print(count)
+        return render(request, 'hint/qr.html')
+    else:
+        print(count)
+        return render(request, 'hint/not_hint.html')
+
+
 
 
 @login_required
@@ -43,4 +55,16 @@ def theme_detail(request, user_id, theme):
     return render(request, 'hint/theme_detail.html', {
         'theme': theme,
         'password': reset,
+    })
+
+
+@login_required
+def theme_hint(request, user_id, theme, hint):
+    global count
+    theme = get_object_or_404(Theme, name=theme)
+    return render(request, 'hint/theme_hint.html', {
+        'hint': hint,
+        'theme': theme,
+        'count': count,
+        'user_id': user_id,
     })

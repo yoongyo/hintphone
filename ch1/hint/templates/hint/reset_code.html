@@ -13,7 +13,7 @@
 
 <script>
     var reset_code = "{{ q }}";
-    var url = "{% url 'hint:QR_code' %}";
+    var url = "{% url 'hint:QR_code' user_id theme %}";
     if (reset_code == ""){
         pass
     }else{

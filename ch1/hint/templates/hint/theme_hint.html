@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    audio{
+        width:100%
+    }
+</style>
+{% if hint == "1" %}
+    {% if theme.hint1 %}
+    <audio controls src="{{ theme.hint1.url }}"></audio>
+    {% endif %}
+{% endif %}
+{% if hint == "2" %}
+    {% if theme.hint2 %}
+    <audio controls src="{{ theme.hint2.url }}"></audio>
+    {% endif %}
+{% endif %}
+{% if hint == "3" %}
+    {% if theme.hint3 %}
+    <audio controls src="{{ theme.hint3.url }}"></audio>
+    {% endif %}
+{% endif %}
+{% if hint == "4" %}
+    {% if theme.hint4 %}
+    <audio controls src="{{ theme.hint4.url }}"></audio>
+    {% endif %}
+{% endif %}
+{% if hint == "5" %}
+    {% if theme.hint5 %}
+    <audio controls src="{{ theme.hint5.url }}"></audio>
+    {% endif %}
+{% endif %}
+{% if hint == "6" %}
+    {% if theme.hint6 %}
+    <audio controls src="{{ theme.hint6.url }}"></audio>
+    {% endif %}
+{% endif %}
+{% if hint == "7" %}
+    {% if theme.hint7 %}
+    <audio controls src="{{ theme.hint7.url }}"></audio>
+    {% endif %}
+{% endif %}
+{% if hint == "8" %}
+    {% if theme.hint8 %}
+    <audio controls src="{{ theme.hint8.url }}"></audio>
+    {% endif %}
+{% endif %}
+
+<div class="text-center">
+    <a style="border-color:black" class="p-4" href="{% url 'hint:QR_code' user_id theme %}">힌트 사용하러가기</a>
+</div>
+
+{% endblock %}
