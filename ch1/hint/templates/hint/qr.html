@@ -42,7 +42,7 @@
         node.value = "";
         qrcode.callback = function(res) {
           if(res instanceof Error) {
-            alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
+            alert("QR코드가 제대로 입력되지 않았습니다. 다시 카메라 프레임에 맞게 찍어주세요.");
           } else {
             node.parentNode.previousElementSibling.value = res;
             alert("QR코드가 입력되어 해당 힌트를 들을 수 있습니다.");
