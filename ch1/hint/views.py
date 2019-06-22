@@ -1,10 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, reverse
 from .models import Theme
 from django.contrib.auth.decorators import login_required
 import sys
 sys.path.append('..')
 from accounts.models import Profile
-
+from .forms import HintForm
 
 @login_required
 def theme_list(request, user_id):
@@ -46,8 +46,6 @@ def QR_code(request, user_id, theme):
         return render(request, 'hint/not_hint.html')
 
 
-
-
 @login_required
 def theme_detail(request, user_id, theme):
     reset = get_object_or_404(Profile, user=request.user).reset
@@ -67,4 +65,24 @@ def theme_hint(request, user_id, theme, hint):
         'theme': theme,
         'count': count,
         'user_id': user_id,
+    })
+
+
+@login_required
+def theme_edit(request, user_id, theme):
+    theme = get_object_or_404(Theme, name=theme)
+    if request.method == 'POST':
+        form = HintForm(request.POST, request.FILES, instance=theme)
+        print("fuck")
+        if form.is_valid():
+            theme = form.save(commit=False)
+            theme.roomEscape = request.user
+            theme.save()
+            return HttpResponseRedirect(reverse('hint:theme_list', args=[request.user.username]))
+        else:
+            print(form.errors)
+    else:
+        form = HintForm(instance=theme)
+    return render(request, 'hint/theme_edit.html', {
+        'form': form,
     })

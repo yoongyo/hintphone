@@ -58,9 +58,9 @@
     function url(){
         var value = $('#text').val();
         if (value == ""){
-            pass
+            alert("QR 코드를 입력하세요.");
         }else{
-            location.replace(value);
+            location.href=value;
         }
     }
 </script>

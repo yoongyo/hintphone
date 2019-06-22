@@ -5,10 +5,13 @@
     <div class="text-center mt-5">
         <h1 class="m-5">{{ escape_room }}</h1>
         {% for i in themes %}
-        <a style="color:black; text-decoration:none;" href="{% url 'hint:reset_code' user_id i.name %}"><h2>{{ i.name }}</h2></a>
+        <div style="position:relative;">
+            <a style="color:black; text-decoration:none;" href="{% url 'hint:reset_code' user_id i.name %}"><h2 class="m-3">{{ i.name }}</h2></a>
+            <a style="text-decoration:none;color:black;position:absolute;right:0;bottom:0" href="{% url 'hint:theme_edit' user_id i.name %}"><span>수정</span></a>
+        </div>
         {% endfor %}
-        </ul>
     </div>
 </div>
+
 
 {% endblock %}
