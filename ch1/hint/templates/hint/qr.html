@@ -8,7 +8,7 @@
         vertical-align:middle
     }
     .qrcode-text {
-        padding-right:1.7em; margin-right:0
+        margin-right:0
     }
     .qrcode-text-btn {
         display:inline-block; background:url(//dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg) 50% 50% no-repeat; height:10em; width:17em; cursor:pointer
@@ -19,7 +19,7 @@
 </style>
 <div style="height:100px"></div>
 <div class="container text-center my-5">
-    <input id="text" type="url" size=16 placeholder="Tracking Code" class="qrcode-text">
+    <input style="visibility:hidden;" id="text" type="url" size=16 placeholder="Tracking Code" class="qrcode-text">
     <label class="qrcode-text-btn">
         <input id="g" type=file accept="image/*" capture="environment"
                onchange="openQRCamera(this);" tabindex=-1>
@@ -45,6 +45,7 @@
             alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
           } else {
             node.parentNode.previousElementSibling.value = res;
+            alert("QR코드가 입력되어 해당 힌트를 들을 수 있습니다.");
           }
         };
         qrcode.decode(reader.result);
