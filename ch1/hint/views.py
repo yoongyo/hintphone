@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, reverse
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, reverse, redirect
 from .models import Theme
 from django.contrib.auth.decorators import login_required
 import sys
@@ -32,17 +32,25 @@ def reset_code(request, user_id, theme):
     })
 
 
-count = -1
+count = 0
 @login_required
 def QR_code(request, user_id, theme):
     global count
     hintCount = get_object_or_404(Theme, name=theme).hintCount
-    if hintCount > count:
-        count += 1
-        print(count)
-        return render(request, 'hint/qr.html')
+    q = request.GET.get('q', '')
+    if q != "":
+        if request.method == "GET":
+            count += 1
+            return redirect(q)
     else:
-        print(count)
+        pass
+    print(count)
+    if hintCount > count:
+        return render(request, 'hint/qr.html', {
+            'count': count,
+            'theme': theme,
+        })
+    else:
         return render(request, 'hint/not_hint.html')
 
 
@@ -73,7 +81,6 @@ def theme_edit(request, user_id, theme):
     theme = get_object_or_404(Theme, name=theme)
     if request.method == 'POST':
         form = HintForm(request.POST, request.FILES, instance=theme)
-        print("fuck")
         if form.is_valid():
             theme = form.save(commit=False)
             theme.roomEscape = request.user

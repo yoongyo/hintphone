@@ -49,5 +49,10 @@
 <div class="text-center">
     <a style="border-color:black" class="p-4" href="{% url 'hint:QR_code' user_id theme %}">힌트 사용하러가기</a>
 </div>
-
+<script>
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
+</script>
 {% endblock %}
