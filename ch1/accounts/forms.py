@@ -5,11 +5,15 @@ from django import forms
 class LoginForm(AuthenticationForm):
     username = UsernameField(widget=forms.TextInput(
         attrs={
+            'id': 'id',
             'type': 'text',
-            'class': 'form-control my-2',
+            'class': 'mt-4 mb-2',
             'value': "",
             'required autofocus': True,
+            'placeholder': 'ID',
             'autocomplete': 'off',
+            'style': 'outline:0;color:white;border-color: black;width:100%;'
+                     'background-color:black;box-shadow: 0 2px 0 0 white;'
         }
     ))
     password = forms.CharField(
@@ -19,10 +23,14 @@ class LoginForm(AuthenticationForm):
             attrs={
                 'id': 'password',
                 'type': 'password',
-                'class': 'form-control my-2',
+                'class': '  mt-2 mb-4',
+                'placeholder': 'Password',
                 'name': 'password',
                 'required data-eye': True,
                 'autocomplete': 'off',
+                'style': 'outline:0;color:white;border-color: black;width:100%;'
+                         'background-color:black;box-shadow: 0 2px 0 0 white;'
+
             }
         ),
     )

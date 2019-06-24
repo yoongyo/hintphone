@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 <style>
     body, input {
-        font-size:14pt
+        font-size:14pt;
+        color: white;
     }
     input, label {
         vertical-align:middle
@@ -11,15 +13,16 @@
         margin-right:0
     }
     .qrcode-text-btn {
-        display:inline-block; background:url(//dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg) 50% 50% no-repeat; height:10em; width:17em; cursor:pointer
+        display:inline-block; background:url(https://www.pythonanywhere.com/user/hintphone/files/home/hintphone/qr2.png) 50% 50% no-repeat; height:10em; width:17em; cursor:pointer
     }
     #g {
         position:absolute; overflow:hidden; width:1px; height:1px; opacity:0
     }
 </style>
 <div style="height:50px"></div>
-<div class="container text-center my-5">
-    <h2>{{ theme }}</h2>
+<div class="container text-center my-4">
+    <span>{{ escape_room }}</span>
+    <h2 class="m-0">{{ theme }}</h2>
     <input style="visibility:hidden;" id="text" type="url" size=16 placeholder="Tracking Code" class="qrcode-text">
     <label class="qrcode-text-btn">
         <input id="g" type=file accept="image/*" capture="environment" onchange="openQRCamera(this);" tabindex=-1>
@@ -29,7 +32,7 @@
         <div class="col-8">
             <form action="" method="get">
                 {% csrf_token %}
-                <button style="border-color:black" class="form-control btn btn-default" onclick="url();" type="submit">힌트 사용</button>
+                <button style="border-color:white; color:white" class="form-control btn btn-default" onclick="url();" type="submit">힌트 사용</button>
                 <h3 class="mt-4 mb-2">HINT COUNT</h3>
                 <h4 class="m-0">{{ count }}</h4>
                 <input style="visibility:hidden;" id="input" name="q" value="{{ q }}" type="text">
@@ -38,7 +41,43 @@
         <div class="col-2"></div>
     </div>
 </div>
+<button style="position:fixed;bottom:20px;left:20px;" type="button" onclick="location.href='{% url 'hint:reset_code' user_id theme %}'">
+    <img width="35px;" src="{% static  'reset1.png' %}">
+</button>
+<button data-target="#myModal" data-toggle="modal" style="position:fixed;bottom:20px;right:20px;" type="button">
+    <img width="35px;" src="{% static  'question.png' %}">
+</button>
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title" style="color:black">힌트 사용 방법</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="color:black;">
+          <p>힌트폰 사용방법<br>
+            1. 바코드 이미지를 클릭합니다.<br>
+            2. 힌트가 필요한 문제의 QR코드를<br>
+              카메라 프레임에 맞게 촬영합니다.<br>
+            3. 힌트사용 버튼을 클릭합니다.<br>
+              <br>
+              힌트폰 사용안내<br>
+            1. 최대 5회까지만 사용이 가능합니다.<br>
+            2. 반복 된 힌트는 연속 재생이 가능합니다.(No Count)<br>
+          </p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="https://dmla.github.io/jsqrcode/src/qr_packed.js"></script>
 <script>
@@ -75,5 +114,7 @@
             history.go(1);
     };
 </script>
+
+
 
 {% endblock %}

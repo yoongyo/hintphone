@@ -5,6 +5,7 @@ import sys
 sys.path.append('..')
 from accounts.models import Profile
 from .forms import HintForm
+count = 0
 
 @login_required
 def theme_list(request, user_id):
@@ -20,22 +21,27 @@ def theme_list(request, user_id):
 
 @login_required
 def reset_code(request, user_id, theme):
+    global count
     reset = get_object_or_404(Profile, user=request.user).reset
     user_id = request.user.username
     theme = get_object_or_404(Theme, name=theme)
+    escape_room = get_object_or_404(Profile, user=request.user).escape_room
     q = request.GET.get('q', '')
+    if q == reset:
+        count = 0
     return render(request, 'hint/reset_code.html', {
         'reset': reset,
         'q': q,
         'theme': theme,
-        'user_id': user_id
+        'user_id': user_id,
+        'escape_room': escape_room,
     })
 
 
-count = 0
 @login_required
 def QR_code(request, user_id, theme):
     global count
+    escape_room = get_object_or_404(Profile, user=request.user).escape_room
     hintCount = get_object_or_404(Theme, name=theme).hintCount
     q = request.GET.get('q', '')
     if q != "":
@@ -49,6 +55,8 @@ def QR_code(request, user_id, theme):
         return render(request, 'hint/qr.html', {
             'count': count,
             'theme': theme,
+            'escape_room': escape_room,
+            'user_id': user_id
         })
     else:
         return render(request, 'hint/not_hint.html')

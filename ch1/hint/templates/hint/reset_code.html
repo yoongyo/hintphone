@@ -1,13 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
+<style>
+    input::placeholder {
+        color: white;
+    }
+</style>
 
 <div class="container mt-5">
+    <div style="height:50px"></div>
     <div class="text-center mt-5">
-        <form action="" method="get">
-            {% csrf_token %}
-            <input name="q" value="{{ q }}" id="pw" class="form-control" type="search" placeholder="Reset Code를 입력해주세요">
-        </form>
-        <h3 id="not">Reset Code를 입력해주세요</h3>
+        <span style="color:white">{{ escape_room }}</span>
+        <h1 style="color:white">{{ theme }}</h1>
+        <div class="m-5">
+            <div style="height:120px"></div>
+            <form action="" method="get">
+                {% csrf_token %}
+                <input style="outline:0;color:white;border-color: black;width:100%;background-color:black;box-shadow: 0 2px 0 0 white;" name="q" value="{{ q }}" id="pw" type="password" placeholder="Reset Code를 입력해주세요">
+                <button type="submit" class="form-control btn btn-default mt-4" style="border-color: white;color:white">ENTER</button>
+            </form>
+            <h3 id="not"></h3>
+        </div>
     </div>
 </div>
 
