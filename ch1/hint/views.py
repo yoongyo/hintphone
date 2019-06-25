@@ -5,7 +5,7 @@ import sys
 sys.path.append('..')
 from accounts.models import Profile
 from .forms import HintForm
-import copy
+import pyaudio
 
 count1 = 0
 count2 = 0
@@ -288,4 +288,16 @@ def theme_edit(request, user_id, theme):
         form = HintForm(instance=theme)
     return render(request, 'hint/theme_edit.html', {
         'form': form,
+    })
+
+
+def mike_check(request):
+    li=[]
+    PA = pyaudio.PyAudio()
+    for device_index in range(PA.get_device_count()):
+        info = PA.get_device_info_by_index(device_index)
+        for key in info.keys():
+            li.append(key+' = '+str(info[key]))
+    return render(request, 'hint/mike_check.html', {
+        'li':li
     })
