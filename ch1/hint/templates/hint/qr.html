@@ -20,7 +20,7 @@
     }
 </style>
 <div style="height:50px"></div>
-<div class="container text-center my-4">
+<div class="container text-center my-4 p-3">
     <span>{{ escape_room }}</span>
     <h2 class="m-0">{{ theme }}</h2>
     <input style="visibility:hidden;" id="text" type="url" size=16 placeholder="Tracking Code" class="qrcode-text">
@@ -67,7 +67,8 @@
               <br>
               힌트폰 사용안내<br>
             1. 최대 {{ hintCount }}회까지만 사용이 가능합니다.<br>
-            2. 반복 된 힌트는 연속 재생이 가능합니다.(No Count)<br>
+            2. 한번 사용한 힌트는 연속 재생이 가능합니다.<br>
+              (물론 카운팅은 되지 않습니다.)
           </p>
       </div>
 
