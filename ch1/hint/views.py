@@ -290,14 +290,3 @@ def theme_edit(request, user_id, theme):
         'form': form,
     })
 
-
-def mike_check(request):
-    li=[]
-    PA = pyaudio.PyAudio()
-    for device_index in range(PA.get_device_count()):
-        info = PA.get_device_info_by_index(device_index)
-        for key in info.keys():
-            li.append(key+' = '+str(info[key]))
-    return render(request, 'hint/mike_check.html', {
-        'li':li
-    })
