@@ -4,6 +4,7 @@ from django.conf import settings
 
 class Theme(models.Model):
     roomEscape = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    theme_number = models.PositiveIntegerField(null=True, blank=True)
     hintCount = models.PositiveIntegerField()
     name = models.CharField(max_length=30)
     hint1 = models.FileField(upload_to='{0}/{1}/'.format(roomEscape, name), blank=True, null=True)

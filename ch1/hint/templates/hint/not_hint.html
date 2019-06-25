@@ -1,6 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h3 class="text-center">힌트를 모두 다 사용하셨습니다.</h3>
+<h3 style="color:white" class="text-center">힌트를 모두 다 사용하셨습니다.</h3>
+<button style="position:fixed;bottom:20px;left:20px;background-color:black;border-color:black" type="button" onclick="location.href='{% url 'hint:reset_code' user_id theme %}'">
+    <img width="35px;" src="{% static  'reset1.png' %}">
+</button>
+<button data-target="#myModal" data-toggle="modal" style="position:fixed;bottom:20px;right:20px;background-color:black;border-color:black" type="button">
+    <img width="35px;" src="{% static  'question.png' %}">
+</button>
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title" style="color:black">힌트 사용 방법</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="color:black;">
+          <p>힌트폰 사용방법<br>
+            1. 바코드 이미지를 클릭합니다.<br>
+            2. 힌트가 필요한 문제의 QR코드를<br>
+              카메라 프레임에 맞게 촬영합니다.<br>
+            3. 힌트사용 버튼을 클릭합니다.<br>
+              <br>
+              힌트폰 사용안내<br>
+            1. 최대 5회까지만 사용이 가능합니다.<br>
+            2. 반복 된 힌트는 연속 재생이 가능합니다.(No Count)<br>
+          </p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
