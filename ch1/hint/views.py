@@ -5,7 +5,6 @@ import sys
 sys.path.append('..')
 from accounts.models import Profile
 from .forms import HintForm
-import pyaudio
 
 count1 = 0
 count2 = 0
@@ -249,7 +248,13 @@ def QR_code(request, user_id, theme):
             'user_id': user_id
         })
     else:
-        return render(request, 'hint/not_hint.html')
+        return render(request, 'hint/not_hint.html',{
+            'hintCount': hintCount,
+            'count': count,
+            'theme': theme,
+            'escape_room': escape_room,
+            'user_id': user_id
+        })
 
 
 @login_required
@@ -289,4 +294,16 @@ def theme_edit(request, user_id, theme):
     return render(request, 'hint/theme_edit.html', {
         'form': form,
     })
+
+
+def create_qr_code(request):
+    id = request.GET.get('id', '')
+    theme = request.GET.get('theme', '')
+    hint = request.GET.get('hint', '')
+    return render(request, 'hint/create_qr_code.html', {
+        'id': id,
+        'theme': theme,
+        'hint': hint,
+    })
+
 

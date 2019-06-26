@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+{% load static %}
 <h3 style="color:white" class="text-center">힌트를 모두 다 사용하셨습니다.</h3>
 <button style="position:fixed;bottom:20px;left:20px;background-color:black;border-color:black" type="button" onclick="location.href='{% url 'hint:reset_code' user_id theme %}'">
     <img width="35px;" src="{% static  'reset1.png' %}">
