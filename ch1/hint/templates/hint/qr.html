@@ -13,7 +13,7 @@
         margin-right:0
     }
     .qrcode-text-btn {
-        display:inline-block; background:url(https://www.pythonanywhere.com/user/hintphone/files/home/hintphone/qr2.png) 50% 50% no-repeat; height:10em; width:17em; cursor:pointer
+        display:inline-block; background: url({% static 'qr.png' %}) 50% 50% no-repeat; height:10em; width:17em; cursor:pointer
     }
     #g {
         position:absolute; overflow:hidden; width:1px; height:1px; opacity:0
@@ -60,7 +60,7 @@
       <!-- Modal body -->
       <div class="modal-body" style="color:black;">
           <p>힌트폰 사용방법<br>
-            1. 바코드 이미지를 클릭합니다.<br>
+            1. QR코드 이미지를 클릭합니다.<br>
             2. 힌트가 필요한 문제의 QR코드를<br>
               카메라 프레임에 맞게 촬영합니다.<br>
             3. 힌트사용 버튼을 클릭합니다.<br>

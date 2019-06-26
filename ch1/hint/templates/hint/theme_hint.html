@@ -8,108 +8,108 @@
 <div class="container">
 {% if hint == "1" %}
     {% if theme.hint1 %}
-    <audio controls src="{{ theme.hint1.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint1.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "2" %}
     {% if theme.hint2 %}
-    <audio controls src="{{ theme.hint2.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint2.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "3" %}
     {% if theme.hint3 %}
-    <audio controls src="{{ theme.hint3.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint3.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "4" %}
     {% if theme.hint4 %}
-    <audio controls src="{{ theme.hint4.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint4.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "5" %}
     {% if theme.hint5 %}
-    <audio controls src="{{ theme.hint5.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint5.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "6" %}
     {% if theme.hint6 %}
-    <audio controls src="{{ theme.hint6.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint6.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "7" %}
     {% if theme.hint7 %}
-    <audio controls src="{{ theme.hint7.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint7.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "8" %}
     {% if theme.hint8 %}
-    <audio controls src="{{ theme.hint8.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint8.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "9" %}
     {% if theme.hint9 %}
-    <audio controls src="{{ theme.hint9.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint9.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "10" %}
     {% if theme.hint10 %}
-    <audio controls src="{{ theme.hint10.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint10.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "11" %}
     {% if theme.hint11 %}
-    <audio controls src="{{ theme.hint11.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint11.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "12" %}
     {% if theme.hint12 %}
-    <audio controls src="{{ theme.hint12.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint12.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "13" %}
     {% if theme.hint13 %}
-    <audio controls src="{{ theme.hint13.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint13.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "14" %}
     {% if theme.hint14 %}
-    <audio controls src="{{ theme.hint14.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint14.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "15" %}
     {% if theme.hint15 %}
-    <audio controls src="{{ theme.hint15.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint15.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "16" %}
     {% if theme.hint16 %}
-    <audio controls src="{{ theme.hint16.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint16.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "17" %}
     {% if theme.hint17 %}
-    <audio controls src="{{ theme.hint17.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint17.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "18" %}
     {% if theme.hint18 %}
-    <audio controls src="{{ theme.hint18.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint18.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "19" %}
     {% if theme.hint19 %}
-    <audio controls src="{{ theme.hint19.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint19.url }}"></audio>
     {% endif %}
 {% endif %}
 {% if hint == "20" %}
     {% if theme.hint20 %}
-    <audio controls src="{{ theme.hint20.url }}"></audio>
+    <audio controls autoplay src="{{ theme.hint20.url }}"></audio>
     {% endif %}
 {% endif %}
 </div>
 
 <div class="text-center">
-    <a style="border-color:black" class="p-4" href="{% url 'hint:QR_code' user_id theme %}">힌트 사용하러가기</a>
+    <button style="border-color:black" class="p-4 form-control btn btn-default" onclick="location.href='{% url 'hint:QR_code' user_id theme %}'">힌트 사용하러가기</button>
 </div>
 <script>
     history.pushState(null, null, location.href);
