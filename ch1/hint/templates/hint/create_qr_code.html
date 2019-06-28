@@ -1,28 +1,165 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+<style>
 
+</style>
 <script type="text/javascript" src="{% static 'qr/js/jquery.qrcode.min.js' %}"></script>
+<script src="{% static 'html2canvas.js' %}"></script>
+<script type="text/javascript" src="{% static 'zip/jszip.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'zip/FileSaver.js' %}"></script>
 
-<div class="container text-center my-5">
+
+<div class="container-fluid text-center my-3" id="test">
     <form action="" method="get">
         {% csrf_token %}
-        <input class="form-control" name="id" value="{{ id }}" id="id" type="text" placeholder="ID를 입력해주세요">
-        <br>
-        <input class="form-control" name="theme" value="{{ theme }}" id="theme" type="text" placeholder="테마 이름을 입력해주세요">
-        <br>
-        <input class="form-control" name="hint" value="{{ hint }}" id="hint" type="text" placeholder="힌트 번호를 입력해주세요">
-        <br>
-        <button type="submit" class="form-control btn btn-default my-4" style="border-color: white;color:white">ENTER</button>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-2">
+                <input class="form-control" name="id" value="{{ id }}" id="id" type="text" placeholder="ID를 입력해주세요">
+            </div>
+            <div class="col-2">
+                <input class="form-control" name="theme" value="{{ theme }}" id="theme" type="text" placeholder="테마 이름을 입력해주세요">
+            </div>
+            <div class="col-2">
+                <button type="submit" class="form-control btn btn-default" style="border-color: white;color:white">ENTER</button>
+            </div>
+            <div class="col-2">
+                <button onclick="dd();" type="button" class="form-control btn btn-default" style="border-color: white;color:white">전체 다운로드</button>
+            </div>
+            <div class="col-2"></div>
+        </div>
     </form>
-
-    <h1 class="m-3" style="color:white;">QR코드 출력</h1>
-    <div style="border:1px solid white;height:130px;width:130px;margin:auto" id="gcDiv">
+    <h3 class="m-4" style="color:white;">QR코드 출력</h3>
+    <div class="row m-2">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-3">
+                    <h4 style="color:white">hint1</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint1"></div>
+                    <button id="blobButton1">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint2</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint2"></div>
+                    <button id="blobButton2">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint3</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint3"></div>
+                    <button id="blobButton3">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint4</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint4"></div>
+                    <button id="blobButton4">다운로드</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-3">
+                    <h4 style="color:white">hint5</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint5"></div>
+                    <button id="blobButton5">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint6</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint6"></div>
+                    <button id="blobButton6">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint7</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint7"></div>
+                    <button id="blobButton7">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint8</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint8"></div>
+                    <button id="blobButton8">다운로드</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <h3 style="margin:0;background-color:black;color:white;">HINT QR코드</h3>
-    <h4 class="m-3" style="color: white">{{ id }} / {{ theme }} / {{ hint }}</h4>
+    <div class="row m-2">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-3">
+                    <h4 style="color:white">hint9</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint9"></div>
+                    <button id="blobButton9">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint9</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint10"></div>
+                    <button id="blobButton10">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint11</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint11"></div>
+                    <button id="blobButton11">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint12</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint12"></div>
+                    <button id="blobButton12">다운로드</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-3">
+                    <h4 style="color:white">hint13</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint13"></div>
+                    <button id="blobButton13">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint14</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint14"></div>
+                    <button id="blobButton14">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint15</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint15"></div>
+                    <button id="blobButton15">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint16</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint16"></div>
+                    <button id="blobButton16">다운로드</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-3">
+                    <h4 style="color:white">hint17</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint17"></div>
+                    <button id="blobButton17">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint18</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint18"></div>
+                    <button id="blobButton18">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint19</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint19"></div>
+                    <button id="blobButton19">다운로드</button>
+                </div>
+                <div class="col-3">
+                    <h4 style="color:white">hint20</h4>
+                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint20"></div>
+                    <button id="blobButton20">다운로드</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
 </div>
-
 
 
 <script charset="utf-8">
@@ -30,13 +167,630 @@
     var theme = "{{ theme }}";
     var hint = "{{ hint }}";
     var encode_theme = encodeURI(theme).replace("%2F", "/");
-    jQuery("#gcDiv").qrcode({   //qrcode 시작
+    jQuery("#hint1").qrcode({
         {% if id %}
         width: 128,
         height: 128,
-        text: "http://127.0.0.1:8000/hint/{{ id }}/" +encode_theme+"/{{ hint }}"
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/1"
         {% endif %}
     });
+    jQuery("#hint2").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/2"
+        {% endif %}
+    });
+    jQuery("#hint3").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/3"
+        {% endif %}
+    });
+    jQuery("#hint4").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/4"
+        {% endif %}
+    });
+    jQuery("#hint5").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/5"
+        {% endif %}
+    });
+    jQuery("#hint6").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/6"
+        {% endif %}
+    });
+    jQuery("#hint7").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/7"
+        {% endif %}
+    });
+    jQuery("#hint8").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/8"
+        {% endif %}
+    });
+    jQuery("#hint9").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/9"
+        {% endif %}
+    });
+    jQuery("#hint10").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/10"
+        {% endif %}
+    });
+    jQuery("#hint11").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/11"
+        {% endif %}
+    });
+    jQuery("#hint12").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/12"
+        {% endif %}
+    });
+    jQuery("#hint13").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/13"
+        {% endif %}
+    });
+    jQuery("#hint14").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/14"
+        {% endif %}
+    });
+    jQuery("#hint15").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/15"
+        {% endif %}
+    });
+    jQuery("#hint16").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/16"
+        {% endif %}
+    });
+    jQuery("#hint17").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/17"
+        {% endif %}
+    });
+    jQuery("#hint18").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/18"
+        {% endif %}
+    });
+    jQuery("#hint19").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/19"
+        {% endif %}
+    });
+    jQuery("#hint20").qrcode({
+        {% if id %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ id }}/" +encode_theme+"/20"
+        {% endif %}
+    });
+
+    function PrintDiv1(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint1.png");
+        });
+    }
+    function PrintDiv2(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint2.png");
+        });
+    }
+    function PrintDiv3(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint3.png");
+        });
+    }
+    function PrintDiv4(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint4.png");
+        });
+    }
+    function PrintDiv5(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint5.png");
+        });
+    }
+    function PrintDiv6(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint6.png");
+        });
+    }
+    function PrintDiv7(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint7.png");
+        });
+    }
+    function PrintDiv8(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint8.png");
+        });
+    }
+    function PrintDiv9(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint9.png");
+        });
+    }
+    function PrintDiv10(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint10.png");
+        });
+    }
+    function PrintDiv11(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint11.png");
+        });
+    }
+    function PrintDiv12(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint12.png");
+        });
+    }
+    function PrintDiv13(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint13.png");
+        });
+    }
+    function PrintDiv14(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint14.png");
+        });
+    }
+    function PrintDiv15(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint5.png");
+        });
+    }
+    function PrintDiv16(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint16.png");
+        });
+    }
+    function PrintDiv17(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint17.png");
+        });
+    }
+    function PrintDiv18(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint18.png");
+        });
+    }
+    function PrintDiv19(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint19.png");
+        });
+    }
+    function PrintDiv20(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint20.png");
+        });
+    }
+    function zip(uri){
+        var zip = new JSZip();
+        image = uri.split(',');
+        zip.file("hint1.png", image[1], {base64:true});
+        zip.generateAsync({type:"blob"}).then(function(blob) {
+            saveAs(blob, id+"_"+theme);
+        });
+    }
+    function dd(){
+        var zip = new JSZip();
+        var div1 = $('#hint1')[0];
+        var div2 = $('#hint2')[0];
+        var div3 = $('#hint3')[0];
+        var div4 = $('#hint4')[0];
+        var div5 = $('#hint5')[0];
+        var div6 = $('#hint6')[0];
+        var div7 = $('#hint7')[0];
+        var div8 = $('#hint8')[0];
+        var div9 = $('#hint9')[0];
+        var div10 = $('#hint10')[0];
+        var div11 = $('#hint11')[0];
+        var div12 = $('#hint12')[0];
+        var div13 = $('#hint13')[0];
+        var div14 = $('#hint14')[0];
+        var div15 = $('#hint15')[0];
+        var div16 = $('#hint16')[0];
+        var div17 = $('#hint17')[0];
+        var div18 = $('#hint18')[0];
+        var div19 = $('#hint19')[0];
+        var div20 = $('#hint20')[0];
+
+        html2canvas(div1).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            var image = myImage.split(',');
+            zip.file("hint1.png", image[1], {base64:true});
+        }).then(function(){
+            html2canvas(div2).then(function(canvas){
+                var myImage = canvas.toDataURL();
+                var image = myImage.split(',');
+                zip.file("hint2.png", image[1], {base64:true});
+            }).then(function(){
+                html2canvas(div3).then(function(canvas){
+                    var myImage = canvas.toDataURL();
+                    var image = myImage.split(',');
+                    zip.file("hint3.png", image[1], {base64:true});
+                }).then(function(){
+                    html2canvas(div4).then(function(canvas){
+                        var myImage = canvas.toDataURL();
+                        var image = myImage.split(',');
+                        zip.file("hint4.png", image[1], {base64:true});
+                    }).then(function(){
+                        html2canvas(div5).then(function(canvas){
+                            var myImage = canvas.toDataURL();
+                            var image = myImage.split(',');
+                            zip.file("hint5.png", image[1], {base64:true});
+                        }).then(function(){
+                            html2canvas(div6).then(function(canvas){
+                                var myImage = canvas.toDataURL();
+                                var image = myImage.split(',');
+                                zip.file("hint6.png", image[1], {base64:true});
+                            }).then(function(){
+                                html2canvas(div7).then(function(canvas){
+                                    var myImage = canvas.toDataURL();
+                                    var image = myImage.split(',');
+                                    zip.file("hint7.png", image[1], {base64:true});
+                                }).then(function(){
+                                    html2canvas(div8).then(function(canvas){
+                                        var myImage = canvas.toDataURL();
+                                        var image = myImage.split(',');
+                                        zip.file("hint8.png", image[1], {base64:true});
+                                    }).then(function(){
+                                        html2canvas(div9).then(function(canvas){
+                                            var myImage = canvas.toDataURL();
+                                            var image = myImage.split(',');
+                                            zip.file("hint9.png", image[1], {base64:true});
+                                        }).then(function(){
+                                            html2canvas(div10).then(function(canvas){
+                                                var myImage = canvas.toDataURL();
+                                                var image = myImage.split(',');
+                                                zip.file("hint10.png", image[1], {base64:true});
+                                            }).then(function(){
+                                                html2canvas(div11).then(function(canvas){
+                                                    var myImage = canvas.toDataURL();
+                                                    var image = myImage.split(',');
+                                                    zip.file("hint11.png", image[1], {base64:true});
+                                                }).then(function(){
+                                                    html2canvas(div12).then(function(canvas){
+                                                        var myImage = canvas.toDataURL();
+                                                        var image = myImage.split(',');
+                                                        zip.file("hint12.png", image[1], {base64:true});
+                                                    }).then(function(){
+                                                        html2canvas(div13).then(function(canvas){
+                                                            var myImage = canvas.toDataURL();
+                                                            var image = myImage.split(',');
+                                                            zip.file("hint13.png", image[1], {base64:true});
+                                                        }).then(function(){
+                                                            html2canvas(div14).then(function(canvas){
+                                                                var myImage = canvas.toDataURL();
+                                                                var image = myImage.split(',');
+                                                                zip.file("hint14.png", image[1], {base64:true});
+                                                            }).then(function(){
+                                                                html2canvas(div15).then(function(canvas){
+                                                                    var myImage = canvas.toDataURL();
+                                                                    var image = myImage.split(',');
+                                                                    zip.file("hint15.png", image[1], {base64:true});
+                                                                }).then(function(){
+                                                                    html2canvas(div16).then(function(canvas){
+                                                                        var myImage = canvas.toDataURL();
+                                                                        var image = myImage.split(',');
+                                                                        zip.file("hint16.png", image[1], {base64:true});
+                                                                    }).then(function(){
+                                                                        html2canvas(div17).then(function(canvas){
+                                                                            var myImage = canvas.toDataURL();
+                                                                            var image = myImage.split(',');
+                                                                            zip.file("hint17.png", image[1], {base64:true});
+                                                                        }).then(function(){
+                                                                            html2canvas(div18).then(function(canvas){
+                                                                                var myImage = canvas.toDataURL();
+                                                                                var image = myImage.split(',');
+                                                                                zip.file("hint18.png", image[1], {base64:true});
+                                                                            }).then(function(){
+                                                                                html2canvas(div19).then(function(canvas){
+                                                                                    var myImage = canvas.toDataURL();
+                                                                                    var image = myImage.split(',');
+                                                                                    zip.file("hint19.png", image[1], {base64:true});
+                                                                                }).then(function(){
+                                                                                    html2canvas(div20).then(function(canvas){
+                                                                                        var myImage = canvas.toDataURL();
+                                                                                        var image = myImage.split(',');
+                                                                                        zip.file("hint20.png", image[1], {base64:true});
+                                                                                    }).then(function(){
+                                                                                        zip.generateAsync({type:"blob"}).then(function(blob) {
+                                                                                            saveAs(blob, id+"_"+theme);
+                                                                                        });
+                                                                                    });
+                                                                                });
+                                                                            });
+                                                                        });
+                                                                    });
+                                                                });
+                                                            });
+                                                        });
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    }
+
+    function downloadURI(uri, name){
+        var link = document.createElement("a");
+        link.download = name;
+        link.href = uri;
+        document.body.appendChild(link);
+        link.click();
+    }
+
+    function fullDownLoad(){
+        var div1 = $('#hint1')[0];
+        html2canvas(div1).then(function(canvas){
+            var myImage1 = canvas.toDataURL();
+            downloadURI(myImage1, "hint1.png");
+        });
+        var div2 = $('#hint2')[0];
+        html2canvas(div2).then(function(canvas){
+            var myImage2 = canvas.toDataURL();
+            downloadURI(myImage2, "hint2.png");
+        });
+        var div3 = $('#hint3')[0];
+        html2canvas(div3).then(function(canvas){
+            var myImage3 = canvas.toDataURL();
+            downloadURI(myImage3, "hint3.png");
+        });
+        var div4 = $('#hint4')[0];
+        html2canvas(div4).then(function(canvas){
+            var myImage4 = canvas.toDataURL();
+            downloadURI(myImage4, "hint4.png");
+        });
+        var div5 = $('#hint5')[0];
+        html2canvas(div5).then(function(canvas){
+            var myImage5 = canvas.toDataURL();
+            downloadURI(myImage5, "hint5.png");
+        });
+        var div6 = $('#hint6')[0];
+        html2canvas(div6).then(function(canvas){
+            var myImage6 = canvas.toDataURL();
+            downloadURI(myImage6, "hint6.png");
+        });
+        var div7 = $('#hint7')[0];
+        html2canvas(div7).then(function(canvas){
+            var myImage7 = canvas.toDataURL();
+            downloadURI(myImage7, "hint7.png");
+        });
+        var div8 = $('#hint8')[0];
+        html2canvas(div8).then(function(canvas){
+            var myImage8 = canvas.toDataURL();
+            downloadURI(myImage8, "hint8.png");
+        });
+        var div9 = $('#hint9')[0];
+        html2canvas(div9).then(function(canvas){
+            var myImage9 = canvas.toDataURL();
+            downloadURI(myImage9, "hint9.png");
+        });
+        var div10 = $('#hint10')[0];
+        html2canvas(div10).then(function(canvas){
+            var myImage10 = canvas.toDataURL();
+            downloadURI(myImage10, "hint10.png");
+        });
+        var div11 = $('#hint11')[0];
+        html2canvas(div11).then(function(canvas){
+            var myImage11 = canvas.toDataURL();
+            downloadURI(myImage11, "hint11.png");
+        });
+        var div12 = $('#hint12')[0];
+        html2canvas(div12).then(function(canvas){
+            var myImage12 = canvas.toDataURL();
+            downloadURI(myImage12, "hint12.png");
+        });
+        var div13 = $('#hint13')[0];
+        html2canvas(div13).then(function(canvas){
+            var myImage13 = canvas.toDataURL();
+            downloadURI(myImage13, "hint13.png");
+        });
+        var div14 = $('#hint14')[0];
+        html2canvas(div14).then(function(canvas){
+            var myImage14 = canvas.toDataURL();
+            downloadURI(myImage14, "hint14.png");
+        });
+        var div15 = $('#hint15')[0];
+        html2canvas(div15).then(function(canvas){
+            var myImage15 = canvas.toDataURL();
+            downloadURI(myImage15, "hint15.png");
+        });
+        var div16 = $('#hint16')[0];
+        html2canvas(div16).then(function(canvas){
+            var myImage16 = canvas.toDataURL();
+            downloadURI(myImage16, "hint16.png");
+        });
+        var div17 = $('#hint17')[0];
+        html2canvas(div17).then(function(canvas){
+            var myImage17 = canvas.toDataURL();
+            downloadURI(myImage17, "hint17.png");
+        });
+        var div18 = $('#hint18')[0];
+        html2canvas(div18).then(function(canvas){
+            var myImage18 = canvas.toDataURL();
+            downloadURI(myImage18, "hint18.png");
+        });
+        var div19 = $('#hint19')[0];
+        html2canvas(div19).then(function(canvas){
+            var myImage19 = canvas.toDataURL();
+            downloadURI(myImage19, "hint19.png");
+        });
+        var div20 = $('#hint20')[0];
+        html2canvas(div20).then(function(canvas){
+            var myImage20 = canvas.toDataURL();
+            downloadURI(myImage20, "hint20.png");
+        });
+    }
+
+    $('#blobButton1').click(function(){
+        PrintDiv1($('#hint1'));
+    })
+    $('#blobButton2').click(function(){
+        PrintDiv2($('#hint2'));
+    })
+    $('#blobButton3').click(function(){
+        PrintDiv3($('#hint3'));
+    })
+    $('#blobButton4').click(function(){
+        PrintDiv4($('#hint4'));
+    })
+    $('#blobButton5').click(function(){
+        PrintDiv5($('#hint5'));
+    })
+    $('#blobButton6').click(function(){
+        PrintDiv6($('#hint6'));
+    })
+    $('#blobButton7').click(function(){
+        PrintDiv7($('#hint7'));
+    })
+    $('#blobButton8').click(function(){
+        PrintDiv8($('#hint8'));
+    })
+    $('#blobButton9').click(function(){
+        PrintDiv9($('#hint9'));
+    })
+    $('#blobButton10').click(function(){
+        PrintDiv10($('#hint10'));
+    })
+    $('#blobButton11').click(function(){
+        PrintDiv11($('#hint11'));
+    })
+    $('#blobButton12').click(function(){
+        PrintDiv12($('#hint12'));
+    })
+    $('#blobButton13').click(function(){
+        PrintDiv13($('#hint13'));
+    })
+    $('#blobButton14').click(function(){
+        PrintDiv14($('#hint14'));
+    })
+    $('#blobButton15').click(function(){
+        PrintDiv15($('#hint15'));
+    })
+    $('#blobButton16').click(function(){
+        PrintDiv16($('#hint16'));
+    })
+    $('#blobButton17').click(function(){
+        PrintDiv17($('#hint17'));
+    })
+    $('#blobButton18').click(function(){
+        PrintDiv18($('#hint18'));
+    })
+    $('#blobButton19').click(function(){
+        PrintDiv19($('#hint19'));
+    })
+    $('#blobButton20').click(function(){
+        PrintDiv20($('#hint20'));
+    })
+    $('#full').click(function(){
+        fullDownLoad();
+    })
+
+
+
+    function getZip(){
+        var zip = new JSZip();
+        var div1 = $('#hint1');
+        zip.file("hint122.png", dd(div1), {base64: true});
+        zip.file("text1.txt", "Hello test 1");
+        zip.file("text2.txt", "Hello text 2");
+        zip.generateAsync({type:"blob"}).then(function(blob) {
+            saveAs(blob, "hello.zip");
+        });
+    }
 </script>
 
 {% endblock %}

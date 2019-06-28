@@ -307,3 +307,7 @@ def create_qr_code(request):
     })
 
 
+def personal_information(request):
+    return render(request, 'hint/personal_information.html')
+
+

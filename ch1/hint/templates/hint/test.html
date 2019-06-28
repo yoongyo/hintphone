@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+    body{
+        background-color:white;
+    }
+</style>
+<script src="{% static 'html2canvas.js' %}"></script>
+<script src="{% static 'FileSaver.js' %}"></script>
+<button id="blobButton">이미지 다운로드</button>
+<div id="myDiagramDiv">
+    <h1>스타일입니다.</h1>
+    <img src="{% static 'account.png' %}">
+</div>
+
+<script>
+    function PrintDiv(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, "Ma.png");
+        });
+    }
+
+    function downloadURI(uri, name){
+        var link = document.createElement("a");
+        link.download = name;
+        link.href = uri;
+        document.body.appendChild(link);
+        link.click();
+    }
+    $('#blobButton').click(function(){
+        PrintDiv($('#myDiagramDiv'));
+    })
+</script>
+{% endblock %}
