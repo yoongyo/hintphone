@@ -279,6 +279,7 @@ def theme_hint(request, user_id, theme, hint):
 
 @login_required
 def theme_edit(request, user_id, theme):
+    escape_room = get_object_or_404(Profile, user=request.user).escape_room
     theme = get_object_or_404(Theme, name=theme)
     if request.method == 'POST':
         form = HintForm(request.POST, request.FILES, instance=theme)
@@ -293,6 +294,8 @@ def theme_edit(request, user_id, theme):
         form = HintForm(instance=theme)
     return render(request, 'hint/theme_edit.html', {
         'form': form,
+        'theme': theme,
+        'escape_room': escape_room
     })
 
 
@@ -309,5 +312,16 @@ def create_qr_code(request):
 
 def personal_information(request):
     return render(request, 'hint/personal_information.html')
+
+
+def admin(request, user_id):
+    themes = Theme.objects.all()
+    themes = themes.filter(roomEscape=request.user)
+    escape_room = get_object_or_404(Profile, user=request.user).escape_room
+    return render(request, 'hint/admin.html', {
+        'themes': themes,
+        'escape_room': escape_room,
+        'user_id': user_id
+    })
 
 

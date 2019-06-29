@@ -10,7 +10,59 @@
     }
 </style>
 
-<div class="container text-center">
+<div class="container text-center d-none d-sm-block">
+    <div style="height:80px"></div>
+    <h1 class="m-4" style="color:white;">Hint Phone 관리자 로그인</h1>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="row pb-5" style="border: 2px solid white;border-radius:15px">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <img class="my-3 mt-5" width="130px" src="{% static 'accounts1.png' %}">
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        {{ form.username }}
+                        {{ form.password }}
+                        <input name="method" type="text" value="pc" style="visibility:hidden">
+                        <button class="form-control btn btn-default mt-0" style="border-color: white" type="submit"><span style="color:white">LOGIN</span></button>
+                        <button class="form-control btn btn-default mt-2" data-target="#myModal1" data-toggle="modal" style="border-color: white" type="button"><span style="color:white">SEARCH</span></button>
+                        <div class="modal" id="myModal1">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h4 class="modal-title">Connect</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+
+                              <!-- Modal body -->
+                              <div class="modal-body">
+                                  <strong>Email</strong> : bizchoollab@naver.com<br>
+                                  <strong>Phone</strong> : 010-3968-3572
+                              </div>
+
+                              <!-- Modal footer -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-1"></div>
+            </div>
+
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+
+<div class="container text-center d-block d-sm-none">
     <div style="height:120px"></div>
     <img class="my-3" width="130px" src="{% static 'accounts1.png' %}">
     <div class="row">

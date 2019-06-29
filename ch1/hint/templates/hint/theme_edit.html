@@ -1,197 +1,208 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
+<div class="container" style="color:white">
+    <h2 class="mt-5 text-center">{{ escape_room }}</h2>
+    <h3 class="text-center">{{ theme }}</h3>
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <h2 class="text-center m-2">테마 수정</h2>
-        <hr>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">테마명</h3>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">테마명</h3>
+                    </div>
+                    <div class="col-5">
+                        {{ form.name }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트 허용 개수</h3>
+                    </div>
+                    <div class="col-5">
+                        {{ form.hintCount }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트1</h3>
+                    </div>
+                    <div class="col-5">
+                        {{ form.hint1 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트2</h3>
+                    </div>
+                    <div class="col-5">
+                        {{ form.hint2 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트3</h3>
+                    </div>
+                    <div class="col-5">
+                        {{ form.hint3 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트4</h3>
+                    </div>
+                    <div class="col-5">
+                        {{ form.hint4 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트5</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint5 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트6</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint6 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트7</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint7 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트8</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint8 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트9</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint9 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트10</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint10 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트11</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint12 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트11</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint12 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트12</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint12 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트13</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint13 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트14</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint14 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트15</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint15 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트16</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint16 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트17</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint17 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트18</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint18 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트19</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint19 }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-5">
+                        <h3 class="text-center my-1">힌트20</h3>
+                    </div>
+                    <div class="col-7">
+                        {{ form.hint20 }}
+                    </div>
+                </div>
+
+                <div class="row my-4 mx-5">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <button type="submit" class="form-control btn btn-default p-0" style="border-color:white;color:white"><h4 class="m-0">테마 수정</h4></button>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
             </div>
-            <div class="col-7">
-                {{ form.name }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트1</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint1 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트2</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint2 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트3</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint3 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트4</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint4 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트5</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint5 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트6</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint6 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트7</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint7 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트8</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint8 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트9</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint9 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트10</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint10 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트11</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint12 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트11</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint12 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트12</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint12 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트13</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint13 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트14</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint14 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트15</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint15 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트16</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint16 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트17</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint17 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트18</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint18 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트19</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint19 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-5">
-                <h3 class="text-center my-1">힌트20</h3>
-            </div>
-            <div class="col-7">
-                {{ form.hint20 }}
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-7">
-                <h3 class="text-center my-1">힌트 허용 개수</h3>
-            </div>
-            <div class="col-5">
-                {{ form.hintCount }}
-            </div>
-        </div>
-        <div class="row my-4 mx-5">
-            <button type="submit" class="form-control btn btn-default" style="border-color:black"><h4>테마 수정</h4></button>
+            <div class="col-2"></div>
         </div>
     </form>
 </div>

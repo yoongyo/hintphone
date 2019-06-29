@@ -8,10 +8,15 @@ def signin(request):
         form = LoginForm(request.POST)
         username = request.POST['username']
         password = request.POST['password']
+        method = request.POST['method']
+        print(method)
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse('hint:theme_list', args=[user.username]))
+            if method == "pc":
+                return HttpResponseRedirect(reverse('hint:admin', args=[user.username]))
+            else:
+                return HttpResponseRedirect(reverse('hint:theme_list', args=[user.username]))
         else:
             return HttpResponse('로그인 실패. 다시 시도 해보세요.')
     else:
