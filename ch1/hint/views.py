@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, reverse, redirect
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, reverse, redirect, HttpResponse
 from .models import Theme
 from django.contrib.auth.decorators import login_required
 import sys
@@ -287,7 +287,7 @@ def theme_edit(request, user_id, theme):
             theme = form.save(commit=False)
             theme.roomEscape = request.user
             theme.save()
-            return HttpResponseRedirect(reverse('hint:theme_list', args=[request.user.username]))
+            return HttpResponseRedirect(reverse('hint:admin', args=[request.user.username]))
         else:
             print(form.errors)
     else:
@@ -295,8 +295,57 @@ def theme_edit(request, user_id, theme):
     return render(request, 'hint/theme_edit.html', {
         'form': form,
         'theme': theme,
-        'escape_room': escape_room
+        'escape_room': escape_room,
+        'user_id': user_id
     })
+
+
+def ajax(request, user_id, theme):
+    theme = get_object_or_404(Theme, name=theme, roomEscape=request.user)
+    print(theme)
+    data = request.GET['msg']
+    if data == '1':
+        theme.sub_hint1.delete()
+    elif data == '2':
+        theme.sub_hint2.delete()
+    elif data == '3':
+        theme.sub_hint3.delete()
+    elif data == '4':
+        theme.sub_hint4.delete()
+    elif data == '5':
+        theme.sub_hint5.delete()
+    elif data == '6':
+        theme.sub_hint6.delete()
+    elif data == '7':
+        theme.sub_hint7.delete()
+    elif data == '8':
+        theme.sub_hint8.delete()
+    elif data == '9':
+        theme.sub_hint9.delete()
+    elif data == '10':
+        theme.sub_hint10.delete()
+    elif data == '11':
+        theme.sub_hint11.delete()
+    elif data == '12':
+        theme.sub_hint12.delete()
+    elif data == '13':
+        theme.sub_hint13.delete()
+    elif data == '14':
+        theme.sub_hint14.delete()
+    elif data == '15':
+        theme.sub_hint15.delete()
+    elif data == '16':
+        theme.sub_hint16.delete()
+    elif data == '17':
+        theme.sub_hint17.delete()
+    elif data == '18':
+        theme.sub_hint18.delete()
+    elif data == '19':
+        theme.sub_hint19.delete()
+    elif data == '20':
+        theme.sub_hint20.delete()
+
+    return HttpResponse(data)
 
 
 def create_qr_code(request):

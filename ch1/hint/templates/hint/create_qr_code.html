@@ -13,7 +13,7 @@
 <div class="container-fluid text-center my-3" id="test">
     <form action="" method="get">
         {% csrf_token %}
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-2"></div>
             <div class="col-2">
                 <input class="form-control" name="id" value="{{ id }}" id="id" type="text" placeholder="ID를 입력해주세요">
@@ -27,56 +27,103 @@
             <div class="col-2">
                 <button onclick="dd();" type="button" class="form-control btn btn-default" style="border-color: white;color:white">전체 다운로드</button>
             </div>
-            <div class="col-2"></div>
+            <div class="col-1">
+            </div>
+            <div class="col-1">
+                <button data-target="#myModal" data-toggle="modal" style="position:fixed;top:20px;right:20px;background-color:black;border-color:black" type="button">
+                    <img width="35px;" src="{% static  'question.png' %}">
+                </button>
+                <div class="modal" id="myModal">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title" style="color:black">QR코드 생성</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+
+                      <!-- Modal body -->
+                      <div class="modal-body" style="color:black;">
+                          <h4>QR코드 생성시 유의할점</h4>
+                          <span style="font-size:1.5rem">1. 다운받으실 때 전체화면을 한 상태에서 다운을 받으셔야 정확히 나옵니다.</span><br><br>
+                          <span style="font-size:1.5rem">2. 스크롤 바조차도 화면에 보이면 안되며 완벽히 꽉찬 화면에서 진행을 해주셔야합니다.</span><br><br>
+                          <span style="font-size:1.5rem">3. QR코드를 개별적으로 다운받고 싶으실 때는 QR코드 위에 HINT를 눌러주시면 됩니다.</span><br><br>
+                          <span style="font-size:1.5rem">4. ID와 테마명을 입력하실 때 정확히 대소문자, 띄어쓰기를 구분해서 넣어주셔야 합니다.</span>
+                      </div>
+
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
         </div>
     </form>
-    <h3 class="m-4" style="color:white;">QR코드 출력</h3>
     <div class="row m-2">
         <div class="col-6">
             <div class="row">
-                <div class="col-3">
-                    <h4 style="color:white">hint1</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint1"></div>
-                    <button id="blobButton1">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton1" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT1</h4></button>
+                    <div id="hint1s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint1"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint2</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint2"></div>
-                    <button id="blobButton2">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton2" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT2</h4></button>
+                    <div id="hint2s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint2"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint3</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint3"></div>
-                    <button id="blobButton3">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton3" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT3</h4></button>
+                    <div id="hint3s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint3"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint4</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint4"></div>
-                    <button id="blobButton4">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton4" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT4</h4></button>
+                    <div id="hint4s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint4"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-6">
             <div class="row">
-                <div class="col-3">
-                    <h4 style="color:white">hint5</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint5"></div>
-                    <button id="blobButton5">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton5" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT5</h4></button>
+                    <div id="hint5s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint5"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint6</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint6"></div>
-                    <button id="blobButton6">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton6" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT6</h4></button>
+                    <div id="hint6s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint6"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint7</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint7"></div>
-                    <button id="blobButton7">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton7" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT7</h4></button>
+                    <div id="hint7s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint7"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint8</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint8"></div>
-                    <button id="blobButton8">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton8" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT8</h4></button>
+                    <div id="hint8s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint8"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,49 +131,65 @@
     <div class="row m-2">
         <div class="col-6">
             <div class="row">
-                <div class="col-3">
-                    <h4 style="color:white">hint9</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint9"></div>
-                    <button id="blobButton9">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton9" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT9</h4></button>
+                    <div id="hint9s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint9"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint9</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint10"></div>
-                    <button id="blobButton10">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton10" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT10</h4></button>
+                    <div id="hint10s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint10"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint11</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint11"></div>
-                    <button id="blobButton11">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton11" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT11</h4></button>
+                    <div id="hint11s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint11"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint12</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint12"></div>
-                    <button id="blobButton12">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton12" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT12</h4></button>
+                    <div id="hint12s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint12"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-6">
             <div class="row">
-                <div class="col-3">
-                    <h4 style="color:white">hint13</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint13"></div>
-                    <button id="blobButton13">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton13" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT13</h4></button>
+                    <div id="hint13s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint13"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint14</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint14"></div>
-                    <button id="blobButton14">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton14" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT14</h4></button>
+                    <div id="hint14s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint14"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint15</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint15"></div>
-                    <button id="blobButton15">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton15" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT15</h4></button>
+                    <div id="hint15s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint15"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint16</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint16"></div>
-                    <button id="blobButton16">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton16" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT16</h4></button>
+                    <div id="hint16s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint16"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,25 +198,33 @@
         <div class="col-3"></div>
         <div class="col-6">
             <div class="row">
-                <div class="col-3">
-                    <h4 style="color:white">hint17</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint17"></div>
-                    <button id="blobButton17">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton17" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT17</h4></button>
+                    <div id="hint17s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint17"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint18</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint18"></div>
-                    <button id="blobButton18">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton18" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT18</h4></button>
+                    <div id="hint18s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint18"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint19</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint19"></div>
-                    <button id="blobButton19">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton19" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT19</h4></button>
+                    <div id="hint19s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint19"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <h4 style="color:white">hint20</h4>
-                    <div class="mb-2" style="border:1px solid white;height:130px;width:130px;margin:auto" id="hint20"></div>
-                    <button id="blobButton20">다운로드</button>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton20" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT20</h4></button>
+                    <div id="hint20s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint20"></div>
+                        <b><h6 class="py-2" style="color:white">HINT QR코드</h6></b>
+                    </div>
                 </div>
             </div>
         </div>
@@ -458,26 +529,26 @@
     }
     function dd(){
         var zip = new JSZip();
-        var div1 = $('#hint1')[0];
-        var div2 = $('#hint2')[0];
-        var div3 = $('#hint3')[0];
-        var div4 = $('#hint4')[0];
-        var div5 = $('#hint5')[0];
-        var div6 = $('#hint6')[0];
-        var div7 = $('#hint7')[0];
-        var div8 = $('#hint8')[0];
-        var div9 = $('#hint9')[0];
-        var div10 = $('#hint10')[0];
-        var div11 = $('#hint11')[0];
-        var div12 = $('#hint12')[0];
-        var div13 = $('#hint13')[0];
-        var div14 = $('#hint14')[0];
-        var div15 = $('#hint15')[0];
-        var div16 = $('#hint16')[0];
-        var div17 = $('#hint17')[0];
-        var div18 = $('#hint18')[0];
-        var div19 = $('#hint19')[0];
-        var div20 = $('#hint20')[0];
+        var div1 = $('#hint1s')[0];
+        var div2 = $('#hint2s')[0];
+        var div3 = $('#hint3s')[0];
+        var div4 = $('#hint4s')[0];
+        var div5 = $('#hint5s')[0];
+        var div6 = $('#hint6s')[0];
+        var div7 = $('#hint7s')[0];
+        var div8 = $('#hint8s')[0];
+        var div9 = $('#hint9s')[0];
+        var div10 = $('#hint10s')[0];
+        var div11 = $('#hint11s')[0];
+        var div12 = $('#hint12s')[0];
+        var div13 = $('#hint13s')[0];
+        var div14 = $('#hint14s')[0];
+        var div15 = $('#hint15s')[0];
+        var div16 = $('#hint16s')[0];
+        var div17 = $('#hint17s')[0];
+        var div18 = $('#hint18s')[0];
+        var div19 = $('#hint19s')[0];
+        var div20 = $('#hint20s')[0];
 
         html2canvas(div1).then(function(canvas){
             var myImage = canvas.toDataURL();
@@ -612,185 +683,70 @@
         link.click();
     }
 
-    function fullDownLoad(){
-        var div1 = $('#hint1')[0];
-        html2canvas(div1).then(function(canvas){
-            var myImage1 = canvas.toDataURL();
-            downloadURI(myImage1, "hint1.png");
-        });
-        var div2 = $('#hint2')[0];
-        html2canvas(div2).then(function(canvas){
-            var myImage2 = canvas.toDataURL();
-            downloadURI(myImage2, "hint2.png");
-        });
-        var div3 = $('#hint3')[0];
-        html2canvas(div3).then(function(canvas){
-            var myImage3 = canvas.toDataURL();
-            downloadURI(myImage3, "hint3.png");
-        });
-        var div4 = $('#hint4')[0];
-        html2canvas(div4).then(function(canvas){
-            var myImage4 = canvas.toDataURL();
-            downloadURI(myImage4, "hint4.png");
-        });
-        var div5 = $('#hint5')[0];
-        html2canvas(div5).then(function(canvas){
-            var myImage5 = canvas.toDataURL();
-            downloadURI(myImage5, "hint5.png");
-        });
-        var div6 = $('#hint6')[0];
-        html2canvas(div6).then(function(canvas){
-            var myImage6 = canvas.toDataURL();
-            downloadURI(myImage6, "hint6.png");
-        });
-        var div7 = $('#hint7')[0];
-        html2canvas(div7).then(function(canvas){
-            var myImage7 = canvas.toDataURL();
-            downloadURI(myImage7, "hint7.png");
-        });
-        var div8 = $('#hint8')[0];
-        html2canvas(div8).then(function(canvas){
-            var myImage8 = canvas.toDataURL();
-            downloadURI(myImage8, "hint8.png");
-        });
-        var div9 = $('#hint9')[0];
-        html2canvas(div9).then(function(canvas){
-            var myImage9 = canvas.toDataURL();
-            downloadURI(myImage9, "hint9.png");
-        });
-        var div10 = $('#hint10')[0];
-        html2canvas(div10).then(function(canvas){
-            var myImage10 = canvas.toDataURL();
-            downloadURI(myImage10, "hint10.png");
-        });
-        var div11 = $('#hint11')[0];
-        html2canvas(div11).then(function(canvas){
-            var myImage11 = canvas.toDataURL();
-            downloadURI(myImage11, "hint11.png");
-        });
-        var div12 = $('#hint12')[0];
-        html2canvas(div12).then(function(canvas){
-            var myImage12 = canvas.toDataURL();
-            downloadURI(myImage12, "hint12.png");
-        });
-        var div13 = $('#hint13')[0];
-        html2canvas(div13).then(function(canvas){
-            var myImage13 = canvas.toDataURL();
-            downloadURI(myImage13, "hint13.png");
-        });
-        var div14 = $('#hint14')[0];
-        html2canvas(div14).then(function(canvas){
-            var myImage14 = canvas.toDataURL();
-            downloadURI(myImage14, "hint14.png");
-        });
-        var div15 = $('#hint15')[0];
-        html2canvas(div15).then(function(canvas){
-            var myImage15 = canvas.toDataURL();
-            downloadURI(myImage15, "hint15.png");
-        });
-        var div16 = $('#hint16')[0];
-        html2canvas(div16).then(function(canvas){
-            var myImage16 = canvas.toDataURL();
-            downloadURI(myImage16, "hint16.png");
-        });
-        var div17 = $('#hint17')[0];
-        html2canvas(div17).then(function(canvas){
-            var myImage17 = canvas.toDataURL();
-            downloadURI(myImage17, "hint17.png");
-        });
-        var div18 = $('#hint18')[0];
-        html2canvas(div18).then(function(canvas){
-            var myImage18 = canvas.toDataURL();
-            downloadURI(myImage18, "hint18.png");
-        });
-        var div19 = $('#hint19')[0];
-        html2canvas(div19).then(function(canvas){
-            var myImage19 = canvas.toDataURL();
-            downloadURI(myImage19, "hint19.png");
-        });
-        var div20 = $('#hint20')[0];
-        html2canvas(div20).then(function(canvas){
-            var myImage20 = canvas.toDataURL();
-            downloadURI(myImage20, "hint20.png");
-        });
-    }
 
     $('#blobButton1').click(function(){
-        PrintDiv1($('#hint1'));
+        PrintDiv1($('#hint1s'));
     })
     $('#blobButton2').click(function(){
-        PrintDiv2($('#hint2'));
+        PrintDiv2($('#hint2s'));
     })
     $('#blobButton3').click(function(){
-        PrintDiv3($('#hint3'));
+        PrintDiv3($('#hint3s'));
     })
     $('#blobButton4').click(function(){
-        PrintDiv4($('#hint4'));
+        PrintDiv4($('#hint4s'));
     })
     $('#blobButton5').click(function(){
-        PrintDiv5($('#hint5'));
+        PrintDiv5($('#hint5s'));
     })
     $('#blobButton6').click(function(){
-        PrintDiv6($('#hint6'));
+        PrintDiv6($('#hint6s'));
     })
     $('#blobButton7').click(function(){
-        PrintDiv7($('#hint7'));
+        PrintDiv7($('#hint7s'));
     })
     $('#blobButton8').click(function(){
-        PrintDiv8($('#hint8'));
+        PrintDiv8($('#hint8s'));
     })
     $('#blobButton9').click(function(){
-        PrintDiv9($('#hint9'));
+        PrintDiv9($('#hint9s'));
     })
     $('#blobButton10').click(function(){
-        PrintDiv10($('#hint10'));
+        PrintDiv10($('#hint10s'));
     })
     $('#blobButton11').click(function(){
-        PrintDiv11($('#hint11'));
+        PrintDiv11($('#hint11s'));
     })
     $('#blobButton12').click(function(){
-        PrintDiv12($('#hint12'));
+        PrintDiv12($('#hint12s'));
     })
     $('#blobButton13').click(function(){
-        PrintDiv13($('#hint13'));
+        PrintDiv13($('#hint13s'));
     })
     $('#blobButton14').click(function(){
-        PrintDiv14($('#hint14'));
+        PrintDiv14($('#hint14s'));
     })
     $('#blobButton15').click(function(){
-        PrintDiv15($('#hint15'));
+        PrintDiv15($('#hint15s'));
     })
     $('#blobButton16').click(function(){
-        PrintDiv16($('#hint16'));
+        PrintDiv16($('#hint16s'));
     })
     $('#blobButton17').click(function(){
-        PrintDiv17($('#hint17'));
+        PrintDiv17($('#hint17s'));
     })
     $('#blobButton18').click(function(){
-        PrintDiv18($('#hint18'));
+        PrintDiv18($('#hint18s'));
     })
     $('#blobButton19').click(function(){
-        PrintDiv19($('#hint19'));
+        PrintDiv19($('#hint19s'));
     })
     $('#blobButton20').click(function(){
-        PrintDiv20($('#hint20'));
+        PrintDiv20($('#hint20s'));
     })
     $('#full').click(function(){
         fullDownLoad();
     })
-
-
-
-    function getZip(){
-        var zip = new JSZip();
-        var div1 = $('#hint1');
-        zip.file("hint122.png", dd(div1), {base64: true});
-        zip.file("text1.txt", "Hello test 1");
-        zip.file("text2.txt", "Hello text 2");
-        zip.generateAsync({type:"blob"}).then(function(blob) {
-            saveAs(blob, "hello.zip");
-        });
-    }
 </script>
 
 {% endblock %}

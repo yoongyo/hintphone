@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<div class="container mt-5">
-    <div class="text-center mt-5" style="color:white">
-        <h2 class="mt-5">{{ escape_room }}</h2>
-        <h1 class="mt-1 mb-5">테마 선택</h1>
+{% load static %}
+<div class="container mt-3">
+    <div class="text-center mt-3" style="color:white">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <h2 class="mt-5">{{ escape_room }}</h2>
+                <h1 class="mt-1 mb-5">테마 수정</h1>
+            </div>
+            <div class="col-3 text-center">
+                <h4>QR 코드 생성하기</h4>
+                <a href="{% url 'hint:create_qr_code' %}"><img width="100px" src="{% static 'qr1.png' %}"></a>
+            </div>
+        </div>
         <div class="row">
             {% for i in themes %}
             <div class="col-6 mt-5">

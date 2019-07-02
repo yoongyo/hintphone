@@ -12,7 +12,8 @@
 
 <div class="container text-center d-none d-sm-block">
     <div style="height:80px"></div>
-    <h1 class="m-4" style="color:white;">Hint Phone 관리자 로그인</h1>
+    <h1 class="" style="color:white;">Hint Phone</h1>
+    <h2 class="mb-3" style="color:white">관리자 로그인</h2>
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
@@ -63,16 +64,18 @@
 
 
 <div class="container text-center d-block d-sm-none">
-    <div style="height:120px"></div>
-    <img class="my-3" width="130px" src="{% static 'accounts1.png' %}">
+    <div style="height:50px"></div>
+    <h2 style="color:white">HINT PHONE</h2>
     <div class="row">
         <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-10 py-5 px-4" style="border: 2px solid white;border-radius:15px">
+            <img class="my-3" width="130px" src="{% static 'accounts1.png' %}">
             <form method="post" action="">
                 {% csrf_token %}
                 {{ form.username }}
                 {{ form.password }}
-                <button class="form-control btn btn-default mt-3" style="border-color: white" type="submit"><span style="color:white">LOGIN</span></button>
+                <input name="method" type="text" value="mobile" style="visibility:hidden">
+                <button class="form-control btn btn-default mt-0" style="border-color: white" type="submit"><span style="color:white">LOGIN</span></button>
                 <button class="form-control btn btn-default mt-2" data-target="#myModal" data-toggle="modal" style="border-color: white" type="button"><span style="color:white">SEARCH</span></button>
                 <div class="modal" id="myModal">
                   <div class="modal-dialog">

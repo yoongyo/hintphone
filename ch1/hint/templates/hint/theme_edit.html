@@ -1,209 +1,1784 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<div class="container" style="color:white">
+{% load static %}
+
+<div class="container-fluid" style="color:white">
     <h2 class="mt-5 text-center">{{ escape_room }}</h2>
-    <h3 class="text-center">{{ theme }}</h3>
+    <h3 class="text-center mb-5">{{ theme }}</h3>
+    <div class="text-center">
+        <button data-target="#myModal" data-toggle="modal" style="position:fixed;top:20px;right:20px;background-color:black;border-color:black" type="button">
+            <img width="35px;" src="{% static  'question.png' %}">
+        </button>
+        <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title" style="color:black">테마 수정</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body" style="color:black;">
+                  <h4>테마 수정시 유의할점</h4>
+                  <span style="font-size:1.5rem">1. 힌트 순서에 맞게 힌트 파일을 1번부터 순서대로 넣어주시면 됩니다.</span><br><br>
+                  <span style="font-size:1.5rem">2. Plus 버튼을 누르면 난이도 설정이 가능합니다.</span><br><br>
+                  <span style="font-size:1.5rem">3. 난이도 설정을 중단하고 싶으실 경우 HINT 상의 파일을 삭제해주시면 됩니다.</span><br><br>
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">테마명</h3>
+        <div class="row my-2">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 m-0">테마명 :</h4>
                     </div>
-                    <div class="col-5">
+                    <div class="col-3 p-0">
                         {{ form.name }}
                     </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트 허용 개수</h3>
+                    <div class="col-1"></div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 m-0">힌트 허용 개수 :</h4>
                     </div>
-                    <div class="col-5">
+                    <div class="col-3 p-0">
                         {{ form.hintCount }}
                     </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트1</h3>
-                    </div>
-                    <div class="col-5">
-                        {{ form.hint1 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트2</h3>
-                    </div>
-                    <div class="col-5">
-                        {{ form.hint2 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트3</h3>
-                    </div>
-                    <div class="col-5">
-                        {{ form.hint3 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트4</h3>
-                    </div>
-                    <div class="col-5">
-                        {{ form.hint4 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트5</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint5 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트6</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint6 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트7</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint7 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트8</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint8 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트9</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint9 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트10</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint10 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트11</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint12 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트11</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint12 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트12</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint12 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트13</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint13 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트14</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint14 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트15</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint15 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트16</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint16 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트17</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint17 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트18</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint18 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트19</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint19 }}
-                    </div>
-                </div>
-                <div class="row m-2">
-                    <div class="col-5">
-                        <h3 class="text-center my-1">힌트20</h3>
-                    </div>
-                    <div class="col-7">
-                        {{ form.hint20 }}
-                    </div>
-                </div>
-
-                <div class="row my-4 mx-5">
-                    <div class="col-4"></div>
-                    <div class="col-4">
-                        <button type="submit" class="form-control btn btn-default p-0" style="border-color:white;color:white"><h4 class="m-0">테마 수정</h4></button>
-                    </div>
-                    <div class="col-4"></div>
+                    <div class="col-1"></div>
                 </div>
             </div>
-            <div class="col-2"></div>
+            <div class="col-1"></div>
+        </div>
+        <div class="row my-2">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub1_h4" class="py-1 mt-0 mb-2">HINT1 :</h4>
+                        <h4 id="sub1_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT1 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint1 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint1 }}">
+                        </div>
+                        <div id="sub1_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint1 }}
+                                </span>
+                            </label>
+                            <input id="sub1_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint1 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub1_button" onclick="plus_sub1();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub1_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub1_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub1_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub2_h4" class="py-1 mt-0 mb-2">HINT2 :</h4>
+                        <h4 id="sub2_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT2 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint2 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint2 }}">
+                        </div>
+                        <div id="sub2_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint2 }}
+                                </span>
+                            </label>
+                            <input  id="sub2_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint2 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub2_button" onclick="plus_sub2();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub2_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub2_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub2_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub3_h4" class="py-1 mt-0 mb-2">HINT3 :</h4>
+                        <h4 id="sub3_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT3 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint3 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint3 }}">
+                        </div>
+                        <div id="sub3_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint3 }}
+                                </span>
+                            </label>
+                            <input id="sub3_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint3 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub3_button" onclick="plus_sub3();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub3_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub3_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub3_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub4_h4" class="py-1 mt-0 mb-2">HINT4 :</h4>
+                        <h4 id="sub4_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT4 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint4 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint4 }}">
+                        </div>
+                        <div id="sub4_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint4 }}
+                                </span>
+                            </label>
+                            <input  id="sub4_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint4 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub4_button" onclick="plus_sub4();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub4_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub4_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub4_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub5_h4" class="py-1 mt-0 mb-2">HINT5 :</h4>
+                        <h4 id="sub5_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT5 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint5 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint5 }}">
+                        </div>
+                        <div id="sub5_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint5 }}
+                                </span>
+                            </label>
+                            <input id="sub5_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint5 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub5_button" onclick="plus_sub5();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub5_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub5_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub5_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub6_h4" class="py-1 mt-0 mb-2">HINT6 :</h4>
+                        <h4 id="sub6_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT6 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint6 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint6 }}">
+                        </div>
+                        <div id="sub6_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint6 }}
+                                </span>
+                            </label>
+                            <input  id="sub6_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint6 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub6_button" onclick="plus_sub6();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub6_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub6_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub6_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub7_h4" class="py-1 mt-0 mb-2">HINT7 :</h4>
+                        <h4 id="sub7_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT7 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint7 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint7 }}">
+                        </div>
+                        <div id="sub7_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint7 }}
+                                </span>
+                            </label>
+                            <input id="sub7_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint7 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub7_button" onclick="plus_sub7();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub7_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub7_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub7_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub8_h4" class="py-1 mt-0 mb-2">HINT8 :</h4>
+                        <h4 id="sub8_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT8 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint8 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint8 }}">
+                        </div>
+                        <div id="sub8_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint8 }}
+                                </span>
+                            </label>
+                            <input  id="sub8_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint8 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub8_button" onclick="plus_sub8();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub8_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub8_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub8_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub9_h4" class="py-1 mt-0 mb-2">HINT9 :</h4>
+                        <h4 id="sub9_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT9 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint9 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint9 }}">
+                        </div>
+                        <div id="sub9_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint9 }}
+                                </span>
+                            </label>
+                            <input id="sub9_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint9 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub9_button" onclick="plus_sub9();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub9_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub9_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub9_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub10_h4" class="py-1 mt-0 mb-2">HINT10 :</h4>
+                        <h4 id="sub10_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT10 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint10 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint10 }}">
+                        </div>
+                        <div id="sub10_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint10 }}
+                                </span>
+                            </label>
+                            <input  id="sub10_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint10 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub10_button" onclick="plus_sub10();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub10_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub10_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub10_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub11_h4" class="py-1 mt-0 mb-2">HINT11 :</h4>
+                        <h4 id="sub11_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT11 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint11 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint11 }}">
+                        </div>
+                        <div id="sub11_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint11 }}
+                                </span>
+                            </label>
+                            <input id="sub11_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint11 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub11_button" onclick="plus_sub11();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub11_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub11_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub11_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub12_h4" class="py-1 mt-0 mb-2">HINT12 :</h4>
+                        <h4 id="sub12_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT12 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint12 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint12 }}">
+                        </div>
+                        <div id="sub12_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint12 }}
+                                </span>
+                            </label>
+                            <input  id="sub12_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint12 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub12_button" onclick="plus_sub12();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub12_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub12_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub12_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub13_h4" class="py-1 mt-0 mb-2">HINT13 :</h4>
+                        <h4 id="sub13_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT13 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint13 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint13 }}">
+                        </div>
+                        <div id="sub13_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint13 }}
+                                </span>
+                            </label>
+                            <input id="sub13_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint13 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub13_button" onclick="plus_sub13();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub13_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub13_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub13_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub14_h4" class="py-1 mt-0 mb-2">HINT14 :</h4>
+                        <h4 id="sub14_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT14 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint14 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint14 }}">
+                        </div>
+                        <div id="sub14_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint14 }}
+                                </span>
+                            </label>
+                            <input  id="sub14_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint14 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub14_button" onclick="plus_sub14();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub14_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub14_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub14_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub15_h4" class="py-1 mt-0 mb-2">HINT15 :</h4>
+                        <h4 id="sub15_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT15 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint15 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint15 }}">
+                        </div>
+                        <div id="sub15_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint15 }}
+                                </span>
+                            </label>
+                            <input id="sub15_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint15 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub15_button" onclick="plus_sub15();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub15_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub15_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub15_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub16_h4" class="py-1 mt-0 mb-2">HINT16 :</h4>
+                        <h4 id="sub16_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT16 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint16 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint16 }}">
+                        </div>
+                        <div id="sub16_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint16 }}
+                                </span>
+                            </label>
+                            <input  id="sub16_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint16 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub16_button" onclick="plus_sub16();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub16_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub16_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub16_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub17_h4" class="py-1 mt-0 mb-2">HINT17 :</h4>
+                        <h4 id="sub17_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT17 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint17 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint17 }}">
+                        </div>
+                        <div id="sub17_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint17 }}
+                                </span>
+                            </label>
+                            <input id="sub17_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint17 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub17_button" onclick="plus_sub17();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub17_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub17_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub17_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub18_h4" class="py-1 mt-0 mb-2">HINT18 :</h4>
+                        <h4 id="sub18_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT18 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint18 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint18 }}">
+                        </div>
+                        <div id="sub18_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint18 }}
+                                </span>
+                            </label>
+                            <input  id="sub18_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint18 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub18_button" onclick="plus_sub18();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub18_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub18_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub18_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub19_h4" class="py-1 mt-0 mb-2">HINT19 :</h4>
+                        <h4 id="sub19_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT19 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint19 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint19 }}">
+                        </div>
+                        <div id="sub19_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint19 }}
+                                </span>
+                            </label>
+                            <input id="sub19_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint19 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub19_button" onclick="plus_sub19();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub19_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub19_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub19_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 id="sub20_h4" class="py-1 mt-0 mb-2">HINT20 :</h4>
+                        <h4 id="sub20_h4c" class="py-1 pt-2 mb-0" style="display:none;">HINT20 상 : </h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.hint20 }}
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly placeholder="{{ theme.hint20 }}">
+                        </div>
+                        <div id="sub20_div" class="input-group" style="display:none;">
+                            <label class="input-group-btn">
+                                <span class="btn btn-secondary">
+                                   힌트 선택{{ form.sub_hint20 }}
+                                </span>
+                            </label>
+                            <input  id="sub20_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint20 }}">
+                        </div>
+                    </div>
+                    <div class="col-1 text-center pl-0">
+                        <button id="sub20_button" onclick="plus_sub20();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <i id="sub20_icon" class="fas fa-plus"></i>
+                        </button>
+                        <div id="sub20_cancel" class="mt-2" style="display:none">
+                            <button type="button" id="sub20_btn" class="btn btn-secondary">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+        <div class="row p-5 mx-5">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <button type="submit" class="form-control btn btn-default p-0" style="border-color:white;color:white"><h4 class="m-0">테마 수정</h4></button>
+            </div>
+            <div class="col-3"></div>
         </div>
     </form>
 </div>
+<script>
+    function plus_sub1(){
+        var sub1_div = document.getElementById("sub1_div");
+        sub1_div.setAttribute('style', '');
+        var sub1_h4c = document.getElementById("sub1_h4c");
+        sub1_h4c.setAttribute('style', '');
+        var sub1_cancel = document.getElementById("sub1_cancel");
+        sub1_cancel.setAttribute('style', '');
+        document.getElementById('sub1_h4').innerHTML = 'HINT1 하 :';
+        var icon1 = document.getElementById("sub1_icon");
+        icon1.setAttribute('class', 'fas fa-minus');
+        var button1 = document.getElementById("sub1_button");
+        button1.setAttribute('onclick', 'minus_sub1();');
+    }
+    {% if theme.sub_hint1 %}
+    $(document).ready(function(){
+        plus_sub1();
+    })
+    {% endif %}
+    function minus_sub1(){
+        var sub1_div = document.getElementById("sub1_div");
+        sub1_div.setAttribute('style', 'display:none;');
+        var sub1_h4c = document.getElementById("sub1_h4c");
+        sub1_h4c.setAttribute('style', 'display:none;');
+        var sub1_cancel = document.getElementById("sub1_cancel");
+        sub1_cancel.setAttribute('style', 'display:none;');
+        var icon1 = document.getElementById("sub1_icon");
+        icon1.setAttribute('class', 'fas fa-plus');
+        var button1 = document.getElementById("sub1_button");
+        button1.setAttribute('onclick', 'plus_sub1();');
+        document.getElementById('sub1_h4').innerHTML = 'HINT1 :';
+    }
+    function plus_sub2(){
+        var sub2_div = document.getElementById("sub2_div");
+        sub2_div.setAttribute('style', '');
+        var sub2_h4c = document.getElementById("sub2_h4c");
+        sub2_h4c.setAttribute('style', '');
+        var sub2_cancel = document.getElementById("sub2_cancel");
+        sub2_cancel.setAttribute('style', '');
+        document.getElementById('sub2_h4').innerHTML = 'HINT2 하 :';
+        var icon2 = document.getElementById("sub2_icon");
+        icon2.setAttribute('class', 'fas fa-minus');
+        var button2 = document.getElementById("sub2_button");
+        button2.setAttribute('onclick', 'minus_sub2();');
+    }
+    {% if theme.sub_hint2 %}
+    $(document).ready(function(){
+        plus_sub2();
+    })
+    {% endif %}
+
+    function minus_sub2(){
+        var sub2_div = document.getElementById("sub2_div");
+        sub2_div.setAttribute('style', 'display:none;');
+        var sub2_h4c = document.getElementById("sub2_h4c");
+        sub2_h4c.setAttribute('style', 'display:none;');
+        var sub2_cancel = document.getElementById("sub2_cancel");
+        sub2_cancel.setAttribute('style', 'display:none;');
+        var icon2 = document.getElementById("sub2_icon");
+        icon2.setAttribute('class', 'fas fa-plus');
+        var button2 = document.getElementById("sub2_button");
+        button2.setAttribute('onclick', 'plus_sub2();');
+        document.getElementById('sub2_h4').innerHTML = 'HINT2 :';
+    }
+
+
+    $('#sub1_btn').click(function() {
+        var sub1_placeholder = document.getElementById("sub1_placeholder");
+        sub1_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub1_file = document.getElementById("sub1_file");
+        $("#sub1_file").val('');
+        $("#sub1_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 1},
+            success:function(){
+                var sub1_placeholder = document.getElementById("sub1_placeholder");
+                sub1_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+    $('#sub2_btn').click(function() {
+        var sub2_placeholder = document.getElementById("sub2_placeholder");
+        sub2_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub2_file = document.getElementById("sub2_file");
+        $("#sub2_file").val('');
+        $("#sub2_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 2},
+            success:function(){
+                var sub2_placeholder = document.getElementById("sub2_placeholder");
+                sub2_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+
+    function plus_sub3(){
+        var sub3_div = document.getElementById("sub3_div");
+        sub3_div.setAttribute('style', '');
+        var sub3_h4c = document.getElementById("sub3_h4c");
+        sub3_h4c.setAttribute('style', '');
+        var sub3_cancel = document.getElementById("sub3_cancel");
+        sub3_cancel.setAttribute('style', '');
+        document.getElementById('sub3_h4').innerHTML = 'HINT3 하 :';
+        var icon3 = document.getElementById("sub3_icon");
+        icon3.setAttribute('class', 'fas fa-minus');
+        var button3 = document.getElementById("sub3_button");
+        button3.setAttribute('onclick', 'minus_sub3();');
+    }
+    {% if theme.sub_hint3 %}
+    $(document).ready(function(){
+        plus_sub3();
+    })
+    {% endif %}
+    function minus_sub3(){
+        var sub3_div = document.getElementById("sub3_div");
+        sub3_div.setAttribute('style', 'display:none;');
+        var sub3_h4c = document.getElementById("sub3_h4c");
+        sub3_h4c.setAttribute('style', 'display:none;');
+        var sub3_cancel = document.getElementById("sub3_cancel");
+        sub3_cancel.setAttribute('style', 'display:none;');
+        var icon3 = document.getElementById("sub3_icon");
+        icon3.setAttribute('class', 'fas fa-plus');
+        var button3 = document.getElementById("sub3_button");
+        button3.setAttribute('onclick', 'plus_sub3();');
+        document.getElementById('sub3_h4').innerHTML = 'HINT1 :';
+    }
+    function plus_sub4(){
+        var sub4_div = document.getElementById("sub4_div");
+        sub4_div.setAttribute('style', '');
+        var sub4_h4c = document.getElementById("sub4_h4c");
+        sub4_h4c.setAttribute('style', '');
+        var sub4_cancel = document.getElementById("sub4_cancel");
+        sub4_cancel.setAttribute('style', '');
+        document.getElementById('sub4_h4').innerHTML = 'HINT4 하 :';
+        var icon4 = document.getElementById("sub4_icon");
+        icon4.setAttribute('class', 'fas fa-minus');
+        var button4 = document.getElementById("sub4_button");
+        button4.setAttribute('onclick', 'minus_sub4();');
+    }
+    {% if theme.sub_hint4 %}
+    $(document).ready(function(){
+        plus_sub4();
+    })
+    {% endif %}
+
+    function minus_sub4(){
+        var sub4_div = document.getElementById("sub4_div");
+        sub4_div.setAttribute('style', 'display:none;');
+        var sub4_h4c = document.getElementById("sub4_h4c");
+        sub4_h4c.setAttribute('style', 'display:none;');
+        var sub4_cancel = document.getElementById("sub4_cancel");
+        sub4_cancel.setAttribute('style', 'display:none;');
+        var icon4 = document.getElementById("sub4_icon");
+        icon4.setAttribute('class', 'fas fa-plus');
+        var button4 = document.getElementById("sub4_button");
+        button4.setAttribute('onclick', 'plus_sub4();');
+        document.getElementById('sub4_h4').innerHTML = 'HINT4 :';
+    }
+
+
+    $('#sub3_btn').click(function() {
+        var sub3_placeholder = document.getElementById("sub3_placeholder");
+        sub3_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub3_file = document.getElementById("sub1_file");
+        $("#sub3_file").val('');
+        $("#sub3_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 3},
+            success:function(){
+                var sub3_placeholder = document.getElementById("sub3_placeholder");
+                sub3_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+    $('#sub4_btn').click(function() {
+        var sub4_placeholder = document.getElementById("sub4_placeholder");
+        sub4_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub4_file = document.getElementById("sub4_file");
+        $("#sub4_file").val('');
+        $("#sub4_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 4},
+            success:function(){
+                var sub4_placeholder = document.getElementById("sub4_placeholder");
+                sub4_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+
+    function plus_sub5(){
+        var sub5_div = document.getElementById("sub5_div");
+        sub5_div.setAttribute('style', '');
+        var sub5_h4c = document.getElementById("sub5_h4c");
+        sub5_h4c.setAttribute('style', '');
+        var sub5_cancel = document.getElementById("sub5_cancel");
+        sub5_cancel.setAttribute('style', '');
+        document.getElementById('sub5_h4').innerHTML = 'HINT5 하 :';
+        var icon5 = document.getElementById("sub5_icon");
+        icon5.setAttribute('class', 'fas fa-minus');
+        var button5 = document.getElementById("sub5_button");
+        button5.setAttribute('onclick', 'minus_sub5();');
+    }
+    {% if theme.sub_hint5 %}
+    $(document).ready(function(){
+        plus_sub5();
+    })
+    {% endif %}
+    function minus_sub5(){
+        var sub5_div = document.getElementById("sub5_div");
+        sub5_div.setAttribute('style', 'display:none;');
+        var sub5_h4c = document.getElementById("sub5_h4c");
+        sub5_h4c.setAttribute('style', 'display:none;');
+        var sub5_cancel = document.getElementById("sub5_cancel");
+        sub5_cancel.setAttribute('style', 'display:none;');
+        var icon5 = document.getElementById("sub5_icon");
+        icon5.setAttribute('class', 'fas fa-plus');
+        var button5 = document.getElementById("sub5_button");
+        button5.setAttribute('onclick', 'plus_sub5();');
+        document.getElementById('sub5_h4').innerHTML = 'HINT5 :';
+    }
+    function plus_sub6(){
+        var sub6_div = document.getElementById("sub6_div");
+        sub6_div.setAttribute('style', '');
+        var sub6_h4c = document.getElementById("sub6_h4c");
+        sub6_h4c.setAttribute('style', '');
+        var sub6_cancel = document.getElementById("sub6_cancel");
+        sub6_cancel.setAttribute('style', '');
+        document.getElementById('sub6_h4').innerHTML = 'HINT6 하 :';
+        var icon6 = document.getElementById("sub6_icon");
+        icon6.setAttribute('class', 'fas fa-minus');
+        var button6 = document.getElementById("sub6_button");
+        button6.setAttribute('onclick', 'minus_sub6();');
+    }
+    {% if theme.sub_hint6 %}
+    $(document).ready(function(){
+        plus_sub6();
+    })
+    {% endif %}
+
+    function minus_sub6(){
+        var sub6_div = document.getElementById("sub6_div");
+        sub6_div.setAttribute('style', 'display:none;');
+        var sub6_h4c = document.getElementById("sub6_h4c");
+        sub6_h4c.setAttribute('style', 'display:none;');
+        var sub6_cancel = document.getElementById("sub6_cancel");
+        sub6_cancel.setAttribute('style', 'display:none;');
+        var icon6 = document.getElementById("sub6_icon");
+        icon6.setAttribute('class', 'fas fa-plus');
+        var button6 = document.getElementById("sub6_button");
+        button6.setAttribute('onclick', 'plus_sub6();');
+        document.getElementById('sub6_h4').innerHTML = 'HINT6 :';
+    }
+
+
+    $('#sub5_btn').click(function() {
+        var sub5_placeholder = document.getElementById("sub5_placeholder");
+        sub5_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub5_file = document.getElementById("sub5_file");
+        $("#sub5_file").val('');
+        $("#sub5_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 5},
+            success:function(){
+                var sub5_placeholder = document.getElementById("sub5_placeholder");
+                sub5_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+    $('#sub6_btn').click(function() {
+        var sub6_placeholder = document.getElementById("sub6_placeholder");
+        sub6_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub6_file = document.getElementById("sub6_file");
+        $("#sub6_file").val('');
+        $("#sub6_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 6},
+            success:function(){
+                var sub6_placeholder = document.getElementById("sub6_placeholder");
+                sub6_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+
+    function plus_sub7(){
+        var sub7_div = document.getElementById("sub7_div");
+        sub7_div.setAttribute('style', '');
+        var sub7_h4c = document.getElementById("sub7_h4c");
+        sub7_h4c.setAttribute('style', '');
+        var sub7_cancel = document.getElementById("sub7_cancel");
+        sub7_cancel.setAttribute('style', '');
+        document.getElementById('sub7_h4').innerHTML = 'HINT7 하 :';
+        var icon7 = document.getElementById("sub7_icon");
+        icon7.setAttribute('class', 'fas fa-minus');
+        var button7 = document.getElementById("sub7_button");
+        button7.setAttribute('onclick', 'minus_sub7();');
+    }
+    {% if theme.sub_hint7 %}
+    $(document).ready(function(){
+        plus_sub7();
+    })
+    {% endif %}
+    function minus_sub7(){
+        var sub7_div = document.getElementById("sub7_div");
+        sub7_div.setAttribute('style', 'display:none;');
+        var sub7_h4c = document.getElementById("sub7_h4c");
+        sub7_h4c.setAttribute('style', 'display:none;');
+        var sub7_cancel = document.getElementById("sub7_cancel");
+        sub7_cancel.setAttribute('style', 'display:none;');
+        var icon7 = document.getElementById("sub7_icon");
+        icon7.setAttribute('class', 'fas fa-plus');
+        var button7 = document.getElementById("sub7_button");
+        button7.setAttribute('onclick', 'plus_sub7();');
+        document.getElementById('sub7_h4').innerHTML = 'HINT7 :';
+    }
+    function plus_sub8(){
+        var sub8_div = document.getElementById("sub8_div");
+        sub8_div.setAttribute('style', '');
+        var sub8_h4c = document.getElementById("sub8_h4c");
+        sub8_h4c.setAttribute('style', '');
+        var sub8_cancel = document.getElementById("sub8_cancel");
+        sub8_cancel.setAttribute('style', '');
+        document.getElementById('sub8_h4').innerHTML = 'HINT8 하 :';
+        var icon8 = document.getElementById("sub8_icon");
+        icon8.setAttribute('class', 'fas fa-minus');
+        var button8 = document.getElementById("sub8_button");
+        button8.setAttribute('onclick', 'minus_sub8();');
+    }
+    {% if theme.sub_hint8 %}
+    $(document).ready(function(){
+        plus_sub8();
+    })
+    {% endif %}
+
+    function minus_sub8(){
+        var sub8_div = document.getElementById("sub8_div");
+        sub8_div.setAttribute('style', 'display:none;');
+        var sub8_h4c = document.getElementById("sub8_h4c");
+        sub8_h4c.setAttribute('style', 'display:none;');
+        var sub8_cancel = document.getElementById("sub8_cancel");
+        sub8_cancel.setAttribute('style', 'display:none;');
+        var icon8 = document.getElementById("sub8_icon");
+        icon8.setAttribute('class', 'fas fa-plus');
+        var button8 = document.getElementById("sub8_button");
+        button8.setAttribute('onclick', 'plus_sub8();');
+        document.getElementById('sub8_h4').innerHTML = 'HINT8 :';
+    }
+
+
+    $('#sub7_btn').click(function() {
+        var sub7_placeholder = document.getElementById("sub7_placeholder");
+        sub7_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub7_file = document.getElementById("sub7_file");
+        $("#sub7_file").val('');
+        $("#sub7_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 7},
+            success:function(){
+                var sub7_placeholder = document.getElementById("sub7_placeholder");
+                sub7_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+    $('#sub8_btn').click(function() {
+        var sub8_placeholder = document.getElementById("sub8_placeholder");
+        sub8_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub8_file = document.getElementById("sub8_file");
+        $("#sub8_file").val('');
+        $("#sub8_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 8},
+            success:function(){
+                var sub8_placeholder = document.getElementById("sub8_placeholder");
+                sub8_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+
+    function plus_sub9(){
+        var sub9_div = document.getElementById("sub9_div");
+        sub9_div.setAttribute('style', '');
+        var sub9_h4c = document.getElementById("sub9_h4c");
+        sub9_h4c.setAttribute('style', '');
+        var sub9_cancel = document.getElementById("sub9_cancel");
+        sub9_cancel.setAttribute('style', '');
+        document.getElementById('sub9_h4').innerHTML = 'HINT9 하 :';
+        var icon9 = document.getElementById("sub9_icon");
+        icon9.setAttribute('class', 'fas fa-minus');
+        var button9 = document.getElementById("sub9_button");
+        button9.setAttribute('onclick', 'minus_sub9();');
+    }
+    {% if theme.sub_hint9 %}
+    $(document).ready(function(){
+        plus_sub9();
+    })
+    {% endif %}
+    function minus_sub9(){
+        var sub9_div = document.getElementById("sub9_div");
+        sub9_div.setAttribute('style', 'display:none;');
+        var sub9_h4c = document.getElementById("sub9_h4c");
+        sub9_h4c.setAttribute('style', 'display:none;');
+        var sub9_cancel = document.getElementById("sub9_cancel");
+        sub9_cancel.setAttribute('style', 'display:none;');
+        var icon9 = document.getElementById("sub9_icon");
+        icon9.setAttribute('class', 'fas fa-plus');
+        var button9 = document.getElementById("sub9_button");
+        button9.setAttribute('onclick', 'plus_sub9();');
+        document.getElementById('sub9_h4').innerHTML = 'HINT9 :';
+    }
+    function plus_sub10(){
+        var sub10_div = document.getElementById("sub10_div");
+        sub10_div.setAttribute('style', '');
+        var sub10_h4c = document.getElementById("sub10_h4c");
+        sub10_h4c.setAttribute('style', '');
+        var sub2_cancel = document.getElementById("sub10_cancel");
+        sub10_cancel.setAttribute('style', '');
+        document.getElementById('sub10_h4').innerHTML = 'HINT10 하 :';
+        var icon10 = document.getElementById("sub10_icon");
+        icon10.setAttribute('class', 'fas fa-minus');
+        var button10 = document.getElementById("sub10_button");
+        button10.setAttribute('onclick', 'minus_sub10();');
+    }
+    {% if theme.sub_hint10 %}
+    $(document).ready(function(){
+        plus_sub10();
+    })
+    {% endif %}
+
+    function minus_sub10(){
+        var sub10_div = document.getElementById("sub10_div");
+        sub10_div.setAttribute('style', 'display:none;');
+        var sub10_h4c = document.getElementById("sub10_h4c");
+        sub10_h4c.setAttribute('style', 'display:none;');
+        var sub10_cancel = document.getElementById("sub10_cancel");
+        sub10_cancel.setAttribute('style', 'display:none;');
+        var icon10 = document.getElementById("sub10_icon");
+        icon10.setAttribute('class', 'fas fa-plus');
+        var button10 = document.getElementById("sub10_button");
+        button10.setAttribute('onclick', 'plus_sub10();');
+        document.getElementById('sub10_h4').innerHTML = 'HINT10 :';
+    }
+
+
+    $('#sub9_btn').click(function() {
+        var sub9_placeholder = document.getElementById("sub9_placeholder");
+        sub9_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub9_file = document.getElementById("sub9_file");
+        $("#sub9_file").val('');
+        $("#sub9_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 9},
+            success:function(){
+                var sub9_placeholder = document.getElementById("sub9_placeholder");
+                sub9_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+    $('#sub10_btn').click(function() {
+        var sub10_placeholder = document.getElementById("sub10_placeholder");
+        sub10_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub10_file = document.getElementById("sub10.file");
+        $("#sub10_file").val('');
+        $("#sub10_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 10},
+            success:function(){
+                var sub10_placeholder = document.getElementById("sub10_placeholder");
+                sub10_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+
+    function plus_sub11(){
+        var sub11_div = document.getElementById("sub11_div");
+        sub11_div.setAttribute('style', '');
+        var sub11_h4c = document.getElementById("sub11_h4c");
+        sub11_h4c.setAttribute('style', '');
+        var sub11_cancel = document.getElementById("sub11_cancel");
+        sub11_cancel.setAttribute('style', '');
+        document.getElementById('sub11_h4').innerHTML = 'HINT11 하 :';
+        var icon11 = document.getElementById("sub11_icon");
+        icon11.setAttribute('class', 'fas fa-minus');
+        var button11 = document.getElementById("sub11_button");
+        button11.setAttribute('onclick', 'minus_sub11();');
+    }
+    {% if theme.sub_hint11 %}
+    $(document).ready(function(){
+        plus_sub11();
+    })
+    {% endif %}
+    function minus_sub11(){
+        var sub11_div = document.getElementById("sub11_div");
+        sub11_div.setAttribute('style', 'display:none;');
+        var sub11_h4c = document.getElementById("sub11_h4c");
+        sub11_h4c.setAttribute('style', 'display:none;');
+        var sub1_cancel = document.getElementById("sub11_cancel");
+        sub11_cancel.setAttribute('style', 'display:none;');
+        var icon11 = document.getElementById("sub11_icon");
+        icon11.setAttribute('class', 'fas fa-plus');
+        var button11 = document.getElementById("sub11_button");
+        button11.setAttribute('onclick', 'plus_sub11();');
+        document.getElementById('sub11_h4').innerHTML = 'HINT11 :';
+    }
+    function plus_sub12(){
+        var sub12_div = document.getElementById("sub12_div");
+        sub12_div.setAttribute('style', '');
+        var sub12_h4c = document.getElementById("sub12_h4c");
+        sub12_h4c.setAttribute('style', '');
+        var sub12_cancel = document.getElementById("sub12_cancel");
+        sub12_cancel.setAttribute('style', '');
+        document.getElementById('sub12_h4').innerHTML = 'HINT12 하 :';
+        var icon12 = document.getElementById("sub12_icon");
+        icon12.setAttribute('class', 'fas fa-minus');
+        var button12 = document.getElementById("sub12_button");
+        button12.setAttribute('onclick', 'minus_sub12();');
+    }
+    {% if theme.sub_hint12 %}
+    $(document).ready(function(){
+        plus_sub12();
+    })
+    {% endif %}
+
+    function minus_sub12(){
+        var sub12_div = document.getElementById("sub12_div");
+        sub12_div.setAttribute('style', 'display:none;');
+        var sub12_h4c = document.getElementById("sub12_h4c");
+        sub12_h4c.setAttribute('style', 'display:none;');
+        var sub12_cancel = document.getElementById("sub12_cancel");
+        sub12_cancel.setAttribute('style', 'display:none;');
+        var icon12 = document.getElementById("sub12_icon");
+        icon12.setAttribute('class', 'fas fa-plus');
+        var button12 = document.getElementById("sub12_button");
+        button12.setAttribute('onclick', 'plus_sub12();');
+        document.getElementById('sub12_h4').innerHTML = 'HINT12 :';
+    }
+
+
+    $('#sub11_btn').click(function() {
+        var sub11_placeholder = document.getElementById("sub11_placeholder");
+        sub11_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub11_file = document.getElementById("sub11_file");
+        $("#sub11_file").val('');
+        $("#sub11_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 11},
+            success:function(){
+                var sub11_placeholder = document.getElementById("sub11_placeholder");
+                sub11_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+    $('#sub12_btn').click(function() {
+        var sub12_placeholder = document.getElementById("sub12_placeholder");
+        sub12_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub12_file = document.getElementById("sub12_file");
+        $("#sub12_file").val('');
+        $("#sub12_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 12},
+            success:function(){
+                var sub12_placeholder = document.getElementById("sub12_placeholder");
+                sub12_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+
+    function plus_sub13(){
+        var sub13_div = document.getElementById("sub13_div");
+        sub13_div.setAttribute('style', '');
+        var sub13_h4c = document.getElementById("sub13_h4c");
+        sub13_h4c.setAttribute('style', '');
+        var sub13_cancel = document.getElementById("sub13_cancel");
+        sub13_cancel.setAttribute('style', '');
+        document.getElementById('sub13_h4').innerHTML = 'HINT13 하 :';
+        var icon13 = document.getElementById("sub13_icon");
+        icon13.setAttribute('class', 'fas fa-minus');
+        var button13 = document.getElementById("sub13_button");
+        button13.setAttribute('onclick', 'minus_sub13();');
+    }
+    {% if theme.sub_hint13 %}
+    $(document).ready(function(){
+        plus_sub13();
+    })
+    {% endif %}
+    function minus_sub13(){
+        var sub13_div = document.getElementById("sub13_div");
+        sub13_div.setAttribute('style', 'display:none;');
+        var sub13_h4c = document.getElementById("sub13_h4c");
+        sub13_h4c.setAttribute('style', 'display:none;');
+        var sub13_cancel = document.getElementById("sub13_cancel");
+        sub13_cancel.setAttribute('style', 'display:none;');
+        var icon13 = document.getElementById("sub13_icon");
+        icon13.setAttribute('class', 'fas fa-plus');
+        var button13 = document.getElementById("sub13_button");
+        button13.setAttribute('onclick', 'plus_sub13();');
+        document.getElementById('sub13_h4').innerHTML = 'HINT13 :';
+    }
+    function plus_sub14(){
+        var sub14_div = document.getElementById("sub14_div");
+        sub14_div.setAttribute('style', '');
+        var sub2_h4c = document.getElementById("sub14_h4c");
+        sub14_h4c.setAttribute('style', '');
+        var sub14_cancel = document.getElementById("sub14_cancel");
+        sub14_cancel.setAttribute('style', '');
+        document.getElementById('sub14_h4').innerHTML = 'HINT14 하 :';
+        var icon14 = document.getElementById("sub14_icon");
+        icon14.setAttribute('class', 'fas fa-minus');
+        var button14 = document.getElementById("sub14_button");
+        button14.setAttribute('onclick', 'minus_sub14();');
+    }
+    {% if theme.sub_hint14 %}
+    $(document).ready(function(){
+        plus_sub14();
+    })
+    {% endif %}
+
+    function minus_sub14(){
+        var sub14_div = document.getElementById("sub14_div");
+        sub14_div.setAttribute('style', 'display:none;');
+        var sub14_h4c = document.getElementById("sub14_h4c");
+        sub14_h4c.setAttribute('style', 'display:none;');
+        var sub14_cancel = document.getElementById("sub14_cancel");
+        sub14_cancel.setAttribute('style', 'display:none;');
+        var icon14 = document.getElementById("sub14_icon");
+        icon14.setAttribute('class', 'fas fa-plus');
+        var button14 = document.getElementById("sub14_button");
+        button14.setAttribute('onclick', 'plus_sub14();');
+        document.getElementById('sub14_h4').innerHTML = 'HINT14 :';
+    }
+
+
+    $('#sub13_btn').click(function() {
+        var sub1_placeholder = document.getElementById("sub13_placeholder");
+        sub13_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub13_file = document.getElementById("sub13_file");
+        $("#sub13_file").val('');
+        $("#sub13_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 13},
+            success:function(){
+                var sub13_placeholder = document.getElementById("sub13_placeholder");
+                sub13_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+    $('#sub14_btn').click(function() {
+        var sub14_placeholder = document.getElementById("sub14_placeholder");
+        sub14_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub14_file = document.getElementById("sub14_file");
+        $("#sub14_file").val('');
+        $("#sub14_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 14},
+            success:function(){
+                var sub14_placeholder = document.getElementById("sub14_placeholder");
+                sub14_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+
+    function plus_sub15(){
+        var sub15_div = document.getElementById("sub15_div");
+        sub15_div.setAttribute('style', '');
+        var sub15_h4c = document.getElementById("sub15_h4c");
+        sub15_h4c.setAttribute('style', '');
+        var sub15_cancel = document.getElementById("sub15_cancel");
+        sub15_cancel.setAttribute('style', '');
+        document.getElementById('sub15_h4').innerHTML = 'HINT15 하 :';
+        var icon15 = document.getElementById("sub15_icon");
+        icon15.setAttribute('class', 'fas fa-minus');
+        var button15 = document.getElementById("sub15_button");
+        button15.setAttribute('onclick', 'minus_sub15();');
+    }
+    {% if theme.sub_hint15 %}
+    $(document).ready(function(){
+        plus_sub15();
+    })
+    {% endif %}
+    function minus_sub15(){
+        var sub15_div = document.getElementById("sub15_div");
+        sub15_div.setAttribute('style', 'display:none;');
+        var sub15_h4c = document.getElementById("sub15_h4c");
+        sub15_h4c.setAttribute('style', 'display:none;');
+        var sub15_cancel = document.getElementById("sub15_cancel");
+        sub15_cancel.setAttribute('style', 'display:none;');
+        var icon15 = document.getElementById("sub15_icon");
+        icon15.setAttribute('class', 'fas fa-plus');
+        var button15 = document.getElementById("sub15_button");
+        button15.setAttribute('onclick', 'plus_sub15();');
+        document.getElementById('sub15_h4').innerHTML = 'HINT1 :';
+    }
+    function plus_sub16(){
+        var sub16_div = document.getElementById("sub16_div");
+        sub16_div.setAttribute('style', '');
+        var sub16_h4c = document.getElementById("sub16_h4c");
+        sub16_h4c.setAttribute('style', '');
+        var sub16_cancel = document.getElementById("sub16_cancel");
+        sub16_cancel.setAttribute('style', '');
+        document.getElementById('sub16_h4').innerHTML = 'HINT16 하 :';
+        var icon16 = document.getElementById("sub16_icon");
+        icon16.setAttribute('class', 'fas fa-minus');
+        var button16 = document.getElementById("sub16_button");
+        button16.setAttribute('onclick', 'minus_sub16();');
+    }
+    {% if theme.sub_hint16 %}
+    $(document).ready(function(){
+        plus_sub16();
+    })
+    {% endif %}
+
+    function minus_sub16(){
+        var sub16_div = document.getElementById("sub16_div");
+        sub16_div.setAttribute('style', 'display:none;');
+        var sub16_h4c = document.getElementById("sub16_h4c");
+        sub16_h4c.setAttribute('style', 'display:none;');
+        var sub16_cancel = document.getElementById("sub16_cancel");
+        sub16_cancel.setAttribute('style', 'display:none;');
+        var icon16 = document.getElementById("sub16_icon");
+        icon16.setAttribute('class', 'fas fa-plus');
+        var button16 = document.getElementById("sub16_button");
+        button16.setAttribute('onclick', 'plus_sub16();');
+        document.getElementById('sub16_h4').innerHTML = 'HINT16 :';
+    }
+
+
+    $('#sub15_btn').click(function() {
+        var sub15_placeholder = document.getElementById("sub15_placeholder");
+        sub15_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub15_file = document.getElementById("sub15_file");
+        $("#sub15_file").val('');
+        $("#sub15_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 15},
+            success:function(){
+                var sub15_placeholder = document.getElementById("sub15_placeholder");
+                sub15_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+    $('#sub16_btn').click(function() {
+        var sub16_placeholder = document.getElementById("sub16_placeholder");
+        sub16_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub16_file = document.getElementById("sub16_file");
+        $("#sub16_file").val('');
+        $("#sub16_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 16},
+            success:function(){
+                var sub16_placeholder = document.getElementById("sub16_placeholder");
+                sub16_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+
+    function plus_sub17(){
+        var sub17_div = document.getElementById("sub17_div");
+        sub17_div.setAttribute('style', '');
+        var sub17_h4c = document.getElementById("sub17_h4c");
+        sub17_h4c.setAttribute('style', '');
+        var sub17_cancel = document.getElementById("sub17_cancel");
+        sub17_cancel.setAttribute('style', '');
+        document.getElementById('sub17_h4').innerHTML = 'HINT17 하 :';
+        var icon17 = document.getElementById("sub17_icon");
+        icon1.setAttribute('class', 'fas fa-minus');
+        var button17 = document.getElementById("sub17_button");
+        button17.setAttribute('onclick', 'minus_sub17();');
+    }
+    {% if theme.sub_hint17 %}
+    $(document).ready(function(){
+        plus_sub17();
+    })
+    {% endif %}
+    function minus_sub17(){
+        var sub17_div = document.getElementById("sub17_div");
+        sub17_div.setAttribute('style', 'display:none;');
+        var sub17_h4c = document.getElementById("sub17_h4c");
+        sub17_h4c.setAttribute('style', 'display:none;');
+        var sub17_cancel = document.getElementById("sub17_cancel");
+        sub17_cancel.setAttribute('style', 'display:none;');
+        var icon17 = document.getElementById("sub17_icon");
+        icon17.setAttribute('class', 'fas fa-plus');
+        var button17 = document.getElementById("sub17_button");
+        button17.setAttribute('onclick', 'plus_sub17();');
+        document.getElementById('sub17_h4').innerHTML = 'HINT17 :';
+    }
+    function plus_sub18(){
+        var sub18_div = document.getElementById("sub18_div");
+        sub18_div.setAttribute('style', '');
+        var sub18_h4c = document.getElementById("sub18_h4c");
+        sub18_h4c.setAttribute('style', '');
+        var sub18_cancel = document.getElementById("sub18_cancel");
+        sub18_cancel.setAttribute('style', '');
+        document.getElementById('sub18_h4').innerHTML = 'HINT18 하 :';
+        var icon18 = document.getElementById("sub18_icon");
+        icon18.setAttribute('class', 'fas fa-minus');
+        var button18 = document.getElementById("sub18_button");
+        button18.setAttribute('onclick', 'minus_sub18();');
+    }
+    {% if theme.sub_hint18 %}
+    $(document).ready(function(){
+        plus_sub18();
+    })
+    {% endif %}
+
+    function minus_sub18(){
+        var sub18_div = document.getElementById("sub18_div");
+        sub18_div.setAttribute('style', 'display:none;');
+        var sub18_h4c = document.getElementById("sub18_h4c");
+        sub18_h4c.setAttribute('style', 'display:none;');
+        var sub18_cancel = document.getElementById("sub18_cancel");
+        sub18_cancel.setAttribute('style', 'display:none;');
+        var icon18 = document.getElementById("sub18_icon");
+        icon18.setAttribute('class', 'fas fa-plus');
+        var button18 = document.getElementById("sub18_button");
+        button18.setAttribute('onclick', 'plus_sub18();');
+        document.getElementById('sub18_h4').innerHTML = 'HINT18 :';
+    }
+
+
+    $('#sub17_btn').click(function() {
+        var sub17_placeholder = document.getElementById("sub1_placeholder");
+        sub17_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub17_file = document.getElementById("sub17_file");
+        $("#sub17_file").val('');
+        $("#sub17_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 17},
+            success:function(){
+                var sub17_placeholder = document.getElementById("sub17_placeholder");
+                sub17_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+    $('#sub18_btn').click(function() {
+        var sub18_placeholder = document.getElementById("sub18_placeholder");
+        sub18_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub18_file = document.getElementById("sub18_file");
+        $("#sub18_file").val('');
+        $("#sub18_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 18},
+            success:function(){
+                var sub18_placeholder = document.getElementById("sub18_placeholder");
+                sub18_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+
+    function plus_sub19(){
+        var sub19_div = document.getElementById("sub19_div");
+        sub19_div.setAttribute('style', '');
+        var sub19_h4c = document.getElementById("sub19_h4c");
+        sub19_h4c.setAttribute('style', '');
+        var sub19_cancel = document.getElementById("sub19_cancel");
+        sub19_cancel.setAttribute('style', '');
+        document.getElementById('sub19_h4').innerHTML = 'HINT19 하 :';
+        var icon19 = document.getElementById("sub19_icon");
+        icon19.setAttribute('class', 'fas fa-minus');
+        var button19 = document.getElementById("sub19_button");
+        button19.setAttribute('onclick', 'minus_sub19();');
+    }
+    {% if theme.sub_hint19 %}
+    $(document).ready(function(){
+        plus_sub19();
+    })
+    {% endif %}
+    function minus_sub19(){
+        var sub19_div = document.getElementById("sub19_div");
+        sub1_div.setAttribute('style', 'display:none;');
+        var sub19_h4c = document.getElementById("sub19_h4c");
+        sub19_h4c.setAttribute('style', 'display:none;');
+        var sub19_cancel = document.getElementById("sub19_cancel");
+        sub19_cancel.setAttribute('style', 'display:none;');
+        var icon19 = document.getElementById("sub19_icon");
+        icon19.setAttribute('class', 'fas fa-plus');
+        var button19 = document.getElementById("sub19_button");
+        button19.setAttribute('onclick', 'plus_sub19();');
+        document.getElementById('sub19_h4').innerHTML = 'HINT19 :';
+    }
+    function plus_sub20(){
+        var sub20_div = document.getElementById("sub20_div");
+        sub20_div.setAttribute('style', '');
+        var sub20_h4c = document.getElementById("sub20_h4c");
+        sub20_h4c.setAttribute('style', '');
+        var sub20_cancel = document.getElementById("sub20_cancel");
+        sub20_cancel.setAttribute('style', '');
+        document.getElementById('sub20_h4').innerHTML = 'HINT20 하 :';
+        var icon20 = document.getElementById("sub20_icon");
+        icon20.setAttribute('class', 'fas fa-minus');
+        var button20 = document.getElementById("sub20_button");
+        button20.setAttribute('onclick', 'minus_sub20();');
+    }
+    {% if theme.sub_hint20 %}
+    $(document).ready(function(){
+        plus_sub20();
+    })
+    {% endif %}
+
+    function minus_sub20(){
+        var sub20_div = document.getElementById("sub20_div");
+        sub20_div.setAttribute('style', 'display:none;');
+        var sub20_h4c = document.getElementById("sub20_h4c");
+        sub20_h4c.setAttribute('style', 'display:none;');
+        var sub20_cancel = document.getElementById("sub20_cancel");
+        sub20_cancel.setAttribute('style', 'display:none;');
+        var icon20 = document.getElementById("sub20_icon");
+        icon20.setAttribute('class', 'fas fa-plus');
+        var button20 = document.getElementById("sub20_button");
+        button20.setAttribute('onclick', 'plus_sub20();');
+        document.getElementById('sub20_h4').innerHTML = 'HINT20 :';
+    }
+
+
+    $('#sub19_btn').click(function() {
+        var sub19_placeholder = document.getElementById("sub19_placeholder");
+        sub19_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub19_file = document.getElementById("sub19_file");
+        $("#sub19_file").val('');
+        $("#sub19_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 19},
+            success:function(){
+                var sub19_placeholder = document.getElementById("sub19_placeholder");
+                sub19_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+    $('#sub20_btn').click(function() {
+        var sub20_placeholder = document.getElementById("sub20_placeholder");
+        sub20_placeholder.setAttribute('placeholder' ,'삭제됨');
+        var sub20_file = document.getElementById("sub20_file");
+        $("#sub20_file").val('');
+        $("#sub20_placeholder").val('');
+        $.ajax({
+            url:'{% url 'hint:ajax' user_id theme %}',
+            dataType:'json',
+            type:'GET',
+            data:{'msg': 20},
+            success:function(){
+                var sub20_placeholder = document.getElementById("sub20_placeholder");
+                sub20_placeholder.setAttribute('placeholder' ,'삭제됨');
+            }
+        });
+    })
+
+    $(function() {
+      // We can attach the `fileselect` event to all file inputs on the page
+      $(document).on('change', ':file', function() {
+        var input = $(this),
+            numFiles = input.get(0).files ? input.get(0).files.length : 1,
+            label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [numFiles, label]);
+      });
+      // We can watch for our custom `fileselect` event like this
+      $(document).ready( function() {
+          $(':file').on('fileselect', function(event, numFiles, label) {
+              var input = $(this).parents('.input-group').find(':text'),
+                  log = numFiles > 1 ? numFiles + ' files selected' : label;
+              if( input.length ) {
+                  input.val(log);
+              } else {
+                  if( log ) alert(log);
+              }
+          });
+      });
+    });
+</script>
 {% endblock %}
