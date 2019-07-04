@@ -29,7 +29,7 @@
         <div class="col-8">
             <form action="" method="get">
                 {% csrf_token %}
-                <button style="border-color:white; color:white" class="mt-3 form-control btn btn-default" onclick="" type="submit">힌트 사용</button>
+                <button style="border-color:white; color:white" class="mt-3 form-control btn btn-default" onclick="hintUse();" type="submit">힌트 사용</button>
                 <h3 class="mt-4 mb-2">HINT COUNT</h3>
                 <h4 class="m-0">{{ count }}</h4>
                 <input style="visibility:hidden;" id="input" name="q" value="{{ q }}" type="text">
@@ -83,6 +83,9 @@
     }
     function url(url){
         document.getElementById("input").value=url;
+    }
+    function hintUse(){
+        url = document.getElementById("input").value;
         location.href=url;
     }
 
@@ -105,7 +108,15 @@
     //function showQRIntro() {
       //return confirm("Use your camera to take a picture of a QR code.");
     //}
-
+    function url(){
+        var value = $('#text').val();
+        document.getElementById("input").value=value;
+        if (value == ""){
+            alert("QR 코드를 입력하세요.");
+        }else{
+            location.href=value;
+        }
+    }
 
     //$(function(){
     //    $('.camera').change(function(e){
