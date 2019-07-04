@@ -211,10 +211,7 @@
     <button type="button" style="border-color:white;color:white;width:50%" class="my-4 form-control btn btn-default" onclick="back();">다른 힌트 사용하러가기</button>
 </div>
 <script>
-    history.pushState(null, null, location.href);
-    window.onpopstate = function () {
-        history.go(1);
-    };
+    
     function back(){
         window.history.back();
     }
