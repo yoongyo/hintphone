@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fb9a69a9-f5ab-473f-9c49-3d3588a8bab6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hint/templates/hint/not_hint.html" beforeDir="false" afterPath="$PROJECT_DIR$/hint/templates/hint/not_hint.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,8 +139,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hint/templates/hint/theme_hint.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="199" column="30" selection-start-line="199" selection-start-column="30" selection-end-line="199" selection-end-column="30" />
+            <state relative-caret-position="558">
+              <caret line="212" column="8" lean-forward="true" selection-start-line="212" selection-start-column="8" selection-end-line="212" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -231,7 +230,6 @@
         <option value="$PROJECT_DIR$/hint/templates/hint/personal_information.html" />
         <option value="$PROJECT_DIR$/hint/templates/hint/reset_code.html" />
         <option value="$PROJECT_DIR$/hint/admin.py" />
-        <option value="$PROJECT_DIR$/hint/templates/hint/theme_hint.html" />
         <option value="$PROJECT_DIR$/hint/templates/hint/edit.html" />
         <option value="$PROJECT_DIR$/accounts/forms.py" />
         <option value="$PROJECT_DIR$/hint/templates/hint/theme_list.html" />
@@ -250,6 +248,7 @@
         <option value="$PROJECT_DIR$/hint/views.py" />
         <option value="$PROJECT_DIR$/hint/templates/hint/qr.html" />
         <option value="$PROJECT_DIR$/hint/templates/hint/not_hint.html" />
+        <option value="$PROJECT_DIR$/hint/templates/hint/theme_hint.html" />
       </list>
     </option>
   </component>
@@ -876,8 +875,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hint/templates/hint/theme_hint.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="199" column="30" selection-start-line="199" selection-start-column="30" selection-end-line="199" selection-end-column="30" />
+        <state relative-caret-position="558">
+          <caret line="212" column="8" lean-forward="true" selection-start-line="212" selection-start-column="8" selection-end-line="212" selection-end-column="8" />
         </state>
       </provider>
     </entry>
