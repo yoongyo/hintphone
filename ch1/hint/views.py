@@ -235,6 +235,7 @@ def QR_code(request, user_id, theme):
                 count19 += 1
             if theme_number == 20:
                 count20 += 1
+            return redirect(q)
     else:
         pass
     print(count)
