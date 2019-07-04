@@ -25,7 +25,7 @@
     <h2 class="m-0">{{ theme }}</h2>
     <input style="visibility:hidden;" id="text" type="url" size=16 placeholder="Tracking Code" class="qrcode-text">
     <label class="qrcode-text-btn">
-        <input id="g" type=file accept="image/*" capture="environment" onchange="openQRCamera(this);" tabindex=-1>
+        <input id="g" type=file accept="image/*" capture="camera" tabindex=-1>
     </label>
     <div class="row mt-3">
         <div class="col-2"></div>
@@ -81,6 +81,7 @@
 
 <script src="https://dmla.github.io/jsqrcode/src/qr_packed.js"></script>
 <script>
+
     function openQRCamera(node) {
       var reader = new FileReader();
       reader.onload = function() {
@@ -109,6 +110,11 @@
             location.href=value;
         }
     }
+    $(function(){
+        $('#camera').change(function(e){
+            openQRCamera(URL.createObjectURL(e.target.files[0]));
+        });
+    });
     history.pushState(null, null, location.href);
         window.onpopstate = function () {
             history.go(1);
