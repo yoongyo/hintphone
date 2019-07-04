@@ -19,23 +19,17 @@
         position:absolute; overflow:hidden; width:1px; height:1px; opacity:0
     }
 </style>
-<script>
-    function android(){
-        window.Android.capture();
-    }
-</script>
 <div style="height:50px"></div>
 <div class="container text-center my-4 p-3">
     <span>{{ escape_room }}</span>
-    <h2 class="m-0">{{ theme }}</h2>
-    <input style="visibility:hidden;" id="text" type="url" size=16 placeholder="Tracking Code" class="qrcode-text">
-    <button style="background-color:black;border-color:black" type="button" onclick="javascript:android()" value="button"><img src="{% static 'qr.png' %}"></button>
+    <h2 class="mb-4">{{ theme }}</h2>
+    <img src="{% static 'qr.png' %}">
     <div class="row mt-3">
         <div class="col-2"></div>
         <div class="col-8">
             <form action="" method="get">
                 {% csrf_token %}
-                <button style="border-color:white; color:white" class="form-control btn btn-default" onclick="url();" type="submit">힌트 사용</button>
+                <button style="border-color:white; color:white" class="mt-3 form-control btn btn-default" onclick="android()" type="submit">힌트 사용</button>
                 <h3 class="mt-4 mb-2">HINT COUNT</h3>
                 <h4 class="m-0">{{ count }}</h4>
                 <input style="visibility:hidden;" id="input" name="q" value="{{ q }}" type="text">
@@ -84,6 +78,9 @@
 
 <script src="https://dmla.github.io/jsqrcode/src/qr_packed.js"></script>
 <script>
+    function android(){
+        window.Android.capture();
+    }
 
     function openQRCamera(node) {
       var reader = new FileReader();
