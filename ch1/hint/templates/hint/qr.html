@@ -19,14 +19,17 @@
         position:absolute; overflow:hidden; width:1px; height:1px; opacity:0
     }
 </style>
+<script>
+    function android(){
+        window.Android.capture();
+    }
+</script>
 <div style="height:50px"></div>
 <div class="container text-center my-4 p-3">
     <span>{{ escape_room }}</span>
     <h2 class="m-0">{{ theme }}</h2>
     <input style="visibility:hidden;" id="text" type="url" size=16 placeholder="Tracking Code" class="qrcode-text">
-    <label class="grcode-text-btn">
-        <input style="background-color:black;border-color:black" type="button" onclick="android();" value="button">
-    </label>
+    <button style="background-color:black;border-color:black" type="button" onclick="javascript:android()" value="button"><img src="{% static 'qr.png' %}"></button>
     <div class="row mt-3">
         <div class="col-2"></div>
         <div class="col-8">
@@ -110,9 +113,7 @@
             location.href=value;
         }
     }
-    function android(){
-        window.Android.capture();
-    }
+
     //$(function(){
     //    $('.camera').change(function(e){
     //        openQRCamera(e.target);
