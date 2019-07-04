@@ -83,6 +83,7 @@
     }
     function url(url){
         document.getElementById("input").value=url;
+        location.href=url
     }
 
     function openQRCamera(node) {
@@ -104,15 +105,7 @@
     //function showQRIntro() {
       //return confirm("Use your camera to take a picture of a QR code.");
     //}
-    function url(){
-        var value = $('#text').val();
-        document.getElementById("input").value=value;
-        if (value == ""){
-            alert("QR 코드를 입력하세요.");
-        }else{
-            location.href=value;
-        }
-    }
+    
 
     //$(function(){
     //    $('.camera').change(function(e){
