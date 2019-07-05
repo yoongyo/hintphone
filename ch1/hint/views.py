@@ -191,54 +191,51 @@ def QR_code(request, user_id, theme):
     print("pk:", theme_number, 'count:', count)
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
     hintCount = get_object_or_404(Theme, name=theme).hintCount
-    q = request.POST['q']
-    print(q)
-    if q != "":
-        if request.method == "POST":
-            print("fuck")
-            if theme_number == 1:
-                count1 += 1
-            if theme_number == 2:
-                count2 += 1
-            if theme_number == 3:
-                count3 += 1
-            if theme_number == 4:
-                count4 += 1
-            if theme_number == 5:
-                count5 += 1
-            if theme_number == 6:
-                count6 += 1
-            if theme_number == 7:
-                count7 += 1
-            if theme_number == 8:
-                count8 += 1
-            if theme_number == 9:
-                count9 += 1
-            if theme_number == 10:
-                count10 += 1
-            if theme_number == 11:
-                count11 += 1
-            if theme_number == 12:
-                count12 += 1
-            if theme_number == 13:
-                count13 += 1
-            if theme_number == 14:
-                count14 += 1
-            if theme_number == 15:
-                count15 += 1
-            if theme_number == 16:
-                count16 += 1
-            if theme_number == 17:
-                count17 += 1
-            if theme_number == 18:
-                count18 += 1
-            if theme_number == 19:
-                count19 += 1
-            if theme_number == 20:
-                count20 += 1
-            return redirect(q)
-    else:
-        pass
+    if request.method == "POST":
+        q = request.POST['q']
+        print(q)
+        print("fuck")
+        if theme_number == 1:
+            count1 += 1
+        if theme_number == 2:
+            count2 += 1
+        if theme_number == 3:
+            count3 += 1
+        if theme_number == 4:
+            count4 += 1
+        if theme_number == 5:
+            count5 += 1
+        if theme_number == 6:
+            count6 += 1
+        if theme_number == 7:
+            count7 += 1
+        if theme_number == 8:
+            count8 += 1
+        if theme_number == 9:
+            count9 += 1
+        if theme_number == 10:
+            count10 += 1
+        if theme_number == 11:
+            count11 += 1
+        if theme_number == 12:
+            count12 += 1
+        if theme_number == 13:
+            count13 += 1
+        if theme_number == 14:
+            count14 += 1
+        if theme_number == 15:
+            count15 += 1
+        if theme_number == 16:
+            count16 += 1
+        if theme_number == 17:
+            count17 += 1
+        if theme_number == 18:
+            count18 += 1
+        if theme_number == 19:
+            count19 += 1
+        if theme_number == 20:
+            count20 += 1
+        return redirect(q)
     print(count)
     if hintCount > count:
         return render(request, 'hint/qr.html', {
