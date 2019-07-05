@@ -12,7 +12,7 @@
 <div class="container text-center my-4 p-3">
     <span>{{ escape_room }}</span>
     <h2 class="mb-4">{{ theme }}</h2>
-    <button type="button" style="background-color:black;border-color:black" onclick="android()"><img src="{% static 'qr.png' %}"></button>
+    <button type="button" class="m-0 p-0" style="background-color:black;border-color:black" onclick="android()"><img src="{% static 'qr.png' %}"></button>
     <div class="row mt-3">
         <div class="col-2"></div>
         <div class="col-8">
@@ -70,11 +70,13 @@
     function android(){
         window.Android.capture();
     }
+
     function url(url){
         var btn = document.getElementById("hint_btn");
         document.getElementById("input").value=url;
         btn.setAttribute('type', 'submit');
     }
+
     function hintUse(){
         url = document.getElementById("input").value;
         if (url == ""){
@@ -87,7 +89,6 @@
             location.href=url;
         }
     }
-
     history.pushState(null, null, location.href);
         window.onpopstate = function () {
             history.go(1);
