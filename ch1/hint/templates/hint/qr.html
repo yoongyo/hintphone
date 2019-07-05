@@ -74,7 +74,7 @@
     function url(url){
         var btn = document.getElementById("hint_btn");
         document.getElementById("input").value=url;
-        btn.setAttribute('type', 'submit');
+        // btn.setAttribute('type', 'submit');
     }
 
     function hintUse(){
@@ -85,7 +85,7 @@
                     cancel: "OK",
                   },
             });
-        }else{
+        }else {
             location.href=url;
         }
     }
@@ -93,7 +93,6 @@
         window.onpopstate = function () {
             history.go(1);
     };
-
 </script>
 
 
