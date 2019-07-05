@@ -67,6 +67,9 @@
 
 <script src="https://dmla.github.io/jsqrcode/src/qr_packed.js"></script>
 <script>
+    function empty() {
+        document.getElementById("input").value="";
+    }
     function android(){
         window.Android.capture();
     }
@@ -92,6 +95,8 @@
         window.onpopstate = function () {
             history.go(1);
     };
+    window.onload = empty;
+
 </script>
 
 
