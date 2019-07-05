@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <style>
     body, input {
         font-size:14pt;
@@ -17,7 +18,7 @@
         <div class="col-8">
             <form action="" method="get">
                 {% csrf_token %}
-                <button style="border-color:white; color:white" class="mt-3 form-control btn btn-default" onclick="hintUse();" type="submit">힌트 사용</button>
+                <button id="hint_btn" style="border-color:white; color:white" class="mt-3 form-control btn btn-default" onclick="hintUse();" type="button">힌트 사용</button>
                 <h3 class="mt-4 mb-2">HINT COUNT</h3>
                 <h4 class="m-0">{{ count }}</h4>
                 <input style="visibility:hidden;" id="input" name="q" value="{{ q }}" type="text">
@@ -45,7 +46,7 @@
       <!-- Modal body -->
       <div class="modal-body" style="color:black;">
           <p>힌트폰 사용방법<br>
-            1. QR코드 이미지를 클릭합니다.<br>
+            1. QR코드 버튼을 클릭합니다.<br>
             2. 힌트가 필요한 문제의 QR코드를<br>
               카메라 프레임에 맞게 스캔합니다.<br>
             3. 스캔 완료 후에 힌트사용 버튼을 클릭합니다.<br>
@@ -70,51 +71,23 @@
         window.Android.capture();
     }
     function url(url){
+        btn = document.getElementById("hint_btn");
         document.getElementById("input").value=url;
+        btn.setAttribute('type', 'submit')
     }
     function hintUse(){
         url = document.getElementById("input").value;
         if (url == ""){
-            alert("QR코드를 스캔하세요.");
+            swal({title:"QR코드를 스캔하세요.",
+                  buttons: {
+                    cancel: "OK",
+                  },
+            });
         }else{
             location.href=url;
         }
     }
 
-    function openQRCamera(node) {
-      var reader = new FileReader();
-      reader.onload = function() {
-        node.value = "";
-        qrcode.callback = function(res) {
-          if(res instanceof Error) {
-            alert("QR코드가 제대로 입력되지 않았습니다. 다시 카메라 프레임에 맞게 찍어주세요.");
-          } else {
-            node.parentNode.previousElementSibling.value = res;
-            alert("QR코드가 입력되어 해당 힌트를 들을 수 있습니다.");
-          }
-        };
-        qrcode.decode(reader.result);
-      };
-      reader.readAsDataURL(node.files[0]);
-    }
-    //function showQRIntro() {
-      //return confirm("Use your camera to take a picture of a QR code.");
-    //}
-    //function url(){
-    //    var value = $('#text').val();
-    //    document.getElementById("input").value=value;
-    //    if (value == ""){
-    //        alert("QR 코드를 입력하세요.");
-    //    }else{
-    //        location.href=value;
-    //    }
-    //}
-
-    //$(function(){
-    //    $('.camera').change(function(e){
-    //        openQRCamera(e.target);
-    //    });
-    //});
     history.pushState(null, null, location.href);
         window.onpopstate = function () {
             history.go(1);

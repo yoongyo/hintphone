@@ -374,3 +374,17 @@ def admin(request, user_id):
     })
 
 
+def admin_confirm(request, user_id, theme):
+    reset = get_object_or_404(Profile, user=request.user).reset
+    escape_room = get_object_or_404(Profile, user=request.user).escape_room
+    q = request.GET.get('q', '')
+
+    return render(request, 'hint/admin_confirm.html',{
+        'q': q,
+        'escape_room': escape_room,
+        'reset': reset,
+        'user_id': user_id,
+        'theme': theme
+    })
+
+

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    input::placeholder {
+        color: white;
+    }
+</style>
+
+
+<div class="container mt-5">
+    <div style="height:20px"></div>
+    <div class="text-center mt-5">
+        <span style="color:white">{{ escape_room }}</span>
+        <h1 style="color:white">관리자 확인</h1>
+        <div class="m-5">
+            <div style="height:120px"></div>
+            <form action="" method="get">
+                {% csrf_token %}
+                <input style="outline:0;color:white;border-color: black;width:100%;background-color:black;box-shadow: 0 2px 0 0 white;" name="q" value="{{ q }}" id="pw" type="password" placeholder="Reset Code를 입력해주세요">
+                <button type="submit" class="form-control btn btn-default mt-4" style="border-color: white;color:white">ENTER</button>
+            </form>
+            <button type="button" onclick="back();" class="form-control btn btn-default mt-2" style="border-color: white;color:white">관리자가 아닐시 돌아가기</button>
+            <h3 id="not"></h3>
+        </div>
+    </div>
+</div>
+
+<script>
+    var reset_code = "{{ q }}";
+    var url = "{% url 'hint:QR_code' user_id theme %}";
+    if (reset_code == ""){
+    }else{
+        if (reset_code == "{{ reset }}" ){
+            location.href=url;
+        }
+        else {
+            $(function(){
+              $('#not').text('Reset Code가 일치하지 않습니다.');
+            });
+        }
+    }
+
+    function back(){
+        window.history.back();
+    }
+</script>
+
+{% endblock %}
