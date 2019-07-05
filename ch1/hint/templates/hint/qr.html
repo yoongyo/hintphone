@@ -68,7 +68,8 @@
 <script src="https://dmla.github.io/jsqrcode/src/qr_packed.js"></script>
 <script>
     window.onload = function(){
-        document.getElementById("hint_btn").btn.setAttribute('type', 'button');
+        document.getElementById("input").value = "";
+        document.getElementById("hint_btn").setAttribute('type', 'button');
     }
     function android(){
         window.Android.capture();
