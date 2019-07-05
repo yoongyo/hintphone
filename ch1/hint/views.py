@@ -191,9 +191,10 @@ def QR_code(request, user_id, theme):
     print("pk:", theme_number, 'count:', count)
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
     hintCount = get_object_or_404(Theme, name=theme).hintCount
-    q = request.GET.get('q', '')
+    q = request.POST['q']
+    print(q)
     if q != "":
-        if request.method == "GET":
+        if request.method == "POST":
             print("fuck")
             if theme_number == 1:
                 count1 += 1
