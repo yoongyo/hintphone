@@ -18,7 +18,7 @@
         <div class="col-8">
             <form action="" method="get">
                 {% csrf_token %}
-                <button id="hint_btn" style="border-color:white; color:white" class="mt-3 form-control btn btn-default" onclick="hintUse();" type="button">힌트 사용</button>
+                <button id="hint_btn" style="border-color:white; color:white" class="mt-3 form-control btn btn-default" onclick="hintUse();" type="submit">힌트 사용</button>
                 <h3 class="mt-4 mb-2">HINT COUNT</h3>
                 <h4 class="m-0">{{ count }}</h4>
                 <input style="color:black" id="input" name="q" value="{{ q }}" type="text">
@@ -72,9 +72,9 @@
     }
 
     function url(url){
-        var btn = document.getElementById("hint_btn");
         document.getElementById("input").value=url;
-        // btn.setAttribute('type', 'submit');
+        var btn = document.getElementById("hint_btn");
+        btn.setAttribute('type', 'submit');
     }
 
     function hintUse(){
