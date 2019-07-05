@@ -211,9 +211,9 @@
     <button type="button" style="border-color:white;color:white;width:50%" class="my-4 form-control btn btn-default" onclick="back();">다른 힌트 사용하러가기</button>
 </div>
 <script>
-    
     function back(){
-        window.history.back();
+        var referrer =  document.referrer;
+        location.href=referrer;
     }
 </script>
 {% endblock %}
