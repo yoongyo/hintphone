@@ -21,7 +21,7 @@
                 <button id="hint_btn" style="border-color:white; color:white" class="mt-3 form-control btn btn-default" onclick="hintUse();" type="submit">힌트 사용</button>
                 <h3 class="mt-4 mb-2">HINT COUNT</h3>
                 <h4 class="m-0">{{ count }}</h4>
-                <input style="color:black" id="input" name="q" value="{{ q }}" type="text">
+                <input style="color:black;visibility:hidden" id="input" name="q" value="{{ q }}" type="text">
             </form>
         </div>
         <div class="col-2"></div>
@@ -73,17 +73,13 @@
 
     function url(url){
         document.getElementById("input").value=url;
-        var btn = document.getElementById("hint_btn");
-        btn.setAttribute('type', 'submit');
     }
 
     function hintUse(){
         url = document.getElementById("input").value;
         if (url == ""){
             swal({title:"QR코드를 스캔하세요.",
-                  buttons: {
-                    cancel: "OK",
-                  },
+                button:false,
             });
         }else {
             location.href=url;
