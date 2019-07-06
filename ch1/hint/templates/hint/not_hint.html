@@ -2,8 +2,8 @@
 {% block content %}
 {% load static %}
 
+<h3 class="mt-5 pt-5 text-center" style="color:white;">힌트를 모두다 사용하셨습니다</h3>
 <div class="container">
-  <h3 class="mt-5 pt-5" style="color:white;">힌트를 모두다 사용하셨습니다</h3>
   <img class="text-center px-3 mt-5 pt-3" width="100%" src="{% static 'not_hint.png' %}">
 </div>
 <button style="position:fixed;bottom:20px;left:20px;background-color:black;border-color:black" type="button" onclick="location.href='{% url 'hint:reset_code' user_id theme %}'">
@@ -24,13 +24,13 @@
 
       <!-- Modal body -->
       <div class="modal-body" style="color:black;">
-          <p>힌트폰 사용방법<br>
+        <p><strong>힌트폰 사용방법</strong><br>
             1. QR코드 버튼을 클릭합니다.<br>
             2. 힌트가 필요한 문제의 QR코드를<br>
               카메라 프레임에 맞게 스캔합니다.<br>
             3. 스캔 완료 후에 힌트사용 버튼을 클릭합니다.<br>
               <br>
-              힌트폰 사용안내<br>
+          <strong>힌트폰 사용안내</strong><br>
             1. 최대 {{ hintCount }}회까지만 사용이 가능합니다.<br>
             2. 한번 사용한 힌트는 카운팅 없이 연속 재생이 가능합니다.<br>
           </p>

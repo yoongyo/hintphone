@@ -240,7 +240,7 @@ def QR_code(request, user_id, theme):
         pass
     print(count)
     if hintCount > count:
-        return render(request, 'hint/qr.html', {
+        return render(request, 'hint/not_hint.html', {
             'hintCount': hintCount,
             'count': count,
             'theme': theme,
