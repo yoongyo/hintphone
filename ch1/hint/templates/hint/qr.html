@@ -27,7 +27,7 @@
         <div class="col-2"></div>
     </div>
 </div>
-<button id="hint" style="position:fixed;bottom:20px;left:20px;background-color:black;border-color:black" type="button" onclick="location.href='{% url 'hint:reset_code' user_id theme %}'">
+<button style="position:fixed;bottom:20px;left:20px;background-color:black;border-color:black" type="button" onclick="location.href='{% url 'hint:reset_code' user_id theme %}'">
     <img width="35px;" src="{% static  'reset1.png' %}">
 </button>
 <button data-target="#myModal" data-toggle="modal" style="position:fixed;bottom:20px;right:20px;background-color:black;border-color:black" type="button">
@@ -79,7 +79,7 @@
             });
         }
         else {
-            document.getElementById("hint").click();
+            document.getElementById("hint_btn").click();
         }
     }
 
