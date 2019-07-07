@@ -27,7 +27,7 @@
         <div class="col-2"></div>
     </div>
 </div>
-<button style="position:fixed;bottom:20px;left:20px;background-color:black;border-color:black" type="button" onclick="location.href='{% url 'hint:reset_code' user_id theme %}'">
+<button id="hint" style="position:fixed;bottom:20px;left:20px;background-color:black;border-color:black" type="button" onclick="location.href='{% url 'hint:reset_code' user_id theme %}'">
     <img width="35px;" src="{% static  'reset1.png' %}">
 </button>
 <button data-target="#myModal" data-toggle="modal" style="position:fixed;bottom:20px;right:20px;background-color:black;border-color:black" type="button">
@@ -73,18 +73,26 @@
 
     function url(url){
         document.getElementById("input").value=url;
-    }
-
-    ("#input").change(function(){
-        var url = document.getElementById("input").value;
         if (url == ""){
             swal({title:"QR코드를 스캔하세요.",
-                button:false,
+                    button:false,
             });
-        }else {
-            location.href=url;
         }
-    });
+        else {
+            document.getElementById("hint").click();
+        }
+    }
+
+    //("#input").change(function(){
+    //    var url = document.getElementById("input").value;
+    //    if (url == ""){
+    //        swal({title:"QR코드를 스캔하세요.",
+    //            button:false,
+    //        });
+    //    }else {
+    //        location.href=url;
+    //    }
+    //});
 
 
     function hintUse(){
