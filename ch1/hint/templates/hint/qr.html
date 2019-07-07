@@ -18,7 +18,7 @@
         <div class="col-8">
             <form action="" method="get">
                 {% csrf_token %}
-                <button style="border-color:white; color:white" class="mt-3 form-control btn btn-default" onclick="android()" type="button">힌트 사용</button>
+                <button style="background-color:black;border-color:white; color:white" class="mt-3 form-control" onclick="android()" type="button">힌트 사용</button>
                 <h3 class="mt-4 mb-2">HINT COUNT</h3>
                 <h4 class="m-0">{{ count }}</h4>
                 <input style="color:black;visibility:hidden" id="input" name="q" value="{{ q }}" type="text">
@@ -76,7 +76,7 @@
         document.getElementById("input").value=url;
         if (url == ""){
             swal({title:"QR코드를 스캔하세요.",
-                    button:false,
+                button:false,
             });
         }
         else {
