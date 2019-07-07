@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 <style>
     audio{
         width:100%
@@ -12,13 +13,8 @@
                 <audio controls autoplay src="{{ theme.hint1.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint1.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio id="audio1" controls autoplay src="{{ theme.hint1.url }}"></audio>
-                <script>
-                    var audio1 = document.getElementById("audio1");
-                    window.onload = function(){
-                        audio1.play();
-                    }
-                </script>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -28,6 +24,8 @@
                 <audio controls autoplay src="{{ theme.hint2.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint2.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
+
                 <audio controls autoplay src="{{ theme.hint2.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -38,6 +36,7 @@
                 <audio controls autoplay src="{{ theme.hint3.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint3.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint3.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -48,6 +47,7 @@
                 <audio controls autoplay src="{{ theme.hint4.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint4.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint4.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -58,6 +58,7 @@
                 <audio controls autoplay src="{{ theme.hint5.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint5.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint5.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -68,6 +69,7 @@
                 <audio controls autoplay src="{{ theme.hint6.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint6.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint6.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -78,6 +80,7 @@
                 <audio controls autoplay src="{{ theme.hint7.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint7.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint7.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -88,6 +91,7 @@
                 <audio controls autoplay src="{{ theme.hint8.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint8.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint8.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -98,6 +102,7 @@
                 <audio controls autoplay src="{{ theme.hint9.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint9.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint9.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -108,6 +113,7 @@
                 <audio controls autoplay src="{{ theme.hint10.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint10.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint10.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -118,6 +124,7 @@
                 <audio controls autoplay src="{{ theme.hint11.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint11.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint11.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -128,6 +135,7 @@
                 <audio controls autoplay src="{{ theme.hint12.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint12.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint12.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -138,6 +146,7 @@
                 <audio controls autoplay src="{{ theme.hint13.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint13.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint13.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -148,6 +157,7 @@
                 <audio controls autoplay src="{{ theme.hint14.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint14.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint14.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -158,6 +168,7 @@
                 <audio controls autoplay src="{{ theme.hint15.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint15.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint15.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -168,6 +179,7 @@
                 <audio controls autoplay src="{{ theme.hint16.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint16.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint16.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -178,6 +190,7 @@
                 <audio controls autoplay src="{{ theme.hint17.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint17.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint17.url }}"></audio>
             {% endif %}    {% endif %}
     {% endif %}
@@ -187,6 +200,7 @@
                 <audio controls autoplay src="{{ theme.hint18.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint18.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint18.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -197,6 +211,7 @@
                 <audio controls autoplay src="{{ theme.hint19.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint19.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint19.url }}"></audio>
             {% endif %}
         {% endif %}
@@ -207,6 +222,7 @@
                 <audio controls autoplay src="{{ theme.hint20.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint20.url }}"></audio>
             {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint20.url }}"></audio>
             {% endif %}
         {% endif %}
