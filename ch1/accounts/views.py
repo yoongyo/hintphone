@@ -16,7 +16,7 @@ def signin(request):
             else:
                 return HttpResponseRedirect(reverse('hint:theme_list', args=[user.username]))
         else:
-            return HttpResponse('로그인 실패. 다시 시도 해보세요.')
+            return render(request, 'accounts/login_fail.html')
 
     elif request.method == "POST":
         form = LoginForm(request.POST)
@@ -42,7 +42,7 @@ def signin(request):
                 response.set_cookie('method', method)
                 return response
         else:
-            return HttpResponse('로그인 실패. 다시 시도 해보세요.')
+            return render(request, 'accounts/login_fail.html')
     else:
         form = LoginForm()
         return render(request, 'accounts/login.html', {
