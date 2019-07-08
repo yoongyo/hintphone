@@ -13,8 +13,7 @@
                 <audio controls autoplay src="{{ theme.hint1.url }}"></audio>
                 <audio controls autoplay src="{{ theme.sub_hint1.url }}"></audio>
             {% else %}
-                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
-                <audio id="audio1" controls autoplay src="{{ theme.hint1.url }}"></audio>
+                <iframe src="{{ theme.hint1.url }}" allow="autoplay"></iframe>
             {% endif %}
         {% endif %}
     {% endif %}
