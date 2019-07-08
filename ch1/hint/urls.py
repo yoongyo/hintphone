@@ -12,6 +12,4 @@ urlpatterns = [
     re_path(r'^(?P<user_id>\w+)/(?P<theme>[\w|\W]+)/qr/$', views.QR_code, name="QR_code"),
     re_path(r'^(?P<user_id>\w+)/(?P<theme>[\w|\W]+)/reset/$', views.reset_code, name='reset_code'),
     re_path(r'^(?P<user_id>\w+)/(?P<theme>[\w|\W]+)/(?P<hint>\d+)/$', views.theme_hint, name='theme_hint'),
-    re_path(r'^(?P<user_id>\w+)/(?P<theme>[\w|\W]+)/$', views.theme_detail, name='theme_detail'),
-
 ]

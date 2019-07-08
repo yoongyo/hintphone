@@ -34,21 +34,25 @@ def switch(x):
             13: count13, 14: count14, 15: count15, 16: count16, 17: count17, 18: count18,
             19: count19, 20: count20}.get(x, 0)
 
+
 @login_required
 def theme_list(request, user_id):
     themes = Theme.objects.all()
     themes = themes.filter(roomEscape=request.user)
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
+    nation = get_object_or_404(Profile, user=request.user).nation
     return render(request, 'hint/theme_list.html', {
         'themes': themes,
         'escape_room': escape_room,
-        'user_id': user_id
+        'user_id': user_id,
+        'nation': nation
     })
 
 
 @login_required
 def reset_code(request, user_id, theme):
     theme_number = get_object_or_404(Theme, name=theme).theme_number
+    nation = get_object_or_404(Profile, user=request.user).nation
     if theme_number == 1:
         global count1
     if theme_number == 2:
@@ -141,12 +145,14 @@ def reset_code(request, user_id, theme):
         'theme': theme,
         'user_id': user_id,
         'escape_room': escape_room,
+        'nation': nation
     })
 
 
 @login_required
 def QR_code(request, user_id, theme):
     theme_number = get_object_or_404(Theme, name=theme).theme_number
+    nation = get_object_or_404(Profile, user=request.user).nation
     if theme_number == 1:
         global count1
     if theme_number == 2:
@@ -245,7 +251,8 @@ def QR_code(request, user_id, theme):
             'count': count,
             'theme': theme,
             'escape_room': escape_room,
-            'user_id': user_id
+            'user_id': user_id,
+            'nation': nation
         })
     else:
         return render(request, 'hint/not_hint.html',{
@@ -253,32 +260,26 @@ def QR_code(request, user_id, theme):
             'count': count,
             'theme': theme,
             'escape_room': escape_room,
-            'user_id': user_id
+            'user_id': user_id,
+            'nation': nation
         })
 
 
 @login_required
-def theme_detail(request, user_id, theme):
-    reset = get_object_or_404(Profile, user=request.user).reset
-    theme = get_object_or_404(Theme, name=theme)
-    return render(request, 'hint/theme_detail.html', {
-        'theme': theme,
-        'password': reset,
-    })
-
-
-@login_required
 def theme_hint(request, user_id, theme, hint):
+    nation = get_object_or_404(Profile, user=request.user).nation
     theme = get_object_or_404(Theme, name=theme)
     return render(request, 'hint/theme_hint.html', {
         'hint': hint,
         'theme': theme,
         'user_id': user_id,
+        'nation': nation
     })
 
 
 @login_required
 def theme_edit(request, user_id, theme):
+    nation = get_object_or_404(Profile, user=request.user).nation
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
     theme = get_object_or_404(Theme, name=theme)
     if request.method == 'POST':
@@ -296,7 +297,8 @@ def theme_edit(request, user_id, theme):
         'form': form,
         'theme': theme,
         'escape_room': escape_room,
-        'user_id': user_id
+        'user_id': user_id,
+        'nation': nation
     })
 
 
@@ -375,11 +377,13 @@ def admin(request, user_id):
 
 
 def admin_confirm(request, user_id, theme):
+    nation = get_object_or_404(Profile, user=request.user).nation
     reset = get_object_or_404(Profile, user=request.user).reset
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
     q = request.GET.get('q', '')
 
     return render(request, 'hint/admin_confirm.html', {
+        'nation': nation,
         'q': q,
         'escape_room': escape_room,
         'reset': reset,
