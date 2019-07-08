@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fb9a69a9-f5ab-473f-9c49-3d3588a8bab6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hint/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hint/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hint/templates/hint/theme_hint.html" beforeDir="false" afterPath="$PROJECT_DIR$/hint/templates/hint/theme_hint.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,13 +50,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="26795" />
+          <entry key="html" value="26834" />
           <entry key="py" value="8065" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="26795" />
+          <entry key="HTML" value="26834" />
           <entry key="Python" value="8065" />
         </counts>
       </usages-collector>
@@ -109,10 +108,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hint/templates/hint/theme_hint.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+            <state relative-caret-position="158">
+              <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
               <folding>
-                <element signature="e#524#545#0" expanded="true" />
+                <element signature="e#519#545#0" expanded="true" />
                 <element signature="e#2609#2630#0" expanded="true" />
                 <element signature="e#3127#3148#0" expanded="true" />
                 <element signature="e#3645#3666#0" expanded="true" />
@@ -338,7 +337,6 @@
         <option value="$PROJECT_DIR$/accounts/templates/accounts/login.html" />
         <option value="$PROJECT_DIR$/hint/templates/hint/reset_code.html" />
         <option value="$PROJECT_DIR$/hint/templates/hint/admin_confirm.html" />
-        <option value="$PROJECT_DIR$/hint/templates/hint/theme_hint.html" />
         <option value="$PROJECT_DIR$/hintPhone.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/login_fail.ntml.html" />
         <option value="$PROJECT_DIR$/accounts/views.py" />
@@ -352,6 +350,7 @@
         <option value="$PROJECT_DIR$/hint/templates/hint/not_hint.html" />
         <option value="$PROJECT_DIR$/hint/views.py" />
         <option value="$PROJECT_DIR$/hint/templates/hint/qr.html" />
+        <option value="$PROJECT_DIR$/hint/templates/hint/theme_hint.html" />
       </list>
     </option>
   </component>
@@ -928,10 +927,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hint/templates/hint/theme_hint.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        <state relative-caret-position="158">
+          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
           <folding>
-            <element signature="e#524#545#0" expanded="true" />
+            <element signature="e#519#545#0" expanded="true" />
             <element signature="e#2609#2630#0" expanded="true" />
             <element signature="e#3127#3148#0" expanded="true" />
             <element signature="e#3645#3666#0" expanded="true" />
