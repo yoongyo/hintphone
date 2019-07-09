@@ -47,6 +47,6 @@ class Theme(models.Model):
     sub_hint19 = models.FileField(upload_to='mp3/', blank=True, null=True)
     hint20 = models.FileField(upload_to='mp3/', blank=True, null=True)
     sub_hint20 = models.FileField(upload_to='mp3/', blank=True, null=True)
-    
+
     def __str__(self):
         return self.name
