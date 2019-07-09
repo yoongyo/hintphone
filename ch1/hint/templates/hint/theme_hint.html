@@ -6,6 +6,14 @@
         width:100%
     }
 </style>
+<script>
+    var audio1 = document.getElementById("audio1");
+    audio1.volume = 1.0;
+    window.onload = function() {
+        var audio1 = document.getElementById("audio1");
+        audio1.play();
+    }
+</script>
 <div class="container" style="position: absolute;top:42%">
     {% if hint == "1" %}
         {% if theme.hint1 %}
@@ -14,14 +22,7 @@
                 <audio controls autoplay src="{{ theme.sub_hint1.url }}"></audio>
             {% else %}
                 <audio id="audio1" controls autoplay src="{{ theme.hint1.url }}"></audio>
-                <script>
-                    var audio1 = document.getElementById("audio1");
-                    audio1.volume = 1.0;
-                    window.onload = function() {
-                        var audio1 = document.getElementById("audio1");
-                        audio1.play();
-                    }
-                </script>
+
             {% endif %}
         {% endif %}
     {% endif %}
