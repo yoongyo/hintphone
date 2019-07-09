@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fb9a69a9-f5ab-473f-9c49-3d3588a8bab6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hint/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/hint/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hint/templates/hint/theme_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/hint/templates/hint/theme_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +30,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
+          <entry key="gitignore" value="1" />
           <entry key="html" value="124" />
           <entry key="ignore" value="1" />
           <entry key="js" value="4" />
@@ -45,7 +45,7 @@
           <entry key="HTML" value="124" />
           <entry key="Image" value="8" />
           <entry key="JavaScript" value="4" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="Python" value="111" />
         </counts>
       </usages-collector>
@@ -53,7 +53,7 @@
         <counts>
           <entry key="gitignore" value="9" />
           <entry key="html" value="26996" />
-          <entry key="py" value="8164" />
+          <entry key="py" value="8168" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -61,13 +61,22 @@
         <counts>
           <entry key="HTML" value="26996" />
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="8164" />
+          <entry key="Python" value="8168" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/settings/prod.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -77,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+              <caret line="5" column="73" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -125,20 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hint/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="603">
               <caret line="283" selection-start-line="283" selection-end-line="283" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hint/templates/hint/theme_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -335,10 +335,10 @@
         <option value="$PROJECT_DIR$/mysite/settings.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/mysite/settings/common.py" />
-        <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/hint/models.py" />
         <option value="$PROJECT_DIR$/hint/templates/hint/theme_edit.html" />
         <option value="$PROJECT_DIR$/hint/forms.py" />
+        <option value="$PROJECT_DIR$/manage.py" />
       </list>
     </option>
   </component>
@@ -360,40 +360,6 @@
             <path>
               <item name="ch1" type="b2602c69:ProjectViewProjectNode" />
               <item name="ch1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ch1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ch1" type="462c0819:PsiDirectoryNode" />
-              <item name="hint" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ch1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ch1" type="462c0819:PsiDirectoryNode" />
-              <item name="hint" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ch1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ch1" type="462c0819:PsiDirectoryNode" />
-              <item name="hint" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="hint" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ch1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ch1" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ch1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ch1" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="settings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ch1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ch1" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -655,13 +621,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/settings.py" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/settings/common.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -822,13 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hint/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -850,6 +802,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="603">
           <caret line="283" selection-start-line="283" selection-end-line="283" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="73" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
         </state>
       </provider>
     </entry>
