@@ -26,221 +26,261 @@ class HintForm(forms.ModelForm):
             'hint1': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint1': forms.FileInput(
                 attrs={
                     'id': 'sub1_file',
                     'style': 'border-color:black;display: none',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint2': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint2': forms.FileInput(
                 attrs={
                     'id': 'sub2_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint3': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint3': forms.FileInput(
                 attrs={
                     'id': 'sub3_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint4': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint4': forms.FileInput(
                 attrs={
                     'id': 'sub4_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint5': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint5': forms.FileInput(
                 attrs={
                     'id': 'sub5_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint6': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint6': forms.FileInput(
                 attrs={
                     'id': 'sub6_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint7': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint7': forms.FileInput(
                 attrs={
                     'id': 'sub7_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint8': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint8': forms.FileInput(
                 attrs={
                     'id': 'sub8_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint9': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint9': forms.FileInput(
                 attrs={
                     'id': 'sub9_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint10': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint10': forms.FileInput(
                 attrs={
                     'id': 'sub10_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint11': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint11': forms.FileInput(
                 attrs={
                     'id': 'sub11_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint12': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint12': forms.FileInput(
                 attrs={
                     'id': 'sub12_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint13': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint13': forms.FileInput(
                 attrs={
                     'id': 'sub13_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint14': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint14': forms.FileInput(
                 attrs={
                     'id': 'sub14_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint15': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint15': forms.FileInput(
                 attrs={
                     'id': 'sub15_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint16': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint16': forms.FileInput(
                 attrs={
                     'id': 'sub16_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint17': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint17': forms.FileInput(
                 attrs={
                     'id': 'sub17_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint18': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint18': forms.FileInput(
                 attrs={
                     'id': 'sub18_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint19': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint19': forms.FileInput(
                 attrs={
                     'id': 'sub19_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'hint20': forms.FileInput(
                 attrs={
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
             'sub_hint20': forms.FileInput(
                 attrs={
                     'id': 'sub20_file',
                     'style': 'border-color:black;display: none;',
+                    'onchange': 'checkSize(this)'
                 }
             ),
         }
