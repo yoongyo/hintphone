@@ -361,10 +361,23 @@ def create_qr_code(request):
     })
 
 
+@login_required
+def create(request, user_id):
+    themes = Theme.objects.all()
+    themes = themes.filter(roomEscape=request.user)
+    theme = request.GET.get('theme', '')
+    return render(request, 'hint/create.html', {
+        'user_id': user_id,
+        'theme': theme,
+        'themes': themes
+    })
+
+
 def personal_information(request):
     return render(request, 'hint/personal_information.html')
 
 
+@login_required
 def admin(request, user_id):
     themes = Theme.objects.all()
     themes = themes.filter(roomEscape=request.user)
@@ -376,6 +389,7 @@ def admin(request, user_id):
     })
 
 
+@login_required
 def admin_confirm(request, user_id, theme):
     nation = get_object_or_404(Profile, user=request.user).nation
     reset = get_object_or_404(Profile, user=request.user).reset
