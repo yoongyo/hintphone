@@ -86,7 +86,7 @@
         var key = "{{ interPhone_key }}";
         var admin = "{{ interPhone_call }}";
         console.log(id, secret, key, admin);
-        window.Android.call();
+        window.Android.call(key, secret, id, admin);
         alert("전화걸기");
     }
     function android(){
