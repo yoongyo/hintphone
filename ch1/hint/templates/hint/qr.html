@@ -81,13 +81,13 @@
 <script src="https://dmla.github.io/jsqrcode/src/qr_packed.js"></script>
 <script>
     function call(){
-        alert("전화걸기");
         var id = "{{ interPhone_id }}";
         var secret = "{{ interPhone_secret }}";
         var key = "{{ interPhone_key }}";
         var admin = "{{ interPhone_call }}";
         console.log(id, secret, key, admin);
         window.Android.call(key, secret, id, admin);
+        alert("전화걸기");
     }
     function android(){
         window.Android.capture();
