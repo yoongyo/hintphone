@@ -16,7 +16,7 @@
     <div class="mb-2">
         {% if interPhone %}
         <button class="text-center" style="background-color:black;border-color:black" type="button" onclick="interPhone()">
-            <img width="35px" src="{% static 'call.jpeg' %}">
+            <img width="35px" src="{% static 'call1.png' %}">
         </button>
         {% else %}
         <div style="height:30px"></div>
@@ -86,7 +86,7 @@
         var key = "{{ interPhone_key }}";
         var admin = "{{ interPhone_call }}";
         console.log(id, secret, key, admin);
-        window.Android.call(key, secret, id, admin);
+        Android.call(key, secret, id, admin);
         alert("전화걸기");
     }
     function android(){
