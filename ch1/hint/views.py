@@ -406,3 +406,7 @@ def admin_confirm(request, user_id, theme):
     })
 
 
+def interphone(request):
+    return render(request, 'hint/interphone.html')
+
+
