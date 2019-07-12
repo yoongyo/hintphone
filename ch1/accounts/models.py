@@ -14,6 +14,8 @@ class Profile(models.Model):
     escape_room = models.CharField(max_length=30)
     reset = models.CharField(max_length=20)
     phone = models.CharField(max_length=20)
+    interPhone = models.BooleanField(default=False, blank=True)
+    interPhone_call = models.CharField(max_length=20, blank=True, null=True)
 
     def __str__(self):
         return self.escape_room

@@ -152,7 +152,13 @@ def reset_code(request, user_id, theme):
 @login_required
 def QR_code(request, user_id, theme):
     theme_number = get_object_or_404(Theme, name=theme).theme_number
+    interPhone_key = get_object_or_404(Theme, name=theme).interPhone_key
+    interPhone_secret = get_object_or_404(Theme, name=theme).interPhone_secret
+    interPhone_id = get_object_or_404(Theme, name=theme).interPhone_ID
     nation = get_object_or_404(Profile, user=request.user).nation
+    interPhone = get_object_or_404(Profile, user=request.user).interPhone
+    interPhone_call =  get_object_or_404(Profile, user=request.user).interPhone_call
+
     if theme_number == 1:
         global count1
     if theme_number == 2:
@@ -252,7 +258,12 @@ def QR_code(request, user_id, theme):
             'theme': theme,
             'escape_room': escape_room,
             'user_id': user_id,
-            'nation': nation
+            'nation': nation,
+            'interPhone_key': interPhone_key,
+            'interPhone_secret': interPhone_secret,
+            'interPhone_id': interPhone_id,
+            'interPhone_call': interPhone_call,
+            'interPhone': interPhone,
         })
     else:
         return render(request, 'hint/not_hint.html',{
@@ -261,7 +272,12 @@ def QR_code(request, user_id, theme):
             'theme': theme,
             'escape_room': escape_room,
             'user_id': user_id,
-            'nation': nation
+            'nation': nation,
+            'interPhone_key': interPhone_key,
+            'interPhone_secret': interPhone_secret,
+            'interPhone_id': interPhone_id,
+            'interPhone_call': interPhone_call,
+            'interPhone': interPhone,
         })
 
 
@@ -406,7 +422,5 @@ def admin_confirm(request, user_id, theme):
     })
 
 
-def interphone(request):
-    return render(request, 'hint/interphone.html')
 
 
