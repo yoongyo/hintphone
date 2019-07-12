@@ -15,7 +15,7 @@
 <div class="container text-center my-4 p-3">
     <div class="mb-2">
         {% if interPhone %}
-        <button class="text-center" style="background-color:black;border-color:black" type="button" onclick="call()">
+        <button class="text-center" style="background-color:black;border-color:black" type="button" onclick="interPhone()">
             <img width="35px" src="{% static 'call.jpeg' %}">
         </button>
         {% else %}
@@ -80,13 +80,13 @@
 
 <script src="https://dmla.github.io/jsqrcode/src/qr_packed.js"></script>
 <script>
-    function call(){
+    function interPhone(){
         var id = "{{ interPhone_id }}";
         var secret = "{{ interPhone_secret }}";
         var key = "{{ interPhone_key }}";
         var admin = "{{ interPhone_call }}";
         console.log(id, secret, key, admin);
-        window.Android.call(key, secret, id, admin);
+        window.Android.call();
         alert("전화걸기");
     }
     function android(){
