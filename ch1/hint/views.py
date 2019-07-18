@@ -152,9 +152,9 @@ def reset_code(request, user_id, theme):
 @login_required
 def QR_code(request, user_id, theme):
     theme_number = get_object_or_404(Theme, name=theme, roomEscape=request.user).theme_number
-    interPhone_key = get_object_or_404(Theme, name=theme).interPhone_key
-    interPhone_secret = get_object_or_404(Theme, name=theme).interPhone_secret
-    interPhone_id = get_object_or_404(Theme, name=theme).interPhone_ID
+    interPhone_key = get_object_or_404(Theme, name=theme, roomEscape=request.user).interPhone_key
+    interPhone_secret = get_object_or_404(Theme, name=theme, roomEscape=request.user).interPhone_secret
+    interPhone_id = get_object_or_404(Theme, name=theme, roomEscape=request.user).interPhone_ID
     nation = get_object_or_404(Profile, user=request.user).nation
     interPhone = get_object_or_404(Profile, user=request.user).interPhone
     interPhone_call =  get_object_or_404(Profile, user=request.user).interPhone_call
