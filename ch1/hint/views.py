@@ -51,7 +51,7 @@ def theme_list(request, user_id):
 
 @login_required
 def reset_code(request, user_id, theme):
-    theme_number = get_object_or_404(Theme, name=theme).theme_number
+    theme_number = get_object_or_404(Theme, name=theme, roomEscape=request.user).theme_number
     nation = get_object_or_404(Profile, user=request.user).nation
     if theme_number == 1:
         global count1
@@ -95,7 +95,7 @@ def reset_code(request, user_id, theme):
         global count20
     reset = get_object_or_404(Profile, user=request.user).reset
     user_id = request.user.username
-    theme = get_object_or_404(Theme, name=theme)
+    theme = get_object_or_404(Theme, name=theme, roomEscape=request.user)
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
     q = request.GET.get('q', '')
     if q == reset:

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fb9a69a9-f5ab-473f-9c49-3d3588a8bab6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hint/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hint/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +54,7 @@
         <counts>
           <entry key="gitignore" value="9" />
           <entry key="html" value="28629" />
-          <entry key="py" value="9511" />
+          <entry key="py" value="9548" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -61,7 +62,7 @@
         <counts>
           <entry key="HTML" value="28629" />
           <entry key="PLAIN_TEXT" value="11" />
-          <entry key="Python" value="9511" />
+          <entry key="Python" value="9548" />
         </counts>
       </usages-collector>
     </session>
@@ -95,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hint/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="203" column="42" selection-start-line="203" selection-start-column="42" selection-end-line="203" selection-end-column="42" />
+            <state relative-caret-position="-225">
+              <caret line="97" column="72" selection-start-line="97" selection-start-column="72" selection-end-line="97" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -131,7 +132,7 @@
         <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="5" column="73" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
+              <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -747,13 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="73" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hint/templates/hint/theme_hint.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -893,10 +887,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hint/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="203" column="42" selection-start-line="203" selection-start-column="42" selection-end-line="203" selection-end-column="42" />
+        <state relative-caret-position="-225">
+          <caret line="97" column="72" selection-start-line="97" selection-start-column="72" selection-end-line="97" selection-end-column="72" />
         </state>
       </provider>
     </entry>
