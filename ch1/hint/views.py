@@ -151,7 +151,7 @@ def reset_code(request, user_id, theme):
 
 @login_required
 def QR_code(request, user_id, theme):
-    theme_number = get_object_or_404(Theme, name=theme).theme_number
+    theme_number = get_object_or_404(Theme, name=theme, roomEscape=request.user).theme_number
     interPhone_key = get_object_or_404(Theme, name=theme).interPhone_key
     interPhone_secret = get_object_or_404(Theme, name=theme).interPhone_secret
     interPhone_id = get_object_or_404(Theme, name=theme).interPhone_ID
@@ -202,7 +202,7 @@ def QR_code(request, user_id, theme):
     count = switch(theme_number)
     print("pk:", theme_number, 'count:', count)
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
-    hintCount = get_object_or_404(Theme, name=theme).hintCount
+    hintCount = get_object_or_404(Theme, name=theme, roomEscape=request.user).hintCount
     q = request.GET.get('q', '')
     if q != "":
         if request.method == "GET":
