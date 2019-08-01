@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<style>
+    body, input {
+        font-size:14pt;
+        color: white;
+    }
+    *:focus {
+        outline:none !important;
+    }
+    * {-webkit-tap-highlight-color:rgba(0,0,0,0) !important;}
+    input::placeholder {
+        color: white !important;
+        text-align: center;
+    }
+</style>
+<div class="container text-center my-4 p-3">
+    <div class="mb-2">
+        {% if interPhone %}
+        <button class="text-center" style="background-color:black;border-color:black" type="button" onclick="interPhone()">
+            <img width="35px" src="{% static 'call1.png' %}">
+        </button>
+        {% else %}
+        <div style="height:10px"></div>
+        {% endif %}
+    </div>
+    <span>{{ escape_room }}</span>
+    <h2 class="mb-4">{{ theme }}</h2>
+    <img src="{% static 'qr.png' %}">
+    <div class="row mt-3">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <form action="" method="get" class="mb-3">
+                {% csrf_token %}
+                <button style="background-color:black;border-color:white;color:white" class="mt-3 form-control" onclick="android()" type="button">QR 코드 힌트 사용</button>
+                <input style="color:black;display:none;" id="input" name="q" value="{{ q }}" type="text">
+                <button id="hint_btn" type="submit" style="display:none;"></button>
+            </form>
+            <form action="" method="post" name="hintCode" onsubmit="return check();">
+                {% csrf_token %}
+                <input class="form-control" style="background-color:black;color:white;border-color:white" name="p" value="{{ p }}" type="search" placeholder="힌트 코드 입력">
+            </form>
+            <h5 id="notCode" class="text-center mt-2" style="display:none;">힌트코드가 맞지 않습니다.<br>다시 입력해주세요.</h5>
+            <h3 class="mt-3 mb-2">HINT COUNT</h3>
+            <h4 class="m-0">{{ count }} / {{ hintCount }}</h4>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+<button style="position:fixed;bottom:20px;left:20px;background-color:black;border-color:black" type="button" onclick="location.href='{% url 'hint:reset_code' user_id theme %}'">
+    <img width="35px;" src="{% static  'reset1.png' %}">
+</button>
+<button data-target="#myModal" data-toggle="modal" style="position:fixed;bottom:20px;right:20px;background-color:black;border-color:black" type="button">
+    <img width="35px;" src="{% static  'question.png' %}">
+</button>
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title" style="color:black">힌트 사용 방법</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="color:black;">
+          <p><strong>힌트폰 사용방법</strong><br>
+            1. 힌트 사용 버튼을 클릭합니다.<br>
+            2. 힌트가 필요한 문제의 QR코드를<br>
+              카메라 프레임에 맞게 스캔합니다.<br>
+            3. 스캔 완료 후 1초뒤에 힌트를 들으실 수 있습니다.<br>
+              <br>
+              <strong>힌트폰 사용안내</strong><br>
+            1. 최대 {{ hintCount }}회까지만 사용이 가능합니다.<br>
+            2. 한번 사용한 힌트는 카운팅 없이 연속 재생이 가능합니다.<br>
+          </p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://dmla.github.io/jsqrcode/src/qr_packed.js"></script>
+<script>
+    function interPhone(){
+        var id = "{{ interPhone_id }}";
+        var secret = "{{ interPhone_secret }}";
+        var key = "{{ interPhone_key }}";
+        var admin = "{{ interPhone_call }}";
+        console.log(id, secret, key, admin);
+        Android.call(key, secret, id, admin);
+        alert("전화걸기");
+    }
+    function android(){
+        window.Android.capture();
+    }
+
+    function url(url){
+        document.getElementById("input").value=url;
+        if (url == ""){
+            swal({title:"QR코드를 스캔하세요.",
+                button:false,
+            });
+        }
+        else {
+            document.getElementById("hint_btn").click();
+        }
+    }
+
+    function hintUse(){
+        url = document.getElementById("input").value;
+        if (url == ""){
+            swal({title:"QR코드를 스캔하세요.",
+                button:false,
+            });
+        }else {
+            location.href=url;
+        }
+    }
+    history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+    };
+
+    function check() {
+      if(hintCode.p.value == "DB38") {
+        hintCode.p.value = "1";
+        return true;
+      }
+      else if(hintCode.p.value == "DA60") {
+        hintCode.p.value = "2";
+        return true;
+      }
+      else if(hintCode.p.value == "CA59") {
+        hintCode.p.value = "3";
+        return true;
+      }
+      else if(hintCode.p.value == "BD67") {
+        hintCode.p.value = "4";
+        return true;
+      }
+      else if(hintCode.p.value == "AC35") {
+        hintCode.p.value = "5";
+        return true;
+      }
+      else if(hintCode.p.value == "BC71") {
+        hintCode.p.value = "6";
+        return true;
+      }
+      else if(hintCode.p.value == "AD58") {
+        hintCode.p.value = "7";
+        return true;
+      }
+      else if(hintCode.p.value == "CB88") {
+        hintCode.p.value = "8";
+        return true;
+      }
+      else if(hintCode.p.value == "CD37") {
+        hintCode.p.value = "9";
+        return true;
+      }
+      else if(hintCode.p.value == "CC38") {
+        hintCode.p.value = "10";
+        return true;
+      }
+      else if(hintCode.p.value == "DC54") {
+        hintCode.p.value = "11";
+        return true;
+      }
+      else if(hintCode.p.value == "DD88") {
+        hintCode.p.value = "12";
+        return true;
+      }
+      else if(hintCode.p.value == "DB34") {
+        hintCode.p.value = "13";
+        return true;
+      }
+      else if(hintCode.p.value == "AB65") {
+        hintCode.p.value = "14";
+        return true;
+      }
+      else if(hintCode.p.value == "CA29") {
+        hintCode.p.value = "15";
+        return true;
+      }
+      else if(hintCode.p.value == "BC63") {
+        hintCode.p.value = "16";
+        return true;
+      }
+      else if(hintCode.p.value == "AC25") {
+        hintCode.p.value = "17";
+        return true;
+      }
+      else if(hintCode.p.value == "BC31") {
+        hintCode.p.value = "18";
+        return true;
+      }
+      else if(hintCode.p.value == "AD98") {
+        hintCode.p.value = "19";
+        return true;
+      }
+      else if(hintCode.p.value == "CB48") {
+        hintCode.p.value = "20";
+        return true;
+      }
+      else if(hintCode.p.value == "CD27") {
+        hintCode.p.value = "21";
+        return true;
+      }
+      else if(hintCode.p.value == "CC98") {
+        hintCode.p.value = "22";
+        return true;
+      }
+      else if(hintCode.p.value == "DC14") {
+        hintCode.p.value = "23";
+        return true;
+      }
+      else if(hintCode.p.value == "DD08") {
+        hintCode.p.value = "24";
+        return true;
+      }
+      else if(hintCode.p.value == "BC51") {
+        hintCode.p.value = "25";
+        return true;
+      }
+      else if(hintCode.p.value == "CD47") {
+        hintCode.p.value = "26";
+        return true;
+      }
+      else if(hintCode.p.value == "CB02") {
+        hintCode.p.value = "27";
+        return true;
+      }
+      else if(hintCode.p.value == "DC14") {
+        hintCode.p.value = "28";
+        return true;
+      }
+      else if(hintCode.p.value == "CC58") {
+        hintCode.p.value = "29";
+        return true;
+      }
+      else if(hintCode.p.value == "DD48") {
+        hintCode.p.value = "30";
+        return true;
+      }
+      else {
+        document.getElementById('notCode').setAttribute('style', '')
+        return false;
+      }
+    }
+</script>
+
+
+
+{% endblock %}
