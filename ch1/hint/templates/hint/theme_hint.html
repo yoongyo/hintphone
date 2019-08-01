@@ -5,13 +5,18 @@
     audio{
         width:100%
     }
+    body {
+        color:white;
+    }
 </style>
 
-<div class="container" style="position: absolute;top:42%">
+<div class="container" style="position: absolute;top:22%">
     {% if hint == "1" %}
         {% if theme.hint1 %}
             {% if theme.sub_hint1 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint1.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint1.url }}"></audio>
             {% else %}
                 <audio id="audio1" controls autoplay src="{{ theme.hint1.url }}"></audio>
@@ -21,7 +26,9 @@
     {% if hint == "2" %}
         {% if theme.hint2 %}
             {% if theme.sub_hint2 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint2.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint2.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -32,7 +39,9 @@
     {% if hint == "3" %}
         {% if theme.hint3 %}
             {% if theme.sub_hint3 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint3.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint3.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -43,7 +52,9 @@
     {% if hint == "4" %}
         {% if theme.hint4 %}
             {% if theme.sub_hint4 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint4.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint4.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -54,7 +65,9 @@
     {% if hint == "5" %}
         {% if theme.hint5 %}
             {% if theme.sub_hint5 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint5.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint5.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -65,7 +78,9 @@
     {% if hint == "6" %}
         {% if theme.hint6 %}
             {% if theme.sub_hint6 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint6.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint6.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -76,7 +91,9 @@
     {% if hint == "7" %}
         {% if theme.hint7 %}
             {% if theme.sub_hint7 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint7.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint7.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -87,7 +104,9 @@
     {% if hint == "8" %}
         {% if theme.hint8 %}
             {% if theme.sub_hint8 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint8.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint8.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -98,7 +117,9 @@
     {% if hint == "9" %}
         {% if theme.hint9 %}
             {% if theme.sub_hint9 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint9.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint9.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -109,7 +130,9 @@
     {% if hint == "10" %}
         {% if theme.hint10 %}
             {% if theme.sub_hint10 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint10.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint10.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -120,7 +143,9 @@
     {% if hint == "11" %}
         {% if theme.hint11 %}
             {% if theme.sub_hint11 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint11.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint11.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -131,7 +156,9 @@
     {% if hint == "12" %}
         {% if theme.hint12 %}
             {% if theme.sub_hint12 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint12.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint12.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -142,7 +169,9 @@
     {% if hint == "13" %}
         {% if theme.hint13 %}
             {% if theme.sub_hint13 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint13.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint13.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -153,7 +182,9 @@
     {% if hint == "14" %}
         {% if theme.hint14 %}
             {% if theme.sub_hint14 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint14.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint14.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -164,7 +195,9 @@
     {% if hint == "15" %}
         {% if theme.hint15 %}
             {% if theme.sub_hint15 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint15.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint15.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -175,7 +208,9 @@
     {% if hint == "16" %}
         {% if theme.hint16 %}
             {% if theme.sub_hint16 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint16.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint16.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -186,7 +221,9 @@
     {% if hint == "17" %}
         {% if theme.hint17 %}
             {% if theme.sub_hint17 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint17.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint17.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -196,7 +233,9 @@
     {% if hint == "18" %}
         {% if theme.hint18 %}
             {% if theme.sub_hint18 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint18.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint18.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -207,7 +246,9 @@
     {% if hint == "19" %}
         {% if theme.hint19 %}
             {% if theme.sub_hint19 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint19.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint19.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -218,7 +259,9 @@
     {% if hint == "20" %}
         {% if theme.hint20 %}
             {% if theme.sub_hint20 %}
+                <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint20.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.sub_hint20.url }}"></audio>
             {% else %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
@@ -226,10 +269,140 @@
             {% endif %}
         {% endif %}
     {% endif %}
+    {% if hint == "21" %}
+        {% if theme.hint21 %}
+            {% if theme.sub_hint21 %}
+                <h3 class="text-center">대략적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.hint21.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.sub_hint21.url }}"></audio>
+            {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
+                <audio controls autoplay src="{{ theme.hint21.url }}"></audio>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if hint == "22" %}
+        {% if theme.hint22 %}
+            {% if theme.sub_hint22 %}
+                <h3 class="text-center">대략적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.hint22.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.sub_hint22.url }}"></audio>
+            {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
+                <audio controls autoplay src="{{ theme.hint22.url }}"></audio>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if hint == "23" %}
+        {% if theme.hint23 %}
+            {% if theme.sub_hint23 %}
+                <h3 class="text-center">대략적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.hint23.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.sub_hint23.url }}"></audio>
+            {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
+                <audio controls autoplay src="{{ theme.hint23.url }}"></audio>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if hint == "24" %}
+        {% if theme.hint24 %}
+            {% if theme.sub_hint24 %}
+                <h3 class="text-center">대략적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.hint24.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.sub_hint24.url }}"></audio>
+            {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
+                <audio controls autoplay src="{{ theme.hint24.url }}"></audio>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if hint == "25" %}
+        {% if theme.hint25 %}
+            {% if theme.sub_hint25 %}
+                <h3 class="text-center">대략적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.hint25.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.sub_hint25.url }}"></audio>
+            {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
+                <audio controls autoplay src="{{ theme.hint25.url }}"></audio>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if hint == "26" %}
+        {% if theme.hint26 %}
+            {% if theme.sub_hint26 %}
+                <h3 class="text-center">대략적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.hint26.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.sub_hint26.url }}"></audio>
+            {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
+                <audio controls autoplay src="{{ theme.hint26.url }}"></audio>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if hint == "27" %}
+        {% if theme.hint27 %}
+            {% if theme.sub_hint27 %}
+                <h3 class="text-center">대략적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.hint27.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.sub_hint27.url }}"></audio>
+            {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
+                <audio controls autoplay src="{{ theme.hint27.url }}"></audio>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if hint == "28" %}
+        {% if theme.hint28 %}
+            {% if theme.sub_hint28 %}
+                <h3 class="text-center">대략적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.hint28.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.sub_hint28.url }}"></audio>
+            {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
+                <audio controls autoplay src="{{ theme.hint28.url }}"></audio>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if hint == "29" %}
+        {% if theme.hint29 %}
+            {% if theme.sub_hint29 %}
+                <h3 class="text-center">대략적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.hint29.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.sub_hint29.url }}"></audio>
+            {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
+                <audio controls autoplay src="{{ theme.hint29.url }}"></audio>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if hint == "30" %}
+        {% if theme.hint30 %}
+            {% if theme.sub_hint30 %}
+                <h3 class="text-center">대략적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.hint30.url }}"></audio>
+                <h3 class="text-center mt-5">구체적인 힌트</h3>
+                <audio controls autoplay src="{{ theme.sub_hint30.url }}"></audio>
+            {% else %}
+                <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
+                <audio controls autoplay src="{{ theme.hint30.url }}"></audio>
+            {% endif %}
+        {% endif %}
+    {% endif %}
     <div class="row text-center">
         <div class="col-2"></div>
         <div class="col-8">
-        <button type="button" style="background-color:black;border-color:white;color:white;" class="my-4 form-control" onclick="back();">다른 힌트 사용하러가기</button>
+        <button type="button" style="background-color:black;border-color:white;color:white;" class="my-5 form-control" onclick="back();">다른 힌트 사용하러가기</button>
         </div>
         <div class="col-2"></div>
     </div>
