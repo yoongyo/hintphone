@@ -436,14 +436,41 @@ def create_qr_code(request):
 
 @login_required
 def create(request, user_id):
+    hintCode = request.user.profile.hintCode
     themes = Theme.objects.all()
     themes = themes.filter(roomEscape=request.user)
     theme = request.GET.get('theme', '')
-    return render(request, 'hint/create.html', {
-        'user_id': user_id,
-        'theme': theme,
-        'themes': themes
-    })
+    if hintCode:
+        return render(request, 'hint/create_hintQR_code.html', {
+            'user_id': user_id,
+            'theme': theme,
+            'themes': themes
+        })
+    else:
+        return render(request, 'hint/create.html', {
+            'user_id': user_id,
+            'theme': theme,
+            'themes': themes
+        })
+
+@login_required
+def create2(request, user_id):
+    hintCode = request.user.profile.hintCode
+    themes = Theme.objects.all()
+    themes = themes.filter(roomEscape=request.user)
+    theme = request.GET.get('theme', '')
+    if hintCode:
+        return render(request, 'hint/create_hintQR2_code.html', {
+            'user_id': user_id,
+            'theme': theme,
+            'themes': themes
+        })
+    else:
+        return render(request, 'hint/create.html', {
+            'user_id': user_id,
+            'theme': theme,
+            'themes': themes
+        })
 
 
 def personal_information(request):

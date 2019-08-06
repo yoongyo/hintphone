@@ -7,6 +7,7 @@ urlpatterns = [
     re_path(r'^(?P<user_id>\w+)/admin/$', views.admin, name="admin"),
     re_path(r'^(?P<user_id>\w+)/$', views.theme_list, name='theme_list'),
     re_path(r'^(?P<user_id>\w+)/create/$', views.create, name="create"),
+    re_path(r'^(?P<user_id>\w+)/create2/$', views.create2, name="create2"),
     re_path(r'^(?P<user_id>\w+)/(?P<theme>[\w|\W]+)/confirm/$', views.admin_confirm, name='admin_confirm'),
     re_path(r'^(?P<user_id>\w+)/(?P<theme>[\w|\W]+)/ajax/$', views.ajax, name='ajax'),
     re_path(r'^(?P<user_id>\w+)/(?P<theme>[\w|\W]+)/edit/$', views.theme_edit, name='theme_edit'),

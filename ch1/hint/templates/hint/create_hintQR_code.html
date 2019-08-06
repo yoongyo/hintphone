@@ -1,0 +1,754 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<script type="text/javascript" src="{% static 'qr/js/jquery.qrcode.min.js' %}"></script>
+<script src="{% static 'html2canvas.js' %}"></script>
+<script type="text/javascript" src="{% static 'zip/jszip.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'zip/FileSaver.js' %}"></script>
+
+<div class="container-fluid text-center my-3" id="test">
+    <form action="" method="get">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <div class="col-2"></div>
+            <div class="col-1"></div>
+            <div class="col-2">
+                <select class="form-control" name="theme" value="{{ theme }}" id="theme">
+                    <option value="" selected="selected">테마 선택</option>
+                    {% for i in themes %}
+                        <option value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-2">
+                <button type="submit" class="form-control" style="border-color: white;color:white;background-color:black">ENTER</button>
+            </div>
+            <div class="col-2">
+                <button onclick="dd();" type="button" class="form-control" style="border-color: white;background-color:black;color:white">전체 다운로드</button>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-1">
+            </div>
+            <div class="col-1">
+                <a href="{% url 'hint:create2' user_id %}" style="color:white;position:fixed;top:20px;right:100px;text-decoration:none;"><h2>다음</h2></a>
+                <button data-target="#myModal" data-toggle="modal" style="position:fixed;top:20px;right:20px;background-color:black;border-color:black" type="button">
+                    <img width="35px;" src="{% static  'question.png' %}">
+                </button>
+                <div class="modal" id="myModal">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title" style="color:black">QR코드 생성</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+
+                      <!-- Modal body -->
+                      <div class="modal-body" style="color:black;">
+                          <h4>QR코드 생성시 유의할점</h4>
+                          <span style="font-size:1.5rem">1. 다운받으실 때 전체화면을 한 상태에서 다운을 받으셔야 정확히 나옵니다.</span><br><br>
+                          <span style="font-size:1.5rem">2. 스크롤 바조차도 화면에 보이면 안되며 완벽히 꽉찬 화면에서 진행을 해주셔야합니다.</span><br><br>
+                          <span style="font-size:1.5rem">3. QR코드를 개별적으로 다운받고 싶으실 때는 QR코드 위에 HINT를 눌러주시면 됩니다.</span><br><br>
+                          <span style="font-size:1.5rem">4. 테마명을 입력하실 때 정확히 대소문자, 띄어쓰기를 구분해서 넣어주셔야 합니다.</span>
+                      </div>
+
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <h4 class="text-center my-3" style="color:white">{{ theme }}</h4>
+    <div class="row m-2">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton1" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT1</h4></button>
+                    <div id="hint1s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint1"></div>
+                        <b><h6 class="py-2" style="color:white">DB38</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton2" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT2</h4></button>
+                    <div id="hint2s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint2"></div>
+                        <b><h6 class="py-2" style="color:white">DA60</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton3" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT3</h4></button>
+                    <div id="hint3s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint3"></div>
+                        <b><h6 class="py-2" style="color:white">CA59</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton4" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT4</h4></button>
+                    <div id="hint4s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint4"></div>
+                        <b><h6 class="py-2" style="color:white">BD67</h6></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton5" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT5</h4></button>
+                    <div id="hint5s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint5"></div>
+                        <b><h6 class="py-2" style="color:white">AC35</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton6" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT6</h4></button>
+                    <div id="hint6s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint6"></div>
+                        <b><h6 class="py-2" style="color:white">BC71</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton7" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT7</h4></button>
+                    <div id="hint7s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint7"></div>
+                        <b><h6 class="py-2" style="color:white">AD58</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton8" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT8</h4></button>
+                    <div id="hint8s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint8"></div>
+                        <b><h6 class="py-2" style="color:white">CB88</h6></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton9" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT9</h4></button>
+                    <div id="hint9s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint9"></div>
+                        <b><h6 class="py-2" style="color:white">CD37</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton10" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT10</h4></button>
+                    <div id="hint10s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint10"></div>
+                        <b><h6 class="py-2" style="color:white">CC38</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton11" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT11</h4></button>
+                    <div id="hint11s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint11"></div>
+                        <b><h6 class="py-2" style="color:white">DD88</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton12" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT12</h4></button>
+                    <div id="hint12s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint12"></div>
+                        <b><h6 class="py-2" style="color:white">CA29</h6></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton13" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT13</h4></button>
+                    <div id="hint13s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint13"></div>
+                        <b><h6 class="py-2" style="color:white">DB34</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton14" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT14</h4></button>
+                    <div id="hint14s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint14"></div>
+                        <b><h6 class="py-2" style="color:white">AB65</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton15" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT15</h4></button>
+                    <div id="hint15s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint15"></div>
+                        <b><h6 class="py-2" style="color:white">CA29</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton16" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT16</h4></button>
+                    <div id="hint16s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint16"></div>
+                        <b><h6 class="py-2" style="color:white">BC63</h6></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton17" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT17</h4></button>
+                    <div id="hint17s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint17"></div>
+                        <b><h6 class="py-2" style="color:white">AC25</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton18" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT18</h4></button>
+                    <div id="hint18s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint18"></div>
+                        <b><h6 class="py-2" style="color:white">BC31</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton19" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT19</h4></button>
+                    <div id="hint19s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint19"></div>
+                        <b><h6 class="py-2" style="color:white">AD98</h6></b>
+                    </div>
+                </div>
+                <div class="col-3 px-2">
+                    <button class="p-0" id="blobButton20" style="background-color:black;color:white;border-color:black"><h4 class="mb-0">HINT20</h4></button>
+                    <div id="hint20s" style="background-color:black; border-radius:8px" class="pt-2">
+                        <div style="border:5px solid white;height:138px;width:138px;margin:auto;border-radius:6px" id="hint20"></div>
+                        <b><h6 class="py-2" style="color:white">CB48</h6></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+
+<script charset="utf-8">
+    var id = "{{ user_id }}";
+    var theme = "{{ theme }}";
+    var hint = "{{ hint }}";
+    var encode_theme = encodeURI(theme).replace("%2F", "/");
+    jQuery("#hint1").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/1"
+        {% endif %}
+    });
+    jQuery("#hint2").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/2"
+        {% endif %}
+    });
+    jQuery("#hint3").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/3"
+        {% endif %}
+    });
+    jQuery("#hint4").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/4"
+        {% endif %}
+    });
+    jQuery("#hint5").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/5"
+        {% endif %}
+    });
+    jQuery("#hint6").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/6"
+        {% endif %}
+    });
+    jQuery("#hint7").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/7"
+        {% endif %}
+    });
+    jQuery("#hint8").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/8"
+        {% endif %}
+    });
+    jQuery("#hint9").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/9"
+        {% endif %}
+    });
+    jQuery("#hint10").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/10"
+        {% endif %}
+    });
+    jQuery("#hint11").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/11"
+        {% endif %}
+    });
+    jQuery("#hint12").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/12"
+        {% endif %}
+    });
+    jQuery("#hint13").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/13"
+        {% endif %}
+    });
+    jQuery("#hint14").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/14"
+        {% endif %}
+    });
+    jQuery("#hint15").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/15"
+        {% endif %}
+    });
+    jQuery("#hint16").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/16"
+        {% endif %}
+    });
+    jQuery("#hint17").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/17"
+        {% endif %}
+    });
+    jQuery("#hint18").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/18"
+        {% endif %}
+    });
+    jQuery("#hint19").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/19"
+        {% endif %}
+    });
+    jQuery("#hint20").qrcode({
+        {% if theme %}
+        width: 128,
+        height: 128,
+        text: "http://hintphone.pythonanywhere.com/hint/{{ user_id }}/" +encode_theme+"/20"
+        {% endif %}
+    });
+
+    function PrintDiv1(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint1.png");
+        });
+    }
+    function PrintDiv2(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint2.png");
+        });
+    }
+    function PrintDiv3(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint3.png");
+        });
+    }
+    function PrintDiv4(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint4.png");
+        });
+    }
+    function PrintDiv5(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint5.png");
+        });
+    }
+    function PrintDiv6(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint6.png");
+        });
+    }
+    function PrintDiv7(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint7.png");
+        });
+    }
+    function PrintDiv8(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint8.png");
+        });
+    }
+    function PrintDiv9(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint9.png");
+        });
+    }
+    function PrintDiv10(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint10.png");
+        });
+    }
+    function PrintDiv11(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint11.png");
+        });
+    }
+    function PrintDiv12(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint12.png");
+        });
+    }
+    function PrintDiv13(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint13.png");
+        });
+    }
+    function PrintDiv14(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint14.png");
+        });
+    }
+    function PrintDiv15(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint15.png");
+        });
+    }
+    function PrintDiv16(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint16.png");
+        });
+    }
+    function PrintDiv17(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint17.png");
+        });
+    }
+    function PrintDiv18(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint18.png");
+        });
+    }
+    function PrintDiv19(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint19.png");
+        });
+    }
+    function PrintDiv20(div){
+        div = div[0];
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, id+"_"+theme+"_"+"hint20.png");
+        });
+    }
+    function zip(uri){
+        var zip = new JSZip();
+        image = uri.split(',');
+        zip.file("hint1.png", image[1], {base64:true});
+        zip.generateAsync({type:"blob"}).then(function(blob) {
+            saveAs(blob, id+"_"+theme);
+        });
+    }
+    function dd(){
+        var zip = new JSZip();
+        var div1 = $('#hint1s')[0];
+        var div2 = $('#hint2s')[0];
+        var div3 = $('#hint3s')[0];
+        var div4 = $('#hint4s')[0];
+        var div5 = $('#hint5s')[0];
+        var div6 = $('#hint6s')[0];
+        var div7 = $('#hint7s')[0];
+        var div8 = $('#hint8s')[0];
+        var div9 = $('#hint9s')[0];
+        var div10 = $('#hint10s')[0];
+        var div11 = $('#hint11s')[0];
+        var div12 = $('#hint12s')[0];
+        var div13 = $('#hint13s')[0];
+        var div14 = $('#hint14s')[0];
+        var div15 = $('#hint15s')[0];
+        var div16 = $('#hint16s')[0];
+        var div17 = $('#hint17s')[0];
+        var div18 = $('#hint18s')[0];
+        var div19 = $('#hint19s')[0];
+        var div20 = $('#hint20s')[0];
+
+        html2canvas(div1).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            var image = myImage.split(',');
+            zip.file("hint1.png", image[1], {base64:true});
+        }).then(function(){
+            html2canvas(div2).then(function(canvas){
+                var myImage = canvas.toDataURL();
+                var image = myImage.split(',');
+                zip.file("hint2.png", image[1], {base64:true});
+            }).then(function(){
+                html2canvas(div3).then(function(canvas){
+                    var myImage = canvas.toDataURL();
+                    var image = myImage.split(',');
+                    zip.file("hint3.png", image[1], {base64:true});
+                }).then(function(){
+                    html2canvas(div4).then(function(canvas){
+                        var myImage = canvas.toDataURL();
+                        var image = myImage.split(',');
+                        zip.file("hint4.png", image[1], {base64:true});
+                    }).then(function(){
+                        html2canvas(div5).then(function(canvas){
+                            var myImage = canvas.toDataURL();
+                            var image = myImage.split(',');
+                            zip.file("hint5.png", image[1], {base64:true});
+                        }).then(function(){
+                            html2canvas(div6).then(function(canvas){
+                                var myImage = canvas.toDataURL();
+                                var image = myImage.split(',');
+                                zip.file("hint6.png", image[1], {base64:true});
+                            }).then(function(){
+                                html2canvas(div7).then(function(canvas){
+                                    var myImage = canvas.toDataURL();
+                                    var image = myImage.split(',');
+                                    zip.file("hint7.png", image[1], {base64:true});
+                                }).then(function(){
+                                    html2canvas(div8).then(function(canvas){
+                                        var myImage = canvas.toDataURL();
+                                        var image = myImage.split(',');
+                                        zip.file("hint8.png", image[1], {base64:true});
+                                    }).then(function(){
+                                        html2canvas(div9).then(function(canvas){
+                                            var myImage = canvas.toDataURL();
+                                            var image = myImage.split(',');
+                                            zip.file("hint9.png", image[1], {base64:true});
+                                        }).then(function(){
+                                            html2canvas(div10).then(function(canvas){
+                                                var myImage = canvas.toDataURL();
+                                                var image = myImage.split(',');
+                                                zip.file("hint10.png", image[1], {base64:true});
+                                            }).then(function(){
+                                                html2canvas(div11).then(function(canvas){
+                                                    var myImage = canvas.toDataURL();
+                                                    var image = myImage.split(',');
+                                                    zip.file("hint11.png", image[1], {base64:true});
+                                                }).then(function(){
+                                                    html2canvas(div12).then(function(canvas){
+                                                        var myImage = canvas.toDataURL();
+                                                        var image = myImage.split(',');
+                                                        zip.file("hint12.png", image[1], {base64:true});
+                                                    }).then(function(){
+                                                        html2canvas(div13).then(function(canvas){
+                                                            var myImage = canvas.toDataURL();
+                                                            var image = myImage.split(',');
+                                                            zip.file("hint13.png", image[1], {base64:true});
+                                                        }).then(function(){
+                                                            html2canvas(div14).then(function(canvas){
+                                                                var myImage = canvas.toDataURL();
+                                                                var image = myImage.split(',');
+                                                                zip.file("hint14.png", image[1], {base64:true});
+                                                            }).then(function(){
+                                                                html2canvas(div15).then(function(canvas){
+                                                                    var myImage = canvas.toDataURL();
+                                                                    var image = myImage.split(',');
+                                                                    zip.file("hint15.png", image[1], {base64:true});
+                                                                }).then(function(){
+                                                                    html2canvas(div16).then(function(canvas){
+                                                                        var myImage = canvas.toDataURL();
+                                                                        var image = myImage.split(',');
+                                                                        zip.file("hint16.png", image[1], {base64:true});
+                                                                    }).then(function(){
+                                                                        html2canvas(div17).then(function(canvas){
+                                                                            var myImage = canvas.toDataURL();
+                                                                            var image = myImage.split(',');
+                                                                            zip.file("hint17.png", image[1], {base64:true});
+                                                                        }).then(function(){
+                                                                            html2canvas(div18).then(function(canvas){
+                                                                                var myImage = canvas.toDataURL();
+                                                                                var image = myImage.split(',');
+                                                                                zip.file("hint18.png", image[1], {base64:true});
+                                                                            }).then(function(){
+                                                                                html2canvas(div19).then(function(canvas){
+                                                                                    var myImage = canvas.toDataURL();
+                                                                                    var image = myImage.split(',');
+                                                                                    zip.file("hint19.png", image[1], {base64:true});
+                                                                                }).then(function(){
+                                                                                    html2canvas(div20).then(function(canvas){
+                                                                                        var myImage = canvas.toDataURL();
+                                                                                        var image = myImage.split(',');
+                                                                                        zip.file("hint20.png", image[1], {base64:true});
+                                                                                    }).then(function(){
+                                                                                        zip.generateAsync({type:"blob"}).then(function(blob) {
+                                                                                            saveAs(blob, id+"_"+theme);
+                                                                                        });
+                                                                                    });
+                                                                                });
+                                                                            });
+                                                                        });
+                                                                    });
+                                                                });
+                                                            });
+                                                        });
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    }
+
+    function downloadURI(uri, name){
+        var link = document.createElement("a");
+        link.download = name;
+        link.href = uri;
+        document.body.appendChild(link);
+        link.click();
+    }
+
+
+    $('#blobButton1').click(function(){
+        PrintDiv1($('#hint1s'));
+    })
+    $('#blobButton2').click(function(){
+        PrintDiv2($('#hint2s'));
+    })
+    $('#blobButton3').click(function(){
+        PrintDiv3($('#hint3s'));
+    })
+    $('#blobButton4').click(function(){
+        PrintDiv4($('#hint4s'));
+    })
+    $('#blobButton5').click(function(){
+        PrintDiv5($('#hint5s'));
+    })
+    $('#blobButton6').click(function(){
+        PrintDiv6($('#hint6s'));
+    })
+    $('#blobButton7').click(function(){
+        PrintDiv7($('#hint7s'));
+    })
+    $('#blobButton8').click(function(){
+        PrintDiv8($('#hint8s'));
+    })
+    $('#blobButton9').click(function(){
+        PrintDiv9($('#hint9s'));
+    })
+    $('#blobButton10').click(function(){
+        PrintDiv10($('#hint10s'));
+    })
+    $('#blobButton11').click(function(){
+        PrintDiv11($('#hint11s'));
+    })
+    $('#blobButton12').click(function(){
+        PrintDiv12($('#hint12s'));
+    })
+    $('#blobButton13').click(function(){
+        PrintDiv13($('#hint13s'));
+    })
+    $('#blobButton14').click(function(){
+        PrintDiv14($('#hint14s'));
+    })
+    $('#blobButton15').click(function(){
+        PrintDiv15($('#hint15s'));
+    })
+    $('#blobButton16').click(function(){
+        PrintDiv16($('#hint16s'));
+    })
+    $('#blobButton17').click(function(){
+        PrintDiv17($('#hint17s'));
+    })
+    $('#blobButton18').click(function(){
+        PrintDiv18($('#hint18s'));
+    })
+    $('#blobButton19').click(function(){
+        PrintDiv19($('#hint19s'));
+    })
+    $('#blobButton20').click(function(){
+        PrintDiv20($('#hint20s'));
+    })
+    $('#full').click(function(){
+        fullDownLoad();
+    })
+</script>
+
+{% endblock %}
