@@ -507,7 +507,7 @@ def admin_confirm(request, user_id, theme):
 
 
 def enter_key(request, user_id, theme):
-    enterKey = get_object_or_404(Theme, user=request.user).enterKey
+    enterKey = get_object_or_404(Theme, roomEscape=request.user, name=theme).enterKey
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
     q = request.GET.get('q', '')
     return render(request, 'hint/enterKey.html', {
@@ -515,6 +515,7 @@ def enter_key(request, user_id, theme):
         'escape_room': escape_room,
         'user_id': user_id,
         'q': q,
+        'theme': theme
     })
 
 
