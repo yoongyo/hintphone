@@ -11,9 +11,16 @@ class HintForm(forms.ModelForm):
                   'sub_hint8', 'sub_hint9', 'sub_hint10', 'sub_hint11', 'sub_hint12', 'sub_hint13', 'sub_hint14',
                   'sub_hint15', 'sub_hint16', 'sub_hint17', 'sub_hint18', 'sub_hint19', 'sub_hint20', 'hint21', 'hint22',
                   'hint23', 'hint24', 'hint25', 'hint26', 'hint27', 'hint28', 'hint29', 'hint30', 'sub_hint21', 'sub_hint22',
-                  'sub_hint23', 'sub_hint24', 'sub_hint25', 'sub_hint26', 'sub_hint27', 'sub_hint28', 'sub_hint29', 'sub_hint30']
+                  'sub_hint23', 'sub_hint24', 'sub_hint25', 'sub_hint26', 'sub_hint27', 'sub_hint28', 'sub_hint29', 'sub_hint30',
+                  'enterKey']
         widgets = {
             'name': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'style': 'border-color:black',
+                }
+            ),
+            'enterKey': forms.TextInput(
                 attrs={
                     'class': 'form-control',
                     'style': 'border-color:black',
