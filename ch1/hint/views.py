@@ -27,6 +27,27 @@ count18 = 0
 count19 = 0
 count20 = 0
 
+code_list1 = []
+code_list2 = []
+code_list3 = []
+code_list4 = []
+code_list5 = []
+code_list6 = []
+code_list7 = []
+code_list8 = []
+code_list9 = []
+code_list10 = []
+code_list11 = []
+code_list12 = []
+code_list13 = []
+code_list14 = []
+code_list15 = []
+code_list16 = []
+code_list17 = []
+code_list18 = []
+code_list19 = []
+code_list20 = []
+
 
 def switch(x):
     return {1: count1, 2: count2, 3: count3, 4: count4, 5: count5, 6: count6,
@@ -55,44 +76,65 @@ def reset_code(request, user_id, theme):
     nation = get_object_or_404(Profile, user=request.user).nation
     if theme_number == 1:
         global count1
+        global code_list1
     if theme_number == 2:
         global count2
+        global code_list2
     if theme_number == 3:
         global count3
+        global code_list3
     if theme_number == 4:
         global count4
+        global code_list4
     if theme_number == 5:
         global count5
+        global code_list5
     if theme_number == 6:
         global count6
+        global code_list6
     if theme_number == 7:
         global count7
+        global code_list7
     if theme_number == 8:
         global count8
+        global code_list8
     if theme_number == 9:
         global count9
+        global code_list9
     if theme_number == 10:
         global count10
+        global code_list10
     if theme_number == 11:
         global count11
+        global code_list11
     if theme_number == 12:
         global count12
+        global code_list12
     if theme_number == 13:
         global count13
+        global code_list13
     if theme_number == 14:
         global count14
+        global code_list14
     if theme_number == 15:
         global count15
+        global code_list15
     if theme_number == 16:
         global count16
+        global code_list16
     if theme_number == 17:
         global count17
+        global code_list17
     if theme_number == 18:
         global count18
+        global code_list18
     if theme_number == 19:
         global count19
+        global code_list19
     if theme_number == 20:
         global count20
+        global code_list20
+
     reset = get_object_or_404(Profile, user=request.user).reset
     user_id = request.user.username
     theme = get_object_or_404(Theme, name=theme, roomEscape=request.user)
@@ -101,44 +143,64 @@ def reset_code(request, user_id, theme):
     if q == reset:
         if theme_number == 1:
             count1 = 0
+            code_list1 = []
         if theme_number == 2:
             count2 = 0
+            code_list2 = []
         if theme_number == 3:
             count3 = 0
+            code_list3 = []
         if theme_number == 4:
             count4 = 0
+            code_list4 = []
         if theme_number == 5:
             count5 = 0
+            code_list5 = []
         if theme_number == 6:
             count6 = 0
+            code_list6 = []
         if theme_number == 7:
             count7 = 0
+            code_list7 = []
         if theme_number == 8:
             count8 = 0
+            code_list8 = []
         if theme_number == 9:
             count9 = 0
+            code_list9 = []
         if theme_number == 10:
             count10 = 0
+            code_list10 = []
         if theme_number == 11:
             count11 = 0
+            code_list11 = []
         if theme_number == 12:
             count12 = 0
+            code_list12 = []
         if theme_number == 13:
             count13 = 0
+            code_list13 = []
         if theme_number == 14:
             count14 = 0
+            code_list14 = []
         if theme_number == 15:
             count15 = 0
+            code_list15 = []
         if theme_number == 16:
             count16 = 0
+            code_list16 = []
         if theme_number == 17:
             count17 = 0
+            code_list17 = []
         if theme_number == 18:
             count18 = 0
+            code_list18 = []
         if theme_number == 19:
             count19 = 0
+            code_list19 = []
         if theme_number == 20:
             count20 = 0
+            code_list20 = []
     return render(request, 'hint/reset_code.html', {
         'reset': reset,
         'q': q,
@@ -157,48 +219,68 @@ def QR_code(request, user_id, theme):
     interPhone_id = get_object_or_404(Theme, name=theme, roomEscape=request.user).interPhone_ID
     nation = get_object_or_404(Profile, user=request.user).nation
     interPhone = get_object_or_404(Profile, user=request.user).interPhone
-    interPhone_call =  get_object_or_404(Profile, user=request.user).interPhone_call
+    interPhone_call = get_object_or_404(Profile, user=request.user).interPhone_call
     hintCode = request.user.profile.hintCode
     if theme_number == 1:
         global count1
+        global code_list1
     if theme_number == 2:
         global count2
+        global code_list2
     if theme_number == 3:
         global count3
+        global code_list3
     if theme_number == 4:
         global count4
+        global code_list4
     if theme_number == 5:
         global count5
+        global code_list5
     if theme_number == 6:
         global count6
+        global code_list6
     if theme_number == 7:
         global count7
+        global code_list7
     if theme_number == 8:
         global count8
+        global code_list8
     if theme_number == 9:
         global count9
+        global code_list9
     if theme_number == 10:
         global count10
+        global code_list10
     if theme_number == 11:
         global count11
+        global code_list11
     if theme_number == 12:
         global count12
+        global code_list12
     if theme_number == 13:
         global count13
+        global code_list13
     if theme_number == 14:
         global count14
+        global code_list14
     if theme_number == 15:
         global count15
+        global code_list15
     if theme_number == 16:
         global count16
+        global code_list16
     if theme_number == 17:
         global count17
+        global code_list17
     if theme_number == 18:
         global count18
+        global code_list18
     if theme_number == 19:
         global count19
+        global code_list19
     if theme_number == 20:
         global count20
+        global code_list20
     count = switch(theme_number)
     print("pk:", theme_number, 'count:', count)
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
@@ -206,89 +288,209 @@ def QR_code(request, user_id, theme):
     if request.method == "POST":
         p = request.POST.get('p', '')
         if theme_number == 1:
-            count1 += 1
+            if p not in code_list1:
+                code_list1.append(p)
+                print(code_list1)
+                count1 += 1
         if theme_number == 2:
-            count2 += 1
+            if p not in code_list2:
+                code_list2.append(p)
+                print(code_list2)
+                count2 += 1
         if theme_number == 3:
-            count3 += 1
+            if p not in code_list3:
+                code_list3.append(p)
+                print(code_list3)
+                count3 += 1
         if theme_number == 4:
-            count4 += 1
+            if p not in code_list4:
+                code_list4.append(p)
+                print(code_list4)
+                count4 += 1
         if theme_number == 5:
-            count5 += 1
+            if p not in code_list5:
+                code_list5.append(p)
+                print(code_list5)
+                count5 += 1
         if theme_number == 6:
-            count6 += 1
+            if p not in code_list6:
+                code_list6.append(p)
+                print(code_list6)
+                count6 += 1
         if theme_number == 7:
-            count7 += 1
+            if p not in code_list7:
+                code_list7.append(p)
+                print(code_list7)
+                count7 += 1
         if theme_number == 8:
-            count8 += 1
+            if p not in code_list8:
+                code_list8.append(p)
+                print(code_list8)
+                count8 += 1
         if theme_number == 9:
-            count9 += 1
+            if p not in code_list9:
+                code_list9.append(p)
+                print(code_list9)
+                count9 += 1
         if theme_number == 10:
-            count10 += 1
+            if p not in code_list10:
+                code_list10.append(p)
+                print(code_list10)
+                count10 += 1
         if theme_number == 11:
-            count11 += 1
+            if p not in code_list11:
+                code_list11.append(p)
+                print(code_list11)
+                count11 += 1
         if theme_number == 12:
-            count12 += 1
+            if p not in code_list12:
+                code_list12.append(p)
+                print(code_list12)
+                count12 += 1
         if theme_number == 13:
-            count13 += 1
+            if p not in code_list13:
+                code_list13.append(p)
+                print(code_list13)
+                count13 += 1
         if theme_number == 14:
-            count14 += 1
+            if p not in code_list14:
+                code_list14.append(p)
+                print(code_list14)
+                count14 += 1
         if theme_number == 15:
-            count15 += 1
+            if p not in code_list15:
+                code_list15.append(p)
+                print(code_list15)
+                count15 += 1
         if theme_number == 16:
-            count16 += 1
+            if p not in code_list16:
+                code_list16.append(p)
+                print(code_list16)
+                count16 += 1
         if theme_number == 17:
-            count17 += 1
+            if p not in code_list17:
+                code_list17.append(p)
+                print(code_list17)
+                count17 += 1
         if theme_number == 18:
-            count18 += 1
+            if p not in code_list18:
+                code_list18.append(p)
+                print(code_list18)
+                count18 += 1
         if theme_number == 19:
-            count19 += 1
+            if p not in code_list19:
+                code_list19.append(p)
+                print(code_list19)
+                count19 += 1
         if theme_number == 20:
-            count20 += 1
+            if p not in code_list20:
+                code_list20.append(p)
+                print(code_list20)
+                count20 += 1
         return HttpResponseRedirect(reverse('hint:theme_hint', args=[user_id, theme, p]))
     q = request.GET.get('q', '')
     if q != "":
         if request.method == "GET":
             if theme_number == 1:
-                count1 += 1
+                if q not in code_list1:
+                    code_list1.append(q)
+                    print(code_list1)
+                    count1 += 1
             if theme_number == 2:
-                count2 += 1
+                if q not in code_list2:
+                    code_list2.append(q)
+                    print(code_list2)
+                    count2 += 1
             if theme_number == 3:
-                count3 += 1
+                if q not in code_list3:
+                    code_list3.append(q)
+                    print(code_list3)
+                    count3 += 1
             if theme_number == 4:
-                count4 += 1
+                if q not in code_list4:
+                    code_list4.append(q)
+                    print(code_list4)
+                    count4 += 1
             if theme_number == 5:
-                count5 += 1
+                if q not in code_list5:
+                    code_list5.append(q)
+                    print(code_list5)
+                    count5 += 1
             if theme_number == 6:
-                count6 += 1
+                if q not in code_list6:
+                    code_list6.append(q)
+                    print(code_list6)
+                    count6 += 1
             if theme_number == 7:
-                count7 += 1
+                if q not in code_list7:
+                    code_list7.append(q)
+                    print(code_list7)
+                    count7 += 1
             if theme_number == 8:
-                count8 += 1
+                if q not in code_list8:
+                    code_list8.append(q)
+                    print(code_list8)
+                    count8 += 1
             if theme_number == 9:
-                count9 += 1
+                if q not in code_list9:
+                    code_list9.append(q)
+                    print(code_list9)
+                    count9 += 1
             if theme_number == 10:
-                count10 += 1
+                if q not in code_list10:
+                    code_list10.append(q)
+                    print(code_list10)
+                    count10 += 1
             if theme_number == 11:
-                count11 += 1
+                if q not in code_list11:
+                    code_list11.append(q)
+                    print(code_list11)
+                    count11 += 1
             if theme_number == 12:
-                count12 += 1
+                if q not in code_list12:
+                    code_list12.append(q)
+                    print(code_list12)
+                    count12 += 1
             if theme_number == 13:
-                count13 += 1
+                if q not in code_list13:
+                    code_list13.append(q)
+                    print(code_list13)
+                    count13 += 1
             if theme_number == 14:
-                count14 += 1
+                if q not in code_list14:
+                    code_list14.append(q)
+                    print(code_list14)
+                    count14 += 1
             if theme_number == 15:
-                count15 += 1
+                if q not in code_list15:
+                    code_list15.append(q)
+                    print(code_list15)
+                    count15 += 1
             if theme_number == 16:
-                count16 += 1
+                if q not in code_list16:
+                    code_list16.append(q)
+                    print(code_list16)
+                    count16 += 1
             if theme_number == 17:
-                count17 += 1
+                if q not in code_list17:
+                    code_list17.append(q)
+                    print(code_list17)
+                    count17 += 1
             if theme_number == 18:
-                count18 += 1
+                if q not in code_list18:
+                    code_list18.append(q)
+                    print(code_list18)
+                    count18 += 1
             if theme_number == 19:
-                count19 += 1
+                if q not in code_list19:
+                    code_list19.append(q)
+                    print(code_list19)
+                    count19 += 1
             if theme_number == 20:
-                count20 += 1
+                if q not in code_list20:
+                    code_list20.append(q)
+                    print(code_list20)
+                    count20 += 1
             return redirect(q)
     else:
         pass
@@ -452,6 +654,7 @@ def create(request, user_id):
             'theme': theme,
             'themes': themes
         })
+
 
 @login_required
 def create2(request, user_id):
