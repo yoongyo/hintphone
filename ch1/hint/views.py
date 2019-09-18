@@ -224,6 +224,7 @@ def QR_code(request, user_id, theme):
     if theme_number == 1:
         global count1
         global code_list1
+        print(code_list1)
     if theme_number == 2:
         global count2
         global code_list2
@@ -389,106 +390,111 @@ def QR_code(request, user_id, theme):
                 count20 += 1
         return HttpResponseRedirect(reverse('hint:theme_hint', args=[user_id, theme, p]))
     q = request.GET.get('q', '')
+    if q[-1] == '/':
+        change = q[:-1]
+    else:
+        change = q
+    code = change.split('/')[-1]
     if q != "":
         if request.method == "GET":
             if theme_number == 1:
-                if q not in code_list1:
-                    code_list1.append(q)
+                if code not in code_list1:
+                    code_list1.append(code)
                     print(code_list1)
                     count1 += 1
             if theme_number == 2:
-                if q not in code_list2:
-                    code_list2.append(q)
+                if code not in code_list2:
+                    code_list2.append(code)
                     print(code_list2)
                     count2 += 1
             if theme_number == 3:
-                if q not in code_list3:
-                    code_list3.append(q)
+                if code not in code_list3:
+                    code_list3.append(code)
                     print(code_list3)
                     count3 += 1
             if theme_number == 4:
-                if q not in code_list4:
-                    code_list4.append(q)
+                if code not in code_list4:
+                    code_list4.append(code)
                     print(code_list4)
                     count4 += 1
             if theme_number == 5:
-                if q not in code_list5:
-                    code_list5.append(q)
+                if code not in code_list5:
+                    code_list5.append(code)
                     print(code_list5)
                     count5 += 1
             if theme_number == 6:
-                if q not in code_list6:
-                    code_list6.append(q)
+                if code not in code_list6:
+                    code_list6.append(code)
                     print(code_list6)
                     count6 += 1
             if theme_number == 7:
-                if q not in code_list7:
-                    code_list7.append(q)
+                if code not in code_list7:
+                    code_list7.append(code)
                     print(code_list7)
                     count7 += 1
             if theme_number == 8:
-                if q not in code_list8:
-                    code_list8.append(q)
+                if code not in code_list8:
+                    code_list8.append(code)
                     print(code_list8)
                     count8 += 1
             if theme_number == 9:
-                if q not in code_list9:
-                    code_list9.append(q)
+                if code not in code_list9:
+                    code_list9.append(code)
                     print(code_list9)
                     count9 += 1
             if theme_number == 10:
-                if q not in code_list10:
-                    code_list10.append(q)
+                if code not in code_list10:
+                    code_list10.append(code)
                     print(code_list10)
                     count10 += 1
             if theme_number == 11:
-                if q not in code_list11:
-                    code_list11.append(q)
+                if code not in code_list11:
+                    code_list11.append(code)
                     print(code_list11)
                     count11 += 1
             if theme_number == 12:
-                if q not in code_list12:
-                    code_list12.append(q)
+                if code not in code_list12:
+                    code_list12.append(code)
                     print(code_list12)
                     count12 += 1
             if theme_number == 13:
-                if q not in code_list13:
-                    code_list13.append(q)
+                if code not in code_list13:
+                    code_list13.append(code)
                     print(code_list13)
                     count13 += 1
             if theme_number == 14:
-                if q not in code_list14:
-                    code_list14.append(q)
+                if code not in code_list14:
+                    code_list14.append(code)
                     print(code_list14)
                     count14 += 1
             if theme_number == 15:
-                if q not in code_list15:
-                    code_list15.append(q)
+                if code not in code_list15:
+                    code_list15.append(code)
                     print(code_list15)
                     count15 += 1
             if theme_number == 16:
-                if q not in code_list16:
-                    code_list16.append(q)
+                if code not in code_list16:
+                    code_list16.append(code)
                     print(code_list16)
                     count16 += 1
             if theme_number == 17:
-                if q not in code_list17:
-                    code_list17.append(q)
+                if code not in code_list17:
+                    code_list17.append(code)
                     print(code_list17)
                     count17 += 1
             if theme_number == 18:
-                if q not in code_list18:
-                    code_list18.append(q)
+                if code not in code_list18:
+                    code_list18.append(code)
                     print(code_list18)
                     count18 += 1
             if theme_number == 19:
-                if q not in code_list19:
-                    code_list19.append(q)
+                if code not in code_list19:
+                    code_list19.append(code)
                     print(code_list19)
                     count19 += 1
             if theme_number == 20:
-                if q not in code_list20:
-                    code_list20.append(q)
+                if code not in code_list20:
+                    code_list20.append(code)
                     print(code_list20)
                     count20 += 1
             return redirect(q)
