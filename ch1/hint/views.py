@@ -390,12 +390,12 @@ def QR_code(request, user_id, theme):
                 count20 += 1
         return HttpResponseRedirect(reverse('hint:theme_hint', args=[user_id, theme, p]))
     q = request.GET.get('q', '')
-    if q[-1] == '/':
-        change = q[:-1]
-    else:
-        change = q
-    code = change.split('/')[-1]
     if q != "":
+        if q[-1] == '/':
+            change = q[:-1]
+        else:
+            change = q
+        code = change.split('/')[-1]
         if request.method == "GET":
             if theme_number == 1:
                 if code not in code_list1:
