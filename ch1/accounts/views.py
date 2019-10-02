@@ -1,6 +1,9 @@
-from django.shortcuts import render, HttpResponse, reverse, HttpResponseRedirect
+from django.shortcuts import render, HttpResponse, reverse, HttpResponseRedirect,redirect
 from .forms import LoginForm
 from django.contrib.auth import login, authenticate
+from django.contrib.auth import (
+    logout as django_logout,
+)
 
 
 def signin(request):
@@ -48,5 +51,15 @@ def signin(request):
         return render(request, 'accounts/login.html', {
             'form': form
         })
+
+
+def logout(request):
+    # django_logout(request)
+    response = HttpResponseRedirect(reverse('accounts:login'))
+    response.delete_cookie('username')
+    response.delete_cookie('password')
+    response.delete_cookie('method')
+    return response
+
 
 

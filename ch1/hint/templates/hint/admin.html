@@ -4,7 +4,9 @@
 
 <div class="container-fluid mt-3">
     <div class="row">
-        <div class="col-2"></div>
+        <div class="col-2">
+
+        </div>
         <div class="col-8">
             <div class="text-center mt-3" style="color:white">
                 <div class="row">
@@ -25,7 +27,17 @@
                 </div>
             </div>
         </div>
-        <div class="col-2"><a style="text-decoration:none" href="{% url 'hint:create' user_id %}"><h4 style="color:white">QR 코드 생성하기</h4></a></div>
+        <div class="col-2">
+            <a style="text-decoration:none" href="{% url 'hint:create' user_id %}">
+                <h4 style="color:white">QR 코드 생성하기</h4>
+            </a>
+            <div style="height:30px">
+
+            </div>
+             <a style="text-decoration:none" href="{% url 'accounts:logout' %}">
+                <h4 style="color:white">로그아웃</h4>
+            </a>
+        </div>
     </div>
 
 </div>
