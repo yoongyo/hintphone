@@ -1,9 +1,21 @@
 import os
+import json
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(ROOT_DIR)
 
-SECRET_KEY = 'wxecc^8@r(r(2pn-mpi+8ys5%u@$jao=xt(m=tmprbm@qk&+@='
+with open(os.path.join(BASE_DIR, 'secret.json'), 'r') as f:
+    secret = json.loads(f.read())
+
+
+def get_secret(setting, secret=secret):
+    try:
+        return secret[setting]
+    except:
+        msg = "Set key '{0}' in secret.json".format(setting)
+
+
+SECRET_KEY = get_secret('SECRET_KEY')
 
 
 ALLOWED_HOSTS = []
