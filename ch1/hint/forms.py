@@ -1,5 +1,6 @@
 from django import forms
 from .models import Theme
+from ckeditor.widgets import CKEditorWidget
 
 
 class HintForm(forms.ModelForm):
@@ -12,8 +13,45 @@ class HintForm(forms.ModelForm):
                   'sub_hint15', 'sub_hint16', 'sub_hint17', 'sub_hint18', 'sub_hint19', 'sub_hint20', 'hint21', 'hint22',
                   'hint23', 'hint24', 'hint25', 'hint26', 'hint27', 'hint28', 'hint29', 'hint30', 'sub_hint21', 'sub_hint22',
                   'sub_hint23', 'sub_hint24', 'sub_hint25', 'sub_hint26', 'sub_hint27', 'sub_hint28', 'sub_hint29', 'sub_hint30',
-                  'enterKey']
+                  'enterKey', 'textHint1', 'textHint2', 'textHint3', 'textHint4', 'textHint5', 'textHint6', 'textHint7', 'textHint8',
+                  'textHint9', 'textHint10', 'textHint11', 'textHint12', 'textHint13', 'textHint14', 'textHint15', 'textHint16',
+                  'textHint17', 'textHint18', 'textHint19', 'textHint20', 'textHint21', 'textHint21', 'textHint22', 'textHint23',
+                  'textHint24', 'textHint25', 'textHint26', 'textHint27', 'textHint28', 'textHint29', 'textHint30']
         widgets = {
+            'textHint1': CKEditorWidget(
+                attrs={
+                    'style': 'width: 100%'
+                }
+            ),
+            'textHint3': CKEditorWidget(),
+            'textHint4': CKEditorWidget(),
+            'textHint5': CKEditorWidget(),
+            'textHint6': CKEditorWidget,
+            'textHint7': CKEditorWidget,
+            'textHint8': CKEditorWidget,
+            'textHint9': CKEditorWidget,
+            'textHint10': CKEditorWidget,
+            'textHint11': CKEditorWidget,
+            'textHint12': CKEditorWidget,
+            'textHint13': CKEditorWidget,
+            'textHint14': CKEditorWidget,
+            'textHint15': CKEditorWidget,
+            'textHint16': CKEditorWidget,
+            'textHint17': CKEditorWidget,
+            'textHint18': CKEditorWidget,
+            'textHint19': CKEditorWidget,
+            'textHint20': CKEditorWidget,
+            'textHint21': CKEditorWidget,
+            'textHint22': CKEditorWidget,
+            'textHint23': CKEditorWidget,
+            'textHint24': CKEditorWidget,
+            'textHint25': CKEditorWidget,
+            'textHint26': CKEditorWidget,
+            'textHint27': CKEditorWidget,
+            'textHint28': CKEditorWidget,
+            'textHint29': CKEditorWidget,
+            'textHint30': CKEditorWidget,
+
             'name': forms.TextInput(
                 attrs={
                     'class': 'form-control',

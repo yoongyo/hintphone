@@ -563,6 +563,7 @@ def theme_edit(request, user_id, theme):
     nation = get_object_or_404(Profile, user=request.user).nation
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
     theme = get_object_or_404(Theme, name=theme, roomEscape=request.user)
+    textHint = get_object_or_404(Profile, user=request.user).textHint
     if request.method == 'POST':
         form = HintForm(request.POST, request.FILES, instance=theme)
         if form.is_valid():
@@ -579,7 +580,8 @@ def theme_edit(request, user_id, theme):
         'theme': theme,
         'escape_room': escape_room,
         'user_id': user_id,
-        'nation': nation
+        'nation': nation,
+        'textHint': textHint
     })
 
 

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+{{form.media}}
 
 <div class="container-fluid" style="color:white">
     <h2 class="mt-5 text-center">{{ escape_room }}</h2>
@@ -104,10 +105,14 @@
                             </label>
                             <input id="sub1_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint1 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint1 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub1_button" onclick="plus_sub1();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub1_icon" class="fas fa-plus"></i>
+                            <!--<i id="sub1_icon" class="fas fa-plus"></i>-->
+                            <img style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" id="sub1_icon">
                         </button>
                         <div id="sub1_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub1_btn" class="btn btn-secondary">삭제</button>
@@ -134,10 +139,13 @@
                             </label>
                             <input  id="sub2_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint2 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint2 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub2_button" onclick="plus_sub2();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub2_icon" class="fas fa-plus"></i>
+                            <img id="sub2_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub2_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub2_btn" class="btn btn-secondary">삭제</button>
@@ -173,10 +181,13 @@
                             </label>
                             <input id="sub3_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint3 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint3 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub3_button" onclick="plus_sub3();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub3_icon" class="fas fa-plus"></i>
+                            <img id="sub3_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub3_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub3_btn" class="btn btn-secondary">삭제</button>
@@ -203,10 +214,13 @@
                             </label>
                             <input  id="sub4_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint4 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint4 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub4_button" onclick="plus_sub4();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub4_icon" class="fas fa-plus"></i>
+                            <img id="sub4_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub4_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub4_btn" class="btn btn-secondary">삭제</button>
@@ -242,10 +256,13 @@
                             </label>
                             <input id="sub5_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint5 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint5 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub5_button" onclick="plus_sub5();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub5_icon" class="fas fa-plus"></i>
+                            <img id="sub5_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub5_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub5_btn" class="btn btn-secondary">삭제</button>
@@ -272,10 +289,13 @@
                             </label>
                             <input  id="sub6_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint6 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint6 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub6_button" onclick="plus_sub6();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub6_icon" class="fas fa-plus"></i>
+                            <img id="sub6_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub6_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub6_btn" class="btn btn-secondary">삭제</button>
@@ -311,10 +331,13 @@
                             </label>
                             <input id="sub7_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint7 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint7 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub7_button" onclick="plus_sub7();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub7_icon" class="fas fa-plus"></i>
+                            <img id="sub7_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub7_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub7_btn" class="btn btn-secondary">삭제</button>
@@ -341,10 +364,13 @@
                             </label>
                             <input  id="sub8_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint8 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint8 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub8_button" onclick="plus_sub8();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub8_icon" class="fas fa-plus"></i>
+                            <img id="sub8_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub8_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub8_btn" class="btn btn-secondary">삭제</button>
@@ -380,10 +406,13 @@
                             </label>
                             <input id="sub9_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint9 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint9 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub9_button" onclick="plus_sub9();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub9_icon" class="fas fa-plus"></i>
+                            <img id="sub9_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub9_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub9_btn" class="btn btn-secondary">삭제</button>
@@ -410,10 +439,13 @@
                             </label>
                             <input  id="sub10_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint10 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint10 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub10_button" onclick="plus_sub10();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub10_icon" class="fas fa-plus"></i>
+                            <img id="sub10_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub10_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub10_btn" class="btn btn-secondary">삭제</button>
@@ -449,10 +481,13 @@
                             </label>
                             <input id="sub11_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint11 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint11 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub11_button" onclick="plus_sub11();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub11_icon" class="fas fa-plus"></i>
+                            <img id="sub11_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub11_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub11_btn" class="btn btn-secondary">삭제</button>
@@ -479,10 +514,13 @@
                             </label>
                             <input  id="sub12_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint12 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint12 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub12_button" onclick="plus_sub12();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub12_icon" class="fas fa-plus"></i>
+                            <img id="sub12_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub12_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub12_btn" class="btn btn-secondary">삭제</button>
@@ -518,10 +556,13 @@
                             </label>
                             <input id="sub13_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint13 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint13 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub13_button" onclick="plus_sub13();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub13_icon" class="fas fa-plus"></i>
+                            <img id="sub13_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub13_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub13_btn" class="btn btn-secondary">삭제</button>
@@ -548,10 +589,13 @@
                             </label>
                             <input  id="sub14_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint14 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint14 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub14_button" onclick="plus_sub14();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub14_icon" class="fas fa-plus"></i>
+                            <img id="sub14_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub14_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub14_btn" class="btn btn-secondary">삭제</button>
@@ -587,10 +631,13 @@
                             </label>
                             <input id="sub15_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint15 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint15 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub15_button" onclick="plus_sub15();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub15_icon" class="fas fa-plus"></i>
+                            <img id="sub15_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub15_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub15_btn" class="btn btn-secondary">삭제</button>
@@ -617,10 +664,13 @@
                             </label>
                             <input  id="sub16_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint16 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint16 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub16_button" onclick="plus_sub16();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub16_icon" class="fas fa-plus"></i>
+                            <img id="sub16_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub16_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub16_btn" class="btn btn-secondary">삭제</button>
@@ -656,10 +706,13 @@
                             </label>
                             <input id="sub17_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint17 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint17 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub17_button" onclick="plus_sub17();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub17_icon" class="fas fa-plus"></i>
+                            <img id="sub17_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub17_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub17_btn" class="btn btn-secondary">삭제</button>
@@ -686,10 +739,13 @@
                             </label>
                             <input  id="sub18_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint18 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint18 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub18_button" onclick="plus_sub18();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub18_icon" class="fas fa-plus"></i>
+                            <img id="sub18_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub18_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub18_btn" class="btn btn-secondary">삭제</button>
@@ -725,10 +781,13 @@
                             </label>
                             <input id="sub19_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint19 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint19 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub19_button" onclick="plus_sub19();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub19_icon" class="fas fa-plus"></i>
+                            <img id="sub19_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub19_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub19_btn" class="btn btn-secondary">삭제</button>
@@ -755,10 +814,13 @@
                             </label>
                             <input  id="sub20_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint20 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint20 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub20_button" onclick="plus_sub20();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub20_icon" class="fas fa-plus"></i>
+                            <img id="sub20_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub20_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub20_btn" class="btn btn-secondary">삭제</button>
@@ -794,10 +856,13 @@
                             </label>
                             <input id="sub21_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint21 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint21 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub21_button" onclick="plus_sub21();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub21_icon" class="fas fa-plus"></i>
+                            <img id="sub21_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub21_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub21_btn" class="btn btn-secondary">삭제</button>
@@ -824,10 +889,13 @@
                             </label>
                             <input  id="sub22_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint22 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint22 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub22_button" onclick="plus_sub22();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub22_icon" class="fas fa-plus"></i>
+                            <img id="sub22_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub22_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub22_btn" class="btn btn-secondary">삭제</button>
@@ -863,10 +931,13 @@
                             </label>
                             <input id="sub23_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint23 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint23 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub23_button" onclick="plus_sub23();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub23_icon" class="fas fa-plus"></i>
+                            <img id="sub23_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub23_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub23_btn" class="btn btn-secondary">삭제</button>
@@ -893,10 +964,13 @@
                             </label>
                             <input  id="sub24_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint24 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint24 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub24_button" onclick="plus_sub24();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub24_icon" class="fas fa-plus"></i>
+                            <img id="sub24_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub24_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub24_btn" class="btn btn-secondary">삭제</button>
@@ -932,10 +1006,13 @@
                             </label>
                             <input id="sub25_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint25 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint25 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub25_button" onclick="plus_sub25();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub25_icon" class="fas fa-plus"></i>
+                            <img id="sub25_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub25_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub25_btn" class="btn btn-secondary">삭제</button>
@@ -962,10 +1039,13 @@
                             </label>
                             <input  id="sub26_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint26 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint26 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub26_button" onclick="plus_sub26();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub26_icon" class="fas fa-plus"></i>
+                            <img id="sub26_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub26_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub26_btn" class="btn btn-secondary">삭제</button>
@@ -1001,10 +1081,13 @@
                             </label>
                             <input id="sub27_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint27 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint27 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub27_button" onclick="plus_sub27();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub27_icon" class="fas fa-plus"></i>
+                            <img id="sub27_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub27_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub27_btn" class="btn btn-secondary">삭제</button>
@@ -1031,10 +1114,13 @@
                             </label>
                             <input  id="sub28_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint28 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint28 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub28_button" onclick="plus_sub28();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub28_icon" class="fas fa-plus"></i>
+                            <img id="sub28_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub28_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub28_btn" class="btn btn-secondary">삭제</button>
@@ -1070,10 +1156,13 @@
                             </label>
                             <input id="sub29_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint29 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint29 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub29_button" onclick="plus_sub29();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub29_icon" class="fas fa-plus"></i>
+                            <img id="sub29_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub29_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub29_btn" class="btn btn-secondary">삭제</button>
@@ -1100,10 +1189,13 @@
                             </label>
                             <input  id="sub30_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint30 }}">
                         </div>
+                        {% if textHint %}
+                            {{ form.textHint30 }}
+                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub30_button" onclick="plus_sub30();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
-                            <i id="sub30_icon" class="fas fa-plus"></i>
+                            <img id="sub30_icon" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
                         </button>
                         <div id="sub30_cancel" class="mt-2" style="display:none">
                             <button type="button" id="sub30_btn" class="btn btn-secondary">삭제</button>
@@ -1140,7 +1232,7 @@
         sub1_cancel.setAttribute('style', '');
         document.getElementById('sub1_h4').innerHTML = 'HINT1 하 :';
         var icon1 = document.getElementById("sub1_icon");
-        icon1.setAttribute('class', 'fas fa-minus');
+        icon1.setAttribute('src', "{% static 'minus.png' %}");
         var button1 = document.getElementById("sub1_button");
         button1.setAttribute('onclick', 'minus_sub1();');
     }
@@ -1157,7 +1249,7 @@
         var sub1_cancel = document.getElementById("sub1_cancel");
         sub1_cancel.setAttribute('style', 'display:none;');
         var icon1 = document.getElementById("sub1_icon");
-        icon1.setAttribute('class', 'fas fa-plus');
+        icon1.setAttribute('src',  "{% static 'plus3.png' %}");
         var button1 = document.getElementById("sub1_button");
         button1.setAttribute('onclick', 'plus_sub1();');
         document.getElementById('sub1_h4').innerHTML = 'HINT1 :';
@@ -1171,7 +1263,7 @@
         sub2_cancel.setAttribute('style', '');
         document.getElementById('sub2_h4').innerHTML = 'HINT2 하 :';
         var icon2 = document.getElementById("sub2_icon");
-        icon2.setAttribute('class', 'fas fa-minus');
+        icon2.setAttribute('src', "{%static 'minus.png' %}");
         var button2 = document.getElementById("sub2_button");
         button2.setAttribute('onclick', 'minus_sub2();');
     }
@@ -1189,7 +1281,7 @@
         var sub2_cancel = document.getElementById("sub2_cancel");
         sub2_cancel.setAttribute('style', 'display:none;');
         var icon2 = document.getElementById("sub2_icon");
-        icon2.setAttribute('class', 'fas fa-plus');
+        icon2.setAttribute('src', "{% static 'plus3.png' %}");
         var button2 = document.getElementById("sub2_button");
         button2.setAttribute('onclick', 'plus_sub2();');
         document.getElementById('sub2_h4').innerHTML = 'HINT2 :';
@@ -1240,7 +1332,7 @@
         sub3_cancel.setAttribute('style', '');
         document.getElementById('sub3_h4').innerHTML = 'HINT3 하 :';
         var icon3 = document.getElementById("sub3_icon");
-        icon3.setAttribute('class', 'fas fa-minus');
+        icon3.setAttribute('src', "{%static 'minus.png' %}");
         var button3 = document.getElementById("sub3_button");
         button3.setAttribute('onclick', 'minus_sub3();');
     }
@@ -1257,7 +1349,7 @@
         var sub3_cancel = document.getElementById("sub3_cancel");
         sub3_cancel.setAttribute('style', 'display:none;');
         var icon3 = document.getElementById("sub3_icon");
-        icon3.setAttribute('class', 'fas fa-plus');
+        icon3.setAttribute('src', "{% static 'plus3.png' %}");
         var button3 = document.getElementById("sub3_button");
         button3.setAttribute('onclick', 'plus_sub3();');
         document.getElementById('sub3_h4').innerHTML = 'HINT3 :';
@@ -1271,7 +1363,7 @@
         sub4_cancel.setAttribute('style', '');
         document.getElementById('sub4_h4').innerHTML = 'HINT4 하 :';
         var icon4 = document.getElementById("sub4_icon");
-        icon4.setAttribute('class', 'fas fa-minus');
+        icon4.setAttribute('src', "{%static 'minus.png' %}");
         var button4 = document.getElementById("sub4_button");
         button4.setAttribute('onclick', 'minus_sub4();');
     }
@@ -1289,7 +1381,7 @@
         var sub4_cancel = document.getElementById("sub4_cancel");
         sub4_cancel.setAttribute('style', 'display:none;');
         var icon4 = document.getElementById("sub4_icon");
-        icon4.setAttribute('class', 'fas fa-plus');
+        icon4.setAttribute('src', "{% static 'plus3.png' %}");
         var button4 = document.getElementById("sub4_button");
         button4.setAttribute('onclick', 'plus_sub4();');
         document.getElementById('sub4_h4').innerHTML = 'HINT4 :';
@@ -1340,7 +1432,7 @@
         sub5_cancel.setAttribute('style', '');
         document.getElementById('sub5_h4').innerHTML = 'HINT5 하 :';
         var icon5 = document.getElementById("sub5_icon");
-        icon5.setAttribute('class', 'fas fa-minus');
+        icon5.setAttribute('src', "{%static 'minus.png' %}");
         var button5 = document.getElementById("sub5_button");
         button5.setAttribute('onclick', 'minus_sub5();');
     }
@@ -1357,7 +1449,7 @@
         var sub5_cancel = document.getElementById("sub5_cancel");
         sub5_cancel.setAttribute('style', 'display:none;');
         var icon5 = document.getElementById("sub5_icon");
-        icon5.setAttribute('class', 'fas fa-plus');
+        icon5.setAttribute('src', "{% static 'plus3.png' %}");
         var button5 = document.getElementById("sub5_button");
         button5.setAttribute('onclick', 'plus_sub5();');
         document.getElementById('sub5_h4').innerHTML = 'HINT5 :';
@@ -1371,7 +1463,7 @@
         sub6_cancel.setAttribute('style', '');
         document.getElementById('sub6_h4').innerHTML = 'HINT6 하 :';
         var icon6 = document.getElementById("sub6_icon");
-        icon6.setAttribute('class', 'fas fa-minus');
+        icon6.setAttribute('src', "{%static 'minus.png' %}");
         var button6 = document.getElementById("sub6_button");
         button6.setAttribute('onclick', 'minus_sub6();');
     }
@@ -1389,7 +1481,7 @@
         var sub6_cancel = document.getElementById("sub6_cancel");
         sub6_cancel.setAttribute('style', 'display:none;');
         var icon6 = document.getElementById("sub6_icon");
-        icon6.setAttribute('class', 'fas fa-plus');
+        icon6.setAttribute('src', "{% static 'plus3.png' %}");
         var button6 = document.getElementById("sub6_button");
         button6.setAttribute('onclick', 'plus_sub6();');
         document.getElementById('sub6_h4').innerHTML = 'HINT6 :';
@@ -1440,7 +1532,7 @@
         sub7_cancel.setAttribute('style', '');
         document.getElementById('sub7_h4').innerHTML = 'HINT7 하 :';
         var icon7 = document.getElementById("sub7_icon");
-        icon7.setAttribute('class', 'fas fa-minus');
+        icon7.setAttribute('src', "{%static 'minus.png' %}");
         var button7 = document.getElementById("sub7_button");
         button7.setAttribute('onclick', 'minus_sub7();');
     }
@@ -1457,7 +1549,7 @@
         var sub7_cancel = document.getElementById("sub7_cancel");
         sub7_cancel.setAttribute('style', 'display:none;');
         var icon7 = document.getElementById("sub7_icon");
-        icon7.setAttribute('class', 'fas fa-plus');
+        icon7.setAttribute('src', "{% static 'plus3.png' %}");
         var button7 = document.getElementById("sub7_button");
         button7.setAttribute('onclick', 'plus_sub7();');
         document.getElementById('sub7_h4').innerHTML = 'HINT7 :';
@@ -1471,7 +1563,7 @@
         sub8_cancel.setAttribute('style', '');
         document.getElementById('sub8_h4').innerHTML = 'HINT8 하 :';
         var icon8 = document.getElementById("sub8_icon");
-        icon8.setAttribute('class', 'fas fa-minus');
+        icon8.setAttribute('src', "{%static 'minus.png' %}");
         var button8 = document.getElementById("sub8_button");
         button8.setAttribute('onclick', 'minus_sub8();');
     }
@@ -1489,7 +1581,7 @@
         var sub8_cancel = document.getElementById("sub8_cancel");
         sub8_cancel.setAttribute('style', 'display:none;');
         var icon8 = document.getElementById("sub8_icon");
-        icon8.setAttribute('class', 'fas fa-plus');
+        icon8.setAttribute('src', "{% static 'plus3.png' %}");
         var button8 = document.getElementById("sub8_button");
         button8.setAttribute('onclick', 'plus_sub8();');
         document.getElementById('sub8_h4').innerHTML = 'HINT8 :';
@@ -1540,7 +1632,7 @@
         sub9_cancel.setAttribute('style', '');
         document.getElementById('sub9_h4').innerHTML = 'HINT9 하 :';
         var icon9 = document.getElementById("sub9_icon");
-        icon9.setAttribute('class', 'fas fa-minus');
+        icon9.setAttribute('src', "{%static 'minus.png' %}");
         var button9 = document.getElementById("sub9_button");
         button9.setAttribute('onclick', 'minus_sub9();');
     }
@@ -1557,7 +1649,7 @@
         var sub9_cancel = document.getElementById("sub9_cancel");
         sub9_cancel.setAttribute('style', 'display:none;');
         var icon9 = document.getElementById("sub9_icon");
-        icon9.setAttribute('class', 'fas fa-plus');
+        icon9.setAttribute('src', "{% static 'plus3.png' %}");
         var button9 = document.getElementById("sub9_button");
         button9.setAttribute('onclick', 'plus_sub9();');
         document.getElementById('sub9_h4').innerHTML = 'HINT9 :';
@@ -1571,7 +1663,7 @@
         sub10_cancel.setAttribute('style', '');
         document.getElementById('sub10_h4').innerHTML = 'HINT10 하 :';
         var icon10 = document.getElementById("sub10_icon");
-        icon10.setAttribute('class', 'fas fa-minus');
+        icon10.setAttribute('src', "{%static 'minus.png' %}");
         var button10 = document.getElementById("sub10_button");
         button10.setAttribute('onclick', 'minus_sub10();');
     }
@@ -1589,7 +1681,7 @@
         var sub10_cancel = document.getElementById("sub10_cancel");
         sub10_cancel.setAttribute('style', 'display:none;');
         var icon10 = document.getElementById("sub10_icon");
-        icon10.setAttribute('class', 'fas fa-plus');
+        icon10.setAttribute('src', "{% static 'plus3.png' %}");
         var button10 = document.getElementById("sub10_button");
         button10.setAttribute('onclick', 'plus_sub10();');
         document.getElementById('sub10_h4').innerHTML = 'HINT10 :';
@@ -1640,7 +1732,7 @@
         sub11_cancel.setAttribute('style', '');
         document.getElementById('sub11_h4').innerHTML = 'HINT11 하 :';
         var icon11 = document.getElementById("sub11_icon");
-        icon11.setAttribute('class', 'fas fa-minus');
+        icon11.setAttribute('src', "{%static 'minus.png' %}");
         var button11 = document.getElementById("sub11_button");
         button11.setAttribute('onclick', 'minus_sub11();');
     }
@@ -1657,7 +1749,7 @@
         var sub1_cancel = document.getElementById("sub11_cancel");
         sub11_cancel.setAttribute('style', 'display:none;');
         var icon11 = document.getElementById("sub11_icon");
-        icon11.setAttribute('class', 'fas fa-plus');
+        icon11.setAttribute('src', "{% static 'plus3.png' %}");
         var button11 = document.getElementById("sub11_button");
         button11.setAttribute('onclick', 'plus_sub11();');
         document.getElementById('sub11_h4').innerHTML = 'HINT11 :';
@@ -1671,7 +1763,7 @@
         sub12_cancel.setAttribute('style', '');
         document.getElementById('sub12_h4').innerHTML = 'HINT12 하 :';
         var icon12 = document.getElementById("sub12_icon");
-        icon12.setAttribute('class', 'fas fa-minus');
+        icon12.setAttribute('src', "{%static 'minus.png' %}");
         var button12 = document.getElementById("sub12_button");
         button12.setAttribute('onclick', 'minus_sub12();');
     }
@@ -1689,7 +1781,7 @@
         var sub12_cancel = document.getElementById("sub12_cancel");
         sub12_cancel.setAttribute('style', 'display:none;');
         var icon12 = document.getElementById("sub12_icon");
-        icon12.setAttribute('class', 'fas fa-plus');
+        icon12.setAttribute('src', "{% static 'plus3.png' %}");
         var button12 = document.getElementById("sub12_button");
         button12.setAttribute('onclick', 'plus_sub12();');
         document.getElementById('sub12_h4').innerHTML = 'HINT12 :';
@@ -1740,7 +1832,7 @@
         sub13_cancel.setAttribute('style', '');
         document.getElementById('sub13_h4').innerHTML = 'HINT13 하 :';
         var icon13 = document.getElementById("sub13_icon");
-        icon13.setAttribute('class', 'fas fa-minus');
+        icon13.setAttribute('src', "{%static 'minus.png' %}");
         var button13 = document.getElementById("sub13_button");
         button13.setAttribute('onclick', 'minus_sub13();');
     }
@@ -1757,7 +1849,7 @@
         var sub13_cancel = document.getElementById("sub13_cancel");
         sub13_cancel.setAttribute('style', 'display:none;');
         var icon13 = document.getElementById("sub13_icon");
-        icon13.setAttribute('class', 'fas fa-plus');
+        icon13.setAttribute('src', "{% static 'plus3.png' %}");
         var button13 = document.getElementById("sub13_button");
         button13.setAttribute('onclick', 'plus_sub13();');
         document.getElementById('sub13_h4').innerHTML = 'HINT13 :';
@@ -1771,7 +1863,7 @@
         sub14_cancel.setAttribute('style', '');
         document.getElementById('sub14_h4').innerHTML = 'HINT14 하 :';
         var icon14 = document.getElementById("sub14_icon");
-        icon14.setAttribute('class', 'fas fa-minus');
+        icon14.setAttribute('src', "{%static 'minus.png' %}");
         var button14 = document.getElementById("sub14_button");
         button14.setAttribute('onclick', 'minus_sub14();');
     }
@@ -1789,7 +1881,7 @@
         var sub14_cancel = document.getElementById("sub14_cancel");
         sub14_cancel.setAttribute('style', 'display:none;');
         var icon14 = document.getElementById("sub14_icon");
-        icon14.setAttribute('class', 'fas fa-plus');
+        icon14.setAttribute('src', "{% static 'plus3.png' %}");
         var button14 = document.getElementById("sub14_button");
         button14.setAttribute('onclick', 'plus_sub14();');
         document.getElementById('sub14_h4').innerHTML = 'HINT14 :';
@@ -1840,7 +1932,7 @@
         sub15_cancel.setAttribute('style', '');
         document.getElementById('sub15_h4').innerHTML = 'HINT15 하 :';
         var icon15 = document.getElementById("sub15_icon");
-        icon15.setAttribute('class', 'fas fa-minus');
+        icon15.setAttribute('src', "{%static 'minus.png' %}");
         var button15 = document.getElementById("sub15_button");
         button15.setAttribute('onclick', 'minus_sub15();');
     }
@@ -1857,7 +1949,7 @@
         var sub15_cancel = document.getElementById("sub15_cancel");
         sub15_cancel.setAttribute('style', 'display:none;');
         var icon15 = document.getElementById("sub15_icon");
-        icon15.setAttribute('class', 'fas fa-plus');
+        icon15.setAttribute('src', "{% static 'plus3.png' %}");
         var button15 = document.getElementById("sub15_button");
         button15.setAttribute('onclick', 'plus_sub15();');
         document.getElementById('sub15_h4').innerHTML = 'HINT1 :';
@@ -1871,7 +1963,7 @@
         sub16_cancel.setAttribute('style', '');
         document.getElementById('sub16_h4').innerHTML = 'HINT16 하 :';
         var icon16 = document.getElementById("sub16_icon");
-        icon16.setAttribute('class', 'fas fa-minus');
+        icon16.setAttribute('src', "{%static 'minus.png' %}");
         var button16 = document.getElementById("sub16_button");
         button16.setAttribute('onclick', 'minus_sub16();');
     }
@@ -1889,7 +1981,7 @@
         var sub16_cancel = document.getElementById("sub16_cancel");
         sub16_cancel.setAttribute('style', 'display:none;');
         var icon16 = document.getElementById("sub16_icon");
-        icon16.setAttribute('class', 'fas fa-plus');
+        icon16.setAttribute('src', "{% static 'plus3.png' %}");
         var button16 = document.getElementById("sub16_button");
         button16.setAttribute('onclick', 'plus_sub16();');
         document.getElementById('sub16_h4').innerHTML = 'HINT16 :';
@@ -1940,7 +2032,7 @@
         sub17_cancel.setAttribute('style', '');
         document.getElementById('sub17_h4').innerHTML = 'HINT17 하 :';
         var icon17 = document.getElementById("sub17_icon");
-        icon17.setAttribute('class', 'fas fa-minus');
+        icon17.setAttribute('src', "{%static 'minus.png' %}");
         var button17 = document.getElementById("sub17_button");
         button17.setAttribute('onclick', 'minus_sub17();');
     }
@@ -1957,7 +2049,7 @@
         var sub17_cancel = document.getElementById("sub17_cancel");
         sub17_cancel.setAttribute('style', 'display:none;');
         var icon17 = document.getElementById("sub17_icon");
-        icon17.setAttribute('class', 'fas fa-plus');
+        icon17.setAttribute('src', "{% static 'plus3.png' %}");
         var button17 = document.getElementById("sub17_button");
         button17.setAttribute('onclick', 'plus_sub17();');
         document.getElementById('sub17_h4').innerHTML = 'HINT17 :';
@@ -1971,7 +2063,7 @@
         sub18_cancel.setAttribute('style', '');
         document.getElementById('sub18_h4').innerHTML = 'HINT18 하 :';
         var icon18 = document.getElementById("sub18_icon");
-        icon18.setAttribute('class', 'fas fa-minus');
+        icon18.setAttribute('src', "{%static 'minus.png' %}");
         var button18 = document.getElementById("sub18_button");
         button18.setAttribute('onclick', 'minus_sub18();');
     }
@@ -1989,7 +2081,7 @@
         var sub18_cancel = document.getElementById("sub18_cancel");
         sub18_cancel.setAttribute('style', 'display:none;');
         var icon18 = document.getElementById("sub18_icon");
-        icon18.setAttribute('class', 'fas fa-plus');
+        icon18.setAttribute('src', "{% static 'plus3.png' %}");
         var button18 = document.getElementById("sub18_button");
         button18.setAttribute('onclick', 'plus_sub18();');
         document.getElementById('sub18_h4').innerHTML = 'HINT18 :';
@@ -2040,7 +2132,7 @@
         sub19_cancel.setAttribute('style', '');
         document.getElementById('sub19_h4').innerHTML = 'HINT19 하 :';
         var icon19 = document.getElementById("sub19_icon");
-        icon19.setAttribute('class', 'fas fa-minus');
+        icon19.setAttribute('src', "{%static 'minus.png' %}");
         var button19 = document.getElementById("sub19_button");
         button19.setAttribute('onclick', 'minus_sub19();');
     }
@@ -2057,7 +2149,7 @@
         var sub19_cancel = document.getElementById("sub19_cancel");
         sub19_cancel.setAttribute('style', 'display:none;');
         var icon19 = document.getElementById("sub19_icon");
-        icon19.setAttribute('class', 'fas fa-plus');
+        icon19.setAttribute('src', "{% static 'plus3.png' %}");
         var button19 = document.getElementById("sub19_button");
         button19.setAttribute('onclick', 'plus_sub19();');
         document.getElementById('sub19_h4').innerHTML = 'HINT19 :';
@@ -2071,7 +2163,7 @@
         sub20_cancel.setAttribute('style', '');
         document.getElementById('sub20_h4').innerHTML = 'HINT20 하 :';
         var icon20 = document.getElementById("sub20_icon");
-        icon20.setAttribute('class', 'fas fa-minus');
+        icon20.setAttribute('src', "{%static 'minus.png' %}");
         var button20 = document.getElementById("sub20_button");
         button20.setAttribute('onclick', 'minus_sub20();');
     }
@@ -2089,7 +2181,7 @@
         var sub20_cancel = document.getElementById("sub20_cancel");
         sub20_cancel.setAttribute('style', 'display:none;');
         var icon20 = document.getElementById("sub20_icon");
-        icon20.setAttribute('class', 'fas fa-plus');
+        icon20.setAttribute('src', "{% static 'plus3.png' %}");
         var button20 = document.getElementById("sub20_button");
         button20.setAttribute('onclick', 'plus_sub20();');
         document.getElementById('sub20_h4').innerHTML = 'HINT20 :';
@@ -2140,7 +2232,7 @@
         sub21_cancel.setAttribute('style', '');
         document.getElementById('sub21_h4').innerHTML = 'HINT21 하 :';
         var icon21 = document.getElementById("sub21_icon");
-        icon21.setAttribute('class', 'fas fa-minus');
+        icon21.setAttribute('src', "{%static 'minus.png' %}");
         var button21 = document.getElementById("sub21_button");
         button21.setAttribute('onclick', 'minus_sub21();');
     }
@@ -2157,7 +2249,7 @@
         var sub21_cancel = document.getElementById("sub21_cancel");
         sub21_cancel.setAttribute('style', 'display:none;');
         var icon21 = document.getElementById("sub21_icon");
-        icon21.setAttribute('class', 'fas fa-plus');
+        icon21.setAttribute('src', "{% static 'plus3.png' %}");
         var button21 = document.getElementById("sub21_button");
         button21.setAttribute('onclick', 'plus_sub21();');
         document.getElementById('sub21_h4').innerHTML = 'HINT21 :';
@@ -2171,7 +2263,7 @@
         sub22_cancel.setAttribute('style', '');
         document.getElementById('sub22_h4').innerHTML = 'HINT22 하 :';
         var icon22 = document.getElementById("sub22_icon");
-        icon22.setAttribute('class', 'fas fa-minus');
+        icon22.setAttribute('src', "{%static 'minus.png' %}");
         var button22 = document.getElementById("sub22_button");
         button22.setAttribute('onclick', 'minus_sub22();');
     }
@@ -2189,7 +2281,7 @@
         var sub22_cancel = document.getElementById("sub22_cancel");
         sub22_cancel.setAttribute('style', 'display:none;');
         var icon22 = document.getElementById("sub22_icon");
-        icon22.setAttribute('class', 'fas fa-plus');
+        icon22.setAttribute('src', "{% static 'plus3.png' %}");
         var button22 = document.getElementById("sub22_button");
         button22.setAttribute('onclick', 'plus_sub22();');
         document.getElementById('sub22_h4').innerHTML = 'HINT22 :';
@@ -2240,7 +2332,7 @@
         sub23_cancel.setAttribute('style', '');
         document.getElementById('sub23_h4').innerHTML = 'HINT23 하 :';
         var icon23 = document.getElementById("sub23_icon");
-        icon23.setAttribute('class', 'fas fa-minus');
+        icon23.setAttribute('src', "{%static 'minus.png' %}");
         var button23 = document.getElementById("sub23_button");
         button23.setAttribute('onclick', 'minus_sub23();');
     }
@@ -2257,7 +2349,7 @@
         var sub23_cancel = document.getElementById("sub23_cancel");
         sub23_cancel.setAttribute('style', 'display:none;');
         var icon23 = document.getElementById("sub23_icon");
-        icon23.setAttribute('class', 'fas fa-plus');
+        icon23.setAttribute('src', "{% static 'plus3.png' %}");
         var button23 = document.getElementById("sub23_button");
         button23.setAttribute('onclick', 'plus_sub23();');
         document.getElementById('sub23_h4').innerHTML = 'HINT23 :';
@@ -2271,7 +2363,7 @@
         sub24_cancel.setAttribute('style', '');
         document.getElementById('sub24_h4').innerHTML = 'HINT24 하 :';
         var icon24 = document.getElementById("sub24_icon");
-        icon24.setAttribute('class', 'fas fa-minus');
+        icon24.setAttribute('src', "{%static 'minus.png' %}");
         var button24 = document.getElementById("sub24_button");
         button24.setAttribute('onclick', 'minus_sub24();');
     }
@@ -2289,7 +2381,7 @@
         var sub24_cancel = document.getElementById("sub24_cancel");
         sub24_cancel.setAttribute('style', 'display:none;');
         var icon24 = document.getElementById("sub24_icon");
-        icon24.setAttribute('class', 'fas fa-plus');
+        icon24.setAttribute('src', "{% static 'plus3.png' %}");
         var button24 = document.getElementById("sub24_button");
         button24.setAttribute('onclick', 'plus_sub24();');
         document.getElementById('sub24_h4').innerHTML = 'HINT24 :';
@@ -2303,7 +2395,7 @@
         sub25_cancel.setAttribute('style', '');
         document.getElementById('sub25_h4').innerHTML = 'HINT25 하 :';
         var icon25 = document.getElementById("sub25_icon");
-        icon25.setAttribute('class', 'fas fa-minus');
+        icon25.setAttribute('src', "{%static 'minus.png' %}");
         var button25 = document.getElementById("sub25_button");
         button25.setAttribute('onclick', 'minus_sub25();');
     }
@@ -2320,7 +2412,7 @@
         var sub25_cancel = document.getElementById("sub25_cancel");
         sub25_cancel.setAttribute('style', 'display:none;');
         var icon25 = document.getElementById("sub25_icon");
-        icon25.setAttribute('class', 'fas fa-plus');
+        icon25.setAttribute('src', "{% static 'plus3.png' %}");
         var button25 = document.getElementById("sub25_button");
         button25.setAttribute('onclick', 'plus_sub25();');
         document.getElementById('sub25_h4').innerHTML = 'HINT25 :';
@@ -2334,7 +2426,7 @@
         sub26_cancel.setAttribute('style', '');
         document.getElementById('sub26_h4').innerHTML = 'HINT26 하 :';
         var icon26 = document.getElementById("sub26_icon");
-        icon26.setAttribute('class', 'fas fa-minus');
+        icon26.setAttribute('src', "{%static 'minus.png' %}");
         var button26 = document.getElementById("sub26_button");
         button26.setAttribute('onclick', 'minus_sub26();');
     }
@@ -2352,7 +2444,7 @@
         var sub26_cancel = document.getElementById("sub26_cancel");
         sub26_cancel.setAttribute('style', 'display:none;');
         var icon26 = document.getElementById("sub26_icon");
-        icon26.setAttribute('class', 'fas fa-plus');
+        icon26.setAttribute('src', "{% static 'plus3.png' %}");
         var button26 = document.getElementById("sub26_button");
         button26.setAttribute('onclick', 'plus_sub26();');
         document.getElementById('sub26_h4').innerHTML = 'HINT26 :';
@@ -2403,7 +2495,7 @@
         sub27_cancel.setAttribute('style', '');
         document.getElementById('sub27_h4').innerHTML = 'HINT27 하 :';
         var icon27 = document.getElementById("sub27_icon");
-        icon27.setAttribute('class', 'fas fa-minus');
+        icon27.setAttribute('src', "{%static 'minus.png' %}");
         var button27 = document.getElementById("sub27_button");
         button27.setAttribute('onclick', 'minus_sub27();');
     }
@@ -2420,7 +2512,7 @@
         var sub27_cancel = document.getElementById("sub27_cancel");
         sub27_cancel.setAttribute('style', 'display:none;');
         var icon27 = document.getElementById("sub27_icon");
-        icon27.setAttribute('class', 'fas fa-plus');
+        icon27.setAttribute('src', "{% static 'plus3.png' %}");
         var button27 = document.getElementById("sub27_button");
         button27.setAttribute('onclick', 'plus_sub27();');
         document.getElementById('sub27_h4').innerHTML = 'HINT27 :';
@@ -2434,7 +2526,7 @@
         sub28_cancel.setAttribute('style', '');
         document.getElementById('sub28_h4').innerHTML = 'HINT28 하 :';
         var icon28 = document.getElementById("sub28_icon");
-        icon28.setAttribute('class', 'fas fa-minus');
+        icon28.setAttribute('src', "{%static 'minus.png' %}");
         var button28 = document.getElementById("sub28_button");
         button28.setAttribute('onclick', 'minus_sub28();');
     }
@@ -2452,7 +2544,7 @@
         var sub28_cancel = document.getElementById("sub28_cancel");
         sub28_cancel.setAttribute('style', 'display:none;');
         var icon28 = document.getElementById("sub28_icon");
-        icon28.setAttribute('class', 'fas fa-plus');
+        icon28.setAttribute('src', "{% static 'plus3.png' %}");
         var button28 = document.getElementById("sub28_button");
         button28.setAttribute('onclick', 'plus_sub28();');
         document.getElementById('sub28_h4').innerHTML = 'HINT28 :';
@@ -2503,7 +2595,7 @@
         sub29_cancel.setAttribute('style', '');
         document.getElementById('sub29_h4').innerHTML = 'HINT29 하 :';
         var icon29 = document.getElementById("sub29_icon");
-        icon29.setAttribute('class', 'fas fa-minus');
+        icon29.setAttribute('src', "{%static 'minus.png' %}");
         var button29 = document.getElementById("sub29_button");
         button29.setAttribute('onclick', 'minus_sub29();');
     }
@@ -2520,7 +2612,7 @@
         var sub29_cancel = document.getElementById("sub29_cancel");
         sub29_cancel.setAttribute('style', 'display:none;');
         var icon29 = document.getElementById("sub29_icon");
-        icon29.setAttribute('class', 'fas fa-plus');
+        icon29.setAttribute('src', "{% static 'plus3.png' %}");
         var button29 = document.getElementById("sub29_button");
         button29.setAttribute('onclick', 'plus_sub29();');
         document.getElementById('sub29_h4').innerHTML = 'HINT29 :';
@@ -2534,7 +2626,7 @@
         sub30_cancel.setAttribute('style', '');
         document.getElementById('sub30_h4').innerHTML = 'HINT30 하 :';
         var icon30 = document.getElementById("sub30_icon");
-        icon30.setAttribute('class', 'fas fa-minus');
+        icon30.setAttribute('src', "{%static 'minus.png' %}");
         var button30 = document.getElementById("sub30_button");
         button30.setAttribute('onclick', 'minus_sub30();');
     }
@@ -2552,7 +2644,7 @@
         var sub30_cancel = document.getElementById("sub30_cancel");
         sub30_cancel.setAttribute('style', 'display:none;');
         var icon30 = document.getElementById("sub30_icon");
-        icon30.setAttribute('class', 'fas fa-plus');
+        icon30.setAttribute('src', "{% static 'plus3.png' %}");
         var button30 = document.getElementById("sub30_button");
         button30.setAttribute('onclick', 'plus_sub30();');
         document.getElementById('sub30_h4').innerHTML = 'HINT30 :';
