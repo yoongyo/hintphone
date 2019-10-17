@@ -33,6 +33,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint1 %}
+                <div class="mt-4">
+                    {{ theme.textHint1|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "2" %}
@@ -57,6 +63,12 @@
                     {{ theme.textHint2|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint2 %}
+                <div class="mt-4">
+                    {{ theme.textHint2|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -83,6 +95,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint3 %}
+                <div class="mt-4">
+                    {{ theme.textHint3|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "4" %}
@@ -107,6 +125,12 @@
                     {{ theme.textHint4|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint4 %}
+                <div class="mt-4">
+                    {{ theme.textHint4|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -133,6 +157,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint5 %}
+                <div class="mt-4">
+                    {{ theme.textHint5|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "6" %}
@@ -157,6 +187,12 @@
                     {{ theme.textHint6|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint6 %}
+                <div class="mt-4">
+                    {{ theme.textHint6|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -183,6 +219,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint7 %}
+                <div class="mt-4">
+                    {{ theme.textHint7|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "8" %}
@@ -207,6 +249,12 @@
                     {{ theme.textHint8|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint8 %}
+                <div class="mt-4">
+                    {{ theme.textHint8|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -233,6 +281,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint9 %}
+                <div class="mt-4">
+                    {{ theme.textHint9|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "10" %}
@@ -257,6 +311,12 @@
                     {{ theme.textHint10|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint10 %}
+                <div class="mt-4">
+                    {{ theme.textHint10|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -283,6 +343,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint11 %}
+                <div class="mt-4">
+                    {{ theme.textHint11|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "12" %}
@@ -307,6 +373,12 @@
                     {{ theme.textHint12|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint12 %}
+                <div class="mt-4">
+                    {{ theme.textHint12|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -333,6 +405,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint13 %}
+                <div class="mt-4">
+                    {{ theme.textHint13|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "14" %}
@@ -357,6 +435,12 @@
                     {{ theme.textHint14|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint14 %}
+                <div class="mt-4">
+                    {{ theme.textHint14|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -383,6 +467,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint15 %}
+                <div class="mt-4">
+                    {{ theme.textHint15|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "16" %}
@@ -408,6 +498,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint16 %}
+                <div class="mt-4">
+                    {{ theme.textHint16|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "17" %}
@@ -426,13 +522,20 @@
                 {% if theme.hint17 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint17.url }}"></audio>
-                {% end if %}
+                {% endif %}
                 {% if theme.textHint17 %}
                 <div class="mt-4">
                     {{ theme.textHint17|safe }}
                 </div>
                 {% endif %}
-            {% endif %}    {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint17 %}
+                <div class="mt-4">
+                    {{ theme.textHint17|safe }}
+                </div>
+            {% endif %}
+        {% endif %}
     {% endif %}
     {% if hint == "18" %}
         {% if theme.hint18 %}
@@ -456,6 +559,12 @@
                     {{ theme.textHint18|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint18 %}
+                <div class="mt-4">
+                    {{ theme.textHint18|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -482,6 +591,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint19 %}
+                <div class="mt-4">
+                    {{ theme.textHint19|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "20" %}
@@ -506,6 +621,12 @@
                     {{ theme.textHint20|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint20 %}
+                <div class="mt-4">
+                    {{ theme.textHint20|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -532,6 +653,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint21 %}
+                <div class="mt-4">
+                    {{ theme.textHint21|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "22" %}
@@ -556,6 +683,12 @@
                     {{ theme.textHint22|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint22 %}
+                <div class="mt-4">
+                    {{ theme.textHint22|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -582,6 +715,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint23 %}
+                <div class="mt-4">
+                    {{ theme.textHint23|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "24" %}
@@ -606,6 +745,12 @@
                     {{ theme.textHint24|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint24 %}
+                <div class="mt-4">
+                    {{ theme.textHint24|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -632,6 +777,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint25 %}
+                <div class="mt-4">
+                    {{ theme.textHint25|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "26" %}
@@ -656,6 +807,12 @@
                     {{ theme.textHint26|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint26 %}
+                <div class="mt-4">
+                    {{ theme.textHint26|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -682,6 +839,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint27 %}
+                <div class="mt-4">
+                    {{ theme.textHint27|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "28" %}
@@ -706,6 +869,12 @@
                     {{ theme.textHint28|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint28 %}
+                <div class="mt-4">
+                    {{ theme.textHint28|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -732,6 +901,12 @@
                 </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            {% if theme.textHint29 %}
+                <div class="mt-4">
+                    {{ theme.textHint29|safe }}
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
     {% if hint == "30" %}
@@ -756,6 +931,12 @@
                     {{ theme.textHint30|safe }}
                 </div>
                 {% endif %}
+            {% endif %}
+        {% else %}
+            {% if theme.textHint30 %}
+                <div class="mt-4">
+                    {{ theme.textHint30|safe }}
+                </div>
             {% endif %}
         {% endif %}
     {% endif %}
