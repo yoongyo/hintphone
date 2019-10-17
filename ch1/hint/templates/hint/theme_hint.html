@@ -24,7 +24,9 @@
                 </div>
                 {% endif %}
             {% else %}
-                <audio id="audio1" controls autoplay src="{{ theme.hint1.url }}"></audio>
+                {% if theme.hint1 %}
+                    <audio id="audio1" controls autoplay src="{{ theme.hint1.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint1 %}
                 <div class="mt-4">
                     {{ theme.textHint1|safe }}
@@ -46,8 +48,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint2 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint2.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint2 %}
                 <div class="mt-4">
                     {{ theme.textHint2|safe }}
@@ -69,8 +73,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint3 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint3.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint3 %}
                 <div class="mt-4">
                     {{ theme.textHint3|safe }}
@@ -92,8 +98,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint4 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint4.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint4 %}
                 <div class="mt-4">
                     {{ theme.textHint4|safe }}
@@ -115,8 +123,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint5 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint5.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint5 %}
                 <div class="mt-4">
                     {{ theme.textHint5|safe }}
@@ -138,8 +148,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint6 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint6.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint6 %}
                 <div class="mt-4">
                     {{ theme.textHint6|safe }}
@@ -161,8 +173,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint7 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint7.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint7 %}
                 <div class="mt-4">
                     {{ theme.textHint7|safe }}
@@ -184,8 +198,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint8 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint8.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint8 %}
                 <div class="mt-4">
                     {{ theme.textHint8|safe }}
@@ -207,8 +223,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint9 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint9.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint9 %}
                 <div class="mt-4">
                     {{ theme.textHint9|safe }}
@@ -230,8 +248,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint10 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint10.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint10 %}
                 <div class="mt-4">
                     {{ theme.textHint10|safe }}
@@ -253,8 +273,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint11 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint11.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint11 %}
                 <div class="mt-4">
                     {{ theme.textHint11|safe }}
@@ -276,8 +298,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint12 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint12.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint12 %}
                 <div class="mt-4">
                     {{ theme.textHint12|safe }}
@@ -299,8 +323,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint13 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint13.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint13%}
                 <div class="mt-4">
                     {{ theme.textHint13|safe }}
@@ -322,8 +348,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint14 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint14.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint14 %}
                 <div class="mt-4">
                     {{ theme.textHint14|safe }}
@@ -345,8 +373,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint15 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint15.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint15 %}
                 <div class="mt-4">
                     {{ theme.textHint15|safe }}
@@ -368,8 +398,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint16 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint16.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint16 %}
                 <div class="mt-4">
                     {{ theme.textHint16|safe }}
@@ -391,8 +423,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint17 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint17.url }}"></audio>
+                {% end if %}
                 {% if theme.textHint17 %}
                 <div class="mt-4">
                     {{ theme.textHint17|safe }}
@@ -413,8 +447,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint18 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint18.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint18 %}
                 <div class="mt-4">
                     {{ theme.textHint18|safe }}
@@ -436,8 +472,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint19 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint19.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint19 %}
                 <div class="mt-4">
                     {{ theme.textHint19|safe }}
@@ -459,8 +497,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint20 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint20.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint20 %}
                 <div class="mt-4">
                     {{ theme.textHint20|safe }}
@@ -482,8 +522,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint21 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint21.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint21 %}
                 <div class="mt-4">
                     {{ theme.textHint21|safe }}
@@ -505,8 +547,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint22 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint22.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint22 %}
                 <div class="mt-4">
                     {{ theme.textHint22|safe }}
@@ -528,8 +572,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint23 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint23.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint23 %}
                 <div class="mt-4">
                     {{ theme.textHint23|safe }}
@@ -551,8 +597,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint24 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint24.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint24 %}
                 <div class="mt-4">
                     {{ theme.textHint24|safe }}
@@ -574,8 +622,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint25 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint25.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint25 %}
                 <div class="mt-4">
                     {{ theme.textHint25|safe }}
@@ -597,8 +647,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint26 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint26.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint26 %}
                 <div class="mt-4">
                     {{ theme.textHint26|safe }}
@@ -620,8 +672,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint27 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint27.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint27 %}
                 <div class="mt-4">
                     {{ theme.textHint27|safe }}
@@ -643,8 +697,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint28 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint28.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint28 %}
                 <div class="mt-4">
                     {{ theme.textHint28|safe }}
@@ -666,8 +722,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint29 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint29.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint29 %}
                 <div class="mt-4">
                     {{ theme.textHint29|safe }}
@@ -689,8 +747,10 @@
                 </div>
                 {% endif %}
             {% else %}
+                {% if theme.hint30 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint30.url }}"></audio>
+                {% endif %}
                 {% if theme.textHint30 %}
                 <div class="mt-4">
                     {{ theme.textHint30|safe }}
