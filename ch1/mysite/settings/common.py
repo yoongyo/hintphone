@@ -106,6 +106,7 @@ USE_TZ = True
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = "pillow"
+AWS_QUERYSTRING_AUTH = False
 
 CKEDITOR_CONFIGS = {
     'default': {
@@ -124,7 +125,7 @@ CKEDITOR_CONFIGS = {
                        'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl']},
 
             {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
-            {'name': 'colors', 'items': ['TextColor', 'BGColor', 'Image', 'ImageButton']},
+            {'name': 'colors', 'items': ['TextColor', 'BGColor', 'Image']},
             '/',
         ],
         'toolbar': 'YourCustomToolbarConfig',
