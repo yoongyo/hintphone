@@ -67,6 +67,67 @@ count58 = 0
 count59 = 0
 count60 = 0
 
+count101 = 0
+count102 = 0
+count103 = 0
+count104 = 0
+count105 = 0
+count106 = 0
+count107 = 0
+count108 = 0
+count109 = 0
+count110 = 0
+count111 = 0
+count112 = 0
+count113 = 0
+count114 = 0
+count115 = 0
+count116 = 0
+count117 = 0
+count118 = 0
+count119 = 0
+count120 = 0
+count121 = 0
+count122 = 0
+count123 = 0
+count124 = 0
+count125 = 0
+count126 = 0
+count127 = 0
+count128 = 0
+count129 = 0
+count130 = 0
+count131 = 0
+count132 = 0
+count133 = 0
+count134 = 0
+count135 = 0
+count136 = 0
+count137 = 0
+count138 = 0
+count139 = 0
+count140 = 0
+count141 = 0
+count142 = 0
+count143 = 0
+count144 = 0
+count145 = 0
+count146 = 0
+count147 = 0
+count148 = 0
+count149 = 0
+count150 = 0
+count151 = 0
+count152 = 0
+count153 = 0
+count154 = 0
+count155 = 0
+count156 = 0
+count157 = 0
+count158 = 0
+count159 = 0
+count160 = 0
+
 code_list1 = []
 code_list2 = []
 code_list3 = []
@@ -128,6 +189,67 @@ code_list58 = []
 code_list59 = []
 code_list60 = []
 
+code_list101 = []
+code_list102 = []
+code_list103 = []
+code_list104 = []
+code_list105 = []
+code_list106 = []
+code_list107 = []
+code_list108 = []
+code_list109 = []
+code_list110 = []
+code_list111 = []
+code_list112 = []
+code_list113 = []
+code_list114 = []
+code_list115 = []
+code_list116 = []
+code_list117 = []
+code_list118 = []
+code_list119 = []
+code_list120 = []
+code_list121 = []
+code_list122 = []
+code_list123 = []
+code_list124 = []
+code_list125 = []
+code_list126 = []
+code_list127 = []
+code_list128 = []
+code_list129 = []
+code_list130 = []
+code_list131 = []
+code_list132 = []
+code_list133 = []
+code_list134 = []
+code_list135 = []
+code_list136 = []
+code_list137 = []
+code_list138 = []
+code_list139 = []
+code_list140 = []
+code_list141 = []
+code_list142 = []
+code_list143 = []
+code_list144 = []
+code_list145 = []
+code_list146 = []
+code_list147 = []
+code_list148 = []
+code_list149 = []
+code_list150 = []
+code_list151 = []
+code_list152 = []
+code_list153 = []
+code_list154 = []
+code_list155 = []
+code_list156 = []
+code_list157 = []
+code_list158 = []
+code_list159 = []
+code_list160 = []
+
 
 def switch(x):
     return {1: count1, 2: count2, 3: count3, 4: count4, 5: count5, 6: count6,
@@ -139,7 +261,16 @@ def switch(x):
             39: count39, 40: count40, 41: count41, 42: count42, 43: count43, 44: count44, 45: count45, 46: count46,
             47: count47, 48: count48, 49: count49, 50: count50, 51: count51, 52: count52,
             53: count53, 54: count54, 55: count55, 56: count56, 57: count57, 58: count58,
-            59: count59, 60: count60}.get(x, 0)
+            59: count59, 60: count60, 101: count101, 102: count102, 103: count103, 104: count104, 105: count105, 106: count106,
+            107: count107, 108: count108, 109: count109, 110: count110, 111: count111, 112: count112,
+            113: count113, 114: count114, 115: count115, 116: count116, 117: count117, 118: count118,
+            119: count119, 120: count120, 121: count112, 122: count122, 123: count123, 124: count124, 125: count125, 126: count126,
+            127: count127, 128: count128, 129: count129, 130: count130, 131: count131, 132: count132,
+            133: count133, 134: count134, 135: count135, 136: count136, 137: count137, 138: count138,
+            139: count139, 140: count140, 141: count141, 142: count142, 143: count143, 144: count144, 145: count145, 146: count146,
+            147: count147, 148: count148, 149: count149, 150: count150, 151: count151, 152: count152,
+            153: count153, 154: count154, 155: count155, 156: count156, 157: count157, 158: count158,
+            159: count159, 160: count160}.get(x, 0)
 
 
 @login_required
@@ -341,6 +472,187 @@ def reset_code(request, user_id, theme):
         global count60
         global code_list60
 
+    if theme_number == 101:
+        global count101
+        global code_list101
+    if theme_number == 102:
+        global count102
+        global code_list102
+    if theme_number == 103:
+        global count103
+        global code_list103
+    if theme_number == 104:
+        global count104
+        global code_list104
+    if theme_number == 105:
+        global count105
+        global code_list105
+    if theme_number == 106:
+        global count106
+        global code_list106
+    if theme_number == 107:
+        global count107
+        global code_list107
+    if theme_number == 108:
+        global count108
+        global code_list108
+    if theme_number == 109:
+        global count109
+        global code_list109
+    if theme_number == 110:
+        global count110
+        global code_list110
+    if theme_number == 111:
+        global count111
+        global code_list111
+    if theme_number == 112:
+        global count112
+        global code_list112
+    if theme_number == 113:
+        global count113
+        global code_list113
+    if theme_number == 114:
+        global count114
+        global code_list114
+    if theme_number == 115:
+        global count115
+        global code_list115
+    if theme_number == 116:
+        global count116
+        global code_list116
+    if theme_number == 117:
+        global count117
+        global code_list117
+    if theme_number == 118:
+        global count118
+        global code_list118
+    if theme_number == 119:
+        global count119
+        global code_list119
+    if theme_number == 120:
+        global count120
+        global code_list120
+    if theme_number == 121:
+        global count121
+        global code_list121
+    if theme_number == 122:
+        global count122
+        global code_list122
+    if theme_number == 123:
+        global count123
+        global code_list123
+    if theme_number == 124:
+        global count124
+        global code_list124
+    if theme_number == 125:
+        global count125
+        global code_list125
+    if theme_number == 126:
+        global count126
+        global code_list126
+    if theme_number == 127:
+        global count127
+        global code_list127
+    if theme_number == 128:
+        global count128
+        global code_list128
+    if theme_number == 129:
+        global count129
+        global code_list129
+    if theme_number == 130:
+        global count130
+        global code_list130
+    if theme_number == 131:
+        global count131
+        global code_list131
+    if theme_number == 132:
+        global count132
+        global code_list132
+    if theme_number == 133:
+        global count133
+        global code_list133
+    if theme_number == 134:
+        global count134
+        global code_list134
+    if theme_number == 135:
+        global count135
+        global code_list135
+    if theme_number == 136:
+        global count136
+        global code_list136
+    if theme_number == 137:
+        global count137
+        global code_list137
+    if theme_number == 138:
+        global count138
+        global code_list138
+    if theme_number == 139:
+        global count139
+        global code_list139
+    if theme_number == 140:
+        global count140
+        global code_list140
+    if theme_number == 141:
+        global count141
+        global code_list141
+    if theme_number == 142:
+        global count142
+        global code_list142
+    if theme_number == 143:
+        global count143
+        global code_list143
+    if theme_number == 144:
+        global count144
+        global code_list144
+    if theme_number == 145:
+        global count145
+        global code_list145
+    if theme_number == 146:
+        global count146
+        global code_list146
+    if theme_number == 147:
+        global count147
+        global code_list147
+    if theme_number == 148:
+        global count148
+        global code_list148
+    if theme_number == 149:
+        global count149
+        global code_list149
+    if theme_number == 150:
+        global count150
+        global code_list150
+    if theme_number == 151:
+        global count151
+        global code_list151
+    if theme_number == 152:
+        global count152
+        global code_list152
+    if theme_number == 153:
+        global count153
+        global code_list153
+    if theme_number == 154:
+        global count154
+        global code_list154
+    if theme_number == 155:
+        global count155
+        global code_list155
+    if theme_number == 156:
+        global count156
+        global code_list156
+    if theme_number == 157:
+        global count157
+        global code_list157
+    if theme_number == 158:
+        global count158
+        global code_list158
+    if theme_number == 159:
+        global count159
+        global code_list159
+    if theme_number == 160:
+        global count160
+        global code_list160
+
     reset = get_object_or_404(Profile, user=request.user).reset
     user_id = request.user.username
     theme = get_object_or_404(Theme, name=theme, roomEscape=request.user)
@@ -527,6 +839,187 @@ def reset_code(request, user_id, theme):
         if theme_number == 60:
             count60 = 0
             code_list60 = []
+
+        if theme_number == 101:
+            count101 = 0
+            code_list101 = []
+        if theme_number == 102:
+            count102 = 0
+            code_list102 = []
+        if theme_number == 103:
+            count103 = 0
+            code_list103 = []
+        if theme_number == 104:
+            count104 = 0
+            code_list104 = []
+        if theme_number == 105:
+            count105 = 0
+            code_list105 = []
+        if theme_number == 106:
+            count106 = 0
+            code_list106 = []
+        if theme_number == 107:
+            count107 = 0
+            code_list107 = []
+        if theme_number == 108:
+            count108 = 0
+            code_list108 = []
+        if theme_number == 109:
+            count109 = 0
+            code_list109 = []
+        if theme_number == 110:
+            count110 = 0
+            code_list110 = []
+        if theme_number == 111:
+            count111 = 0
+            code_list111 = []
+        if theme_number == 112:
+            count112 = 0
+            code_list112 = []
+        if theme_number == 113:
+            count113 = 0
+            code_list113 = []
+        if theme_number == 114:
+            count114 = 0
+            code_list114 = []
+        if theme_number == 115:
+            count115 = 0
+            code_list115 = []
+        if theme_number == 116:
+            count116 = 0
+            code_list116 = []
+        if theme_number == 117:
+            count117 = 0
+            code_list117 = []
+        if theme_number == 118:
+            count118 = 0
+            code_list118 = []
+        if theme_number == 119:
+            count119 = 0
+            code_list119 = []
+        if theme_number == 120:
+            count120 = 0
+            code_list120 = []
+        if theme_number == 121:
+            count121 = 0
+            code_list121 = []
+        if theme_number == 122:
+            count122 = 0
+            code_list122 = []
+        if theme_number == 123:
+            count123 = 0
+            code_list123 = []
+        if theme_number == 124:
+            count124 = 0
+            code_list124 = []
+        if theme_number == 125:
+            count125 = 0
+            code_list125 = []
+        if theme_number == 126:
+            count126 = 0
+            code_list126 = []
+        if theme_number == 127:
+            count127 = 0
+            code_list127 = []
+        if theme_number == 128:
+            count128 = 0
+            code_list128 = []
+        if theme_number == 129:
+            count129 = 0
+            code_list129 = []
+        if theme_number == 130:
+            count130 = 0
+            code_list130 = []
+        if theme_number == 131:
+            count131 = 0
+            code_list131 = []
+        if theme_number == 132:
+            count132 = 0
+            code_list132 = []
+        if theme_number == 133:
+            count133 = 0
+            code_list133 = []
+        if theme_number == 134:
+            count134 = 0
+            code_list134 = []
+        if theme_number == 135:
+            count135 = 0
+            code_list135 = []
+        if theme_number == 136:
+            count136 = 0
+            code_list136 = []
+        if theme_number == 137:
+            count137 = 0
+            code_list137 = []
+        if theme_number == 138:
+            count138 = 0
+            code_list138 = []
+        if theme_number == 139:
+            count139 = 0
+            code_list139 = []
+        if theme_number == 140:
+            count140 = 0
+            code_list140 = []
+        if theme_number == 141:
+            count141 = 0
+            code_list141 = []
+        if theme_number == 142:
+            count142 = 0
+            code_list142 = []
+        if theme_number == 143:
+            count143 = 0
+            code_list143 = []
+        if theme_number == 144:
+            count144 = 0
+            code_list144 = []
+        if theme_number == 145:
+            count145 = 0
+            code_list145 = []
+        if theme_number == 146:
+            count146 = 0
+            code_list146 = []
+        if theme_number == 147:
+            count147 = 0
+            code_list147 = []
+        if theme_number == 148:
+            count148 = 0
+            code_list148 = []
+        if theme_number == 149:
+            count149 = 0
+            code_list149 = []
+        if theme_number == 150:
+            count150 = 0
+            code_list150 = []
+        if theme_number == 151:
+            count151 = 0
+            code_list151 = []
+        if theme_number == 152:
+            count152 = 0
+            code_list152 = []
+        if theme_number == 153:
+            count153 = 0
+            code_list153 = []
+        if theme_number == 154:
+            count154 = 0
+            code_list154 = []
+        if theme_number == 155:
+            count155 = 0
+            code_list155 = []
+        if theme_number == 156:
+            count156 = 0
+            code_list156 = []
+        if theme_number == 157:
+            count157 = 0
+            code_list157 = []
+        if theme_number == 158:
+            count158 = 0
+            code_list158 = []
+        if theme_number == 159:
+            count159 = 0
+            code_list159 = []
+        if theme_number == 160:
+            count160 = 0
+            code_list160 = []
     return render(request, 'hint/reset_code.html', {
         'reset': reset,
         'q': q,
@@ -727,6 +1220,187 @@ def QR_code(request, user_id, theme):
     if theme_number == 60:
         global count60
         global code_list60
+
+    if theme_number == 101:
+        global count101
+        global code_list101
+    if theme_number == 102:
+        global count102
+        global code_list102
+    if theme_number == 103:
+        global count103
+        global code_list103
+    if theme_number == 104:
+        global count104
+        global code_list104
+    if theme_number == 105:
+        global count105
+        global code_list105
+    if theme_number == 106:
+        global count106
+        global code_list106
+    if theme_number == 107:
+        global count107
+        global code_list107
+    if theme_number == 108:
+        global count108
+        global code_list108
+    if theme_number == 109:
+        global count109
+        global code_list109
+    if theme_number == 110:
+        global count110
+        global code_list110
+    if theme_number == 111:
+        global count111
+        global code_list111
+    if theme_number == 112:
+        global count112
+        global code_list112
+    if theme_number == 113:
+        global count113
+        global code_list113
+    if theme_number == 114:
+        global count114
+        global code_list114
+    if theme_number == 115:
+        global count115
+        global code_list115
+    if theme_number == 116:
+        global count116
+        global code_list116
+    if theme_number == 117:
+        global count117
+        global code_list117
+    if theme_number == 118:
+        global count118
+        global code_list118
+    if theme_number == 119:
+        global count119
+        global code_list119
+    if theme_number == 120:
+        global count120
+        global code_list120
+    if theme_number == 121:
+        global count121
+        global code_list121
+    if theme_number == 122:
+        global count122
+        global code_list122
+    if theme_number == 123:
+        global count123
+        global code_list123
+    if theme_number == 124:
+        global count124
+        global code_list124
+    if theme_number == 125:
+        global count125
+        global code_list125
+    if theme_number == 126:
+        global count126
+        global code_list126
+    if theme_number == 127:
+        global count127
+        global code_list127
+    if theme_number == 128:
+        global count128
+        global code_list128
+    if theme_number == 129:
+        global count129
+        global code_list129
+    if theme_number == 130:
+        global count130
+        global code_list130
+    if theme_number == 131:
+        global count131
+        global code_list131
+    if theme_number == 132:
+        global count132
+        global code_list132
+    if theme_number == 133:
+        global count133
+        global code_list133
+    if theme_number == 134:
+        global count134
+        global code_list134
+    if theme_number == 135:
+        global count135
+        global code_list135
+    if theme_number == 136:
+        global count136
+        global code_list136
+    if theme_number == 137:
+        global count137
+        global code_list137
+    if theme_number == 138:
+        global count138
+        global code_list138
+    if theme_number == 139:
+        global count139
+        global code_list139
+    if theme_number == 140:
+        global count140
+        global code_list140
+    if theme_number == 141:
+        global count141
+        global code_list141
+    if theme_number == 142:
+        global count142
+        global code_list142
+    if theme_number == 143:
+        global count143
+        global code_list143
+    if theme_number == 144:
+        global count144
+        global code_list144
+    if theme_number == 145:
+        global count145
+        global code_list145
+    if theme_number == 146:
+        global count146
+        global code_list146
+    if theme_number == 147:
+        global count147
+        global code_list147
+    if theme_number == 148:
+        global count148
+        global code_list148
+    if theme_number == 149:
+        global count149
+        global code_list149
+    if theme_number == 150:
+        global count150
+        global code_list150
+    if theme_number == 151:
+        global count151
+        global code_list151
+    if theme_number == 152:
+        global count152
+        global code_list152
+    if theme_number == 153:
+        global count153
+        global code_list153
+    if theme_number == 154:
+        global count154
+        global code_list154
+    if theme_number == 155:
+        global count155
+        global code_list155
+    if theme_number == 156:
+        global count156
+        global code_list156
+    if theme_number == 157:
+        global count157
+        global code_list157
+    if theme_number == 158:
+        global count158
+        global code_list158
+    if theme_number == 159:
+        global count159
+        global code_list159
+    if theme_number == 160:
+        global count160
+        global code_list160
     count = switch(theme_number)
     print("pk:", theme_number, 'count:', count)
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
@@ -736,303 +1410,484 @@ def QR_code(request, user_id, theme):
         if theme_number == 1:
             if p not in code_list1:
                 code_list1.append(p)
-                print(code_list1)
                 count1 += 1
         if theme_number == 2:
             if p not in code_list2:
                 code_list2.append(p)
-                print(code_list2)
                 count2 += 1
         if theme_number == 3:
             if p not in code_list3:
                 code_list3.append(p)
-                print(code_list3)
                 count3 += 1
         if theme_number == 4:
             if p not in code_list4:
                 code_list4.append(p)
-                print(code_list4)
                 count4 += 1
         if theme_number == 5:
             if p not in code_list5:
                 code_list5.append(p)
-                print(code_list5)
                 count5 += 1
         if theme_number == 6:
             if p not in code_list6:
                 code_list6.append(p)
-                print(code_list6)
                 count6 += 1
         if theme_number == 7:
             if p not in code_list7:
                 code_list7.append(p)
-                print(code_list7)
                 count7 += 1
         if theme_number == 8:
             if p not in code_list8:
                 code_list8.append(p)
-                print(code_list8)
                 count8 += 1
         if theme_number == 9:
             if p not in code_list9:
                 code_list9.append(p)
-                print(code_list9)
                 count9 += 1
         if theme_number == 10:
             if p not in code_list10:
                 code_list10.append(p)
-                print(code_list10)
                 count10 += 1
         if theme_number == 11:
             if p not in code_list11:
                 code_list11.append(p)
-                print(code_list11)
                 count11 += 1
         if theme_number == 12:
             if p not in code_list12:
                 code_list12.append(p)
-                print(code_list12)
                 count12 += 1
         if theme_number == 13:
             if p not in code_list13:
                 code_list13.append(p)
-                print(code_list13)
                 count13 += 1
         if theme_number == 14:
             if p not in code_list14:
                 code_list14.append(p)
-                print(code_list14)
                 count14 += 1
         if theme_number == 15:
             if p not in code_list15:
                 code_list15.append(p)
-                print(code_list15)
                 count15 += 1
         if theme_number == 16:
             if p not in code_list16:
                 code_list16.append(p)
-                print(code_list16)
                 count16 += 1
         if theme_number == 17:
             if p not in code_list17:
                 code_list17.append(p)
-                print(code_list17)
                 count17 += 1
         if theme_number == 18:
             if p not in code_list18:
                 code_list18.append(p)
-                print(code_list18)
                 count18 += 1
         if theme_number == 19:
             if p not in code_list19:
                 code_list19.append(p)
-                print(code_list19)
                 count19 += 1
         if theme_number == 20:
             if p not in code_list20:
                 code_list20.append(p)
-                print(code_list20)
                 count20 += 1
         if theme_number == 21:
             if p not in code_list21:
                 code_list21.append(p)
-                print(code_list1)
                 count21 += 1
         if theme_number == 22:
             if p not in code_list22:
                 code_list22.append(p)
-                print(code_list2)
                 count22 += 1
         if theme_number == 23:
             if p not in code_list23:
                 code_list23.append(p)
-                print(code_list3)
                 count23 += 1
         if theme_number == 24:
             if p not in code_list24:
                 code_list24.append(p)
-                print(code_list4)
                 count24 += 1
         if theme_number == 25:
             if p not in code_list25:
                 code_list25.append(p)
-                print(code_list5)
                 count25 += 1
         if theme_number == 26:
             if p not in code_list26:
                 code_list26.append(p)
-                print(code_list6)
                 count26 += 1
         if theme_number == 27:
             if p not in code_list27:
                 code_list27.append(p)
-                print(code_list7)
                 count27 += 1
         if theme_number == 28:
             if p not in code_list28:
                 code_list28.append(p)
-                print(code_list8)
                 count28 += 1
         if theme_number == 29:
             if p not in code_list29:
                 code_list29.append(p)
-                print(code_list9)
                 count29 += 1
         if theme_number == 30:
             if p not in code_list30:
                 code_list30.append(p)
-                print(code_list10)
                 count30 += 1
         if theme_number == 31:
             if p not in code_list31:
                 code_list31.append(p)
-                print(code_list1)
                 count31 += 1
         if theme_number == 32:
             if p not in code_list32:
                 code_list32.append(p)
-                print(code_list2)
                 count32 += 1
         if theme_number == 33:
             if p not in code_list33:
                 code_list33.append(p)
-                print(code_list3)
                 count33 += 1
         if theme_number == 34:
             if p not in code_list34:
                 code_list34.append(p)
-                print(code_list4)
                 count34 += 1
         if theme_number == 35:
             if p not in code_list35:
                 code_list35.append(p)
-                print(code_list5)
                 count35 += 1
         if theme_number == 36:
             if p not in code_list36:
                 code_list36.append(p)
-                print(code_list6)
                 count36 += 1
         if theme_number == 37:
             if p not in code_list37:
                 code_list37.append(p)
-                print(code_list7)
                 count37 += 1
         if theme_number == 38:
             if p not in code_list38:
                 code_list38.append(p)
-                print(code_list8)
                 count38 += 1
         if theme_number == 39:
             if p not in code_list39:
                 code_list39.append(p)
-                print(code_list9)
                 count39 += 1
         if theme_number == 40:
             if p not in code_list40:
                 code_list40.append(p)
-                print(code_list10)
                 count40 += 1
         if theme_number == 41:
             if p not in code_list41:
                 code_list41.append(p)
-                print(code_list1)
                 count41 += 1
         if theme_number == 42:
             if p not in code_list42:
                 code_list42.append(p)
-                print(code_list2)
                 count42 += 1
         if theme_number == 43:
             if p not in code_list43:
                 code_list43.append(p)
-                print(code_list3)
                 count43 += 1
         if theme_number == 44:
             if p not in code_list44:
                 code_list44.append(p)
-                print(code_list4)
                 count44 += 1
         if theme_number == 45:
             if p not in code_list45:
                 code_list45.append(p)
-                print(code_list5)
                 count45 += 1
         if theme_number == 46:
             if p not in code_list46:
                 code_list46.append(p)
-                print(code_list6)
                 count46 += 1
         if theme_number == 47:
             if p not in code_list47:
                 code_list47.append(p)
-                print(code_list7)
                 count47 += 1
         if theme_number == 48:
             if p not in code_list48:
                 code_list48.append(p)
-                print(code_list8)
                 count48 += 1
         if theme_number == 49:
             if p not in code_list49:
                 code_list49.append(p)
-                print(code_list9)
                 count49 += 1
         if theme_number == 50:
             if p not in code_list50:
                 code_list50.append(p)
-                print(code_list10)
                 count50 += 1
         if theme_number == 51:
             if p not in code_list51:
                 code_list51.append(p)
-                print(code_list1)
                 count51 += 1
         if theme_number == 52:
             if p not in code_list52:
                 code_list52.append(p)
-                print(code_list2)
                 count52 += 1
         if theme_number == 53:
             if p not in code_list53:
                 code_list53.append(p)
-                print(code_list3)
                 count53 += 1
         if theme_number == 54:
             if p not in code_list54:
                 code_list54.append(p)
-                print(code_list4)
                 count54 += 1
         if theme_number == 55:
             if p not in code_list55:
                 code_list55.append(p)
-                print(code_list5)
                 count55 += 1
         if theme_number == 56:
             if p not in code_list56:
                 code_list56.append(p)
-                print(code_list6)
                 count56 += 1
         if theme_number == 57:
             if p not in code_list57:
                 code_list57.append(p)
-                print(code_list7)
                 count57 += 1
         if theme_number == 58:
             if p not in code_list58:
                 code_list58.append(p)
-                print(code_list8)
                 count58 += 1
         if theme_number == 59:
             if p not in code_list59:
                 code_list59.append(p)
-                print(code_list9)
                 count59 += 1
         if theme_number == 60:
             if p not in code_list60:
                 code_list60.append(p)
-                print(code_list10)
                 count60 += 1
+
+        if theme_number == 101:
+            if p not in code_list101:
+                code_list101.append(p)
+                count101 += 1
+        if theme_number == 102:
+            if p not in code_list102:
+                code_list102.append(p)
+                count102 += 1
+        if theme_number == 103:
+            if p not in code_list103:
+                code_list103.append(p)
+                count103 += 1
+        if theme_number == 104:
+            if p not in code_list104:
+                code_list104.append(p)
+                count104 += 1
+        if theme_number == 105:
+            if p not in code_list105:
+                code_list105.append(p)
+                count105 += 1
+        if theme_number == 106:
+            if p not in code_list106:
+                code_list106.append(p)
+                count106 += 1
+        if theme_number == 107:
+            if p not in code_list107:
+                code_list107.append(p)
+                count107 += 1
+        if theme_number == 108:
+            if p not in code_list108:
+                code_list108.append(p)
+                count108 += 1
+        if theme_number == 109:
+            if p not in code_list109:
+                code_list109.append(p)
+                count109 += 1
+        if theme_number == 110:
+            if p not in code_list110:
+                code_list110.append(p)
+                count110 += 1
+        if theme_number == 111:
+            if p not in code_list111:
+                code_list111.append(p)
+                count111 += 1
+        if theme_number == 112:
+            if p not in code_list112:
+                code_list112.append(p)
+                count112 += 1
+        if theme_number == 113:
+            if p not in code_list113:
+                code_list113.append(p)
+                count113 += 1
+        if theme_number == 114:
+            if p not in code_list114:
+                code_list114.append(p)
+                count114 += 1
+        if theme_number == 115:
+            if p not in code_list115:
+                code_list115.append(p)
+                count115 += 1
+        if theme_number == 116:
+            if p not in code_list116:
+                code_list116.append(p)
+                count116 += 1
+        if theme_number == 117:
+            if p not in code_list117:
+                code_list117.append(p)
+                count117 += 1
+        if theme_number == 118:
+            if p not in code_list118:
+                code_list118.append(p)
+                count118 += 1
+        if theme_number == 119:
+            if p not in code_list119:
+                code_list119.append(p)
+                count119 += 1
+        if theme_number == 120:
+            if p not in code_list120:
+                code_list120.append(p)
+                count120 += 1
+        if theme_number == 121:
+            if p not in code_list121:
+                code_list121.append(p)
+                count121 += 1
+        if theme_number == 122:
+            if p not in code_list122:
+                code_list122.append(p)
+                count122 += 1
+        if theme_number == 123:
+            if p not in code_list123:
+                code_list123.append(p)
+                count123 += 1
+        if theme_number == 124:
+            if p not in code_list124:
+                code_list124.append(p)
+                count124 += 1
+        if theme_number == 125:
+            if p not in code_list125:
+                code_list125.append(p)
+                count125 += 1
+        if theme_number == 126:
+            if p not in code_list126:
+                code_list126.append(p)
+                count126 += 1
+        if theme_number == 127:
+            if p not in code_list127:
+                code_list127.append(p)
+                count127 += 1
+        if theme_number == 128:
+            if p not in code_list128:
+                code_list128.append(p)
+                count128 += 1
+        if theme_number == 129:
+            if p not in code_list129:
+                code_list129.append(p)
+                count129 += 1
+        if theme_number == 130:
+            if p not in code_list130:
+                code_list130.append(p)
+                count130 += 1
+        if theme_number == 131:
+            if p not in code_list131:
+                code_list131.append(p)
+                count131 += 1
+        if theme_number == 132:
+            if p not in code_list132:
+                code_list132.append(p)
+                count132 += 1
+        if theme_number == 133:
+            if p not in code_list133:
+                code_list133.append(p)
+                count133 += 1
+        if theme_number == 134:
+            if p not in code_list134:
+                code_list134.append(p)
+                count134 += 1
+        if theme_number == 135:
+            if p not in code_list135:
+                code_list135.append(p)
+                count135 += 1
+        if theme_number == 136:
+            if p not in code_list136:
+                code_list136.append(p)
+                count136 += 1
+        if theme_number == 137:
+            if p not in code_list137:
+                code_list137.append(p)
+                count137 += 1
+        if theme_number == 138:
+            if p not in code_list138:
+                code_list138.append(p)
+                count138 += 1
+        if theme_number == 139:
+            if p not in code_list139:
+                code_list139.append(p)
+                count139 += 1
+        if theme_number == 140:
+            if p not in code_list140:
+                code_list140.append(p)
+                count140 += 1
+        if theme_number == 141:
+            if p not in code_list141:
+                code_list141.append(p)
+                count141 += 1
+        if theme_number == 142:
+            if p not in code_list142:
+                code_list142.append(p)
+                count142 += 1
+        if theme_number == 143:
+            if p not in code_list143:
+                code_list143.append(p)
+                count143 += 1
+        if theme_number == 144:
+            if p not in code_list144:
+                code_list144.append(p)
+                count144 += 1
+        if theme_number == 145:
+            if p not in code_list145:
+                code_list145.append(p)
+                count145 += 1
+        if theme_number == 146:
+            if p not in code_list146:
+                code_list146.append(p)
+                count146 += 1
+        if theme_number == 147:
+            if p not in code_list147:
+                code_list147.append(p)
+                count147 += 1
+        if theme_number == 148:
+            if p not in code_list148:
+                code_list148.append(p)
+                count148 += 1
+        if theme_number == 149:
+            if p not in code_list149:
+                code_list149.append(p)
+                count149 += 1
+        if theme_number == 150:
+            if p not in code_list150:
+                code_list150.append(p)
+                count150 += 1
+        if theme_number == 151:
+            if p not in code_list151:
+                code_list151.append(p)
+                count151 += 1
+        if theme_number == 152:
+            if p not in code_list152:
+                code_list152.append(p)
+                count152 += 1
+        if theme_number == 153:
+            if p not in code_list153:
+                code_list153.append(p)
+                count153 += 1
+        if theme_number == 154:
+            if p not in code_list154:
+                code_list154.append(p)
+                count154 += 1
+        if theme_number == 155:
+            if p not in code_list155:
+                code_list155.append(p)
+                count155 += 1
+        if theme_number == 156:
+            if p not in code_list156:
+                code_list156.append(p)
+                count156 += 1
+        if theme_number == 157:
+            if p not in code_list157:
+                code_list157.append(p)
+                count157 += 1
+        if theme_number == 158:
+            if p not in code_list158:
+                code_list158.append(p)
+                count158 += 1
+        if theme_number == 159:
+            if p not in code_list159:
+                code_list159.append(p)
+                count159 += 1
+        if theme_number == 160:
+            if p not in code_list160:
+                code_list160.append(p)
+                count160 += 1
         return HttpResponseRedirect(reverse('hint:theme_hint', args=[user_id, theme, p]))
     q = request.GET.get('q', '')
     if q != "":
@@ -1045,303 +1900,484 @@ def QR_code(request, user_id, theme):
             if theme_number == 1:
                 if code not in code_list1:
                     code_list1.append(code)
-                    print(code_list1)
                     count1 += 1
             if theme_number == 2:
                 if code not in code_list2:
                     code_list2.append(code)
-                    print(code_list2)
                     count2 += 1
             if theme_number == 3:
                 if code not in code_list3:
                     code_list3.append(code)
-                    print(code_list3)
                     count3 += 1
             if theme_number == 4:
                 if code not in code_list4:
                     code_list4.append(code)
-                    print(code_list4)
                     count4 += 1
             if theme_number == 5:
                 if code not in code_list5:
                     code_list5.append(code)
-                    print(code_list5)
                     count5 += 1
             if theme_number == 6:
                 if code not in code_list6:
                     code_list6.append(code)
-                    print(code_list6)
                     count6 += 1
             if theme_number == 7:
                 if code not in code_list7:
                     code_list7.append(code)
-                    print(code_list7)
                     count7 += 1
             if theme_number == 8:
                 if code not in code_list8:
                     code_list8.append(code)
-                    print(code_list8)
                     count8 += 1
             if theme_number == 9:
                 if code not in code_list9:
                     code_list9.append(code)
-                    print(code_list9)
                     count9 += 1
             if theme_number == 10:
                 if code not in code_list10:
                     code_list10.append(code)
-                    print(code_list10)
                     count10 += 1
             if theme_number == 11:
                 if code not in code_list11:
                     code_list11.append(code)
-                    print(code_list11)
                     count11 += 1
             if theme_number == 12:
                 if code not in code_list12:
                     code_list12.append(code)
-                    print(code_list12)
                     count12 += 1
             if theme_number == 13:
                 if code not in code_list13:
                     code_list13.append(code)
-                    print(code_list13)
                     count13 += 1
             if theme_number == 14:
                 if code not in code_list14:
                     code_list14.append(code)
-                    print(code_list14)
                     count14 += 1
             if theme_number == 15:
                 if code not in code_list15:
                     code_list15.append(code)
-                    print(code_list15)
                     count15 += 1
             if theme_number == 16:
                 if code not in code_list16:
                     code_list16.append(code)
-                    print(code_list16)
                     count16 += 1
             if theme_number == 17:
                 if code not in code_list17:
                     code_list17.append(code)
-                    print(code_list17)
                     count17 += 1
             if theme_number == 18:
                 if code not in code_list18:
                     code_list18.append(code)
-                    print(code_list18)
                     count18 += 1
             if theme_number == 19:
                 if code not in code_list19:
                     code_list19.append(code)
-                    print(code_list19)
                     count19 += 1
             if theme_number == 20:
                 if code not in code_list20:
                     code_list20.append(code)
-                    print(code_list20)
                     count20 += 1
             if theme_number == 21:
                 if code not in code_list21:
                     code_list21.append(code)
-                    print(code_list1)
                     count21 += 1
             if theme_number == 22:
                 if code not in code_list22:
                     code_list22.append(code)
-                    print(code_list2)
                     count22 += 1
             if theme_number == 23:
                 if code not in code_list23:
                     code_list23.append(code)
-                    print(code_list3)
                     count23 += 1
             if theme_number == 24:
                 if code not in code_list24:
                     code_list24.append(code)
-                    print(code_list4)
                     count24 += 1
             if theme_number == 25:
                 if code not in code_list25:
                     code_list25.append(code)
-                    print(code_list5)
                     count25 += 1
             if theme_number == 26:
                 if code not in code_list26:
                     code_list26.append(code)
-                    print(code_list6)
                     count26 += 1
             if theme_number == 27:
                 if code not in code_list27:
                     code_list27.append(code)
-                    print(code_list7)
                     count27 += 1
             if theme_number == 28:
                 if code not in code_list28:
                     code_list28.append(code)
-                    print(code_list8)
                     count28 += 1
             if theme_number == 29:
                 if code not in code_list29:
                     code_list29.append(code)
-                    print(code_list9)
                     count29 += 1
             if theme_number == 30:
                 if code not in code_list30:
                     code_list30.append(code)
-                    print(code_list30)
                     count30 += 1
             if theme_number == 31:
                 if code not in code_list31:
                     code_list31.append(code)
-                    print(code_list31)
                     count31 += 1
             if theme_number == 32:
                 if code not in code_list32:
                     code_list32.append(code)
-                    print(code_list12)
                     count32 += 1
             if theme_number == 33:
                 if code not in code_list33:
                     code_list33.append(code)
-                    print(code_list13)
                     count33 += 1
             if theme_number == 34:
                 if code not in code_list34:
                     code_list34.append(code)
-                    print(code_list14)
                     count34 += 1
             if theme_number == 35:
                 if code not in code_list35:
                     code_list35.append(code)
-                    print(code_list15)
                     count35 += 1
             if theme_number == 36:
                 if code not in code_list36:
                     code_list36.append(code)
-                    print(code_list16)
                     count36 += 1
             if theme_number == 37:
                 if code not in code_list37:
                     code_list37.append(code)
-                    print(code_list37)
                     count37 += 1
             if theme_number == 38:
                 if code not in code_list38:
                     code_list38.append(code)
-                    print(code_list38)
                     count38 += 1
             if theme_number == 39:
                 if code not in code_list39:
                     code_list39.append(code)
-                    print(code_list19)
                     count39 += 1
             if theme_number == 40:
                 if code not in code_list40:
                     code_list40.append(code)
-                    print(code_list20)
                     count40 += 1
             if theme_number == 41:
                 if code not in code_list41:
                     code_list41.append(code)
-                    print(code_list1)
                     count41 += 1
             if theme_number == 42:
                 if code not in code_list42:
                     code_list42.append(code)
-                    print(code_list2)
                     count42 += 1
             if theme_number == 43:
                 if code not in code_list43:
                     code_list43.append(code)
-                    print(code_list3)
                     count43 += 1
             if theme_number == 44:
                 if code not in code_list44:
                     code_list44.append(code)
-                    print(code_list4)
                     count44 += 1
             if theme_number == 45:
                 if code not in code_list45:
                     code_list45.append(code)
-                    print(code_list45)
                     count45 += 1
             if theme_number == 46:
                 if code not in code_list46:
                     code_list46.append(code)
-                    print(code_list6)
                     count46 += 1
             if theme_number == 47:
                 if code not in code_list47:
                     code_list47.append(code)
-                    print(code_list7)
                     count47 += 1
             if theme_number == 48:
                 if code not in code_list48:
                     code_list48.append(code)
-                    print(code_list8)
                     count48 += 1
             if theme_number == 49:
                 if code not in code_list49:
                     code_list49.append(code)
-                    print(code_list9)
                     count49 += 1
             if theme_number == 50:
                 if code not in code_list50:
                     code_list50.append(code)
-                    print(code_list10)
                     count50 += 1
             if theme_number == 51:
                 if code not in code_list51:
                     code_list51.append(code)
-                    print(code_list11)
                     count51 += 1
             if theme_number == 52:
                 if code not in code_list52:
                     code_list52.append(code)
-                    print(code_list12)
                     count52 += 1
             if theme_number == 53:
                 if code not in code_list53:
                     code_list53.append(code)
-                    print(code_list13)
                     count53 += 1
             if theme_number == 54:
                 if code not in code_list54:
                     code_list54.append(code)
-                    print(code_list14)
                     count54 += 1
             if theme_number == 55:
                 if code not in code_list55:
                     code_list55.append(code)
-                    print(code_list15)
                     count55 += 1
             if theme_number == 56:
                 if code not in code_list56:
                     code_list56.append(code)
-                    print(code_list16)
                     count56 += 1
             if theme_number == 57:
                 if code not in code_list57:
                     code_list57.append(code)
-                    print(code_list17)
                     count57 += 1
             if theme_number == 58:
                 if code not in code_list58:
                     code_list58.append(code)
-                    print(code_list18)
                     count58 += 1
             if theme_number == 59:
                 if code not in code_list59:
                     code_list59.append(code)
-                    print(code_list19)
                     count59 += 1
             if theme_number == 60:
                 if code not in code_list60:
                     code_list60.append(code)
-                    print(code_list20)
                     count60 += 1
+
+            if theme_number == 101:
+                if code not in code_list101:
+                    code_list101.append(code)
+                    count101 += 1
+            if theme_number == 102:
+                if code not in code_list102:
+                    code_list102.append(code)
+                    count102 += 1
+            if theme_number == 103:
+                if code not in code_list103:
+                    code_list103.append(code)
+                    count103 += 1
+            if theme_number == 104:
+                if code not in code_list104:
+                    code_list104.append(code)
+                    count104 += 1
+            if theme_number == 105:
+                if code not in code_list105:
+                    code_list105.append(code)
+                    count105 += 1
+            if theme_number == 106:
+                if code not in code_list106:
+                    code_list106.append(code)
+                    count106 += 1
+            if theme_number == 107:
+                if code not in code_list107:
+                    code_list107.append(code)
+                    count107 += 1
+            if theme_number == 108:
+                if code not in code_list108:
+                    code_list108.append(code)
+                    count108 += 1
+            if theme_number == 109:
+                if code not in code_list109:
+                    code_list109.append(code)
+                    count109 += 1
+            if theme_number == 110:
+                if code not in code_list110:
+                    code_list110.append(code)
+                    count10 += 1
+            if theme_number == 111:
+                if code not in code_list111:
+                    code_list111.append(code)
+                    count111 += 1
+            if theme_number == 112:
+                if code not in code_list112:
+                    code_list112.append(code)
+                    count112 += 1
+            if theme_number == 113:
+                if code not in code_list113:
+                    code_list113.append(code)
+                    count113 += 1
+            if theme_number == 114:
+                if code not in code_list114:
+                    code_list114.append(code)
+                    count114 += 1
+            if theme_number == 115:
+                if code not in code_list115:
+                    code_list115.append(code)
+                    count115 += 1
+            if theme_number == 116:
+                if code not in code_list116:
+                    code_list116.append(code)
+                    count116 += 1
+            if theme_number == 117:
+                if code not in code_list117:
+                    code_list117.append(code)
+                    count117 += 1
+            if theme_number == 118:
+                if code not in code_list118:
+                    code_list118.append(code)
+                    count118 += 1
+            if theme_number == 119:
+                if code not in code_list119:
+                    code_list119.append(code)
+                    count119 += 1
+            if theme_number == 120:
+                if code not in code_list120:
+                    code_list120.append(code)
+                    count120 += 1
+            if theme_number == 121:
+                if code not in code_list121:
+                    code_list121.append(code)
+                    count121 += 1
+            if theme_number == 122:
+                if code not in code_list122:
+                    code_list122.append(code)
+                    count122 += 1
+            if theme_number == 123:
+                if code not in code_list123:
+                    code_list123.append(code)
+                    count123 += 1
+            if theme_number == 124:
+                if code not in code_list124:
+                    code_list124.append(code)
+                    count124 += 1
+            if theme_number == 125:
+                if code not in code_list125:
+                    code_list125.append(code)
+                    count125 += 1
+            if theme_number == 126:
+                if code not in code_list126:
+                    code_list126.append(code)
+                    count126 += 1
+            if theme_number == 127:
+                if code not in code_list127:
+                    code_list127.append(code)
+                    count127 += 1
+            if theme_number == 128:
+                if code not in code_list128:
+                    code_list128.append(code)
+                    count128 += 1
+            if theme_number == 129:
+                if code not in code_list129:
+                    code_list129.append(code)
+                    count129 += 1
+            if theme_number == 130:
+                if code not in code_list130:
+                    code_list130.append(code)
+                    count130 += 1
+            if theme_number == 131:
+                if code not in code_list131:
+                    code_list131.append(code)
+                    count131 += 1
+            if theme_number == 132:
+                if code not in code_list132:
+                    code_list132.append(code)
+                    count132 += 1
+            if theme_number == 133:
+                if code not in code_list133:
+                    code_list133.append(code)
+                    count133 += 1
+            if theme_number == 134:
+                if code not in code_list134:
+                    code_list134.append(code)
+                    count134 += 1
+            if theme_number == 135:
+                if code not in code_list135:
+                    code_list135.append(code)
+                    count135 += 1
+            if theme_number == 136:
+                if code not in code_list136:
+                    code_list136.append(code)
+                    count136 += 1
+            if theme_number == 137:
+                if code not in code_list137:
+                    code_list137.append(code)
+                    count137 += 1
+            if theme_number == 138:
+                if code not in code_list138:
+                    code_list138.append(code)
+                    count138 += 1
+            if theme_number == 139:
+                if code not in code_list139:
+                    code_list139.append(code)
+                    count139 += 1
+            if theme_number == 140:
+                if code not in code_list140:
+                    code_list140.append(code)
+                    count140 += 1
+            if theme_number == 141:
+                if code not in code_list141:
+                    code_list141.append(code)
+                    count141 += 1
+            if theme_number == 142:
+                if code not in code_list142:
+                    code_list142.append(code)
+                    count142 += 1
+            if theme_number == 143:
+                if code not in code_list143:
+                    code_list143.append(code)
+                    count143 += 1
+            if theme_number == 144:
+                if code not in code_list144:
+                    code_list144.append(code)
+                    count144 += 1
+            if theme_number == 145:
+                if code not in code_list145:
+                    code_list145.append(code)
+                    count145 += 1
+            if theme_number == 146:
+                if code not in code_list146:
+                    code_list146.append(code)
+                    count146 += 1
+            if theme_number == 147:
+                if code not in code_list147:
+                    code_list147.append(code)
+                    count147 += 1
+            if theme_number == 148:
+                if code not in code_list148:
+                    code_list148.append(code)
+                    count148 += 1
+            if theme_number == 149:
+                if code not in code_list149:
+                    code_list149.append(code)
+                    count149 += 1
+            if theme_number == 150:
+                if code not in code_list150:
+                    code_list150.append(code)
+                    count150 += 1
+            if theme_number == 151:
+                if code not in code_list151:
+                    code_list151.append(code)
+                    count151 += 1
+            if theme_number == 152:
+                if code not in code_list152:
+                    code_list152.append(code)
+                    count152 += 1
+            if theme_number == 153:
+                if code not in code_list153:
+                    code_list153.append(code)
+                    count153 += 1
+            if theme_number == 154:
+                if code not in code_list154:
+                    code_list154.append(code)
+                    count154 += 1
+            if theme_number == 155:
+                if code not in code_list155:
+                    code_list155.append(code)
+                    count155 += 1
+            if theme_number == 156:
+                if code not in code_list156:
+                    code_list156.append(code)
+                    count156 += 1
+            if theme_number == 157:
+                if code not in code_list157:
+                    code_list157.append(code)
+                    count157 += 1
+            if theme_number == 158:
+                if code not in code_list158:
+                    code_list158.append(code)
+                    count158 += 1
+            if theme_number == 159:
+                if code not in code_list159:
+                    code_list159.append(code)
+                    count159 += 1
+            if theme_number == 160:
+                if code not in code_list160:
+                    code_list160.append(code)
+                    count160 += 1
             return redirect(q)
     else:
         pass

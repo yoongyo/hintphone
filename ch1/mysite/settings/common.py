@@ -124,7 +124,7 @@ CKEDITOR_CONFIGS = {
                        'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl']},
 
             {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
-            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
+            {'name': 'colors', 'items': ['TextColor', 'BGColor', 'Image']},
             '/',
         ],
         'toolbar': 'YourCustomToolbarConfig',
