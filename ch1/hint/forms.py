@@ -16,13 +16,19 @@ class HintForm(forms.ModelForm):
                   'enterKey', 'textHint1', 'textHint2', 'textHint3', 'textHint4', 'textHint5', 'textHint6', 'textHint7', 'textHint8',
                   'textHint9', 'textHint10', 'textHint11', 'textHint12', 'textHint13', 'textHint14', 'textHint15', 'textHint16',
                   'textHint17', 'textHint18', 'textHint19', 'textHint20', 'textHint21', 'textHint21', 'textHint22', 'textHint23',
-                  'textHint24', 'textHint25', 'textHint26', 'textHint27', 'textHint28', 'textHint29', 'textHint30']
+                  'textHint24', 'textHint25', 'textHint26', 'textHint27', 'textHint28', 'textHint29', 'textHint30',
+                  'sub_textHint1', 'sub_textHint2', 'sub_textHint3', 'sub_textHint4', 'sub_textHint5', 'sub_textHint6', 'sub_textHint7',
+                  'sub_textHint8', 'sub_textHint9', 'sub_textHint10', 'sub_textHint11', 'sub_textHint12', 'sub_textHint13', 'sub_textHint14',
+                  'sub_textHint15', 'sub_textHint16', 'sub_textHint17', 'sub_textHint18', 'sub_textHint19', 'sub_textHint20', 'sub_textHint21',
+                  'sub_textHint22', 'sub_textHint23', 'sub_textHint24', 'sub_textHint25', 'sub_textHint26', 'sub_textHint27',
+                  'sub_textHint28', 'sub_textHint29', 'sub_textHint30']
         widgets = {
             'textHint1': CKEditorWidget(
                 attrs={
                     'style': 'width: 100%'
                 }
             ),
+            'textHint2': CKEditorWidget(),
             'textHint3': CKEditorWidget(),
             'textHint4': CKEditorWidget(),
             'textHint5': CKEditorWidget(),
@@ -51,6 +57,37 @@ class HintForm(forms.ModelForm):
             'textHint28': CKEditorWidget,
             'textHint29': CKEditorWidget,
             'textHint30': CKEditorWidget,
+
+            'sub_textHint1': CKEditorWidget(),
+            'sub_textHint2': CKEditorWidget(),
+            'sub_textHint3': CKEditorWidget(),
+            'sub_textHint4': CKEditorWidget(),
+            'sub_textHint5': CKEditorWidget(),
+            'sub_textHint6': CKEditorWidget(),
+            'sub_textHint7': CKEditorWidget(),
+            'sub_textHint8': CKEditorWidget(),
+            'sub_textHint9': CKEditorWidget(),
+            'sub_textHint10': CKEditorWidget(),
+            'sub_textHint11': CKEditorWidget(),
+            'sub_textHint12': CKEditorWidget(),
+            'sub_textHint13': CKEditorWidget(),
+            'sub_textHint14': CKEditorWidget(),
+            'sub_textHint15': CKEditorWidget(),
+            'sub_textHint16': CKEditorWidget(),
+            'sub_textHint17': CKEditorWidget(),
+            'sub_textHint18': CKEditorWidget(),
+            'sub_textHint19': CKEditorWidget(),
+            'sub_textHint20': CKEditorWidget(),
+            'sub_textHint21': CKEditorWidget(),
+            'sub_textHint22': CKEditorWidget(),
+            'sub_textHint23': CKEditorWidget(),
+            'sub_textHint24': CKEditorWidget(),
+            'sub_textHint25': CKEditorWidget(),
+            'sub_textHint26': CKEditorWidget(),
+            'sub_textHint27': CKEditorWidget(),
+            'sub_textHint28': CKEditorWidget(),
+            'sub_textHint29': CKEditorWidget(),
+            'sub_textHint30': CKEditorWidget(),
 
             'name': forms.TextInput(
                 attrs={

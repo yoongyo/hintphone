@@ -105,9 +105,6 @@
                             </label>
                             <input id="sub1_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint1 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint1 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub1_button" onclick="plus_sub1();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -139,9 +136,6 @@
                             </label>
                             <input  id="sub2_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint2 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint2 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub2_button" onclick="plus_sub2();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -156,6 +150,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint1 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint1 }}
+                            <div id="sub_text1_div" style="display:none">
+                                {{ form.sub_textHint1 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn1" onclick="plus_btn1();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text1_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint2 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint2 }}
+                            <div id="sub_text2_div" style="display:none">
+                                {{ form.sub_textHint2 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn2" onclick="plus_btn2();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text2_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint1 %}
+                    $(document).ready(function(){
+                        plus_btn1();
+                    })
+                {% endif %}
+                function plus_btn1() {
+                    document.getElementById("text1_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn1").setAttribute('onclick', 'minus_btn1()');
+                    document.getElementById("sub_text1_div").setAttribute('style', '');
+                }
+                function minus_btn1() {
+                    document.getElementById("text1_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn1").setAttribute('onclick', 'plus_btn1()');
+                    document.getElementById("sub_text1_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint2 %}
+                    $(document).ready(function(){
+                        plus_btn2();
+                    })
+                {% endif %}
+                function plus_btn2() {
+                    document.getElementById("text2_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn2").setAttribute('onclick', 'minus_btn2()');
+                    document.getElementById("sub_text2_div").setAttribute('style', '');
+                }
+                function minus_btn2() {
+                    document.getElementById("text2_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn2").setAttribute('onclick', 'plus_btn2()');
+                    document.getElementById("sub_text2_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -181,9 +250,6 @@
                             </label>
                             <input id="sub3_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint3 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint3 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub3_button" onclick="plus_sub3();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -214,9 +280,6 @@
                             </label>
                             <input  id="sub4_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint4 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint4 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub4_button" onclick="plus_sub4();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -231,6 +294,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint3 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint3 }}
+                            <div id="sub_text3_div" style="display:none">
+                                {{ form.sub_textHint3 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn3" onclick="plus_btn3();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text3_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint4 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint4 }}
+                            <div id="sub_text4_div" style="display:none">
+                                {{ form.sub_textHint4 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn4" onclick="plus_btn4();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text4_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint3 %}
+                    $(document).ready(function(){
+                        plus_btn3();
+                    })
+                {% endif %}
+                function plus_btn3() {
+                    document.getElementById("text3_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn3").setAttribute('onclick', 'minus_btn3()');
+                    document.getElementById("sub_text3_div").setAttribute('style', '');
+                }
+                function minus_btn3() {
+                    document.getElementById("text3_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn3").setAttribute('onclick', 'plus_btn3()');
+                    document.getElementById("sub_text3_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint4 %}
+                    $(document).ready(function(){
+                        plus_btn4();
+                    })
+                {% endif %}
+                function plus_btn4() {
+                    document.getElementById("text4_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn4").setAttribute('onclick', 'minus_btn4()');
+                    document.getElementById("sub_text4_div").setAttribute('style', '');
+                }
+                function minus_btn4() {
+                    document.getElementById("text2_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn2").setAttribute('onclick', 'plus_btn4()');
+                    document.getElementById("sub_text4_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -256,9 +394,6 @@
                             </label>
                             <input id="sub5_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint5 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint5 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub5_button" onclick="plus_sub5();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -289,9 +424,6 @@
                             </label>
                             <input  id="sub6_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint6 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint6 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub6_button" onclick="plus_sub6();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -306,6 +438,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint5 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint5 }}
+                            <div id="sub_text5_div" style="display:none">
+                                {{ form.sub_textHint5 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn5" onclick="plus_btn5();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text5_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint6 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint6 }}
+                            <div id="sub_text6_div" style="display:none">
+                                {{ form.sub_textHint6 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn6" onclick="plus_btn6();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text6_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint5 %}
+                    $(document).ready(function(){
+                        plus_btn5();
+                    })
+                {% endif %}
+                function plus_btn5() {
+                    document.getElementById("text5_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn5").setAttribute('onclick', 'minus_btn5()');
+                    document.getElementById("sub_text5_div").setAttribute('style', '');
+                }
+                function minus_btn5() {
+                    document.getElementById("text5_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn5").setAttribute('onclick', 'plus_btn5()');
+                    document.getElementById("sub_text5_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint6 %}
+                    $(document).ready(function(){
+                        plus_btn6();
+                    })
+                {% endif %}
+                function plus_btn6() {
+                    document.getElementById("text6_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn6").setAttribute('onclick', 'minus_btn6()');
+                    document.getElementById("sub_text6_div").setAttribute('style', '');
+                }
+                function minus_btn6() {
+                    document.getElementById("text6_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn6").setAttribute('onclick', 'plus_btn6()');
+                    document.getElementById("sub_text6_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -331,9 +538,6 @@
                             </label>
                             <input id="sub7_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint7 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint7 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub7_button" onclick="plus_sub7();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -364,9 +568,6 @@
                             </label>
                             <input  id="sub8_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint8 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint8 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub8_button" onclick="plus_sub8();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -381,6 +582,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint7 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint7 }}
+                            <div id="sub_text7_div" style="display:none">
+                                {{ form.sub_textHint7 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn7" onclick="plus_btn7();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text7_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint8 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint8 }}
+                            <div id="sub_text8_div" style="display:none">
+                                {{ form.sub_textHint8 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn8" onclick="plus_btn8();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text8_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint7 %}
+                    $(document).ready(function(){
+                        plus_btn7();
+                    })
+                {% endif %}
+                function plus_btn7() {
+                    document.getElementById("text7_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn7").setAttribute('onclick', 'minus_btn7()');
+                    document.getElementById("sub_text7_div").setAttribute('style', '');
+                }
+                function minus_btn7() {
+                    document.getElementById("text7_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn7").setAttribute('onclick', 'plus_btn7()');
+                    document.getElementById("sub_text7_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint8 %}
+                    $(document).ready(function(){
+                        plus_btn8();
+                    })
+                {% endif %}
+                function plus_btn8() {
+                    document.getElementById("text8_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn8").setAttribute('onclick', 'minus_btn8()');
+                    document.getElementById("sub_text8_div").setAttribute('style', '');
+                }
+                function minus_btn8() {
+                    document.getElementById("text8_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn8").setAttribute('onclick', 'plus_btn8()');
+                    document.getElementById("sub_text8_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -406,9 +682,6 @@
                             </label>
                             <input id="sub9_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint9 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint9 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub9_button" onclick="plus_sub9();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -439,9 +712,6 @@
                             </label>
                             <input  id="sub10_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint10 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint10 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub10_button" onclick="plus_sub10();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -456,6 +726,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint9 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint9 }}
+                            <div id="sub_text9_div" style="display:none">
+                                {{ form.sub_textHint9 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn9" onclick="plus_btn9();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text9_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint10 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint10 }}
+                            <div id="sub_text10_div" style="display:none">
+                                {{ form.sub_textHint10 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn10" onclick="plus_btn10();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text10_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint9 %}
+                    $(document).ready(function(){
+                        plus_btn9();
+                    })
+                {% endif %}
+                function plus_btn9() {
+                    document.getElementById("text9_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn9").setAttribute('onclick', 'minus_btn9()');
+                    document.getElementById("sub_text9_div").setAttribute('style', '');
+                }
+                function minus_btn9() {
+                    document.getElementById("text9_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn9").setAttribute('onclick', 'plus_btn9()');
+                    document.getElementById("sub_text9_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint10 %}
+                    $(document).ready(function(){
+                        plus_btn10();
+                    })
+                {% endif %}
+                function plus_btn10() {
+                    document.getElementById("text10_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn10").setAttribute('onclick', 'minus_btn10()');
+                    document.getElementById("sub_text10_div").setAttribute('style', '');
+                }
+                function minus_btn10() {
+                    document.getElementById("text10_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn10").setAttribute('onclick', 'plus_btn10()');
+                    document.getElementById("sub_text10_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -481,9 +826,6 @@
                             </label>
                             <input id="sub11_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint11 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint11 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub11_button" onclick="plus_sub11();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -514,9 +856,6 @@
                             </label>
                             <input  id="sub12_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint12 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint12 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub12_button" onclick="plus_sub12();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -531,6 +870,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint11 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint11 }}
+                            <div id="sub_text11_div" style="display:none">
+                                {{ form.sub_textHint11 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn11" onclick="plus_btn11();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text11_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint12 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint12 }}
+                            <div id="sub_text12_div" style="display:none">
+                                {{ form.sub_textHint12 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn12" onclick="plus_btn12();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text12_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint11 %}
+                    $(document).ready(function(){
+                        plus_btn11();
+                    })
+                {% endif %}
+                function plus_btn11() {
+                    document.getElementById("text11_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn11").setAttribute('onclick', 'minus_btn11()');
+                    document.getElementById("sub_text11_div").setAttribute('style', '');
+                }
+                function minus_btn11() {
+                    document.getElementById("text11_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn11").setAttribute('onclick', 'plus_btn11()');
+                    document.getElementById("sub_text11_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint12 %}
+                    $(document).ready(function(){
+                        plus_btn12();
+                    })
+                {% endif %}
+                function plus_btn12() {
+                    document.getElementById("text12_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn12").setAttribute('onclick', 'minus_btn12()');
+                    document.getElementById("sub_text12_div").setAttribute('style', '');
+                }
+                function minus_btn12() {
+                    document.getElementById("text12_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn12").setAttribute('onclick', 'plus_btn12()');
+                    document.getElementById("sub_text12_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -556,9 +970,6 @@
                             </label>
                             <input id="sub13_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint13 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint13 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub13_button" onclick="plus_sub13();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -589,9 +1000,6 @@
                             </label>
                             <input  id="sub14_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint14 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint14 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub14_button" onclick="plus_sub14();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -606,6 +1014,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint13 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint13 }}
+                            <div id="sub_text13_div" style="display:none">
+                                {{ form.sub_textHint13 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn13" onclick="plus_btn13();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text13_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint14 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint14 }}
+                            <div id="sub_text14_div" style="display:none">
+                                {{ form.sub_textHint14 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn14" onclick="plus_btn14();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text14_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint13 %}
+                    $(document).ready(function(){
+                        plus_btn13();
+                    })
+                {% endif %}
+                function plus_btn13() {
+                    document.getElementById("text13_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn13").setAttribute('onclick', 'minus_btn13()');
+                    document.getElementById("sub_text13_div").setAttribute('style', '');
+                }
+                function minus_btn13() {
+                    document.getElementById("text13_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn13").setAttribute('onclick', 'plus_btn13()');
+                    document.getElementById("sub_text13_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint14 %}
+                    $(document).ready(function(){
+                        plus_btn14();
+                    })
+                {% endif %}
+                function plus_btn14() {
+                    document.getElementById("text14_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn14").setAttribute('onclick', 'minus_btn14()');
+                    document.getElementById("sub_text14_div").setAttribute('style', '');
+                }
+                function minus_btn14() {
+                    document.getElementById("text14_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn14").setAttribute('onclick', 'plus_btn14()');
+                    document.getElementById("sub_text14_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -631,9 +1114,6 @@
                             </label>
                             <input id="sub15_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint15 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint15 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub15_button" onclick="plus_sub15();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -664,9 +1144,6 @@
                             </label>
                             <input  id="sub16_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint16 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint16 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub16_button" onclick="plus_sub16();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -681,6 +1158,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint15 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint15 }}
+                            <div id="sub_text15_div" style="display:none">
+                                {{ form.sub_textHint15 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn15" onclick="plus_btn15();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text15_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint16 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint16 }}
+                            <div id="sub_text16_div" style="display:none">
+                                {{ form.sub_textHint16 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn16" onclick="plus_btn16();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text16_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint15 %}
+                    $(document).ready(function(){
+                        plus_btn15();
+                    })
+                {% endif %}
+                function plus_btn15() {
+                    document.getElementById("text15_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn15").setAttribute('onclick', 'minus_btn15()');
+                    document.getElementById("sub_text15_div").setAttribute('style', '');
+                }
+                function minus_btn15() {
+                    document.getElementById("text15_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn15").setAttribute('onclick', 'plus_btn15()');
+                    document.getElementById("sub_text15_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint16 %}
+                    $(document).ready(function(){
+                        plus_btn16();
+                    })
+                {% endif %}
+                function plus_btn16() {
+                    document.getElementById("text16_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn16").setAttribute('onclick', 'minus_btn16()');
+                    document.getElementById("sub_text16_div").setAttribute('style', '');
+                }
+                function minus_btn16() {
+                    document.getElementById("text16_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn16").setAttribute('onclick', 'plus_btn16()');
+                    document.getElementById("sub_text16_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -706,9 +1258,6 @@
                             </label>
                             <input id="sub17_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint17 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint17 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub17_button" onclick="plus_sub17();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -739,9 +1288,6 @@
                             </label>
                             <input  id="sub18_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint18 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint18 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub18_button" onclick="plus_sub18();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -756,6 +1302,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint17 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint17 }}
+                            <div id="sub_text17_div" style="display:none">
+                                {{ form.sub_textHint17 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn17" onclick="plus_btn17();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text17_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint18 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint18 }}
+                            <div id="sub_text18_div" style="display:none">
+                                {{ form.sub_textHint18 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn18" onclick="plus_btn18();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text18_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint17 %}
+                    $(document).ready(function(){
+                        plus_btn17();
+                    })
+                {% endif %}
+                function plus_btn17() {
+                    document.getElementById("text17_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn17").setAttribute('onclick', 'minus_btn17()');
+                    document.getElementById("sub_text17_div").setAttribute('style', '');
+                }
+                function minus_btn17() {
+                    document.getElementById("text17_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn17").setAttribute('onclick', 'plus_btn17()');
+                    document.getElementById("sub_text17_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint18 %}
+                    $(document).ready(function(){
+                        plus_btn18();
+                    })
+                {% endif %}
+                function plus_btn18() {
+                    document.getElementById("text18_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn18").setAttribute('onclick', 'minus_btn18()');
+                    document.getElementById("sub_text18_div").setAttribute('style', '');
+                }
+                function minus_btn18() {
+                    document.getElementById("text18_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn18").setAttribute('onclick', 'plus_btn18()');
+                    document.getElementById("sub_text18_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -781,9 +1402,6 @@
                             </label>
                             <input id="sub19_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint19 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint19 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub19_button" onclick="plus_sub19();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -814,9 +1432,6 @@
                             </label>
                             <input  id="sub20_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint20 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint20 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub20_button" onclick="plus_sub20();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -831,6 +1446,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint19 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint19 }}
+                            <div id="sub_text19_div" style="display:none">
+                                {{ form.sub_textHint19 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn19" onclick="plus_btn19();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text19_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint20 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint20 }}
+                            <div id="sub_text20_div" style="display:none">
+                                {{ form.sub_textHint20 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn20" onclick="plus_btn20();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text20_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint19 %}
+                    $(document).ready(function(){
+                        plus_btn19();
+                    })
+                {% endif %}
+                function plus_btn19() {
+                    document.getElementById("text19_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn19").setAttribute('onclick', 'minus_btn19()');
+                    document.getElementById("sub_text19_div").setAttribute('style', '');
+                }
+                function minus_btn19() {
+                    document.getElementById("text19_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn19").setAttribute('onclick', 'plus_btn19()');
+                    document.getElementById("sub_text19_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint20 %}
+                    $(document).ready(function(){
+                        plus_btn20();
+                    })
+                {% endif %}
+                function plus_btn20() {
+                    document.getElementById("text20_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn20").setAttribute('onclick', 'minus_btn20()');
+                    document.getElementById("sub_text20_div").setAttribute('style', '');
+                }
+                function minus_btn20() {
+                    document.getElementById("text20_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn20").setAttribute('onclick', 'plus_btn20()');
+                    document.getElementById("sub_text20_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -856,9 +1546,6 @@
                             </label>
                             <input id="sub21_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint21 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint21 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub21_button" onclick="plus_sub21();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -889,9 +1576,6 @@
                             </label>
                             <input  id="sub22_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint22 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint22 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub22_button" onclick="plus_sub22();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -906,6 +1590,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint21 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint21 }}
+                            <div id="sub_text21_div" style="display:none">
+                                {{ form.sub_textHint21 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn21" onclick="plus_btn21();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text21_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint22 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint22 }}
+                            <div id="sub_text22_div" style="display:none">
+                                {{ form.sub_textHint22 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn22" onclick="plus_btn22();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text22_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint21 %}
+                    $(document).ready(function(){
+                        plus_btn21();
+                    })
+                {% endif %}
+                function plus_btn21() {
+                    document.getElementById("text21_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn21").setAttribute('onclick', 'minus_btn21()');
+                    document.getElementById("sub_text21_div").setAttribute('style', '');
+                }
+                function minus_btn21() {
+                    document.getElementById("text21_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn21").setAttribute('onclick', 'plus_btn21()');
+                    document.getElementById("sub_text21_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint22 %}
+                    $(document).ready(function(){
+                        plus_btn22();
+                    })
+                {% endif %}
+                function plus_btn22() {
+                    document.getElementById("text22_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn22").setAttribute('onclick', 'minus_btn22()');
+                    document.getElementById("sub_text22_div").setAttribute('style', '');
+                }
+                function minus_btn22() {
+                    document.getElementById("text22_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn22").setAttribute('onclick', 'plus_btn22()');
+                    document.getElementById("sub_text22_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -931,9 +1690,6 @@
                             </label>
                             <input id="sub23_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint23 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint23 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub23_button" onclick="plus_sub23();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -964,9 +1720,6 @@
                             </label>
                             <input  id="sub24_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint24 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint24 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub24_button" onclick="plus_sub24();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -981,6 +1734,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint23 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint23 }}
+                            <div id="sub_text23_div" style="display:none">
+                                {{ form.sub_textHint23 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn23" onclick="plus_btn23();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text23_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint24 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint24 }}
+                            <div id="sub_text24_div" style="display:none">
+                                {{ form.sub_textHint24 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn24" onclick="plus_btn24();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text24_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint23 %}
+                    $(document).ready(function(){
+                        plus_btn23();
+                    })
+                {% endif %}
+                function plus_btn23() {
+                    document.getElementById("text23_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn23").setAttribute('onclick', 'minus_btn23()');
+                    document.getElementById("sub_text23_div").setAttribute('style', '');
+                }
+                function minus_btn23() {
+                    document.getElementById("text23_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn23").setAttribute('onclick', 'plus_btn23()');
+                    document.getElementById("sub_text23_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint24 %}
+                    $(document).ready(function(){
+                        plus_btn24();
+                    })
+                {% endif %}
+                function plus_btn24() {
+                    document.getElementById("text24_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn24").setAttribute('onclick', 'minus_btn24()');
+                    document.getElementById("sub_text24_div").setAttribute('style', '');
+                }
+                function minus_btn24() {
+                    document.getElementById("text24_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn24").setAttribute('onclick', 'plus_btn24()');
+                    document.getElementById("sub_text24_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -1006,9 +1834,6 @@
                             </label>
                             <input id="sub25_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint25 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint25 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub25_button" onclick="plus_sub25();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -1039,9 +1864,6 @@
                             </label>
                             <input  id="sub26_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint26 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint26 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub26_button" onclick="plus_sub26();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -1056,6 +1878,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint25 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint25 }}
+                            <div id="sub_text25_div" style="display:none">
+                                {{ form.sub_textHint25 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn25" onclick="plus_btn25();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text25_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint26 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint26 }}
+                            <div id="sub_text26_div" style="display:none">
+                                {{ form.sub_textHint26 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn26" onclick="plus_btn26();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text26_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint25 %}
+                    $(document).ready(function(){
+                        plus_btn25();
+                    })
+                {% endif %}
+                function plus_btn25() {
+                    document.getElementById("text25_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn25").setAttribute('onclick', 'minus_btn25()');
+                    document.getElementById("sub_text25_div").setAttribute('style', '');
+                }
+                function minus_btn25() {
+                    document.getElementById("text25_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn25").setAttribute('onclick', 'plus_btn25()');
+                    document.getElementById("sub_text25_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint26 %}
+                    $(document).ready(function(){
+                        plus_btn26();
+                    })
+                {% endif %}
+                function plus_btn26() {
+                    document.getElementById("text26_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn26").setAttribute('onclick', 'minus_btn26()');
+                    document.getElementById("sub_text26_div").setAttribute('style', '');
+                }
+                function minus_btn26() {
+                    document.getElementById("text26_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn26").setAttribute('onclick', 'plus_btn26()');
+                    document.getElementById("sub_text26_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -1081,9 +1978,6 @@
                             </label>
                             <input id="sub27_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint27 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint27 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub27_button" onclick="plus_sub27();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -1114,9 +2008,6 @@
                             </label>
                             <input  id="sub28_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint28 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint28 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub28_button" onclick="plus_sub28();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -1131,6 +2022,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint27 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint27 }}
+                            <div id="sub_text27_div" style="display:none">
+                                {{ form.sub_textHint27 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn27" onclick="plus_btn27();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text27_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint28 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint28}}
+                            <div id="sub_text28_div" style="display:none">
+                                {{ form.sub_textHint28 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn28" onclick="plus_btn28();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text28_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint27 %}
+                    $(document).ready(function(){
+                        plus_btn27();
+                    })
+                {% endif %}
+                function plus_btn27() {
+                    document.getElementById("text27_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn27").setAttribute('onclick', 'minus_btn27()');
+                    document.getElementById("sub_text27_div").setAttribute('style', '');
+                }
+                function minus_btn27() {
+                    document.getElementById("text27_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn27").setAttribute('onclick', 'plus_btn27()');
+                    document.getElementById("sub_text27_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint28 %}
+                    $(document).ready(function(){
+                        plus_btn28();
+                    })
+                {% endif %}
+                function plus_btn28() {
+                    document.getElementById("text28_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn28").setAttribute('onclick', 'minus_btn28()');
+                    document.getElementById("sub_text28_div").setAttribute('style', '');
+                }
+                function minus_btn28() {
+                    document.getElementById("text28_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn28").setAttribute('onclick', 'plus_btn28()');
+                    document.getElementById("sub_text28_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row my-2">
             <div class="col-1"></div>
             <div class="col-10">
@@ -1156,9 +2122,6 @@
                             </label>
                             <input id="sub29_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint29 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint29 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub29_button" onclick="plus_sub29();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -1189,9 +2152,6 @@
                             </label>
                             <input  id="sub30_placeholder" type="text" class="form-control" readonly placeholder="{{ theme.sub_hint30 }}">
                         </div>
-                        {% if textHint %}
-                            {{ form.textHint30 }}
-                        {% endif %}
                     </div>
                     <div class="col-1 text-center pl-0">
                         <button id="sub30_button" onclick="plus_sub30();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
@@ -1206,6 +2166,81 @@
             <div class="col-1">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint29 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint29 }}
+                            <div id="sub_text29_div" style="display:none">
+                                {{ form.sub_textHint29 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn29" onclick="plus_btn29();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text29_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <h4 class="py-1 mt-0 mb-2">Text Hint30 :</h4>
+                    </div>
+                    <div class="col-3 p-0">
+                        {% if textHint %}
+                            {{ form.textHint30 }}
+                            <div id="sub_text30_div" style="display:none">
+                                {{ form.sub_textHint30 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1 pl-0">
+                        <button id="btn30" onclick="plus_btn30();" type="button" style="color:white;background-color:black;border-color:black;width:100%;font-size:1.5rem" class="p-0">
+                            <img id="text30_btn" style="background-color:white" width="30px" height="30px" src="{% static 'plus3.png' %}" >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                {% if theme.sub_textHint29 %}
+                    $(document).ready(function(){
+                        plus_btn29();
+                    })
+                {% endif %}
+                function plus_btn29() {
+                    document.getElementById("text29_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn29").setAttribute('onclick', 'minus_btn29()');
+                    document.getElementById("sub_text29_div").setAttribute('style', '');
+                }
+                function minus_btn29() {
+                    document.getElementById("text29_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn29").setAttribute('onclick', 'plus_btn29()');
+                    document.getElementById("sub_text29_div").setAttribute('style', 'display:none;');
+                }
+
+                {% if theme.sub_textHint30 %}
+                    $(document).ready(function(){
+                        plus_btn30();
+                    })
+                {% endif %}
+                function plus_btn30() {
+                    document.getElementById("text30_btn").setAttribute('src', "{% static 'minus.png' %}");
+                    document.getElementById("btn30").setAttribute('onclick', 'minus_btn30()');
+                    document.getElementById("sub_text30_div").setAttribute('style', '');
+                }
+                function minus_btn30() {
+                    document.getElementById("text30_btn").setAttribute('src', "{% static 'plus3.png' %}");
+                    document.getElementById("btn30").setAttribute('onclick', 'plus_btn30()');
+                    document.getElementById("sub_text30_div").setAttribute('style', 'display:none;');
+                }
+            </script>
+            <div class="col-1"></div>
+        </div>
+
         <div class="row p-5 mx-5">
             <div class="col-3"></div>
             <div class="col-6">

@@ -17,20 +17,46 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint1.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint1.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint1.url }}"></audio>
                 {% if theme.textHint1 %}
-                <div class="mt-4">
-                    {{ theme.textHint1|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint1|safe }}
+                    </div>
+                    {% if theme.sub_textHint1 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text1_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text1" style="display:none">
+                            {{ theme.sub_textHint1|safe }}
+                        </div>
+                        <script>
+                            function sub_text1_btn() {
+                                document.getElementById("sub_text1").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint1 %}
                     <audio id="audio1" controls autoplay src="{{ theme.hint1.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint1 %}
-                <div class="mt-4">
-                    {{ theme.textHint1|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint1|safe }}
+                    </div>
+                    {% if theme.sub_textHint1 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text1_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text1" style="display:none">
+                            {{ theme.sub_textHint1|safe }}
+                        </div>
+                        <script>
+                            function sub_text1_btn() {
+                                document.getElementById("sub_text1").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -38,6 +64,19 @@
                 <div class="mt-4">
                     {{ theme.textHint1|safe }}
                 </div>
+                {% if theme.sub_textHint1 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text1_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text1" style="display:none">
+                        {{ theme.sub_textHint1|safe }}
+                    </div>
+                    <script>
+                        function sub_text1_btn() {
+                            document.getElementById("sub_text1").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -47,11 +86,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint2.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint2.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint2.url }}"></audio>
                 {% if theme.textHint2 %}
-                <div class="mt-4">
-                    {{ theme.textHint2|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint2|safe }}
+                    </div>
+                    {% if theme.sub_textHint2 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text2_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text2" style="display:none">
+                            {{ theme.sub_textHint2|safe }}
+                        </div>
+                        <script>
+                            function sub_text2_btn() {
+                                document.getElementById("sub_text2").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint2 %}
@@ -59,9 +111,22 @@
                 <audio controls autoplay src="{{ theme.hint2.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint2 %}
-                <div class="mt-4">
-                    {{ theme.textHint2|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint2|safe }}
+                    </div>
+                    {% if theme.sub_textHint2 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text2_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text2" style="display:none">
+                            {{ theme.sub_textHint2|safe }}
+                        </div>
+                        <script>
+                            function sub_text2_btn() {
+                                document.getElementById("sub_text2").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -69,6 +134,19 @@
                 <div class="mt-4">
                     {{ theme.textHint2|safe }}
                 </div>
+                {% if theme.sub_textHint2 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text2_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text2" style="display:none">
+                        {{ theme.sub_textHint2|safe }}
+                    </div>
+                    <script>
+                        function sub_text2_btn() {
+                            document.getElementById("sub_text2").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -78,11 +156,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint3.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint3.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint3.url }}"></audio>
                 {% if theme.textHint3 %}
-                <div class="mt-4">
-                    {{ theme.textHint3|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint3|safe }}
+                    </div>
+                    {% if theme.sub_textHint3 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text3_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text3" style="display:none">
+                            {{ theme.sub_textHint3|safe }}
+                        </div>
+                        <script>
+                            function sub_text3_btn() {
+                                document.getElementById("sub_text3").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint3 %}
@@ -90,9 +181,22 @@
                 <audio controls autoplay src="{{ theme.hint3.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint3 %}
-                <div class="mt-4">
-                    {{ theme.textHint3|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint3|safe }}
+                    </div>
+                    {% if theme.sub_textHint3 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text3_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text3" style="display:none">
+                            {{ theme.sub_textHint3|safe }}
+                        </div>
+                        <script>
+                            function sub_text3_btn() {
+                                document.getElementById("sub_text3").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -100,6 +204,19 @@
                 <div class="mt-4">
                     {{ theme.textHint3|safe }}
                 </div>
+                {% if theme.sub_textHint3 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text3_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text3" style="display:none">
+                        {{ theme.sub_textHint3|safe }}
+                    </div>
+                    <script>
+                        function sub_text3_btn() {
+                            document.getElementById("sub_text3").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -109,11 +226,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint4.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint4.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint4.url }}"></audio>
                 {% if theme.textHint4 %}
-                <div class="mt-4">
-                    {{ theme.textHint4|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint4|safe }}
+                    </div>
+                    {% if theme.sub_textHint4 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text4_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text4" style="display:none">
+                            {{ theme.sub_textHint4|safe }}
+                        </div>
+                        <script>
+                            function sub_text4_btn() {
+                                document.getElementById("sub_text4").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint4 %}
@@ -121,9 +251,22 @@
                 <audio controls autoplay src="{{ theme.hint4.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint4 %}
-                <div class="mt-4">
-                    {{ theme.textHint4|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint4|safe }}
+                    </div>
+                    {% if theme.sub_textHint4 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text4_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text4" style="display:none">
+                            {{ theme.sub_textHint4|safe }}
+                        </div>
+                        <script>
+                            function sub_text4_btn() {
+                                document.getElementById("sub_text4").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -131,6 +274,19 @@
                 <div class="mt-4">
                     {{ theme.textHint4|safe }}
                 </div>
+                {% if theme.sub_textHint4 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text4_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text4" style="display:none">
+                        {{ theme.sub_textHint4|safe }}
+                    </div>
+                    <script>
+                        function sub_text4_btn() {
+                            document.getElementById("sub_text4").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -140,11 +296,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint5.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint5.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint5.url }}"></audio>
                 {% if theme.textHint5 %}
-                <div class="mt-4">
-                    {{ theme.textHint5|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint5|safe }}
+                    </div>
+                    {% if theme.sub_textHint5 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text5_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text5" style="display:none">
+                            {{ theme.sub_textHint5|safe }}
+                        </div>
+                        <script>
+                            function sub_text5_btn() {
+                                document.getElementById("sub_text5").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint5 %}
@@ -152,9 +321,22 @@
                 <audio controls autoplay src="{{ theme.hint5.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint5 %}
-                <div class="mt-4">
-                    {{ theme.textHint5|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint5|safe }}
+                    </div>
+                    {% if theme.sub_textHint5 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text5_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text5" style="display:none">
+                            {{ theme.sub_textHint5|safe }}
+                        </div>
+                        <script>
+                            function sub_text5_btn() {
+                                document.getElementById("sub_text5").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -162,6 +344,19 @@
                 <div class="mt-4">
                     {{ theme.textHint5|safe }}
                 </div>
+                {% if theme.sub_textHint5 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text5_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text5" style="display:none">
+                        {{ theme.sub_textHint5|safe }}
+                    </div>
+                    <script>
+                        function sub_text5_btn() {
+                            document.getElementById("sub_text5").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -171,11 +366,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint6.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint6.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint6.url }}"></audio>
                 {% if theme.textHint6 %}
-                <div class="mt-4">
-                    {{ theme.textHint6|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint6|safe }}
+                    </div>
+                    {% if theme.sub_textHint6 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text6_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text6" style="display:none">
+                            {{ theme.sub_textHint6|safe }}
+                        </div>
+                        <script>
+                            function sub_text6_btn() {
+                                document.getElementById("sub_text6").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint6 %}
@@ -183,9 +391,22 @@
                 <audio controls autoplay src="{{ theme.hint6.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint6 %}
-                <div class="mt-4">
-                    {{ theme.textHint6|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint6|safe }}
+                    </div>
+                    {% if theme.sub_textHint6 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text6_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text6" style="display:none">
+                            {{ theme.sub_textHint6|safe }}
+                        </div>
+                        <script>
+                            function sub_text6_btn() {
+                                document.getElementById("sub_text6").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -193,6 +414,19 @@
                 <div class="mt-4">
                     {{ theme.textHint6|safe }}
                 </div>
+                {% if theme.sub_textHint6 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text6_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text6" style="display:none">
+                        {{ theme.sub_textHint6|safe }}
+                    </div>
+                    <script>
+                        function sub_text6_btn() {
+                            document.getElementById("sub_text6").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -202,11 +436,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint7.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint7.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint7.url }}"></audio>
                 {% if theme.textHint7 %}
-                <div class="mt-4">
-                    {{ theme.textHint7|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint7|safe }}
+                    </div>
+                    {% if theme.sub_textHint7 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text7_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text7" style="display:none">
+                            {{ theme.sub_textHint7|safe }}
+                        </div>
+                        <script>
+                            function sub_text7_btn() {
+                                document.getElementById("sub_text7").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint7 %}
@@ -214,9 +461,22 @@
                 <audio controls autoplay src="{{ theme.hint7.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint7 %}
-                <div class="mt-4">
-                    {{ theme.textHint7|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint7|safe }}
+                    </div>
+                    {% if theme.sub_textHint7 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text7_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text7" style="display:none">
+                            {{ theme.sub_textHint7|safe }}
+                        </div>
+                        <script>
+                            function sub_text7_btn() {
+                                document.getElementById("sub_text7").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -224,6 +484,19 @@
                 <div class="mt-4">
                     {{ theme.textHint7|safe }}
                 </div>
+                {% if theme.sub_textHint7 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text7_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text7" style="display:none">
+                        {{ theme.sub_textHint7|safe }}
+                    </div>
+                    <script>
+                        function sub_text7_btn() {
+                            document.getElementById("sub_text7").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -233,11 +506,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint8.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint8.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint8.url }}"></audio>
                 {% if theme.textHint8 %}
-                <div class="mt-4">
-                    {{ theme.textHint8|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint8|safe }}
+                    </div>
+                    {% if theme.sub_textHint8 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text8_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text8" style="display:none">
+                            {{ theme.sub_textHint8|safe }}
+                        </div>
+                        <script>
+                            function sub_text8_btn() {
+                                document.getElementById("sub_text8").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint8 %}
@@ -245,9 +531,22 @@
                 <audio controls autoplay src="{{ theme.hint8.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint8 %}
-                <div class="mt-4">
-                    {{ theme.textHint8|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint8|safe }}
+                    </div>
+                    {% if theme.sub_textHint8 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text8_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text8" style="display:none">
+                            {{ theme.sub_textHint8|safe }}
+                        </div>
+                        <script>
+                            function sub_text8_btn() {
+                                document.getElementById("sub_text8").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -255,6 +554,19 @@
                 <div class="mt-4">
                     {{ theme.textHint8|safe }}
                 </div>
+                {% if theme.sub_textHint8 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text8_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text8" style="display:none">
+                        {{ theme.sub_textHint8|safe }}
+                    </div>
+                    <script>
+                        function sub_text8_btn() {
+                            document.getElementById("sub_text8").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -264,11 +576,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint9.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint9.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint9.url }}"></audio>
                 {% if theme.textHint9 %}
-                <div class="mt-4">
-                    {{ theme.textHint9|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint9|safe }}
+                    </div>
+                    {% if theme.sub_textHint9 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text9_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text9" style="display:none">
+                            {{ theme.sub_textHint9|safe }}
+                        </div>
+                        <script>
+                            function sub_text9_btn() {
+                                document.getElementById("sub_text9").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint9 %}
@@ -276,9 +601,22 @@
                 <audio controls autoplay src="{{ theme.hint9.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint9 %}
-                <div class="mt-4">
-                    {{ theme.textHint9|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint9|safe }}
+                    </div>
+                    {% if theme.sub_textHint9 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text9_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text9" style="display:none">
+                            {{ theme.sub_textHint9|safe }}
+                        </div>
+                        <script>
+                            function sub_text9_btn() {
+                                document.getElementById("sub_text9").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -286,6 +624,19 @@
                 <div class="mt-4">
                     {{ theme.textHint9|safe }}
                 </div>
+                {% if theme.sub_textHint9 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text9_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text9" style="display:none">
+                        {{ theme.sub_textHint9|safe }}
+                    </div>
+                    <script>
+                        function sub_text9_btn() {
+                            document.getElementById("sub_text9").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -295,11 +646,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint10.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint10.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint10.url }}"></audio>
                 {% if theme.textHint10 %}
-                <div class="mt-4">
-                    {{ theme.textHint10|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint10|safe }}
+                    </div>
+                    {% if theme.sub_textHint10 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text10_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text10" style="display:none">
+                            {{ theme.sub_textHint10|safe }}
+                        </div>
+                        <script>
+                            function sub_text10_btn() {
+                                document.getElementById("sub_text10").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint10 %}
@@ -307,9 +671,22 @@
                 <audio controls autoplay src="{{ theme.hint10.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint10 %}
-                <div class="mt-4">
-                    {{ theme.textHint10|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint10|safe }}
+                    </div>
+                    {% if theme.sub_textHint10 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text10_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text10" style="display:none">
+                            {{ theme.sub_textHint10|safe }}
+                        </div>
+                        <script>
+                            function sub_text10_btn() {
+                                document.getElementById("sub_text10").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -317,6 +694,19 @@
                 <div class="mt-4">
                     {{ theme.textHint10|safe }}
                 </div>
+                {% if theme.sub_textHint10 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text10_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text10" style="display:none">
+                        {{ theme.sub_textHint10|safe }}
+                    </div>
+                    <script>
+                        function sub_text10_btn() {
+                            document.getElementById("sub_text10").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -326,11 +716,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint11.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint11.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint11.url }}"></audio>
                 {% if theme.textHint11 %}
-                <div class="mt-4">
-                    {{ theme.textHint11|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint11|safe }}
+                    </div>
+                    {% if theme.sub_textHint11 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text11_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text11" style="display:none">
+                            {{ theme.sub_textHint11|safe }}
+                        </div>
+                        <script>
+                            function sub_text11_btn() {
+                                document.getElementById("sub_text11").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint11 %}
@@ -338,9 +741,22 @@
                 <audio controls autoplay src="{{ theme.hint11.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint11 %}
-                <div class="mt-4">
-                    {{ theme.textHint11|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint11|safe }}
+                    </div>
+                    {% if theme.sub_textHint11 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text11_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text11" style="display:none">
+                            {{ theme.sub_textHint11|safe }}
+                        </div>
+                        <script>
+                            function sub_text11_btn() {
+                                document.getElementById("sub_text11").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -348,6 +764,19 @@
                 <div class="mt-4">
                     {{ theme.textHint11|safe }}
                 </div>
+                {% if theme.sub_textHint11 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text11_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text11" style="display:none">
+                        {{ theme.sub_textHint11|safe }}
+                    </div>
+                    <script>
+                        function sub_text11_btn() {
+                            document.getElementById("sub_text11").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -357,11 +786,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint12.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint12.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint12.url }}"></audio>
                 {% if theme.textHint12 %}
-                <div class="mt-4">
-                    {{ theme.textHint12|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint12|safe }}
+                    </div>
+                    {% if theme.sub_textHint12 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text12_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text12" style="display:none">
+                            {{ theme.sub_textHint12|safe }}
+                        </div>
+                        <script>
+                            function sub_text12_btn() {
+                                document.getElementById("sub_text12").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint12 %}
@@ -369,9 +811,22 @@
                 <audio controls autoplay src="{{ theme.hint12.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint12 %}
-                <div class="mt-4">
-                    {{ theme.textHint12|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint12|safe }}
+                    </div>
+                    {% if theme.sub_textHint12 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text12_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text12" style="display:none">
+                            {{ theme.sub_textHint12|safe }}
+                        </div>
+                        <script>
+                            function sub_text12_btn() {
+                                document.getElementById("sub_text12").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -379,6 +834,19 @@
                 <div class="mt-4">
                     {{ theme.textHint12|safe }}
                 </div>
+                {% if theme.sub_textHint12 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text12_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text12" style="display:none">
+                        {{ theme.sub_textHint12|safe }}
+                    </div>
+                    <script>
+                        function sub_text12_btn() {
+                            document.getElementById("sub_text12").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -388,21 +856,47 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint13.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint13.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint13.url }}"></audio>
                 {% if theme.textHint13 %}
-                <div class="mt-4">
-                    {{ theme.textHint13|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint13|safe }}
+                    </div>
+                    {% if theme.sub_textHint13 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text13_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text13" style="display:none">
+                            {{ theme.sub_textHint13|safe }}
+                        </div>
+                        <script>
+                            function sub_text13_btn() {
+                                document.getElementById("sub_text13").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint13 %}
                 <iframe src="{% static 'silence.mp3' %}" allow="autoplay" style="display:none;"></iframe>
                 <audio controls autoplay src="{{ theme.hint13.url }}"></audio>
                 {% endif %}
-                {% if theme.textHint13%}
-                <div class="mt-4">
-                    {{ theme.textHint13|safe }}
-                </div>
+                {% if theme.textHint13 %}
+                    <div class="mt-4">
+                        {{ theme.textHint13|safe }}
+                    </div>
+                    {% if theme.sub_textHint13 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text13_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text13" style="display:none">
+                            {{ theme.sub_textHint13|safe }}
+                        </div>
+                        <script>
+                            function sub_text13_btn() {
+                                document.getElementById("sub_text13").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -410,6 +904,19 @@
                 <div class="mt-4">
                     {{ theme.textHint13|safe }}
                 </div>
+                {% if theme.sub_textHint13 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text13_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text13" style="display:none">
+                        {{ theme.sub_textHint13|safe }}
+                    </div>
+                    <script>
+                        function sub_text13_btn() {
+                            document.getElementById("sub_text13").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -419,11 +926,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint14.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint14.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint14.url }}"></audio>
                 {% if theme.textHint14 %}
-                <div class="mt-4">
-                    {{ theme.textHint14|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint14|safe }}
+                    </div>
+                    {% if theme.sub_textHint14 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text14_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text14" style="display:none">
+                            {{ theme.sub_textHint14|safe }}
+                        </div>
+                        <script>
+                            function sub_text14_btn() {
+                                document.getElementById("sub_text14").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint14 %}
@@ -431,9 +951,22 @@
                 <audio controls autoplay src="{{ theme.hint14.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint14 %}
-                <div class="mt-4">
-                    {{ theme.textHint14|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint14|safe }}
+                    </div>
+                    {% if theme.sub_textHint14 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text14_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text14" style="display:none">
+                            {{ theme.sub_textHint14|safe }}
+                        </div>
+                        <script>
+                            function sub_text14_btn() {
+                                document.getElementById("sub_text14").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -441,6 +974,19 @@
                 <div class="mt-4">
                     {{ theme.textHint14|safe }}
                 </div>
+                {% if theme.sub_textHint14 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text14_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text14" style="display:none">
+                        {{ theme.sub_textHint14|safe }}
+                    </div>
+                    <script>
+                        function sub_text14_btn() {
+                            document.getElementById("sub_text14").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -450,11 +996,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint15.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint15.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint15.url }}"></audio>
                 {% if theme.textHint15 %}
-                <div class="mt-4">
-                    {{ theme.textHint15|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint15|safe }}
+                    </div>
+                    {% if theme.sub_textHint15 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text15_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text15" style="display:none">
+                            {{ theme.sub_textHint15|safe }}
+                        </div>
+                        <script>
+                            function sub_text15_btn() {
+                                document.getElementById("sub_text15").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint15 %}
@@ -462,9 +1021,22 @@
                 <audio controls autoplay src="{{ theme.hint15.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint15 %}
-                <div class="mt-4">
-                    {{ theme.textHint15|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint15|safe }}
+                    </div>
+                    {% if theme.sub_textHint15 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text15_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text15" style="display:none">
+                            {{ theme.sub_textHint15|safe }}
+                        </div>
+                        <script>
+                            function sub_text15_btn() {
+                                document.getElementById("sub_text15").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -472,6 +1044,19 @@
                 <div class="mt-4">
                     {{ theme.textHint15|safe }}
                 </div>
+                {% if theme.sub_textHint15 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text15_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text15" style="display:none">
+                        {{ theme.sub_textHint15|safe }}
+                    </div>
+                    <script>
+                        function sub_text15_btn() {
+                            document.getElementById("sub_text15").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -481,11 +1066,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint16.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint16.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint16.url }}"></audio>
                 {% if theme.textHint16 %}
-                <div class="mt-4">
-                    {{ theme.textHint16|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint16|safe }}
+                    </div>
+                    {% if theme.sub_textHint16 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text16_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text16" style="display:none">
+                            {{ theme.sub_textHint16|safe }}
+                        </div>
+                        <script>
+                            function sub_text16_btn() {
+                                document.getElementById("sub_text16").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint16 %}
@@ -493,9 +1091,22 @@
                 <audio controls autoplay src="{{ theme.hint16.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint16 %}
-                <div class="mt-4">
-                    {{ theme.textHint16|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint16|safe }}
+                    </div>
+                    {% if theme.sub_textHint16 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text16_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text16" style="display:none">
+                            {{ theme.sub_textHint16|safe }}
+                        </div>
+                        <script>
+                            function sub_text16_btn() {
+                                document.getElementById("sub_text16").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -503,6 +1114,19 @@
                 <div class="mt-4">
                     {{ theme.textHint16|safe }}
                 </div>
+                {% if theme.sub_textHint16 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text16_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text16" style="display:none">
+                        {{ theme.sub_textHint16|safe }}
+                    </div>
+                    <script>
+                        function sub_text16_btn() {
+                            document.getElementById("sub_text16").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -512,11 +1136,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint17.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint17.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint17.url }}"></audio>
                 {% if theme.textHint17 %}
-                <div class="mt-4">
-                    {{ theme.textHint17|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint17|safe }}
+                    </div>
+                    {% if theme.sub_textHint17 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text17_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text17" style="display:none">
+                            {{ theme.sub_textHint17|safe }}
+                        </div>
+                        <script>
+                            function sub_text17_btn() {
+                                document.getElementById("sub_text17").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint17 %}
@@ -524,9 +1161,22 @@
                 <audio controls autoplay src="{{ theme.hint17.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint17 %}
-                <div class="mt-4">
-                    {{ theme.textHint17|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint17|safe }}
+                    </div>
+                    {% if theme.sub_textHint17 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text17_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text17" style="display:none">
+                            {{ theme.sub_textHint17|safe }}
+                        </div>
+                        <script>
+                            function sub_text17_btn() {
+                                document.getElementById("sub_text17").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -534,6 +1184,19 @@
                 <div class="mt-4">
                     {{ theme.textHint17|safe }}
                 </div>
+                {% if theme.sub_textHint17 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text17_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text17" style="display:none">
+                        {{ theme.sub_textHint17|safe }}
+                    </div>
+                    <script>
+                        function sub_text17_btn() {
+                            document.getElementById("sub_text17").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -543,11 +1206,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint18.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint18.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint18.url }}"></audio>
                 {% if theme.textHint18 %}
-                <div class="mt-4">
-                    {{ theme.textHint18|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint18|safe }}
+                    </div>
+                    {% if theme.sub_textHint18 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text18_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text18" style="display:none">
+                            {{ theme.sub_textHint18|safe }}
+                        </div>
+                        <script>
+                            function sub_text18_btn() {
+                                document.getElementById("sub_text18").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint18 %}
@@ -555,9 +1231,22 @@
                 <audio controls autoplay src="{{ theme.hint18.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint18 %}
-                <div class="mt-4">
-                    {{ theme.textHint18|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint18|safe }}
+                    </div>
+                    {% if theme.sub_textHint18 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text18_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text18" style="display:none">
+                            {{ theme.sub_textHint18|safe }}
+                        </div>
+                        <script>
+                            function sub_text18_btn() {
+                                document.getElementById("sub_text18").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -565,6 +1254,19 @@
                 <div class="mt-4">
                     {{ theme.textHint18|safe }}
                 </div>
+                {% if theme.sub_textHint18 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text18_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text18" style="display:none">
+                        {{ theme.sub_textHint18|safe }}
+                    </div>
+                    <script>
+                        function sub_text18_btn() {
+                            document.getElementById("sub_text18").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -574,11 +1276,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint19.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint19.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint19.url }}"></audio>
                 {% if theme.textHint19 %}
-                <div class="mt-4">
-                    {{ theme.textHint19|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint19|safe }}
+                    </div>
+                    {% if theme.sub_textHint19 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text19_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text19" style="display:none">
+                            {{ theme.sub_textHint19|safe }}
+                        </div>
+                        <script>
+                            function sub_text19_btn() {
+                                document.getElementById("sub_text19").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint19 %}
@@ -586,9 +1301,22 @@
                 <audio controls autoplay src="{{ theme.hint19.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint19 %}
-                <div class="mt-4">
-                    {{ theme.textHint19|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint19|safe }}
+                    </div>
+                    {% if theme.sub_textHint19 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text19_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text19" style="display:none">
+                            {{ theme.sub_textHint19|safe }}
+                        </div>
+                        <script>
+                            function sub_text19_btn() {
+                                document.getElementById("sub_text19").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -596,6 +1324,19 @@
                 <div class="mt-4">
                     {{ theme.textHint19|safe }}
                 </div>
+                {% if theme.sub_textHint19 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text19_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text19" style="display:none">
+                        {{ theme.sub_textHint19|safe }}
+                    </div>
+                    <script>
+                        function sub_text19_btn() {
+                            document.getElementById("sub_text19").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -605,11 +1346,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint20.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint20.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint20.url }}"></audio>
                 {% if theme.textHint20 %}
-                <div class="mt-4">
-                    {{ theme.textHint20|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint20|safe }}
+                    </div>
+                    {% if theme.sub_textHint20 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text20_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text20" style="display:none">
+                            {{ theme.sub_textHint20|safe }}
+                        </div>
+                        <script>
+                            function sub_text20_btn() {
+                                document.getElementById("sub_text20").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint20 %}
@@ -617,9 +1371,22 @@
                 <audio controls autoplay src="{{ theme.hint20.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint20 %}
-                <div class="mt-4">
-                    {{ theme.textHint20|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint20|safe }}
+                    </div>
+                    {% if theme.sub_textHint20 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text20_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text20" style="display:none">
+                            {{ theme.sub_textHint20|safe }}
+                        </div>
+                        <script>
+                            function sub_text20_btn() {
+                                document.getElementById("sub_text20").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -627,6 +1394,19 @@
                 <div class="mt-4">
                     {{ theme.textHint20|safe }}
                 </div>
+                {% if theme.sub_textHint20 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text20_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text20" style="display:none">
+                        {{ theme.sub_textHint20|safe }}
+                    </div>
+                    <script>
+                        function sub_text20_btn() {
+                            document.getElementById("sub_text20").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -636,11 +1416,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint21.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint21.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint21.url }}"></audio>
                 {% if theme.textHint21 %}
-                <div class="mt-4">
-                    {{ theme.textHint21|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint21|safe }}
+                    </div>
+                    {% if theme.sub_textHint21 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text21_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text21" style="display:none">
+                            {{ theme.sub_textHint21|safe }}
+                        </div>
+                        <script>
+                            function sub_text21_btn() {
+                                document.getElementById("sub_text21").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint21 %}
@@ -648,9 +1441,22 @@
                 <audio controls autoplay src="{{ theme.hint21.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint21 %}
-                <div class="mt-4">
-                    {{ theme.textHint21|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint21|safe }}
+                    </div>
+                    {% if theme.sub_textHint21 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text21_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text21" style="display:none">
+                            {{ theme.sub_textHint21|safe }}
+                        </div>
+                        <script>
+                            function sub_text21_btn() {
+                                document.getElementById("sub_text21").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -658,6 +1464,19 @@
                 <div class="mt-4">
                     {{ theme.textHint21|safe }}
                 </div>
+                {% if theme.sub_textHint21 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text21_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text21" style="display:none">
+                        {{ theme.sub_textHint21|safe }}
+                    </div>
+                    <script>
+                        function sub_text21_btn() {
+                            document.getElementById("sub_text21").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -667,11 +1486,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint22.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint22.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint22.url }}"></audio>
                 {% if theme.textHint22 %}
-                <div class="mt-4">
-                    {{ theme.textHint22|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint22|safe }}
+                    </div>
+                    {% if theme.sub_textHint22 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text22_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text22" style="display:none">
+                            {{ theme.sub_textHint22|safe }}
+                        </div>
+                        <script>
+                            function sub_text22_btn() {
+                                document.getElementById("sub_text22").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint22 %}
@@ -679,9 +1511,22 @@
                 <audio controls autoplay src="{{ theme.hint22.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint22 %}
-                <div class="mt-4">
-                    {{ theme.textHint22|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint22|safe }}
+                    </div>
+                    {% if theme.sub_textHint22 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text22_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text22" style="display:none">
+                            {{ theme.sub_textHint22|safe }}
+                        </div>
+                        <script>
+                            function sub_text22_btn() {
+                                document.getElementById("sub_text22").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -689,6 +1534,19 @@
                 <div class="mt-4">
                     {{ theme.textHint22|safe }}
                 </div>
+                {% if theme.sub_textHint22 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text22_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text22" style="display:none">
+                        {{ theme.sub_textHint22|safe }}
+                    </div>
+                    <script>
+                        function sub_text22_btn() {
+                            document.getElementById("sub_text22").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -698,11 +1556,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint23.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint23.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint23.url }}"></audio>
                 {% if theme.textHint23 %}
-                <div class="mt-4">
-                    {{ theme.textHint23|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint23|safe }}
+                    </div>
+                    {% if theme.sub_textHint23 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text23_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text23" style="display:none">
+                            {{ theme.sub_textHint23|safe }}
+                        </div>
+                        <script>
+                            function sub_text23_btn() {
+                                document.getElementById("sub_text23").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint23 %}
@@ -710,9 +1581,22 @@
                 <audio controls autoplay src="{{ theme.hint23.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint23 %}
-                <div class="mt-4">
-                    {{ theme.textHint23|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint23|safe }}
+                    </div>
+                    {% if theme.sub_textHint23 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text23_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text23" style="display:none">
+                            {{ theme.sub_textHint23|safe }}
+                        </div>
+                        <script>
+                            function sub_text23_btn() {
+                                document.getElementById("sub_text23").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -720,6 +1604,19 @@
                 <div class="mt-4">
                     {{ theme.textHint23|safe }}
                 </div>
+                {% if theme.sub_textHint23 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text23_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text23" style="display:none">
+                        {{ theme.sub_textHint23|safe }}
+                    </div>
+                    <script>
+                        function sub_text23_btn() {
+                            document.getElementById("sub_text23").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -729,11 +1626,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint24.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint24.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint24.url }}"></audio>
                 {% if theme.textHint24 %}
-                <div class="mt-4">
-                    {{ theme.textHint24|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint24|safe }}
+                    </div>
+                    {% if theme.sub_textHint24 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text24_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text24" style="display:none">
+                            {{ theme.sub_textHint24|safe }}
+                        </div>
+                        <script>
+                            function sub_text24_btn() {
+                                document.getElementById("sub_text24").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint24 %}
@@ -741,9 +1651,22 @@
                 <audio controls autoplay src="{{ theme.hint24.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint24 %}
-                <div class="mt-4">
-                    {{ theme.textHint24|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint24|safe }}
+                    </div>
+                    {% if theme.sub_textHint24 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text24_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text24" style="display:none">
+                            {{ theme.sub_textHint24|safe }}
+                        </div>
+                        <script>
+                            function sub_text24_btn() {
+                                document.getElementById("sub_text24").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -751,6 +1674,19 @@
                 <div class="mt-4">
                     {{ theme.textHint24|safe }}
                 </div>
+                {% if theme.sub_textHint24 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text24_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text24" style="display:none">
+                        {{ theme.sub_textHint24|safe }}
+                    </div>
+                    <script>
+                        function sub_text24_btn() {
+                            document.getElementById("sub_text24").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -760,11 +1696,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint25.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint25.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint25.url }}"></audio>
                 {% if theme.textHint25 %}
-                <div class="mt-4">
-                    {{ theme.textHint25|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint25|safe }}
+                    </div>
+                    {% if theme.sub_textHint25 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text25_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text25" style="display:none">
+                            {{ theme.sub_textHint25|safe }}
+                        </div>
+                        <script>
+                            function sub_text25_btn() {
+                                document.getElementById("sub_text25").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint25 %}
@@ -772,9 +1721,22 @@
                 <audio controls autoplay src="{{ theme.hint25.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint25 %}
-                <div class="mt-4">
-                    {{ theme.textHint25|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint25|safe }}
+                    </div>
+                    {% if theme.sub_textHint25 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text25_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text25" style="display:none">
+                            {{ theme.sub_textHint25|safe }}
+                        </div>
+                        <script>
+                            function sub_text25_btn() {
+                                document.getElementById("sub_text25").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -782,6 +1744,19 @@
                 <div class="mt-4">
                     {{ theme.textHint25|safe }}
                 </div>
+                {% if theme.sub_textHint25 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text25_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text25" style="display:none">
+                        {{ theme.sub_textHint25|safe }}
+                    </div>
+                    <script>
+                        function sub_text25_btn() {
+                            document.getElementById("sub_text25").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -791,11 +1766,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint26.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint26.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint26.url }}"></audio>
                 {% if theme.textHint26 %}
-                <div class="mt-4">
-                    {{ theme.textHint26|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint26|safe }}
+                    </div>
+                    {% if theme.sub_textHint26 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text26_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text26" style="display:none">
+                            {{ theme.sub_textHint26|safe }}
+                        </div>
+                        <script>
+                            function sub_text26_btn() {
+                                document.getElementById("sub_text26").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint26 %}
@@ -803,9 +1791,22 @@
                 <audio controls autoplay src="{{ theme.hint26.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint26 %}
-                <div class="mt-4">
-                    {{ theme.textHint26|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint26|safe }}
+                    </div>
+                    {% if theme.sub_textHint26 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text26_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text26" style="display:none">
+                            {{ theme.sub_textHint26|safe }}
+                        </div>
+                        <script>
+                            function sub_text26_btn() {
+                                document.getElementById("sub_text26").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -813,6 +1814,19 @@
                 <div class="mt-4">
                     {{ theme.textHint26|safe }}
                 </div>
+                {% if theme.sub_textHint26 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text26_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text26" style="display:none">
+                        {{ theme.sub_textHint26|safe }}
+                    </div>
+                    <script>
+                        function sub_text26_btn() {
+                            document.getElementById("sub_text26").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -822,11 +1836,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint27.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint27.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint27.url }}"></audio>
                 {% if theme.textHint27 %}
-                <div class="mt-4">
-                    {{ theme.textHint27|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint27|safe }}
+                    </div>
+                    {% if theme.sub_textHint27 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text27_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text27" style="display:none">
+                            {{ theme.sub_textHint27|safe }}
+                        </div>
+                        <script>
+                            function sub_text27_btn() {
+                                document.getElementById("sub_text27").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint27 %}
@@ -834,9 +1861,22 @@
                 <audio controls autoplay src="{{ theme.hint27.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint27 %}
-                <div class="mt-4">
-                    {{ theme.textHint27|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint27|safe }}
+                    </div>
+                    {% if theme.sub_textHint27 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text27_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text27" style="display:none">
+                            {{ theme.sub_textHint27|safe }}
+                        </div>
+                        <script>
+                            function sub_text27_btn() {
+                                document.getElementById("sub_text27").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -844,6 +1884,19 @@
                 <div class="mt-4">
                     {{ theme.textHint27|safe }}
                 </div>
+                {% if theme.sub_textHint27 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text27_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text27" style="display:none">
+                        {{ theme.sub_textHint27|safe }}
+                    </div>
+                    <script>
+                        function sub_text27_btn() {
+                            document.getElementById("sub_text27").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -853,11 +1906,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint28.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint28.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint28.url }}"></audio>
                 {% if theme.textHint28 %}
-                <div class="mt-4">
-                    {{ theme.textHint28|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint28|safe }}
+                    </div>
+                    {% if theme.sub_textHint28 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text28_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text28" style="display:none">
+                            {{ theme.sub_textHint28|safe }}
+                        </div>
+                        <script>
+                            function sub_text28_btn() {
+                                document.getElementById("sub_text28").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint28 %}
@@ -865,9 +1931,22 @@
                 <audio controls autoplay src="{{ theme.hint28.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint28 %}
-                <div class="mt-4">
-                    {{ theme.textHint28|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint28|safe }}
+                    </div>
+                    {% if theme.sub_textHint28 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text28_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text28" style="display:none">
+                            {{ theme.sub_textHint28|safe }}
+                        </div>
+                        <script>
+                            function sub_text28_btn() {
+                                document.getElementById("sub_text28").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -875,6 +1954,19 @@
                 <div class="mt-4">
                     {{ theme.textHint28|safe }}
                 </div>
+                {% if theme.sub_textHint28 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text28_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text28" style="display:none">
+                        {{ theme.sub_textHint28|safe }}
+                    </div>
+                    <script>
+                        function sub_text28_btn() {
+                            document.getElementById("sub_text28").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -884,11 +1976,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint29.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint29.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint29.url }}"></audio>
                 {% if theme.textHint29 %}
-                <div class="mt-4">
-                    {{ theme.textHint29|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint29|safe }}
+                    </div>
+                    {% if theme.sub_textHint29 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text29_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text29" style="display:none">
+                            {{ theme.sub_textHint29|safe }}
+                        </div>
+                        <script>
+                            function sub_text29_btn() {
+                                document.getElementById("sub_text29").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint29 %}
@@ -896,9 +2001,22 @@
                 <audio controls autoplay src="{{ theme.hint29.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint29 %}
-                <div class="mt-4">
-                    {{ theme.textHint29|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint29|safe }}
+                    </div>
+                    {% if theme.sub_textHint29 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text29_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text29" style="display:none">
+                            {{ theme.sub_textHint29|safe }}
+                        </div>
+                        <script>
+                            function sub_text29_btn() {
+                                document.getElementById("sub_text29").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -906,6 +2024,19 @@
                 <div class="mt-4">
                     {{ theme.textHint29|safe }}
                 </div>
+                {% if theme.sub_textHint29 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text29_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text29" style="display:none">
+                        {{ theme.sub_textHint29|safe }}
+                    </div>
+                    <script>
+                        function sub_text29_btn() {
+                            document.getElementById("sub_text29").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -915,11 +2046,24 @@
                 <h3 class="text-center">대략적인 힌트</h3>
                 <audio controls autoplay src="{{ theme.hint30.url }}"></audio>
                 <h3 class="text-center mt-5">구체적인 힌트</h3>
-                <audio controls autoplay src="{{ theme.sub_hint30.url }}"></audio>
+                <audio class="mb-3" controls autoplay src="{{ theme.sub_hint30.url }}"></audio>
                 {% if theme.textHint30 %}
-                <div class="mt-4">
-                    {{ theme.textHint30|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint30|safe }}
+                    </div>
+                    {% if theme.sub_textHint30 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text30_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text30" style="display:none">
+                            {{ theme.sub_textHint30|safe }}
+                        </div>
+                        <script>
+                            function sub_text30_btn() {
+                                document.getElementById("sub_text30").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 {% if theme.hint30 %}
@@ -927,9 +2071,22 @@
                 <audio controls autoplay src="{{ theme.hint30.url }}"></audio>
                 {% endif %}
                 {% if theme.textHint30 %}
-                <div class="mt-4">
-                    {{ theme.textHint30|safe }}
-                </div>
+                    <div class="mt-4">
+                        {{ theme.textHint30|safe }}
+                    </div>
+                    {% if theme.sub_textHint30 %}
+                        <div class="text-center mb-3">
+                            <button onclick="sub_text30_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                        </div>
+                        <div id="sub_text30" style="display:none">
+                            {{ theme.sub_textHint30|safe }}
+                        </div>
+                        <script>
+                            function sub_text30_btn() {
+                                document.getElementById("sub_text30").setAttribute('style', '');
+                            }
+                        </script>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         {% else %}
@@ -937,6 +2094,19 @@
                 <div class="mt-4">
                     {{ theme.textHint30|safe }}
                 </div>
+                {% if theme.sub_textHint30 %}
+                    <div class="text-center mb-3">
+                        <button onclick="sub_text30_btn()" style="color:white; border:1px solid white; background-color:black" class="text-center">좀더 구체적인 힌트보기</button>
+                    </div>
+                    <div id="sub_text30" style="display:none">
+                        {{ theme.sub_textHint30|safe }}
+                    </div>
+                    <script>
+                        function sub_text30_btn() {
+                            document.getElementById("sub_text30").setAttribute('style', '');
+                        }
+                    </script>
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
