@@ -21,6 +21,9 @@
             {% endfor %}
         </div>
     </div>
+    <div class="text-center">
+        <h5 class="my-5"><a style="color: white;text-decoration:none;" href="{% url 'accounts:logout' %}">로그아웃</a></h5>
+    </div>
 </div>
 {% else %}
 {% endif %}

@@ -33,7 +33,7 @@
         <div class="col-8">
             <form action="" method="post" name="hintCode" onsubmit="return check();">
                 {% csrf_token %}
-                <input class="form-control" style="background-color:black;color:white;border-color:white" name="p" value="{{ p }}" type="search" placeholder="힌트 코드 입력">
+                <input class="form-control" style="background-color:black;color:white;border-color:white" name="p" value="{{ p }}" type="search" placeholder="힌트 코드 입력" autocomplete='off'>
             </form>
             <h5 id="notCode" class="text-center mt-2" style="display:none;">다시 입력해주세요.</h5>
         </div>
@@ -136,166 +136,327 @@
     };
 
     function check() {
-      if(hintCode.p.value == "DB38" || hintCode.p.value == "db38") {
+      if(hintCode.p.value == "DB38" || hintCode.p.value == "db38" || hintCode.p.value == "Db38") {
         hintCode.p.value = "1";
         return true;
       }
-      else if(hintCode.p.value == "DA60" || hintCode.p.value == "da60") {
+      else if(hintCode.p.value == "DA60" || hintCode.p.value == "da60" || hintCode.p.value == "Da60") {
         hintCode.p.value = "2";
         return true;
       }
-      else if(hintCode.p.value == "CA59" || hintCode.p.value == "ca59") {
+      else if(hintCode.p.value == "CA59" || hintCode.p.value == "ca59" || hintCode.p.value == "Ca59") {
         hintCode.p.value = "3";
         return true;
       }
-      else if(hintCode.p.value == "BD67" || hintCode.p.value == "bd67") {
+      else if(hintCode.p.value == "BD67" || hintCode.p.value == "bd67" || hintCode.p.value == "Bd67") {
         hintCode.p.value = "4";
         return true;
       }
-      else if(hintCode.p.value == "AC35" || hintCode.p.value == "ac35") {
+      else if(hintCode.p.value == "AC35" || hintCode.p.value == "ac35" || hintCode.p.value == "Ac35") {
         hintCode.p.value = "5";
         return true;
       }
-      else if(hintCode.p.value == "BC71" || hintCode.p.value == "bc71") {
+      else if(hintCode.p.value == "BC71" || hintCode.p.value == "bc71" || hintCode.p.value == "Bc71") {
         hintCode.p.value = "6";
         return true;
       }
-      else if(hintCode.p.value == "AD58" || hintCode.p.value == "ad58") {
+      else if(hintCode.p.value == "AD58" || hintCode.p.value == "ad58" || hintCode.p.value == "Ad58") {
         hintCode.p.value = "7";
         return true;
       }
-      else if(hintCode.p.value == "CB88" || hintCode.p.value == "ca88") {
+      else if(hintCode.p.value == "CB88" || hintCode.p.value == "ca88" || hintCode.p.value == "Ca88") {
         hintCode.p.value = "8";
         return true;
       }
-      else if(hintCode.p.value == "CD37" || hintCode.p.value == "cd37") {
+      else if(hintCode.p.value == "CD37" || hintCode.p.value == "cd37" || hintCode.p.value == "Cd37") {
         hintCode.p.value = "9";
         return true;
       }
-      else if(hintCode.p.value == "CC38" || hintCode.p.value == "cc38") {
+      else if(hintCode.p.value == "CC38" || hintCode.p.value == "cc38" || hintCode.p.value == "Cc37") {
         hintCode.p.value = "10";
         return true;
       }
-      else if(hintCode.p.value == "DC54" || hintCode.p.value == "dc54") {
+      else if(hintCode.p.value == "DC54" || hintCode.p.value == "dc54" || hintCode.p.value == "Dc54") {
         hintCode.p.value = "11";
         return true;
       }
-      else if(hintCode.p.value == "DD88" || hintCode.p.value == "dd88") {
+      else if(hintCode.p.value == "DD88" || hintCode.p.value == "dd88" || hintCode.p.value == "Dd88") {
         hintCode.p.value = "12";
         return true;
       }
-      else if(hintCode.p.value == "DB34" || hintCode.p.value == "db34") {
+      else if(hintCode.p.value == "DB34" || hintCode.p.value == "db34" || hintCode.p.value == "Db34") {
         hintCode.p.value = "13";
         return true;
       }
-      else if(hintCode.p.value == "AB65" || hintCode.p.value == "ab65") {
+      else if(hintCode.p.value == "AB65" || hintCode.p.value == "ab65" || hintCode.p.value == "Ab65") {
         hintCode.p.value = "14";
         return true;
       }
-      else if(hintCode.p.value == "CA29" || hintCode.p.value == "ca29") {
+      else if(hintCode.p.value == "CA29" || hintCode.p.value == "ca29" || hintCode.p.value == "Ca29") {
         hintCode.p.value = "15";
         return true;
       }
-      else if(hintCode.p.value == "BC63" || hintCode.p.value == "bc63") {
+      else if(hintCode.p.value == "BC63" || hintCode.p.value == "bc63" || hintCode.p.value == "Bc63") {
         hintCode.p.value = "16";
         return true;
       }
-      else if(hintCode.p.value == "AC25" || hintCode.p.value == "ac25") {
+      else if(hintCode.p.value == "AC25" || hintCode.p.value == "ac25" || hintCode.p.value == "Ac25") {
         hintCode.p.value = "17";
         return true;
       }
-      else if(hintCode.p.value == "BC31" || hintCode.p.value == "bc31") {
+      else if(hintCode.p.value == "BC31" || hintCode.p.value == "bc31" || hintCode.p.value == "Bc31") {
         hintCode.p.value = "18";
         return true;
       }
-      else if(hintCode.p.value == "AD98" || hintCode.p.value == "ad98") {
+      else if(hintCode.p.value == "AD98" || hintCode.p.value == "ad98" || hintCode.p.value == "Ad98") {
         hintCode.p.value = "19";
         return true;
       }
-      else if(hintCode.p.value == "CB48" || hintCode.p.value == "cb48") {
+      else if(hintCode.p.value == "CB48" || hintCode.p.value == "cb48" || hintCode.p.value == "Cb48") {
         hintCode.p.value = "20";
         return true;
       }
-      else if(hintCode.p.value == "CD27" || hintCode.p.value == "cd27") {
+      else if(hintCode.p.value == "CD27" || hintCode.p.value == "cd27" || hintCode.p.value == "Cd27") {
         hintCode.p.value = "21";
         return true;
       }
-      else if(hintCode.p.value == "CC98" || hintCode.p.value == "cc98") {
+      else if(hintCode.p.value == "CC98" || hintCode.p.value == "cc98" || hintCode.p.value == "Cc98") {
         hintCode.p.value = "22";
         return true;
       }
-      else if(hintCode.p.value == "DC14" || hintCode.p.value == "dc14") {
+      else if(hintCode.p.value == "DC14" || hintCode.p.value == "dc14" || hintCode.p.value == "Dc14") {
         hintCode.p.value = "23";
         return true;
       }
-      else if(hintCode.p.value == "DD08" || hintCode.p.value == "dd08") {
+      else if(hintCode.p.value == "DD08" || hintCode.p.value == "dd08" || hintCode.p.value == "Dd08") {
         hintCode.p.value = "24";
         return true;
       }
-      else if(hintCode.p.value == "BC51" || hintCode.p.value == "bc51") {
+      else if(hintCode.p.value == "BC51" || hintCode.p.value == "bc51" || hintCode.p.value == "Bc51") {
         hintCode.p.value = "25";
         return true;
       }
-      else if(hintCode.p.value == "CD47" || hintCode.p.value == "cd47") {
+      else if(hintCode.p.value == "CD47" || hintCode.p.value == "cd47" || hintCode.p.value == "Cd47") {
         hintCode.p.value = "26";
         return true;
       }
-      else if(hintCode.p.value == "CB02" || hintCode.p.value == "cb02") {
+      else if(hintCode.p.value == "CB02" || hintCode.p.value == "cb02" || hintCode.p.value == "Cb02") {
         hintCode.p.value = "27";
         return true;
       }
-      else if(hintCode.p.value == "DC14" || hintCode.p.value == "dc14") {
+      else if(hintCode.p.value == "DC14" || hintCode.p.value == "dc14" || hintCode.p.value == "Dc14") {
         hintCode.p.value = "28";
         return true;
       }
-      else if(hintCode.p.value == "CC58" || hintCode.p.value == "cc58") {
+      else if(hintCode.p.value == "CC58" || hintCode.p.value == "cc58" || hintCode.p.value == "Cc58") {
         hintCode.p.value = "29";
         return true;
       }
-      else if(hintCode.p.value == "DD48" || hintCode.p.value == "dd48") {
+      else if(hintCode.p.value == "DD48" || hintCode.p.value == "dd48" || hintCode.p.value == "Dd48") {
         hintCode.p.value = "30";
         return true;
       }
-      else if(hintCode.p.value == "BC77" || hintCode.p.value == "bc77") {
+      else if(hintCode.p.value == "BC77" || hintCode.p.value == "bc77" || hintCode.p.value == "Bc77") {
         hintCode.p.value = "31";
         return true;
       }
-      else if(hintCode.p.value == "CD44" || hintCode.p.value == "cd44") {
+      else if(hintCode.p.value == "CD44" || hintCode.p.value == "cd44" || hintCode.p.value == "Cd44") {
         hintCode.p.value = "32";
         return true;
       }
-      else if(hintCode.p.value == "DC55" || hintCode.p.value == "dc55") {
+      else if(hintCode.p.value == "DC55" || hintCode.p.value == "dc55" || hintCode.p.value == "Dc55") {
         hintCode.p.value = "33";
         return true;
       }
-      else if(hintCode.p.value == "DD90" || hintCode.p.value == "dd90") {
+      else if(hintCode.p.value == "DD90" || hintCode.p.value == "dd90" || hintCode.p.value == "Dd90") {
         hintCode.p.value = "34";
         return true;
       }
-      else if(hintCode.p.value == "BC53" || hintCode.p.value == "bc53") {
+      else if(hintCode.p.value == "BC53" || hintCode.p.value == "bc53" || hintCode.p.value == "Bc53") {
         hintCode.p.value = "35";
         return true;
       }
-      else if(hintCode.p.value == "CD93" || hintCode.p.value == "cd93") {
+      else if(hintCode.p.value == "CD93" || hintCode.p.value == "cd93" || hintCode.p.value == "Cd93") {
         hintCode.p.value = "36";
         return true;
       }
-      else if(hintCode.p.value == "CB21" || hintCode.p.value == "cb21") {
+      else if(hintCode.p.value == "CB21" || hintCode.p.value == "cb21" || hintCode.p.value == "Cb21") {
         hintCode.p.value = "37";
         return true;
       }
-      else if(hintCode.p.value == "DC22" || hintCode.p.value == "dc22") {
+      else if(hintCode.p.value == "DC22" || hintCode.p.value == "dc22" || hintCode.p.value == "Dc22") {
         hintCode.p.value = "38";
         return true;
       }
-      else if(hintCode.p.value == "CC11" || hintCode.p.value == "cc11") {
+      else if(hintCode.p.value == "CC11" || hintCode.p.value == "cc11" || hintCode.p.value == "Cc11") {
         hintCode.p.value = "39";
         return true;
       }
-      else if(hintCode.p.value == "DD65" || hintCode.p.value == "dd65") {
+      else if(hintCode.p.value == "DD65" || hintCode.p.value == "dd65" || hintCode.p.value == "Dd65") {
         hintCode.p.value = "40";
         return true;
       }
+      else if(hintCode.p.value == "EA10" || hintCode.p.value == "ea10" || hintCode.p.value == "Ea10") {
+        hintCode.p.value = "41";
+        return true;
+      }
+      else if(hintCode.p.value == "EB31" || hintCode.p.value == "eb31" || hintCode.p.value == "eb31") {
+        hintCode.p.value = "42";
+        return true;
+      }
+      else if(hintCode.p.value == "EC52" || hintCode.p.value == "ec52" || hintCode.p.value == "Ec52") {
+        hintCode.p.value = "43";
+        return true;
+      }
+      else if(hintCode.p.value == "EA73" || hintCode.p.value == "Ea73" || hintCode.p.value == "ea73") {
+        hintCode.p.value = "44";
+        return true;
+      }
+      else if(hintCode.p.value == "EB94" || hintCode.p.value == "Eb94" || hintCode.p.value == "eb94") {
+        hintCode.p.value = "45";
+        return true;
+      }
+      else if(hintCode.p.value == "FA20" || hintCode.p.value == "Fa20" || hintCode.p.value == "fa20") {
+        hintCode.p.value = "46";
+        return true;
+      }
+      else if(hintCode.p.value == "FB41" || hintCode.p.value == "fb41" || hintCode.p.value == "Fb41") {
+        hintCode.p.value = "47";
+        return true;
+      }
+      else if(hintCode.p.value == "Fc62" || hintCode.p.value == "FC62" || hintCode.p.value == "fc62") {
+        hintCode.p.value = "48";
+        return true;
+      }
+      else if(hintCode.p.value == "fa83" || hintCode.p.value == "FA83" || hintCode.p.value == "Fa83") {
+        hintCode.p.value = "49";
+        return true;
+      }
+      else if(hintCode.p.value == "FB04" || hintCode.p.value == "Fb04" || hintCode.p.value == "fb04") {
+        hintCode.p.value = "50";
+        return true;
+      }
+      else if(hintCode.p.value == "EA11" || hintCode.p.value == "ea11" || hintCode.p.value == "Ea11") {
+        hintCode.p.value = "51";
+        return true;
+      }
+      else if(hintCode.p.value == "EB32" || hintCode.p.value == "Eb32" || hintCode.p.value == "eb32") {
+        hintCode.p.value = "52";
+        return true;
+      }
+      else if(hintCode.p.value == "EC53" || hintCode.p.value == "Ec53" || hintCode.p.value == "ec53") {
+        hintCode.p.value = "53";
+        return true;
+      }
+      else if(hintCode.p.value == "EA74" || hintCode.p.value == "Ea74" || hintCode.p.value == "ea74") {
+        hintCode.p.value = "54";
+        return true;
+      }
+      else if(hintCode.p.value == "EB85" || hintCode.p.value == "Eb85" || hintCode.p.value == "eb85") {
+        hintCode.p.value = "55";
+        return true;
+      }
+      else if(hintCode.p.value == "FA31" || hintCode.p.value == "Fa31" || hintCode.p.value == "fa31") {
+        hintCode.p.value = "56";
+        return true;
+      }
+      else if(hintCode.p.value == "FB52" || hintCode.p.value == "fb52" || hintCode.p.value == "Fb52") {
+        hintCode.p.value = "57";
+        return true;
+      }
+      else if(hintCode.p.value == "FC73" || hintCode.p.value == "Fc73" || hintCode.p.value == "fc73") {
+        hintCode.p.value = "58";
+        return true;
+      }
+      else if(hintCode.p.value == "FA94" || hintCode.p.value == "Fa94" || hintCode.p.value == "fa94") {
+        hintCode.p.value = "59";
+        return true;
+      }
+      else if(hintCode.p.value == "FB15" || hintCode.p.value == "Fb15" || hintCode.p.value == "fb15") {
+        hintCode.p.value = "60";
+        return true;
+      }
+      else if(hintCode.p.value == "EA20" || hintCode.p.value == "Ea20" || hintCode.p.value == "ea20") {
+        hintCode.p.value = "61";
+        return true;
+      }
+      else if(hintCode.p.value == "EB41" || hintCode.p.value == "eb41" || hintCode.p.value == "Eb41") {
+        hintCode.p.value = "62";
+        return true;
+      }
+      else if(hintCode.p.value == "EC62" || hintCode.p.value == "Ec62" || hintCode.p.value == "ec62") {
+        hintCode.p.value = "63";
+        return true;
+      }
+      else if(hintCode.p.value == "EA83" || hintCode.p.value == "ea83" || hintCode.p.value == "Ea83") {
+        hintCode.p.value = "64";
+        return true;
+      }
+      else if(hintCode.p.value == "EB04" || hintCode.p.value == "eb04" || hintCode.p.value == "Eb04") {
+        hintCode.p.value = "65";
+        return true;
+      }
+      else if(hintCode.p.value == "FA10" || hintCode.p.value == "Fa10" || hintCode.p.value == "fa10") {
+        hintCode.p.value = "66";
+        return true;
+      }
+      else if(hintCode.p.value == "FB31" || hintCode.p.value == "fb31" || hintCode.p.value == "Fb31") {
+        hintCode.p.value = "67";
+        return true;
+      }
+      else if(hintCode.p.value == "FC52" || hintCode.p.value == "Fc52" || hintCode.p.value == "fc52") {
+        hintCode.p.value = "68";
+        return true;
+      }
+      else if(hintCode.p.value == "FA73" || hintCode.p.value == "Fa73" || hintCode.p.value == "fa73") {
+        hintCode.p.value = "69";
+        return true;
+      }
+      else if(hintCode.p.value == "FB94" || hintCode.p.value == "Fa94" || hintCode.p.value == "fa94") {
+        hintCode.p.value = "70";
+        return true;
+      }
+      else if(hintCode.p.value == "GA20" || hintCode.p.value == "Ga20" || hintCode.p.value == "ga20") {
+        hintCode.p.value = "71";
+        return true;
+      }
+      else if(hintCode.p.value == "GB41" || hintCode.p.value == "gb41" || hintCode.p.value == "Gb41") {
+        hintCode.p.value = "72";
+        return true;
+      }
+      else if(hintCode.p.value == "GC62" || hintCode.p.value == "Gc62" || hintCode.p.value == "gc62") {
+        hintCode.p.value = "73";
+        return true;
+      }
+      else if(hintCode.p.value == "GA83" || hintCode.p.value == "ga83" || hintCode.p.value == "Ga83") {
+        hintCode.p.value = "74";
+        return true;
+      }
+      else if(hintCode.p.value == "GB04" || hintCode.p.value == "gb04" || hintCode.p.value == "Gb04") {
+        hintCode.p.value = "75";
+        return true;
+      }
+      else if(hintCode.p.value == "GA10" || hintCode.p.value == "Ga10" || hintCode.p.value == "ga10") {
+        hintCode.p.value = "76";
+        return true;
+      }
+      else if(hintCode.p.value == "GB31" || hintCode.p.value == "gb31" || hintCode.p.value == "Gb31") {
+        hintCode.p.value = "77";
+        return true;
+      }
+      else if(hintCode.p.value == "GC52" || hintCode.p.value == "Gc52" || hintCode.p.value == "gc52") {
+        hintCode.p.value = "78";
+        return true;
+      }
+      else if(hintCode.p.value == "GA73" || hintCode.p.value == "Ga73" || hintCode.p.value == "ga73") {
+        hintCode.p.value = "79";
+        return true;
+      }
+      else if(hintCode.p.value == "GB94" || hintCode.p.value == "Ga94" || hintCode.p.value == "ga94") {
+        hintCode.p.value = "80";
+        return true;
+      }
+
       else {
         document.getElementById('notCode').setAttribute('style', '')
         return false;

@@ -2,6 +2,7 @@ from django.urls import re_path
 from . import views
 
 urlpatterns = [
+    re_path(r'^laurentia/$', views.laurentia),
     re_path(r'^personal_information/$', views.personal_information),
     re_path(r'^create/$', views.create_qr_code, name='create_qr_code'),
     re_path(r'^(?P<user_id>\w+)/admin/$', views.admin, name="admin"),
