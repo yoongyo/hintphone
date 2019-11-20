@@ -3029,9 +3029,7 @@ def laurentia(request):
     if request.method == 'POST':
         form = HintForm(request.POST, request.FILES, instance=theme)
         if form.is_valid():
-            theme = form.save(commit=False)
-            theme.roomEscape = request.user
-            theme.save()
+            form.save()
             return HttpResponseRedirect(reverse('hint:laurentia_complete'))
         else:
             print(form.errors)
