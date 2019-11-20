@@ -3032,7 +3032,7 @@ def laurentia(request):
             theme = form.save(commit=False)
             theme.roomEscape = request.user
             theme.save()
-            return HttpResponseRedirect(reverse('accounts:login'))
+            return HttpResponseRedirect(reverse('hint:laurentia_complete'))
         else:
             print(form.errors)
     else:
@@ -3040,6 +3040,10 @@ def laurentia(request):
     return render(request, 'hint/laurentia.html', {
         'form': form
     })
+
+
+def laurentia_complete(request):
+    return render(request, 'hint/laurentia_complete.html')
 
 
 
