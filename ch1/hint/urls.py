@@ -2,6 +2,8 @@ from django.urls import re_path
 from . import views
 
 urlpatterns = [
+    re_path(r'^ordinary/$', views.ordinary),
+    re_path(r'^ordinaryComplete/$', views.ordinary_complete, name='ordinary_complete'),
     re_path(r'^laurentia/$', views.laurentia),
     re_path(r'^laurentiaComplete/$', views.laurentia_complete, name='laurentia_complete'),
     re_path(r'^personal_information/$', views.personal_information),

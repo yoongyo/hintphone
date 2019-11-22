@@ -2430,6 +2430,7 @@ def QR_code(request, user_id, theme):
 @login_required
 def theme_hint(request, user_id, theme, hint):
     nation = get_object_or_404(Profile, user=request.user).nation
+    answer = get_object_or_404(Profile, user=request.user).answer
     theme = get_object_or_404(Theme, name=theme, roomEscape=request.user)
 
     if hint == '1':
@@ -2838,8 +2839,6 @@ def theme_hint(request, user_id, theme, hint):
         textHint = False
         sub_textHint = False
 
-
-
     return render(request, 'hint/theme_hint.html', {
         'hint': hint,
         'theme': theme,
@@ -2848,7 +2847,8 @@ def theme_hint(request, user_id, theme, hint):
         'mainHint': mainHint,
         'subHint': subHint,
         'textHint': textHint,
-        'sub_textHint': sub_textHint
+        'sub_textHint': sub_textHint,
+        'answer': answer
     })
 
 
@@ -3042,6 +3042,26 @@ def laurentia(request):
 
 def laurentia_complete(request):
     return render(request, 'hint/laurentia_complete.html')
+
+
+def ordinary(request):
+    theme = get_object_or_404(Theme, name='평범한하루')
+    if request.method == 'POST':
+        form = HintForm(request.POST, request.FILES, instance=theme)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('hint:ordinary_complete'))
+        else:
+            print(form.errors)
+    else:
+        form = HintForm(instance=theme)
+    return render(request, 'hint/ordinary.html', {
+        'form': form
+    })
+
+
+def ordinary_complete(request):
+    return render(request, 'hint/ordinary_complete.html')
 
 
 
