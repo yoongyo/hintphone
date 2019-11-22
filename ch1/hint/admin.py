@@ -10,7 +10,7 @@ class ThemeAdmin(admin.ModelAdmin):
     class Meta:
         model = Theme
 
-    list_display = ['name', 'roomEscape', 'enterKey', 'theme_number', 'hintCount']
+    list_display = ['name', 'roomEscape', 'enterKey', 'hintCount']
 
 
 admin.site.register(Theme, ThemeAdmin)

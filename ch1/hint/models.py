@@ -6,9 +6,11 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Theme(models.Model):
     roomEscape = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     enterKey = models.CharField(max_length=50)
-    theme_number = models.PositiveIntegerField(null=True, blank=True)
     hintCount = models.PositiveIntegerField(default=3)
     name = models.CharField(max_length=30)
+
+    currentCount = models.PositiveIntegerField(default=0, blank=True, null=True)
+    currentHint = models.TextField(default='', blank=True, null=True)
 
     hint1 = models.FileField(upload_to='mp3/', blank=True, null=True)
     sub_hint1 = models.FileField(upload_to='mp3/', blank=True, null=True)

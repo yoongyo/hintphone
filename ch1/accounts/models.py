@@ -14,11 +14,8 @@ class Profile(models.Model):
     escape_room = models.CharField(max_length=30)
     reset = models.CharField(max_length=20)
     phone = models.CharField(max_length=20)
-    hintCode = models.BooleanField(default=False, blank=True)
     textHint = models.BooleanField(default=False)
     answer = models.BooleanField(default=False)
-    interPhone = models.BooleanField(default=False, blank=True)
-    interPhone_call = models.CharField(max_length=20, blank=True, null=True)
 
     def __str__(self):
         return self.escape_room
