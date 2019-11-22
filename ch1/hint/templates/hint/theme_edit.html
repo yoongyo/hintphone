@@ -6,41 +6,40 @@
 <div class="container-fluid" style="color:white">
     <h2 class="mt-5 text-center">{{ escape_room }}</h2>
     <h3 class="text-center mb-5">{{ theme }}</h3>
-    <div class="text-center">
-        <button data-target="#myModal" data-toggle="modal" style="position:fixed;top:20px;right:20px;background-color:black;border-color:black" type="button">
-            <img width="35px;" src="{% static  'question.png' %}">
-        </button>
-        <div class="modal" id="myModal">
-          <div class="modal-dialog">
-            <div class="modal-content">
+    <!--<div class="text-center">-->
+        <!--<button data-target="#myModal" data-toggle="modal" style="position:fixed;top:20px;right:20px;background-color:black;border-color:black" type="button">-->
+            <!--<img style="z-index:0;" width="35px;" src="{% static  'question.png' %}">-->
+        <!--</button>-->
+        <!--<div class="modal" id="myModal">-->
+          <!--<div class="modal-dialog">-->
+            <!--<div class="modal-content">-->
 
-              <!-- Modal Header -->
-              <div class="modal-header">
-                <h4 class="modal-title" style="color:black">테마 수정</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
+              <!--&lt;!&ndash; Modal Header &ndash;&gt;-->
+              <!--<div class="modal-header">-->
+                <!--<h4 class="modal-title" style="color:black">테마 수정</h4>-->
+                <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+              <!--</div>-->
 
-              <!-- Modal body -->
-              <div class="modal-body" style="color:black;">
-                  <h4>테마 수정시 유의할점</h4>
-                  <span style="font-size:1.5rem">1. 힌트 순서에 맞게 힌트 파일을 1번부터 순서대로 넣어주시면 됩니다.</span><br><br>
-                  <span style="font-size:1.5rem">2. Plus 버튼을 누르면 난이도 설정이 가능합니다.</span><br><br>
-                  <span style="font-size:1.5rem">3. 난이도 설정을 중단하고 싶으실 경우 HINT 상의 파일을 삭제해주시면 됩니다.</span><br><br>
-              </div>
+              <!--&lt;!&ndash; Modal body &ndash;&gt;-->
+              <!--<div class="modal-body" style="color:black;">-->
+                  <!--<h4>테마 수정시 유의할점</h4>-->
+                  <!--<span style="font-size:1.5rem">1. 힌트 순서에 맞게 힌트 파일을 1번부터 순서대로 넣어주시면 됩니다.</span><br><br>-->
+                  <!--<span style="font-size:1.5rem">2. Plus 버튼을 누르면 난이도 설정이 가능합니다.</span><br><br>-->
+                  <!--<span style="font-size:1.5rem">3. 난이도 설정을 중단하고 싶으실 경우 HINT 상의 파일을 삭제해주시면 됩니다.</span><br><br>-->
+              <!--</div>-->
 
-              <!-- Modal footer -->
-              <div class="modal-footer">
-                <button type="button" class="btn" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+              <!--&lt;!&ndash; Modal footer &ndash;&gt;-->
+              <!--<div class="modal-footer">-->
+                <!--<button type="button" class="btn" data-dismiss="modal">Close</button>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 py-1 text-center">
                         <h4 class="mt-0 mb-2">테마명:</h4>
@@ -48,19 +47,15 @@
                     <div class="col-3 p-0">
                         {{ form.name }}
                     </div>
-                    <div class="col-1"></div>
                     <div class="col-2 py-1 text-center">
                     </div>
                     <div class="col-3 p-0">
                     </div>
-                    <div class="col-1"></div>
                 </div>
             </div>
-            <div class="col-1"></div>
         </div>
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 py-1 text-center">
                         <h4 class="mt-0 mb-2">Enter Key:</h4>
@@ -75,14 +70,11 @@
                     <div class="col-3 p-0">
                         {{ form.hintCount }}
                     </div>
-                    <div class="col-1"></div>
                 </div>
             </div>
-            <div class="col-1"></div>
         </div>
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub1_h4" class="py-1 mt-0 mb-2">음성힌트1  :</h4>
@@ -152,8 +144,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트1 :</h4>
@@ -222,12 +213,10 @@
                     document.getElementById("sub_text2_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub3_h4" class="py-1 mt-0 mb-2">음성힌트3 :</h4>
@@ -296,8 +285,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트3 :</h4>
@@ -366,12 +354,10 @@
                     document.getElementById("sub_text4_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub5_h4" class="py-1 mt-0 mb-2">음성힌트5 :</h4>
@@ -440,8 +426,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트5 :</h4>
@@ -510,12 +495,10 @@
                     document.getElementById("sub_text6_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub7_h4" class="py-1 mt-0 mb-2">음성힌트7 :</h4>
@@ -584,8 +567,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트7 :</h4>
@@ -654,12 +636,10 @@
                     document.getElementById("sub_text8_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub9_h4" class="py-1 mt-0 mb-2">음성힌트9 :</h4>
@@ -728,8 +708,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트9 :</h4>
@@ -798,12 +777,10 @@
                     document.getElementById("sub_text10_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub11_h4" class="py-1 mt-0 mb-2">음성힌트11 :</h4>
@@ -872,8 +849,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트11 :</h4>
@@ -942,12 +918,10 @@
                     document.getElementById("sub_text12_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub13_h4" class="py-1 mt-0 mb-2">음성힌트13 :</h4>
@@ -1016,8 +990,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트13 :</h4>
@@ -1086,12 +1059,10 @@
                     document.getElementById("sub_text14_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub15_h4" class="py-1 mt-0 mb-2">음성힌트15 :</h4>
@@ -1160,8 +1131,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트15 :</h4>
@@ -1230,12 +1200,10 @@
                     document.getElementById("sub_text16_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub17_h4" class="py-1 mt-0 mb-2">음성힌트17 :</h4>
@@ -1304,8 +1272,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트17 :</h4>
@@ -1374,12 +1341,10 @@
                     document.getElementById("sub_text18_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub19_h4" class="py-1 mt-0 mb-2">음성힌트19 :</h4>
@@ -1448,8 +1413,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트19 :</h4>
@@ -1518,12 +1482,10 @@
                     document.getElementById("sub_text20_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub21_h4" class="py-1 mt-0 mb-2">음성힌트21 :</h4>
@@ -1592,8 +1554,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트21 :</h4>
@@ -1662,12 +1623,10 @@
                     document.getElementById("sub_text22_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub23_h4" class="py-1 mt-0 mb-2">음성힌트23 :</h4>
@@ -1736,8 +1695,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트23 :</h4>
@@ -1806,12 +1764,10 @@
                     document.getElementById("sub_text24_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub25_h4" class="py-1 mt-0 mb-2">음성힌트25 :</h4>
@@ -1880,8 +1836,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트25 :</h4>
@@ -1950,12 +1905,10 @@
                     document.getElementById("sub_text26_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub27_h4" class="py-1 mt-0 mb-2">음성힌트27 :</h4>
@@ -2024,8 +1977,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트27 :</h4>
@@ -2094,12 +2046,10 @@
                     document.getElementById("sub_text28_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
 
         <div class="row my-2">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 id="sub29_h4" class="py-1 mt-0 mb-2">음성힌트29 :</h4>
@@ -2168,8 +2118,7 @@
         </div>
 
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="row">
                     <div class="col-2 p-0 text-center">
                         <h4 class="py-1 mt-0 mb-2">텍스트 힌트29 :</h4>
@@ -2238,7 +2187,6 @@
                     document.getElementById("sub_text30_div").setAttribute('style', 'display:none;');
                 }
             </script>
-            <div class="col-1"></div>
         </div>
         <div style="display:none;">
             {{ form.hint31 }}

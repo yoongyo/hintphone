@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, reverse, redirect, HttpResponse
 from .models import Theme
 from django.contrib.auth.decorators import login_required
-import json
 import sys
 sys.path.append('..')
 from accounts.models import Profile
