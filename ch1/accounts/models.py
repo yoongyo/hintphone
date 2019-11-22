@@ -14,7 +14,7 @@ class Profile(models.Model):
     escape_room = models.CharField(max_length=30)
     reset = models.CharField(max_length=20)
     phone = models.CharField(max_length=20)
-    textHint = models.BooleanField(default=False)
+    textHint = models.BooleanField(default=True)
     answer = models.BooleanField(default=False)
 
     def __str__(self):
