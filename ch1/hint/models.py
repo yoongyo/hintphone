@@ -12,6 +12,8 @@ class Theme(models.Model):
     currentCount = models.PositiveIntegerField(default=0, blank=True, null=True)
     currentHint = models.TextField(default='', blank=True, null=True)
 
+    manyHint = models.BooleanField(default=False)
+
     hint1 = models.FileField(upload_to='mp3/', blank=True, null=True)
     sub_hint1 = models.FileField(upload_to='mp3/', blank=True, null=True)
     textHint1 = RichTextUploadingField(blank=True, null=True)
