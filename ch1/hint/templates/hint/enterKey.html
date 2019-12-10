@@ -43,6 +43,7 @@
         window.history.back();
     }
     {% if okTimer %}
+    localStorage.test = {{ timer }} * 60;
     localStorage.start = false;
     {% endif %}
 </script>

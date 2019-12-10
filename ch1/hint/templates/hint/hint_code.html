@@ -53,6 +53,7 @@
             <h4 class="m-0">{{ count }} / {{ hintCount }}</h4>
             <div id="ViewTimer"></div>
             <button type="button" id="timerBtn" onclick="timer_start()" style="color:white;display:none;background-color:black; border-color:black">시작</button>
+            <button type="button" id="pauseBtn" onclick="timer_stop()" style="color:white;background-color:black; border-color:black">일시정지</button>
         </div>
         <div class="col-2"></div>
     </div>
@@ -104,14 +105,28 @@
         var start = localStorage.getItem('start');
         if (!start) {
             document.getElementById("timerBtn").style.display='';
+            document.getElementById("pauseBtn").style.display='none';
         }
         if (localStorage.getItem('test') <= -100) {
             document.getElementById("timerBtn").style.display='';
+            document.getElementById("pauseBtn").style.display='none';
         }
         function timer_start() {
             localStorage.test = {{ timer }} * 60;
             localStorage.start = true;
             location.reload();
+        }
+
+        function timer_stop() {
+            clearInterval(tid);
+            document.getElementById("pauseBtn").innerHTML = "재시작";
+            document.getElementById("pauseBtn").setAttribute( 'onClick', 'timer_restart()' );
+        }
+
+        function timer_restart() {
+            document.getElementById("pauseBtn").innerHTML = "일시정지";
+            document.getElementById("pauseBtn").setAttribute( 'onClick', 'timer_stop()' );
+            tid=setInterval('msg_time()',1000)
         }
 
         function pad(n, width) {
@@ -126,8 +141,8 @@
             localStorage.test--;
             SetTime--;
             if (localStorage.test < 0) {
-                clearInterval(tid);		// 타이머 해제
-                m = "00 : 00";	// 남은 시간 계산
+                clearInterval(tid);
+                m = "00 : 00";
                 var msg = "<font color='red'>" + m + "</font>";
                 document.all.ViewTimer.innerHTML = msg;
                 start = false;
@@ -138,6 +153,7 @@
                 document.all.ViewTimer.innerHTML = msg;
             }
         }
+
         if (start) {
             window.onload = function TimerStart(){
                 tid=setInterval('msg_time()',1000)
