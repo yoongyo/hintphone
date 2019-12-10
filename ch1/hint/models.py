@@ -13,7 +13,7 @@ class Theme(models.Model):
     currentHint = models.TextField(default='', blank=True, null=True)
 
     manyHint = models.BooleanField(default=False)
-    timer = models.PositiveIntegerField(default=0, blank=True, null=True)
+    timer = models.PositiveIntegerField(default=60, blank=True, null=True)
 
     hint1 = models.FileField(upload_to='mp3/', blank=True, null=True)
     sub_hint1 = models.FileField(upload_to='mp3/', blank=True, null=True)

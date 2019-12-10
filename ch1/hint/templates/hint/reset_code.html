@@ -37,7 +37,9 @@
 
     }else{
         if (reset_code == "{{ reset }}" ){
-            localStorage.test = -100;
+            {% if okTimer %}
+                localStorage.test = -100;
+            {% endif %}
             location.href=url;
         }
         else {
@@ -46,6 +48,9 @@
             });
         }
     }
+
+    {% if okTimer %}
+
     var start = localStorage.getItem('start');
     var SetTime = localStorage.getItem('test');		// 최초 설정 시간(기본 : 초)
     function msg_time() {	// 1초씩 카운트
@@ -62,6 +67,7 @@
             tid=setInterval('msg_time()',1000)
         };
     }
+    {% endif %}
 </script>
 
 {% endblock %}

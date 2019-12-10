@@ -39,11 +39,12 @@
             });
         }
     }
-
     function back(){
         window.history.back();
     }
+    {% if okTimer %}
     localStorage.start = false;
+    {% endif %}
 </script>
 
 {% endblock %}

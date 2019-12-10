@@ -29,6 +29,7 @@ def reset_code(request, user_id, theme):
     theme = Theme.objects.get(name=theme, roomEscape=request.user)
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
     q = request.GET.get('q', '')
+    okTimer = get_object_or_404(Profile, user=request.user).timer
     if q == reset:
         theme.currentHint = ''
         theme.currentCount = 0
@@ -39,7 +40,8 @@ def reset_code(request, user_id, theme):
         'theme': theme,
         'user_id': user_id,
         'escape_room': escape_room,
-        'nation': nation
+        'nation': nation,
+        'okTimer': okTimer
     })
 
 
@@ -50,6 +52,7 @@ def QR_code(request, user_id, theme):
     hintCount = get_object_or_404(Theme, name=theme, roomEscape=request.user).hintCount
     currentCount = get_object_or_404(Theme, name=theme, roomEscape=request.user).currentCount
     timer = get_object_or_404(Theme, name=theme, roomEscape=request.user).timer
+    okTimer = get_object_or_404(Profile, user=request.user).timer
 
     if request.method == "POST":
         p = request.POST.get('p', '')
@@ -67,7 +70,8 @@ def QR_code(request, user_id, theme):
             'escape_room': escape_room,
             'user_id': user_id,
             'nation': nation,
-            'timer': timer
+            'timer': timer,
+            'okTimer': okTimer
         })
     else:
         return render(request, 'hint/not_hint.html', {
@@ -77,7 +81,8 @@ def QR_code(request, user_id, theme):
             'escape_room': escape_room,
             'user_id': user_id,
             'nation': nation,
-            'timer': timer
+            'timer': timer,
+            'okTimer': okTimer
         })
 
 
@@ -495,6 +500,7 @@ def theme_hint(request, user_id, theme, hint):
 
     theme = Theme.objects.get(name=theme, roomEscape=request.user)
     currentHint = theme.currentHint.split(',')
+    okTimer = get_object_or_404(Profile, user=request.user).timer
     if hint not in currentHint:
         theme.currentHint = theme.currentHint + (hint+',')
         theme.currentCount = theme.currentCount + 1
@@ -509,7 +515,8 @@ def theme_hint(request, user_id, theme, hint):
         'subHint': subHint,
         'textHint': textHint,
         'sub_textHint': sub_textHint,
-        'answer': answer
+        'answer': answer,
+        'okTimer': okTimer
     })
 
 
@@ -654,6 +661,8 @@ def enter_key(request, user_id, theme):
     enterKey = get_object_or_404(Theme, roomEscape=request.user, name=theme).enterKey
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
     timer = get_object_or_404(Theme, roomEscape=request.user, name=theme).timer
+    okTimer = get_object_or_404(Profile, user=request.user).timer
+
     q = request.GET.get('q', '')
     return render(request, 'hint/enterKey.html', {
         'enterKey': enterKey,
@@ -661,7 +670,8 @@ def enter_key(request, user_id, theme):
         'user_id': user_id,
         'q': q,
         'theme': theme,
-        'timer': timer
+        'timer': timer,
+        'okTimer': okTimer
     })
 
 
