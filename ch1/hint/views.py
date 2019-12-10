@@ -49,6 +49,8 @@ def QR_code(request, user_id, theme):
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
     hintCount = get_object_or_404(Theme, name=theme, roomEscape=request.user).hintCount
     currentCount = get_object_or_404(Theme, name=theme, roomEscape=request.user).currentCount
+    timer = get_object_or_404(Theme, name=theme, roomEscape=request.user).timer
+
     if request.method == "POST":
         p = request.POST.get('p', '')
         return HttpResponseRedirect(reverse('hint:theme_hint', args=[user_id, theme, p]))
@@ -65,6 +67,7 @@ def QR_code(request, user_id, theme):
             'escape_room': escape_room,
             'user_id': user_id,
             'nation': nation,
+            'timer': timer
         })
     else:
         return render(request, 'hint/not_hint.html', {
@@ -74,6 +77,7 @@ def QR_code(request, user_id, theme):
             'escape_room': escape_room,
             'user_id': user_id,
             'nation': nation,
+            'timer': timer
         })
 
 
@@ -516,6 +520,7 @@ def theme_edit(request, user_id, theme):
     theme = get_object_or_404(Theme, name=theme, roomEscape=request.user)
     textHint = get_object_or_404(Profile, user=request.user).textHint
     manyHint = theme.manyHint
+    timer = get_object_or_404(Profile, user=request.user).timer
 
     if request.method == 'POST':
         form = HintForm(request.POST, request.FILES, instance=theme)
@@ -535,7 +540,8 @@ def theme_edit(request, user_id, theme):
         'user_id': user_id,
         'nation': nation,
         'textHint': textHint,
-        'manyHint': manyHint
+        'manyHint': manyHint,
+        'timer': timer,
     })
 
 
@@ -647,13 +653,15 @@ def admin_confirm(request, user_id, theme):
 def enter_key(request, user_id, theme):
     enterKey = get_object_or_404(Theme, roomEscape=request.user, name=theme).enterKey
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
+    timer = get_object_or_404(Theme, roomEscape=request.user, name=theme).timer
     q = request.GET.get('q', '')
     return render(request, 'hint/enterKey.html', {
         'enterKey': enterKey,
         'escape_room': escape_room,
         'user_id': user_id,
         'q': q,
-        'theme': theme
+        'theme': theme,
+        'timer': timer
     })
 
 

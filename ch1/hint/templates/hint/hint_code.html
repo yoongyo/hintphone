@@ -51,6 +51,8 @@
             </form>
             <h3 class="mt-3 mb-2">HINT COUNT</h3>
             <h4 class="m-0">{{ count }} / {{ hintCount }}</h4>
+            <div id="ViewTimer"></div>
+            <button type="button" id="timerBtn" onclick="timer_start()" style="color:white;display:none;">시작</button>
         </div>
         <div class="col-2"></div>
     </div>
@@ -95,6 +97,53 @@
 
 <script src="https://dmla.github.io/jsqrcode/src/qr_packed.js"></script>
 <script>
+    // 타이머 기능
+    console.log(localStorage.getItem('test'));
+    var SetTime = localStorage.getItem('test');
+    var start = localStorage.getItem('start');
+    if (!start) {
+        document.getElementById("timerBtn").style.display='';
+    }
+    if (localStorage.getItem('test') <= -100) {
+        document.getElementById("timerBtn").style.display='';
+    }
+    function timer_start() {
+        localStorage.test = {{ timer }} * 60;
+        localStorage.start = true;
+        location.reload();
+    }
+
+    function pad(n, width) {
+      n = n + '';
+      return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+    }
+
+    function msg_time() {
+        m = pad(Math.floor(SetTime / 60),2) + " : " + pad((SetTime % 60),2);
+        var msg = "<font color='red'>" + m + "</font>";
+        document.all.ViewTimer.innerHTML = msg;
+        localStorage.test--;
+        SetTime--;
+        if (localStorage.test < 0) {
+            clearInterval(tid);		// 타이머 해제
+            m = "00 : 00";	// 남은 시간 계산
+            var msg = "<font color='red'>" + m + "</font>";
+            document.all.ViewTimer.innerHTML = msg;
+            start = false;
+        }
+        if (!start) {
+            m = pad(Math.floor({{ timer }} * 60 / 60),2) + " : " + pad(({{ timer }} * 60 % 60),2);
+            var msg = "<font color='red'>" + m + "</font>";
+            document.all.ViewTimer.innerHTML = msg;
+        }
+    }
+    if (start) {
+        window.onload = function TimerStart(){
+            tid=setInterval('msg_time()',1000)
+        };
+    }
+	// 타이머기능
+
     function interPhone(){
         var id = "{{ interPhone_id }}";
         var secret = "{{ interPhone_secret }}";

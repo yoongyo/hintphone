@@ -47,10 +47,19 @@
                     <div class="col-3 p-0">
                         {{ form.name }}
                     </div>
-                    <div class="col-2 py-1 text-center">
-                    </div>
-                    <div class="col-3 p-0">
-                    </div>
+                    {% if timer %}
+                        <div class="col-1"></div>
+                        <div class="col-2 py-1 text-center">
+                            <h4 class="mt-0 mb-2">타이머(분) :</h4>
+                        </div>
+                        <div class="col-3 p-0">
+                            {{ form.timer }}
+                        </div>
+                    {% else %}
+                        <div class="col-1"></div>
+                        <div class="col-2 py-1 text-center"></div>
+                        <div class="col-3 p-0"></div>
+                    {% endif %}
                 </div>
             </div>
         </div>

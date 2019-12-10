@@ -49,7 +49,7 @@ class HintForm(forms.ModelForm):
                   'textHint68',
                   'textHint69', 'textHint70', 'textHint71', 'textHint72', 'textHint73', 'textHint74', 'textHint75',
                   'textHint76',
-                  'textHint77', 'textHint78', 'textHint79', 'textHint80',
+                  'textHint77', 'textHint78', 'textHint79', 'textHint80', 'timer'
                   ]
         widgets = {
             'textHint1': CKEditorWidget(
@@ -217,7 +217,12 @@ class HintForm(forms.ModelForm):
             'sub_textHint78': CKEditorWidget(),
             'sub_textHint79': CKEditorWidget(),
             'sub_textHint80': CKEditorWidget(),
-
+            'timer': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'style': 'border-color:black'
+                }
+            ),
             'name': forms.TextInput(
                 attrs={
                     'class': 'form-control',

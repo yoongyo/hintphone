@@ -34,8 +34,10 @@
     var reset_code = "{{ q }}";
     var url = "{% url 'hint:QR_code' user_id theme %}";
     if (reset_code == ""){
+
     }else{
         if (reset_code == "{{ reset }}" ){
+            localStorage.test = -100;
             location.href=url;
         }
         else {
@@ -43,6 +45,22 @@
               $('#not').text('Reset Code가 일치하지 않습니다.');
             });
         }
+    }
+    var start = localStorage.getItem('start');
+    var SetTime = localStorage.getItem('test');		// 최초 설정 시간(기본 : 초)
+    function msg_time() {	// 1초씩 카운트
+        SetTime--;					// 1초씩 감소
+        localStorage.test = SetTime;
+        if (SetTime < 0) {			// 시간이 종료 되었으면..
+            clearInterval(tid);		// 타이머 해제
+            start = false;
+        }
+    }
+
+	if (start) {
+        window.onload = function TimerStart(){
+            tid=setInterval('msg_time()',1000)
+        };
     }
 </script>
 
