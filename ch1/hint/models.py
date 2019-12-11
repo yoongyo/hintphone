@@ -415,9 +415,5 @@ class Theme(models.Model):
     textHint80 = RichTextUploadingField(blank=True, null=True)
     sub_textHint80 = RichTextUploadingField(blank=True, null=True)
 
-    interPhone_key = models.CharField(max_length=100, blank=True, null=True)
-    interPhone_secret = models.CharField(max_length=100, blank=True, null=True)
-    interPhone_ID = models.CharField(max_length=100, blank=True, null=True)
-
     def __str__(self):
         return self.name
