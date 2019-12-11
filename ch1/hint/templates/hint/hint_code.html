@@ -53,7 +53,9 @@
             <h4 class="m-0">{{ count }} / {{ hintCount }}</h4>
             <div id="ViewTimer"></div>
             <button type="button" id="timerBtn" onclick="timer_start()" style="color:white;display:none;background-color:black; border-color:black">시작</button>
-            <button type="button" id="pauseBtn" onclick="timer_stop()" style="color:white;background-color:black; border-color:black">일시정지</button>
+            {% if pause %}
+                <button type="button" id="pauseBtn" onclick="timer_stop()" style="color:white;background-color:black; border-color:black">일시정지</button>
+            {% endif %}
         </div>
         <div class="col-2"></div>
     </div>
@@ -105,17 +107,23 @@
         var start = localStorage.getItem('start');
         if (!start) {
             document.getElementById("timerBtn").style.display='';
+            {% if pause %}
             document.getElementById("pauseBtn").style.display='none';
+            {% endif %}
         }
         if (localStorage.getItem('test') <= -100) {
             document.getElementById("timerBtn").style.display='';
+            {% if pause %}
             document.getElementById("pauseBtn").style.display='none';
+            {% endif %}
         }
         function timer_start() {
             localStorage.test = {{ timer }} * 60;
             localStorage.start = true;
             location.reload();
         }
+
+        {% if pause %}
 
         function timer_stop() {
             clearInterval(tid);
@@ -128,6 +136,8 @@
             document.getElementById("pauseBtn").setAttribute( 'onClick', 'timer_stop()' );
             tid=setInterval('msg_time()',1000)
         }
+
+        {% endif %}
 
         function pad(n, width) {
           n = n + '';
