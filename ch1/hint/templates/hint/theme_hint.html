@@ -106,22 +106,23 @@
         location.href=referrer;
     }
     {% if okTimer %}
-    var start = localStorage.getItem('start');
-    var SetTime = localStorage.getItem('test');		// 최초 설정 시간(기본 : 초)
-    function msg_time() {	// 1초씩 카운트
-        SetTime--;					// 1초씩 감소
-        localStorage.test = SetTime;
-        if (SetTime < 0) {			// 시간이 종료 되었으면..
-            clearInterval(tid);		// 타이머 해제
-            start = false;
+    function count() {
+        var currentDates = new Date();
+        timestamp = currentDates.getTime()/1000;
+        currentTime = Math.round(timestamp);
+        localStorage.currentTimer = currentTime;
+        second = localStorage.currentTimer - localStorage.startTimer;
+        console.log("현재 시간 : " + localStorage.currentTimer);
+        console.log("시작 시간 : " + localStorage.startTimer);
+        console.log(second);
+        console.log(localStorage.timer);
+        localStorage.time = localStorage.timer - second;
+        console.log(localStorage.time);
+        if (localStorage.time < 1) {
+            clearInterval(tid);
         }
     }
-
-	if (start) {
-        window.onload = function TimerStart(){
-            tid=setInterval('msg_time()',1000)
-        };
-    }
+    tid = setInterval('count()', 1000);
     {% endif %}
 </script>
 {% endblock %}

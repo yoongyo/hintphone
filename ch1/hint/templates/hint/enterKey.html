@@ -31,6 +31,11 @@
     if (reset_code == ""){
     }else{
         if (reset_code == "{{ enterKey }}" ){
+            {% if okTimer %}
+                localStorage.time = {{ timer }} * 60;
+                localStorage.timer = {{ timer }} * 60;
+                localStorage.start = "false";
+            {% endif %}
             location.href=url;
         }
         else {
@@ -42,10 +47,7 @@
     function back(){
         window.history.back();
     }
-    {% if okTimer %}
-    localStorage.test = {{ timer }} * 60;
-    localStorage.start = false;
-    {% endif %}
+
 </script>
 
 {% endblock %}

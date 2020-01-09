@@ -30,6 +30,8 @@ def reset_code(request, user_id, theme):
     escape_room = get_object_or_404(Profile, user=request.user).escape_room
     q = request.GET.get('q', '')
     okTimer = get_object_or_404(Profile, user=request.user).timer
+    timer = get_object_or_404(Theme, name=theme, roomEscape=request.user).timer
+
     if q == reset:
         theme.currentHint = ''
         theme.currentCount = 0
@@ -41,7 +43,8 @@ def reset_code(request, user_id, theme):
         'user_id': user_id,
         'escape_room': escape_room,
         'nation': nation,
-        'okTimer': okTimer
+        'okTimer': okTimer,
+        'timer': timer
     })
 
 
