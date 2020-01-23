@@ -32,9 +32,12 @@
     }else{
         if (reset_code == "{{ enterKey }}" ){
             {% if okTimer %}
-                localStorage.time = {{ timer }} * 60;
-                localStorage.timer = {{ timer }} * 60;
-                localStorage.start = "false";
+                if (localStorage.start == "true") {
+                } else {
+                    localStorage.time = {{ timer }} * 60;
+                    localStorage.timer = {{ timer }} * 60;
+                    localStorage.start = "false";
+                }
             {% endif %}
             location.href=url;
         }

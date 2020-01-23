@@ -128,7 +128,6 @@
                 localStorage.startTimer = timeStart;
                 localStorage.start = "true";
 
-
                 location.reload();
             }
         }
@@ -155,6 +154,7 @@
             document.all.ViewTimer.innerHTML = msg;
             if (localStorage.time < 1) {
                 clearInterval(tid);
+                localStorage.start = "false";
             }
         }
 
