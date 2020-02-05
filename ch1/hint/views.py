@@ -57,6 +57,7 @@ def QR_code(request, user_id, theme):
     timer = get_object_or_404(Theme, name=theme, roomEscape=request.user).timer
     okTimer = get_object_or_404(Profile, user=request.user).timer
     pause = get_object_or_404(Profile, user=request.user).pause
+    onlyCode = get_object_or_404(Profile, user=request.user).onlyCode
 
     if request.method == "POST":
         p = request.POST.get('p', '')
@@ -76,7 +77,8 @@ def QR_code(request, user_id, theme):
             'nation': nation,
             'timer': timer,
             'okTimer': okTimer,
-            'pause': pause
+            'pause': pause,
+            'onlyCode': onlyCode
         })
     else:
         return render(request, 'hint/not_hint.html', {
@@ -88,7 +90,8 @@ def QR_code(request, user_id, theme):
             'nation': nation,
             'timer': timer,
             'okTimer': okTimer,
-            'pause': pause
+            'pause': pause,
+            'onlyCode': onlyCode
         })
 
 

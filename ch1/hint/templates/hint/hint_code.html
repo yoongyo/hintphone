@@ -39,16 +39,33 @@
         </div>
         <div class="col-2"></div>
     </div>
+    {% if onlyCode == False %}
     <img src="{% static 'qr.png' %}">
+    {% else %}
+    <div style="visibility: hidden">
+        <img src="{% static 'qr.png' %}">
+    </div>
+    {% endif %}
     <div class="row mt-1">
         <div class="col-2"></div>
         <div class="col-8">
+            {% if onlyCode == False %}
             <form action="" method="get" class="mb-3">
                 {% csrf_token %}
                 <button style="background-color:black;border-color:white;color:white" class="mt-3 form-control" onclick="android()" type="button">QR 코드 힌트 사용</button>
                 <input style="color:black;display:none;" id="input" name="q" value="{{ q }}" type="text">
                 <button id="hint_btn" type="submit" style="display:none;"></button>
             </form>
+             {% else %}
+            <div style="visibility: hidden">
+                <form action="" method="get" class="mb-3">
+                    {% csrf_token %}
+                    <button style="background-color:black;border-color:white;color:white" class="mt-3 form-control" onclick="android()" type="button">QR 코드 힌트 사용</button>
+                    <input style="color:black;display:none;" id="inputs" name="q" value="{{ q }}" type="text">
+                    <button id="hint_btns" type="submit" style="display:none;"></button>
+                </form>
+            </div>
+            {% endif %}
             <h3 class="mt-3 mb-2">HINT COUNT</h3>
             <h4 class="m-0">{{ count }} / {{ hintCount }}</h4>
             <div id="ViewTimer"></div>
