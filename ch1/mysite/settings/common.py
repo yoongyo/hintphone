@@ -28,11 +28,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor_uploader',
+    'ckeditor',
     'hint',
     'accounts',
     'storages',
-    'ckeditor',
-    'ckeditor_uploader'
 ]
 
 MIDDLEWARE = [
@@ -104,10 +104,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
-CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_UPLOAD_PATH = "uploads/"
 AWS_QUERYSTRING_AUTH = False
-
 CKEDITOR_CONFIGS = {
     'default': {
         'height': 200,
@@ -125,9 +123,11 @@ CKEDITOR_CONFIGS = {
                        'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl']},
 
             {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
-            {'name': 'colors', 'items': ['TextColor', 'BGColor', 'Image']},
+            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
+            {'name': 'upload', 'items': ['Image', 'Youtube']},
             '/',
         ],
+        'extraPlugins': 'youtube',
         'toolbar': 'YourCustomToolbarConfig',
         'tabSpaces': 4,
     },
