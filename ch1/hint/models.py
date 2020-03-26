@@ -17,7 +17,12 @@ class Theme(models.Model):
 
     hint1 = models.FileField(upload_to='mp3/', blank=True, null=True)
     sub_hint1 = models.FileField(upload_to='mp3/', blank=True, null=True)
-    textHint1 = RichTextUploadingField(blank=True, null=True)
+    textHint1 = RichTextUploadingField(blank=True, null=True,
+                                       external_plugin_resources=[(
+                                         'youtube',
+                                         '/static/base/vendor/ckeditor_plugins/youtube/youtube/',
+                                         'plugin.js',
+                                     )])
     sub_textHint1 = RichTextUploadingField(blank=True, null=True)
 
     hint2 = models.FileField(upload_to='mp3/', blank=True, null=True)
